@@ -1,0 +1,8 @@
+# OpenAI API Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Optional: Tesseract Configuration (if using local OCR)
+# TESSERACT_CMD=/usr/bin/tesseract
+ 
+# Optional: Logging Configuration
+# LOG_LEVEL=INFO 

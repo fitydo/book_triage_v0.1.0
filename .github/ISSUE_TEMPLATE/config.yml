@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "📖 Documentation"
+    url: "https://github.com/fitydo/book_triage_v1.0.0/wiki"
+    about: "Check the project wiki for detailed documentation and guides"
+  - name: "💬 Discussions"
+    url: "https://github.com/fitydo/book_triage_v1.0.0/discussions"
+    about: "Ask questions and discuss features with the community"
+  - name: "🔒 Security Issues"
+    url: "https://github.com/fitydo/book_triage_v1.0.0/security/advisories/new"
+    about: "Report security vulnerabilities privately" 
