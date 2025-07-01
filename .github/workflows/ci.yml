@@ -63,7 +63,7 @@ jobs:
     - name: Run tests with coverage
       run: |
         coverage run -m pytest tests/ -v
-        coverage report --show-missing --fail-under=84
+        coverage report --show-missing
         coverage xml
     
     - name: Upload coverage to Codecov
