@@ -43,15 +43,22 @@ class TestBookTriage:
     
     def test_book_triage_initialization(self):
         """Test BookTriage initialization."""
-        with tempfile.NamedTemporaryFile(suffix=".csv", delete=True) as tmp:
-            csv_path = Path(tmp.name)
+        # Use a non-existent path that BookTriage can handle
+        csv_path = Path(tempfile.mktemp(suffix=".csv"))
+        
+        try:
             triage = BookTriage(csv_path)
             assert triage.csv_path == csv_path
+        finally:
+            if csv_path.exists():
+                csv_path.unlink()
 
     def test_calculate_utilities_simple(self):
         """Test simple utility calculation."""
-        with tempfile.NamedTemporaryFile(suffix=".csv", delete=True) as tmp:
-            csv_path = Path(tmp.name)
+        # Use a non-existent path that BookTriage can handle
+        csv_path = Path(tempfile.mktemp(suffix=".csv"))
+        
+        try:
             triage = BookTriage(csv_path)
             
             record = BookRecord(
@@ -69,11 +76,16 @@ class TestBookTriage:
             assert isinstance(utilities["sell"], (int, float))
             assert isinstance(utilities["digital"], (int, float))
             assert isinstance(utilities["keep"], (int, float))
+        finally:
+            if csv_path.exists():
+                csv_path.unlink()
 
     def test_make_decision_simple(self):
         """Test simple decision making."""
-        with tempfile.NamedTemporaryFile(suffix=".csv", delete=True) as tmp:
-            csv_path = Path(tmp.name)
+        # Use a non-existent path that BookTriage can handle
+        csv_path = Path(tempfile.mktemp(suffix=".csv"))
+        
+        try:
             triage = BookTriage(csv_path)
             
             record = BookRecord(
@@ -85,6 +97,9 @@ class TestBookTriage:
             decision = triage.make_decision(record)
             assert isinstance(decision, Decision)
             assert decision in [Decision.SELL, Decision.DIGITAL, Decision.KEEP, Decision.UNKNOWN]
+        finally:
+            if csv_path.exists():
+                csv_path.unlink()
 
 
 class TestDecision:

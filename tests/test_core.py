@@ -202,9 +202,10 @@ class TestBookTriage:
     
     def test_make_decision(self):
         """Test decision making logic."""
-        with tempfile.NamedTemporaryFile(suffix=".csv", delete=True) as tmp:
-            csv_path = Path(tmp.name)
+        # Use a non-existent path that BookTriage can handle
+        csv_path = Path(tempfile.mktemp(suffix=".csv"))
         
+        try:
             triage = BookTriage(csv_path)
             
             # Test case where digital has highest utility
@@ -273,12 +274,16 @@ class TestBookTriage:
             # U_keep = 1 + 0 + 1 = 2 (highest but positive, so not UNKNOWN)
             # Max utility is 2, so should be KEEP, not UNKNOWN
             assert decision == Decision.KEEP
+        finally:
+            if csv_path.exists():
+                csv_path.unlink()
     
     def test_add_record(self):
         """Test adding records."""
-        with tempfile.NamedTemporaryFile(suffix=".csv", delete=True) as tmp:
-            csv_path = Path(tmp.name)
+        # Use a non-existent path that BookTriage can handle
+        csv_path = Path(tempfile.mktemp(suffix=".csv"))
         
+        try:
             # File doesn't exist, so BookTriage will handle it gracefully
             triage = BookTriage(csv_path)
             
@@ -299,16 +304,18 @@ class TestBookTriage:
             df = pd.read_csv(csv_path)
             assert len(df) == 1
             assert df.iloc[0]['id'] == "test1"
-        
+        finally:
             # Clean up
-            csv_path.unlink()
+            if csv_path.exists():
+                csv_path.unlink()
     
     def test_get_record_by_id(self):
         """Test getting record by ID."""
-        with tempfile.NamedTemporaryFile(suffix=".csv", delete=True) as tmp:
-            csv_path = Path(tmp.name)
+        # Use a non-existent path that BookTriage can handle
+        csv_path = Path(tempfile.mktemp(suffix=".csv"))
         
-        # File doesn't exist, so BookTriage will handle it gracefully
+        try:
+            # File doesn't exist, so BookTriage will handle it gracefully
             triage = BookTriage(csv_path)
             
             record1 = BookRecord(id="test1", title="Test Book 1")
@@ -323,9 +330,10 @@ class TestBookTriage:
             
             not_found = triage.get_record_by_id("nonexistent")
             assert not_found is None
-        
-        # Clean up
-        csv_path.unlink()
+        finally:
+            # Clean up
+            if csv_path.exists():
+                csv_path.unlink()
 
     def test_price_to_v_calculation(self):
         """Test automatic V calculation from purchase and used prices."""
@@ -354,58 +362,65 @@ class TestBookTriage:
         finally:
             if csv_path.exists():
                 csv_path.unlink()
-            os.rmdir(temp_dir)
 
     @patch('book_triage.core.OpenAI')
     def test_enrich_with_gpt4o_mock(self, mock_openai):
         """Test GPT-4o enrichment with mocked OpenAI client."""
-        with tempfile.NamedTemporaryFile(suffix=".csv", delete=True) as tmp:
-            csv_path = Path(tmp.name)
+        # Use a non-existent path that BookTriage can handle
+        csv_path = Path(tempfile.mktemp(suffix=".csv"))
         
-        # Mock the OpenAI response for URL enrichment (not R and P)
-        mock_client = Mock()
-        mock_response = Mock()
-        mock_response.choices = [Mock()]
-        mock_response.choices[0].message.content = '{"amazon_co_jp_url": "https://amazon.co.jp/test", "amazon_com_url": "https://amazon.com/test"}'
-        mock_client.chat.completions.create.return_value = mock_response
-        mock_openai.return_value = mock_client
-        
-        triage = BookTriage(csv_path)
-        triage.client = mock_client  # Set the client directly
-        record = BookRecord(id="test1", title="Test Book")
-        
-        triage.enrich_with_gpt4o(record)
-        
-        # GPT-4o enriches URLs, not R and P
-        assert record.url == "https://amazon.co.jp/test"
-        assert record.url_com == "https://amazon.com/test"
-        
-        # Verify OpenAI was called
-        mock_client.chat.completions.create.assert_called_once()
+        try:
+            # Mock the OpenAI response for URL enrichment (not R and P)
+            mock_client = Mock()
+            mock_response = Mock()
+            mock_response.choices = [Mock()]
+            mock_response.choices[0].message.content = '{"amazon_co_jp_url": "https://amazon.co.jp/test", "amazon_com_url": "https://amazon.com/test"}'
+            mock_client.chat.completions.create.return_value = mock_response
+            mock_openai.return_value = mock_client
+            
+            triage = BookTriage(csv_path)
+            triage.client = mock_client  # Set the client directly
+            record = BookRecord(id="test1", title="Test Book")
+            
+            triage.enrich_with_gpt4o(record)
+            
+            # GPT-4o enriches URLs, not R and P
+            assert record.url == "https://amazon.co.jp/test"
+            assert record.url_com == "https://amazon.com/test"
+            
+            # Verify OpenAI was called
+            mock_client.chat.completions.create.assert_called_once()
+        finally:
+            if csv_path.exists():
+                csv_path.unlink()
 
     def test_scan_cost_parameter(self):
         """Test that scan cost parameter affects utility calculations."""
-        with tempfile.NamedTemporaryFile(suffix=".csv", delete=True) as tmp:
-            csv_path = Path(tmp.name)
+        # Use a non-existent path that BookTriage can handle
+        csv_path = Path(tempfile.mktemp(suffix=".csv"))
         
-        # Test with different scan costs
-        triage_low_cost = BookTriage(csv_path, scan_cost=1)
-        triage_high_cost = BookTriage(csv_path, scan_cost=4)
-        
-        record = BookRecord(
-            id="test1",
-            title="Test Book",
-            F=3,
-            P=3
-        )
-        
-        utilities_low = triage_low_cost.calculate_utilities(record)
-        utilities_high = triage_high_cost.calculate_utilities(record)
-        
-        # Digital utility should be higher with lower scan cost
-        assert utilities_low["digital"] > utilities_high["digital"]
-        assert utilities_low["digital"] == 5.0  # 3 + 3 - 1
-        assert utilities_high["digital"] == 2.0  # 3 + 3 - 4
+        try:
+            # Test with different scan costs
+            triage_low_cost = BookTriage(csv_path, scan_cost=1)
+            triage_high_cost = BookTriage(csv_path, scan_cost=4)
+            
+            record = BookRecord(
+                id="test1",
+                title="Test Book",
+                F=3,
+                P=3
+            )
+            
+            utilities_low = triage_low_cost.calculate_utilities(record)
+            utilities_high = triage_high_cost.calculate_utilities(record)
+            
+            # Digital utility should be higher with lower scan cost
+            assert utilities_low["digital"] > utilities_high["digital"]
+            assert utilities_low["digital"] == 5.0  # 3 + 3 - 1
+            assert utilities_high["digital"] == 2.0  # 3 + 3 - 4
+        finally:
+            if csv_path.exists():
+                csv_path.unlink()
 
 
 class TestDecisionEnum:
