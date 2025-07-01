@@ -173,7 +173,7 @@ class TestBookTriage:
             assert utilities["keep"] == 4.0  # R + A + S = 2 + 1 + 1 = 4
         finally:
             if csv_path.exists():
-            csv_path.unlink()
+                csv_path.unlink()
             os.rmdir(temp_dir)
 
     def test_calculate_utilities_with_none_values(self):
@@ -210,76 +210,76 @@ class TestBookTriage:
             # Test case where digital has highest utility
             record = BookRecord(
                 id="test1",
-            title="Test Book 1",
-            F=4,  # High frequency
-            R=2,  # Medium rarity
+                title="Test Book 1",
+                F=4,  # High frequency
+                R=2,  # Medium rarity
                 A=1,  # Low annotation need
-            V=2,  # Medium resale value
+                V=2,  # Medium resale value
                 S=1,  # Low sentimental value
-            P=4   # High scannability
+                P=4   # High scannability
             )
             
             decision = triage.make_decision(record)
-        # U_digital = 4 + 4 - 2 = 6 (highest)
+            # U_digital = 4 + 4 - 2 = 6 (highest)
             assert decision == Decision.DIGITAL
             
-        # Test case where keep has highest utility
+            # Test case where keep has highest utility
             record = BookRecord(
                 id="test2",
                 title="Test Book 2",
-            F=1,  # Low frequency
-            R=5,  # High rarity
-            A=4,  # High annotation need
-            V=1,  # Low resale value
-            S=5,  # High sentimental value
-            P=1   # Low scannability
-        )
-        
-        decision = triage.make_decision(record)
-        # U_keep = 5 + 4 + 5 = 14 (highest)
-        assert decision == Decision.KEEP
+                F=1,  # Low frequency
+                R=5,  # High rarity
+                A=4,  # High annotation need
+                V=1,  # Low resale value
+                S=5,  # High sentimental value
+                P=1   # Low scannability
+            )
+            
+            decision = triage.make_decision(record)
+            # U_keep = 5 + 4 + 5 = 14 (highest)
+            assert decision == Decision.KEEP
 
-        # Test case where sell has highest utility
-        record = BookRecord(
-            id="test3",
-            title="Test Book 3",
-            F=1,  # Low frequency
-            R=1,  # Low rarity
-            A=1,  # Low annotation need
-            V=5,  # High resale value
-            S=1,  # Low sentimental value
-            P=1   # Low scannability
-        )
-        
-        decision = triage.make_decision(record)
-        # U_sell = 5 - (1 + 1) = 3 (highest)
-        assert decision == Decision.SELL
-        
-        # Test case where all utilities are negative or zero
-        record = BookRecord(
-            id="test4",
-            title="Test Book 4",
-            F=0,
-            R=1,
+            # Test case where sell has highest utility
+            record = BookRecord(
+                id="test3",
+                title="Test Book 3",
+                F=1,  # Low frequency
+                R=1,  # Low rarity
+                A=1,  # Low annotation need
+                V=5,  # High resale value
+                S=1,  # Low sentimental value
+                P=1   # Low scannability
+            )
+            
+            decision = triage.make_decision(record)
+            # U_sell = 5 - (1 + 1) = 3 (highest)
+            assert decision == Decision.SELL
+            
+            # Test case where all utilities are negative or zero
+            record = BookRecord(
+                id="test4",
+                title="Test Book 4",
+                F=0,
+                R=1,
                 A=0,
                 V=0,
-            S=1,
+                S=1,
                 P=0
             )
             
             decision = triage.make_decision(record)
-        # U_sell = 0 - (1 + 1) = -2
-        # U_digital = 0 + 0 - 2 = -2  
-        # U_keep = 1 + 0 + 1 = 2 (highest but positive, so not UNKNOWN)
-        # Max utility is 2, so should be KEEP, not UNKNOWN
-        assert decision == Decision.KEEP
+            # U_sell = 0 - (1 + 1) = -2
+            # U_digital = 0 + 0 - 2 = -2  
+            # U_keep = 1 + 0 + 1 = 2 (highest but positive, so not UNKNOWN)
+            # Max utility is 2, so should be KEEP, not UNKNOWN
+            assert decision == Decision.KEEP
     
     def test_add_record(self):
         """Test adding records."""
         with tempfile.NamedTemporaryFile(suffix=".csv", delete=True) as tmp:
             csv_path = Path(tmp.name)
         
-        # File doesn't exist, so BookTriage will handle it gracefully
+            # File doesn't exist, so BookTriage will handle it gracefully
             triage = BookTriage(csv_path)
             
             record = BookRecord(
@@ -294,13 +294,13 @@ class TestBookTriage:
             assert records[0].id == "test1"
             assert records[0].title == "Test Book"
             
-        # Check that file was created and contains data
+            # Check that file was created and contains data
             assert csv_path.exists()
-        df = pd.read_csv(csv_path)
-        assert len(df) == 1
-        assert df.iloc[0]['id'] == "test1"
+            df = pd.read_csv(csv_path)
+            assert len(df) == 1
+            assert df.iloc[0]['id'] == "test1"
         
-        # Clean up
+            # Clean up
             csv_path.unlink()
     
     def test_get_record_by_id(self):
@@ -352,7 +352,9 @@ class TestBookTriage:
             assert records[4].V == 4  # 0.7 ratio
             assert records[5].V == 5  # 0.9 ratio
         finally:
-            csv_path.unlink() 
+            if csv_path.exists():
+                csv_path.unlink()
+            os.rmdir(temp_dir)
 
     @patch('book_triage.core.OpenAI')
     def test_enrich_with_gpt4o_mock(self, mock_openai):

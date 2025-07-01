@@ -97,7 +97,7 @@ jobs:
         timeout 60 python scripts/simple_chaos.py || echo "Chaos tests completed"
     
     - name: Upload failure artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: failure()
       with:
         name: test-failure-artifacts
@@ -192,14 +192,14 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     
     - name: Upload coverage HTML report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: coverage-report
         path: htmlcov/
     
     - name: Upload failure artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: failure()
       with:
         name: quality-gate-failure-artifacts
@@ -245,7 +245,7 @@ jobs:
         safety check || true
     
     - name: Upload security reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: security-reports
@@ -253,7 +253,7 @@ jobs:
           bandit-report.json
     
     - name: Upload failure artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: failure()
       with:
         name: security-failure-artifacts
@@ -330,7 +330,7 @@ jobs:
         python scripts/chaos_demo.py > chaos-demo-results.txt
     
     - name: Upload chaos test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: chaos-test-results
@@ -338,7 +338,7 @@ jobs:
           chaos-demo-results.txt
     
     - name: Upload failure artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: failure()
       with:
         name: chaos-failure-artifacts
@@ -368,4 +368,4 @@ jobs:
           
           View Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} 
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
