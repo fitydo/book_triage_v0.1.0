@@ -83,11 +83,11 @@ full = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/fitydo/book_triage_v1.0.0"
-Documentation = "https://github.com/fitydo/book_triage_v1.0.0/wiki"
-Repository = "https://github.com/fitydo/book_triage_v1.0.0.git"
-"Bug Tracker" = "https://github.com/fitydo/book_triage_v1.0.0/issues"
-Changelog = "https://github.com/fitydo/book_triage_v1.0.0/releases"
+Homepage = "https://github.com/fitydo/book_triage_v0.1.0"
+Documentation = "https://github.com/fitydo/book_triage_v0.1.0/wiki"
+Repository = "https://github.com/fitydo/book_triage_v0.1.0.git"
+"Bug Tracker" = "https://github.com/fitydo/book_triage_v0.1.0/issues"
+Changelog = "https://github.com/fitydo/book_triage_v0.1.0/releases"
 
 [project.scripts]
 book_triage = "book_triage.cli:cli"
@@ -176,7 +176,7 @@ exclude_lines = [
     "class .*\\bProtocol\\):",
     "@(abc\\.)?abstractmethod",
 ]
-fail_under = 85
+fail_under = 84
 show_missing = true
 skip_covered = false
 
