@@ -7,6 +7,11 @@ python -m pip install --upgrade pip
 python -m pip install -e .
 echo.
 echo Setup complete!
-echo To start: python -m uvicorn book_triage.api:app --reload
+echo.
+echo To start Book Triage:
+echo   1. Double-click 'book_triage.bat' or 'start.bat'
+echo   2. Or run: python -m book_triage.cli web examples\sample_books.csv
+echo.
+echo The web interface will open at http://localhost:8000
 echo.
 pause

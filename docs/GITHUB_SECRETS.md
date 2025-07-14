@@ -26,22 +26,27 @@ This document outlines all the GitHub repository secrets required for the Book T
 
 ---
 
-### 📢 SLACK_WEBHOOK (Optional)
+### 📢 SLACK_WEBHOOK_URL (Optional)
 
 **Purpose**: Sends notifications to Slack when CI pipeline fails.
 
 **How to obtain**:
-1. Create a Slack app or use an existing one
-2. Enable incoming webhooks for your workspace
-3. Create a webhook for the desired channel (e.g., `#ci-alerts`)
+1. In your Slack workspace, go to Apps and search for "Incoming Webhooks"
+2. Add the Incoming Webhooks app to your workspace
+3. Create a new webhook for your desired channel (e.g., `#ci-alerts`)
 4. Copy the webhook URL
 
 **How to add to GitHub**:
-1. Follow the same steps as CODECOV_TOKEN
-2. Name: `SLACK_WEBHOOK`
-3. Value: Your Slack webhook URL
+1. Go to your repository on GitHub
+2. Navigate to `Settings` → `Secrets and variables` → `Actions`
+3. Click `New repository secret`
+4. Name: `SLACK_WEBHOOK_URL`
+5. Value: Paste the webhook URL
+6. Click `Add secret`
 
 **Usage in CI**: Used in the `notify` job to send failure notifications.
+
+**Note**: If you don't set up SLACK_WEBHOOK_URL, the CI pipeline will still work but won't send Slack notifications on failures.
 
 ---
 
@@ -73,7 +78,7 @@ Use GitHub secrets for:
 - [x] `CODECOV_TOKEN` - For code coverage reporting
 
 ### Optional (Enhances CI experience)
-- [ ] `SLACK_WEBHOOK` - For failure notifications
+- [ ] `SLACK_WEBHOOK_URL` - For failure notifications
 
 ## Verification
 
@@ -84,7 +89,7 @@ After adding secrets, verify they work by:
    - Look for successful coverage upload in the test job
    - Visit your Codecov dashboard to see coverage reports
 
-2. **SLACK_WEBHOOK**:
+2. **SLACK_WEBHOOK_URL**:
    - Temporarily break a test to trigger a failure
    - Check if Slack notification is received
    - Fix the test and verify success
@@ -119,13 +124,13 @@ After adding secrets, verify they work by:
 2. Verify the codecov action is using the correct file path
 3. Ensure the repository is public or you have a Codecov Pro account
 
-### SLACK_WEBHOOK Issues
+### SLACK_WEBHOOK_URL Issues
 
 **Problem**: No Slack notifications received
 **Solution**:
 1. Test the webhook URL manually with curl
 2. Check Slack app permissions and channel access
-3. Verify the secret is named exactly `SLACK_WEBHOOK`
+3. Verify the secret is named exactly `SLACK_WEBHOOK_URL`
 
 **Problem**: Notifications sent for every run instead of just failures
 **Solution**: Check that the notify job has `if: failure()` condition
