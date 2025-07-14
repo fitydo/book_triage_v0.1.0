@@ -1,0 +1,64 @@
+name: CI-Local
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .
+        pip install pytest pytest-cov
+    
+    - name: Run tests
+      run: |
+        python -m pytest tests/ -v --cov=book_triage --cov-report=term-missing
+    
+    - name: Verify CLI functionality
+      run: |
+        python -m book_triage --help
+        python -m book_triage create-csv test_ci.csv --sample
+        python -c "import pandas as pd; df = pd.read_csv('test_ci.csv'); print(f'CSV has {len(df)} rows')"
+    
+    - name: Check code quality
+      run: |
+        pip install flake8
+        flake8 book_triage/ --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 book_triage/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install security tools
+      run: |
+        pip install bandit safety
+    
+    - name: Run security scan
+      run: |
+        bandit -r book_triage/ -f json -o bandit-report.json || true
+        safety check --json --output safety-report.json || true
+        echo "Security scan completed"
+    
+    - name: Check for common vulnerabilities
+      run: |
+        grep -r "eval\|exec\|subprocess\.call" book_triage/ || echo "No dangerous functions found"
+        grep -r "password\|secret\|key" book_triage/ | grep -v "test" | head -5 || echo "No hardcoded secrets found" 
