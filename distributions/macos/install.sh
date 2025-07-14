@@ -23,5 +23,7 @@ python3 -m pip install -e .
 
 echo
 echo "Setup complete!"
-echo "To start: python3 -m uvicorn book_triage.api:app --reload"
+echo "To start: python3 -m book_triage"
+echo "Or run: ./start.sh"
+echo "Web interface will be at http://localhost:8000"
 echo

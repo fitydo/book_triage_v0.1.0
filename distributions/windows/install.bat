@@ -10,7 +10,7 @@ echo Setup complete!
 echo.
 echo To start Book Triage:
 echo   1. Double-click 'book_triage.bat' or 'start.bat'
-echo   2. Or run: python -m book_triage.cli web examples\sample_books.csv
+echo   2. Or run: python -m book_triage
 echo.
 echo The web interface will open at http://localhost:8000
 echo.

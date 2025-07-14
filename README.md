@@ -1,12 +1,12 @@
 # Book Triage
 
-![CI](https://github.com/fitydo/book_triage_v1.0.0/actions/workflows/ci.yml/badge.svg)
-[![codecov](https://codecov.io/gh/fitydo/book_triage_v1.0.0/branch/main/graph/badge.svg)](https://codecov.io/gh/fitydo/book_triage_v1.0.0)
+![CI](https://github.com/fitydo/book_triage_v0.1.0/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/fitydo/book_triage_v0.1.0/branch/main/graph/badge.svg)](https://codecov.io/gh/fitydo/book_triage_v0.1.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
-[![Windows](https://img.shields.io/badge/Windows-11-blue)](https://github.com/fitydo/book_triage_v1.0.0/releases)
-[![Linux](https://img.shields.io/badge/Linux-Ubuntu%2020.04+-orange)](https://github.com/fitydo/book_triage_v1.0.0/releases)
-[![macOS](https://img.shields.io/badge/macOS-10.15+-lightgrey)](https://github.com/fitydo/book_triage_v1.0.0/releases)
+[![Windows](https://img.shields.io/badge/Windows-11-blue)](https://github.com/fitydo/book_triage_v0.1.0/releases)
+[![Linux](https://img.shields.io/badge/Linux-Ubuntu%2020.04+-orange)](https://github.com/fitydo/book_triage_v0.1.0/releases)
+[![macOS](https://img.shields.io/badge/macOS-10.15+-lightgrey)](https://github.com/fitydo/book_triage_v0.1.0/releases)
 
 A comprehensive Python tool for triaging books based on frequency, rarity, annotation needs, and other factors to help you decide whether to sell, digitize, or keep your books. Features a FastAPI web interface, CLI tools, and OCR capabilities for efficient book collection management.
 
@@ -15,11 +15,11 @@ A comprehensive Python tool for triaging books based on frequency, rarity, annot
 ## 📦 Quick Download
 
 **Choose your platform:**
-- 🪟 **[Windows 11](https://github.com/fitydo/book_triage_v1.0.0/releases/download/v0.1.0/book-triage-0.1.0-windows.zip)** - Double-click installer
-- 🐧 **[Linux](https://github.com/fitydo/book_triage_v1.0.0/releases/download/v0.1.0/book-triage-0.1.0-linux.tar.gz)** - Ubuntu, CentOS, Debian
-- 🍎 **[macOS](https://github.com/fitydo/book_triage_v1.0.0/releases/download/v0.1.0/book-triage-0.1.0-macos.zip)** - Intel & Apple Silicon
+- 🪟 **[Windows 11](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-windows.zip)** - Double-click installer
+- 🐧 **[Linux](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-linux.tar.gz)** - Ubuntu, CentOS, Debian
+- 🍎 **[macOS](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-macos.zip)** - Intel & Apple Silicon
 
-See **[All Releases](https://github.com/fitydo/book_triage_v1.0.0/releases)** for older versions and checksums.
+See **[All Releases](https://github.com/fitydo/book_triage_v0.1.0/releases)** for older versions and checksums.
 
 ## ✨ Features
 
@@ -39,15 +39,15 @@ See **[All Releases](https://github.com/fitydo/book_triage_v1.0.0/releases)** fo
 
 Download and run immediately - no installation required:
 
-- 🪟 **[Windows 11](https://github.com/fitydo/book_triage_v1.0.0/releases/download/v0.1.0/book-triage-0.1.0-windows.zip)** - Double-click installer
-- 🐧 **[Linux](https://github.com/fitydo/book_triage_v1.0.0/releases/download/v0.1.0/book-triage-0.1.0-linux.tar.gz)** - Ubuntu, CentOS, Debian
-- 🍎 **[macOS](https://github.com/fitydo/book_triage_v1.0.0/releases/download/v0.1.0/book-triage-0.1.0-macos.zip)** - Intel & Apple Silicon
+- 🪟 **[Windows 11](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-windows.zip)** - Double-click installer
+- 🐧 **[Linux](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-linux.tar.gz)** - Ubuntu, CentOS, Debian
+- 🍎 **[macOS](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-macos.zip)** - Intel & Apple Silicon
 
-See **[All Releases](https://github.com/fitydo/book_triage_v1.0.0/releases)** for older versions and checksums.
+See **[All Releases](https://github.com/fitydo/book_triage_v0.1.0/releases)** for older versions and checksums.
 
 ### Installation Steps
 
-1. **Download** your platform package from [Releases](https://github.com/fitydo/book_triage_v1.0.0/releases)
+1. **Download** your platform package from [Releases](https://github.com/fitydo/book_triage_v0.1.0/releases)
 
 ## 🧪 Verify Installation
 
@@ -170,7 +170,7 @@ python scripts/chaos_demo.py
 ### Development Installation
 
 ```bash
-git clone https://github.com/fitydo/book_triage_v1.0.0.git
+git clone https://github.com/fitydo/book_triage_v0.1.0.git
 cd book-triage
 pip install -e .
 ```
@@ -214,9 +214,9 @@ python scripts/chaos_demo.py
 
 ## 🤝 Contributing & Support
 
-- **🐛 Bug Reports**: [GitHub Issues](https://github.com/fitydo/book_triage_v1.0.0/issues)
-- **💬 Questions**: [GitHub Discussions](https://github.com/fitydo/book_triage_v1.0.0/discussions)
-- **📖 Documentation**: [Project Wiki](https://github.com/fitydo/book_triage_v1.0.0/wiki)
+- **🐛 Bug Reports**: [GitHub Issues](https://github.com/fitydo/book_triage_v0.1.0/issues)
+- **💬 Questions**: [GitHub Discussions](https://github.com/fitydo/book_triage_v0.1.0/discussions)
+- **📖 Documentation**: [Project Wiki](https://github.com/fitydo/book_triage_v0.1.0/wiki)
 
 ## 📋 Documentation
 
