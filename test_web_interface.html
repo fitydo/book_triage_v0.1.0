@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Triage Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .error { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .info { background-color: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+        button { background: #007cba; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #005a8b; }
+        #books-container { margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .decision-unknown { background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>Book Triage Web Interface Test</h1>
+    
+    <div class="test-result info">
+        <h3>Testing Web Interface Functionality</h3>
+        <p>This page tests the Book Triage web interface running on port 8002.</p>
+    </div>
+    
+    <button onclick="testAPI()">Test API Connection</button>
+    <button onclick="loadBooks()">Load Books</button>
+    <button onclick="testMainInterface()">Test Main Interface</button>
+    
+    <div id="test-results"></div>
+    <div id="books-container"></div>
+    
+    <script>
+        function showResult(message, type = 'info') {
+            const resultsDiv = document.getElementById('test-results');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `test-result ${type}`;
+            resultDiv.innerHTML = `<p>${message}</p>`;
+            resultsDiv.appendChild(resultDiv);
+        }
+        
+        async function testAPI() {
+            showResult('Testing API connection...', 'info');
+            try {
+                const response = await fetch('http://127.0.0.1:8002/books');
+                if (response.ok) {
+                    const data = await response.json();
+                    showResult(`✅ API connected successfully! Found ${data.length} books.`, 'success');
+                    return data;
+                } else {
+                    showResult(`❌ API error: ${response.status} ${response.statusText}`, 'error');
+                }
+            } catch (error) {
+                showResult(`❌ API connection failed: ${error.message}`, 'error');
+            }
+        }
+        
+        async function loadBooks() {
+            showResult('Loading books...', 'info');
+            try {
+                const response = await fetch('http://127.0.0.1:8002/books');
+                const books = await response.json();
+                
+                if (books.length === 0) {
+                    showResult('No books found in database.', 'info');
+                    return;
+                }
+                
+                let table = `
+                    <h3>Books Database (${books.length} books)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>ISBN</th>
+                                <th>URL</th>
+                                <th>F</th>
+                                <th>R</th>
+                                <th>A</th>
+                                <th>V</th>
+                                <th>S</th>
+                                <th>P</th>
+                                <th>Decision</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                
+                books.forEach(book => {
+                    const decisionClass = `decision-${book.decision.toLowerCase()}`;
+                    table += `
+                        <tr class="${decisionClass}">
+                            <td>${book.id}</td>
+                            <td>${book.title}</td>
+                            <td>${book.isbn || 'N/A'}</td>
+                            <td>${book.url || 'N/A'}</td>
+                            <td>${book.F || 'N/A'}</td>
+                            <td>${book.R || 'N/A'}</td>
+                            <td>${book.A || 'N/A'}</td>
+                            <td>${book.V || 'N/A'}</td>
+                            <td>${book.S || 'N/A'}</td>
+                            <td>${book.P || 'N/A'}</td>
+                            <td>${book.decision}</td>
+                        </tr>
+                    `;
+                });
+                
+                table += '</tbody></table>';
+                document.getElementById('books-container').innerHTML = table;
+                
+                showResult(`✅ Books loaded successfully! Data looks correct.`, 'success');
+                
+                // Check for "nan" values
+                const hasNanValues = books.some(book => 
+                    book.url === 'nan' || book.isbn === 'nan' || book.url_com === 'nan'
+                );
+                
+                if (hasNanValues) {
+                    showResult('⚠️ Warning: Found "nan" values in data. This indicates a CSV loading issue.', 'error');
+                } else {
+                    showResult('✅ No "nan" values found. CSV loading is working correctly.', 'success');
+                }
+                
+            } catch (error) {
+                showResult(`❌ Error loading books: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testMainInterface() {
+            showResult('Testing main interface...', 'info');
+            try {
+                const response = await fetch('http://127.0.0.1:8002/');
+                if (response.ok) {
+                    const html = await response.text();
+                    
+                    // Check for key elements
+                    const hasTitle = html.includes('<title>Book Triage</title>');
+                    const hasCSS = html.includes('.books-table');
+                    const hasJS = html.includes('loadBooks()');
+                    const hasForm = html.includes('submitManualTitle');
+                    
+                    if (hasTitle && hasCSS && hasJS && hasForm) {
+                        showResult('✅ Main interface loaded correctly with all components.', 'success');
+                    } else {
+                        showResult('⚠️ Main interface missing some components.', 'error');
+                    }
+                } else {
+                    showResult(`❌ Main interface error: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                showResult(`❌ Main interface test failed: ${error.message}`, 'error');
+            }
+        }
+        
+        // Auto-run tests on page load
+        window.addEventListener('load', function() {
+            setTimeout(testAPI, 500);
+        });
+    </script>
+</body>
+</html> 
