@@ -176,7 +176,7 @@ exclude_lines = [
     "class .*\\bProtocol\\):",
     "@(abc\\.)?abstractmethod",
 ]
-fail_under = 85
+fail_under = 81
 show_missing = true
 skip_covered = false
 

@@ -1,0 +1,29 @@
+﻿2025-07-14T22:16:37.6828041Z Current runner version: '2.326.0'
+2025-07-14T22:16:37.6855879Z ##[group]Runner Image Provisioner
+2025-07-14T22:16:37.6857246Z Hosted Compute Agent
+2025-07-14T22:16:37.6858009Z Version: 20250711.363
+2025-07-14T22:16:37.6858673Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-14T22:16:37.6859406Z Build Date: 2025-07-11T20:04:25Z
+2025-07-14T22:16:37.6860168Z ##[endgroup]
+2025-07-14T22:16:37.6860699Z ##[group]Operating System
+2025-07-14T22:16:37.6861408Z Ubuntu
+2025-07-14T22:16:37.6861860Z 24.04.2
+2025-07-14T22:16:37.6862319Z LTS
+2025-07-14T22:16:37.6862768Z ##[endgroup]
+2025-07-14T22:16:37.6863281Z ##[group]Runner Image
+2025-07-14T22:16:37.6863855Z Image: ubuntu-24.04
+2025-07-14T22:16:37.6864349Z Version: 20250710.1.0
+2025-07-14T22:16:37.6865349Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250710.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-14T22:16:37.6866641Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250710.1
+2025-07-14T22:16:37.6867838Z ##[endgroup]
+2025-07-14T22:16:37.6868879Z ##[group]GITHUB_TOKEN Permissions
+2025-07-14T22:16:37.6871165Z Contents: read
+2025-07-14T22:16:37.6871722Z Metadata: read
+2025-07-14T22:16:37.6872157Z Packages: read
+2025-07-14T22:16:37.6872803Z ##[endgroup]
+2025-07-14T22:16:37.6875536Z Secret source: Actions
+2025-07-14T22:16:37.6876224Z Prepare workflow directory
+2025-07-14T22:16:37.7206752Z Prepare all required actions
+2025-07-14T22:16:37.7244505Z Getting action download info
+2025-07-14T22:16:37.9900438Z Download action repository '8398a7/action-slack@v3' (SHA:1750b5085f3ec60384090fb7c52965ef822e869e)
+2025-07-14T22:16:38.2612253Z Complete job name: notify

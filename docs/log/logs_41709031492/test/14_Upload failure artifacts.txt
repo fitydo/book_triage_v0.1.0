@@ -1,0 +1,25 @@
+﻿2025-07-14T22:16:33.4250672Z ##[group]Run actions/upload-artifact@v4
+2025-07-14T22:16:33.4251282Z with:
+2025-07-14T22:16:33.4251464Z   name: test-failure-artifacts
+2025-07-14T22:16:33.4251695Z   path: coverage.xml
+*.log
+htmlcov/
+
+2025-07-14T22:16:33.4251929Z   if-no-files-found: warn
+2025-07-14T22:16:33.4252130Z   compression-level: 6
+2025-07-14T22:16:33.4252315Z   overwrite: false
+2025-07-14T22:16:33.4252503Z   include-hidden-files: false
+2025-07-14T22:16:33.4252702Z env:
+2025-07-14T22:16:33.4252917Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T22:16:33.4253304Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-14T22:16:33.4253695Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T22:16:33.4254033Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T22:16:33.4254371Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T22:16:33.4254701Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-14T22:16:33.4255020Z   BOOK_USER: testuser
+2025-07-14T22:16:33.4255205Z   BOOK_PASS: testpass
+2025-07-14T22:16:33.4255391Z   OPENAI_API_KEY: test-key
+2025-07-14T22:16:33.4255582Z ##[endgroup]
+2025-07-14T22:16:33.6410197Z ##[warning]No files were found with the provided path: coverage.xml
+*.log
+htmlcov/. No artifacts will be uploaded.
