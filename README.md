@@ -41,9 +41,13 @@ pip install git+https://github.com/fitydo/book_triage_v0.1.0.git
 ### Method 3: Platform-Specific Packages
 
 **📦 Pre-built packages available in the `distributions/` folder:**
-- 🪟 **Windows**: `distributions/windows/` - Includes batch files and setup
+- 🪟 **Windows**: `distributions/windows/` - See [Windows Installation Guide](INSTALL_WINDOWS.md)
 - 🐧 **Linux**: `distributions/linux/` - Shell scripts and installation
 - 🍎 **macOS**: `distributions/macos/` - Native macOS support
+
+### 🪟 Windows Users - Important!
+
+If you're on Windows and experiencing issues with git clone (Zone.Identifier errors), please see the detailed [Windows Installation Guide](INSTALL_WINDOWS.md) for step-by-step instructions and troubleshooting.
 
 ## ✨ Features
 
@@ -169,6 +173,22 @@ python -m book_triage web books.csv --port 8001
 # Ubuntu/Debian: sudo apt-get install tesseract-ocr
 # macOS: brew install tesseract
 # Windows: Download from https://github.com/UB-Mannheim/tesseract/wiki
+```
+
+**Problem: Windows git clone fails with Zone.Identifier errors**
+```powershell
+# Solution: Use git with NTFS protection disabled
+git clone -c core.protectNTFS=false https://github.com/fitydo/book_triage_v0.1.0.git
+
+# Or download as ZIP file from GitHub instead
+```
+
+**Problem: "Neither 'setup.py' nor 'pyproject.toml' found" on Windows**
+```powershell
+# Solution: Git checkout failed, restore working tree
+git restore --source=HEAD :/
+
+# Or re-clone with the fix above
 ```
 
 ### Getting Help
