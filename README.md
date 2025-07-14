@@ -12,14 +12,38 @@ A comprehensive Python tool for triaging books based on frequency, rarity, annot
 
 **✅ Verified compatible with Windows 11, Linux, and macOS**
 
-## 📦 Quick Download
+## 📦 Installation
 
-**Choose your platform:**
-- 🪟 **[Windows 11](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-windows.zip)** - Double-click installer
-- 🐧 **[Linux](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-linux.tar.gz)** - Ubuntu, CentOS, Debian
-- 🍎 **[macOS](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-macos.zip)** - Intel & Apple Silicon
+### Method 1: Direct from Source (Recommended)
 
-See **[All Releases](https://github.com/fitydo/book_triage_v0.1.0/releases)** for older versions and checksums.
+```bash
+# Clone the repository
+git clone https://github.com/fitydo/book_triage_v0.1.0.git
+cd book_triage_v0.1.0
+
+# Install dependencies
+pip install -e .
+
+# Verify installation
+python -m book_triage --help
+```
+
+### Method 2: Using pip (when available)
+
+```bash
+# Install from PyPI (coming soon)
+pip install book-triage
+
+# Or install from GitHub directly
+pip install git+https://github.com/fitydo/book_triage_v0.1.0.git
+```
+
+### Method 3: Platform-Specific Packages
+
+**📦 Pre-built packages available in the `distributions/` folder:**
+- 🪟 **Windows**: `distributions/windows/` - Includes batch files and setup
+- 🐧 **Linux**: `distributions/linux/` - Shell scripts and installation
+- 🍎 **macOS**: `distributions/macos/` - Native macOS support
 
 ## ✨ Features
 
@@ -35,32 +59,56 @@ See **[All Releases](https://github.com/fitydo/book_triage_v0.1.0/releases)** fo
 
 ## 🚀 Quick Start
 
-### Pre-built Packages (Recommended)
+### Step 1: Install Book Triage
 
-Download and run immediately - no installation required:
+Choose your preferred installation method from above. For beginners, we recommend Method 1 (Direct from Source).
 
-- 🪟 **[Windows 11](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-windows.zip)** - Double-click installer
-- 🐧 **[Linux](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-linux.tar.gz)** - Ubuntu, CentOS, Debian
-- 🍎 **[macOS](https://github.com/fitydo/book_triage_v0.1.0/releases/download/v0.1.0/book-triage-0.1.0-macos.zip)** - Intel & Apple Silicon
+### Step 2: Set up Environment (Optional)
 
-See **[All Releases](https://github.com/fitydo/book_triage_v0.1.0/releases)** for older versions and checksums.
+Create a `.env` file in the project directory:
 
-### Installation Steps
+```bash
+BOOK_USER=your_username
+BOOK_PASS=your_password
+OPENAI_API_KEY=your_openai_key  # Optional, for OCR features
+```
 
-1. **Download** your platform package from [Releases](https://github.com/fitydo/book_triage_v0.1.0/releases)
+### Step 3: Create Sample Data
+
+```bash
+# Create a sample CSV file
+python -m book_triage create-csv sample_books.csv --sample
+```
+
+### Step 4: Start Using Book Triage
+
+**Web Interface:**
+```bash
+# Start the web server
+python -m book_triage web sample_books.csv
+# Open http://localhost:8000 in your browser
+```
+
+**Command Line:**
+```bash
+# Scan books from command line
+python -m book_triage scan sample_books.csv
+```
 
 ## 🧪 Verify Installation
 
 Test your setup works correctly:
 
 ```bash
-# Run compatibility test
-python scripts/test_compatibility.py
+# Run installation test
+python test_installation.py
 
 # Expected output:
 # 🎯 Results: 5/5 tests passed
-# 🎉 All tests passed! Book Triage is compatible with this platform.
+# 🎉 All tests passed! Book Triage is ready to use.
 ```
+
+If any tests fail, check the troubleshooting section in the output.
 
 ## 📁 Project Structure
 
@@ -92,6 +140,42 @@ BOOK_USER=your_username
 BOOK_PASS=your_password
 OPENAI_API_KEY=your_openai_key  # Optional, for OCR features
 ```
+
+## 🔧 Troubleshooting
+
+### Common Installation Issues
+
+**Problem: ModuleNotFoundError**
+```bash
+# Solution: Install dependencies
+pip install -e .
+```
+
+**Problem: Permission denied**
+```bash
+# Solution: Use user installation
+pip install --user -e .
+```
+
+**Problem: Web server won't start**
+```bash
+# Solution: Try a different port
+python -m book_triage web books.csv --port 8001
+```
+
+**Problem: OCR not working**
+```bash
+# Solution: Install tesseract
+# Ubuntu/Debian: sudo apt-get install tesseract-ocr
+# macOS: brew install tesseract
+# Windows: Download from https://github.com/UB-Mannheim/tesseract/wiki
+```
+
+### Getting Help
+
+- Check the [Issues](https://github.com/fitydo/book_triage_v0.1.0/issues) page
+- Run `python test_installation.py` to diagnose problems
+- Check the logs in the terminal output
 
 ## 📖 Usage Examples
 
