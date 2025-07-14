@@ -141,7 +141,21 @@ pip install --user -e .
 pip install --user -e .
 ```
 
-### Issue 5: Tesseract OCR not found
+### Issue 5: "The api_key client option must be set" error
+
+**Problem:** Web interface fails to start with OpenAI API key error.
+
+**Solution:**
+```powershell
+# Create .env file with authentication (OpenAI key optional)
+echo BOOK_USER=admin > .env
+echo BOOK_PASS=password >> .env
+
+# For OCR features, add OpenAI API key (optional)
+echo OPENAI_API_KEY=your_key_here >> .env
+```
+
+### Issue 6: Tesseract OCR not found
 
 **Problem:** OCR features don't work.
 
@@ -168,19 +182,42 @@ pip install --user -e .
 
 ## Quick Start (Windows)
 
-1. **Create sample data:**
+### Option 1: Automated Setup (Recommended)
+
+1. **Run the quick start script:**
+   ```powershell
+   .\quick_start_windows.bat
+   ```
+
+   This will:
+   - Create a `.env` file with default credentials
+   - Generate sample data
+   - Start the web interface
+   - Open at http://localhost:8000
+
+### Option 2: Manual Setup
+
+1. **Create environment file:**
+   ```powershell
+   # Create .env file
+   echo BOOK_USER=admin > .env
+   echo BOOK_PASS=password >> .env
+   ```
+
+2. **Create sample data:**
    ```powershell
    python -m book_triage create-csv books.csv --sample
    ```
 
-2. **Start web interface:**
+3. **Start web interface:**
    ```powershell
    python -m book_triage web books.csv
    ```
 
-3. **Open in browser:**
+4. **Open in browser:**
    ```
    http://localhost:8000
+   Login: admin / password
    ```
 
 ## Windows-Specific Features
