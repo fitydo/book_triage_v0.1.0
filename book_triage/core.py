@@ -110,14 +110,23 @@ class BookTriage:
                     except (ValueError, TypeError):
                         return 0.0
                 
-                isbn = str(row.get("isbn", "")) if "isbn" in row else ""
-                citation_R = json.loads(row.get("citation_R", "[]")) if "citation_R" in row and row.get("citation_R") else []
-                citation_P = json.loads(row.get("citation_P", "[]")) if "citation_P" in row and row.get("citation_P") else []
+                # Helper function to safely get string values (handle NaN)
+                def get_string_value(col: str, default: str = "") -> str:
+                    value = row.get(col, default)
+                    if value is None or (hasattr(value, '__len__') and len(str(value)) == 0) or str(value).lower() == 'nan':
+                        return default
+                    return str(value)
+                
+                isbn = get_string_value("isbn") if "isbn" in row else ""
+                citation_R_str = get_string_value("citation_R", "[]") if "citation_R" in row else "[]"
+                citation_P_str = get_string_value("citation_P", "[]") if "citation_P" in row else "[]"
+                citation_R = json.loads(citation_R_str) if citation_R_str and citation_R_str != "[]" else []
+                citation_P = json.loads(citation_P_str) if citation_P_str and citation_P_str != "[]" else []
                 record = BookRecord(
-                    id=str(row.get("id", "")),
-                    title=str(row.get("title", "")),
-                    url=str(row.get("url", "")),
-                    url_com=str(row.get("url_com", "")) if "url_com" in row else "",
+                    id=get_string_value("id"),
+                    title=get_string_value("title"),
+                    url=get_string_value("url"),
+                    url_com=get_string_value("url_com") if "url_com" in row else "",
                     purchase_price=get_float_value("purchase_price") if "purchase_price" in row else 0.0,
                     used_price=get_float_value("used_price") if "used_price" in row else 0.0,
                     F=get_int_value("F"),
@@ -127,7 +136,7 @@ class BookTriage:
                     S=get_int_value("S"),
                     P=get_int_value("P"),
                     decision=Decision(row.get("decision", "unknown")),
-                    verified=str(row.get("verified", "no")) if "verified" in row else "no",
+                    verified=get_string_value("verified", "no") if "verified" in row else "no",
                     isbn=isbn,
                     citation_R=citation_R,
                     citation_P=citation_P,
