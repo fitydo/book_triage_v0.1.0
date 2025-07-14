@@ -45,7 +45,17 @@ This guide provides step-by-step instructions for installing Book Triage on Wind
    pip install -e .
    ```
 
-6. **Verify installation:**
+6. **Set up environment (Required for web interface):**
+   ```powershell
+   # Create .env file with authentication credentials
+   echo BOOK_USER=admin > .env
+   echo BOOK_PASS=password >> .env
+   
+   # Optional: Add OpenAI API key for OCR features
+   # echo OPENAI_API_KEY=your_openai_key_here >> .env
+   ```
+
+7. **Verify installation:**
    ```powershell
    python -m book_triage --help
    ```
@@ -146,14 +156,20 @@ pip install --user -e .
 **Problem:** Web interface fails to start with OpenAI API key error.
 
 **Solution:**
+The OpenAI API key is **optional** and only needed for advanced OCR features. You can run Book Triage without it:
+
 ```powershell
-# Create .env file with authentication (OpenAI key optional)
+# Option 1: Skip OCR features (recommended for basic use)
+# Just ensure you have the basic authentication set up:
 echo BOOK_USER=admin > .env
 echo BOOK_PASS=password >> .env
 
-# For OCR features, add OpenAI API key (optional)
-echo OPENAI_API_KEY=your_key_here >> .env
+# Option 2: Add OpenAI API key for OCR features
+# Get your key from: https://platform.openai.com/api-keys
+echo OPENAI_API_KEY=your_actual_key_here >> .env
 ```
+
+**Note:** Most Book Triage features work without OpenAI API key. OCR is only needed for scanning physical book images.
 
 ### Issue 6: Tesseract OCR not found
 

@@ -67,15 +67,20 @@ If you're on Windows and experiencing issues with git clone (Zone.Identifier err
 
 Choose your preferred installation method from above. For beginners, we recommend Method 1 (Direct from Source).
 
-### Step 2: Set up Environment (Optional)
+### Step 2: Set up Environment (Required for Web Interface)
 
 Create a `.env` file in the project directory:
 
 ```bash
+# Required for web interface authentication
 BOOK_USER=your_username
 BOOK_PASS=your_password
-OPENAI_API_KEY=your_openai_key  # Optional, for OCR features
+
+# Optional: Only needed for OCR features (scanning physical books)
+OPENAI_API_KEY=your_openai_key
 ```
+
+**Note:** The OpenAI API key is **optional** and only required for advanced OCR features. You can use Book Triage without it for CSV-based book management.
 
 ### Step 3: Create Sample Data
 
@@ -347,12 +352,23 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🆘 Support
 
+### Common Issues
+
+**"The api_key client option must be set" Error:**
+- This error occurs when trying to use OCR features without OpenAI API key
+- **Solution 1 (Recommended):** Skip OCR features - most Book Triage functionality works without it
+- **Solution 2:** Get OpenAI API key from [platform.openai.com](https://platform.openai.com/api-keys) and add to `.env` file:
+  ```bash
+  OPENAI_API_KEY=your_actual_key_here
+  ```
+
 ### Platform-Specific Help
 
 **Windows Issues:**
 - Install Python from [python.org](https://python.org/downloads/)
 - Run as Administrator if permission errors
 - Allow batch files in antivirus software
+- See [Windows Installation Guide](INSTALL_WINDOWS.md) for detailed troubleshooting
 
 **Linux Issues:**
 - Update packages: `sudo apt-get update`
