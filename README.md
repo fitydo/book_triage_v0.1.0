@@ -51,7 +51,7 @@ If you're on Windows and experiencing issues with git clone (Zone.Identifier err
 
 ## ✨ Features
 
-- **📊 Multi-criteria Decision Framework**: FRAVSP scoring system (Frequency, Rarity, Annotation, Value, Space, Personal)
+- **📊 Multi-criteria Decision Framework**: FRAVSP scoring system (Frequency, Rarity, Annotation, Value, Sentimental, scannability)
 - **🌐 Web Interface**: Modern FastAPI-based web UI with file uploads and real-time processing
 - **🖥️ Command Line Interface**: Full CLI support with Typer for automation and scripting
 - **🔍 OCR Integration**: Tesseract and OpenAI Vision API support for book scanning
@@ -118,6 +118,47 @@ python test_installation.py
 ```
 
 If any tests fail, check the troubleshooting section in the output.
+
+## 📊 Book Scoring System (FRAVSP)
+
+Book Triage uses a 6-factor scoring system to help you make decisions about your books. Each book is scored on a scale of 1-5 for each factor:
+
+### Scoring Metrics
+
+| **Factor** | **Code** | **Description** | **Example** |
+|------------|----------|-----------------|-------------|
+| **Frequency** | **F** | How often you reference/use this book | 5 = Daily reference, 1 = Never used |
+| **Rarity** | **R** | How rare or hard to find this book is | 5 = Out of print/rare, 1 = Common/easily available |
+| **Annotation** | **A** | How much you need to annotate/write in this book | 5 = Extensive notes needed, 1 = Read-only |
+| **Value** | **V** | Resale value - how much money you could get by selling | 5 = High resale value, 1 = Low/no resale value |
+| **Sentimental** | **S** | Emotional/personal attachment to this book | 5 = Irreplaceable memories, 1 = No attachment |
+| **scannability** | **P** | How easy this book is to scan/digitize | 5 = Easy to scan, 1 = Difficult/impossible to scan |
+
+### Decision Algorithm
+
+The system uses these scores to calculate utilities for each decision:
+
+```
+📤 SELL Decision    = V - (R + S)
+💾 DIGITAL Decision = F + P - scan_cost
+📚 KEEP Decision    = R + A + S
+```
+
+**The system chooses the option with the highest utility score.**
+
+### Scoring Examples
+
+**Academic Textbook (SELL):**
+- F=1 (rarely used), R=2 (common), A=1 (no notes), V=4 (good resale), S=1 (no attachment), P=3 (scannable)
+- Utilities: SELL=4-(2+1)=1, DIGITAL=1+3-2=2, KEEP=2+1+1=4 → **KEEP**
+
+**Reference Manual (DIGITAL):**
+- F=5 (daily use), R=2 (common), A=2 (some notes), V=2 (low resale), S=1 (no attachment), P=5 (very scannable)
+- Utilities: SELL=2-(2+1)=-1, DIGITAL=5+5-2=8, KEEP=2+2+1=5 → **DIGITAL**
+
+**Rare First Edition (KEEP):**
+- F=1 (rarely read), R=5 (very rare), A=1 (no notes), V=4 (valuable), S=5 (sentimental), P=1 (fragile)
+- Utilities: SELL=4-(5+5)=-6, DIGITAL=1+1-2=0, KEEP=5+1+5=11 → **KEEP**
 
 ## 📁 Project Structure
 
