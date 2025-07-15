@@ -1,0 +1,3 @@
+id,title,url,url_com,purchase_price,used_price,F,R,A,V,S,P,decision,verified,isbn,citation_R,citation_P
+sample1,Sample Book 1,,,1.0,1.0,3,2,1,4,1,4,digital,no,,[],[]
+sample2,Sample Book 2,,,0.0,0.0,1,4,3,2,5,2,unknown,no,,[],[]

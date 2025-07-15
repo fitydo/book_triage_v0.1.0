@@ -93,32 +93,232 @@ async def root(request: Request) -> str:
     <head>
         <title>Book Triage</title>
         <style>
-            body { font-family: Arial, sans-serif; max-width: 1200px; margin-left: 0; margin-right: auto; padding: 20px; padding-top: 280px; }
-            #control-panel { position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 20px; max-width: 1200px; margin: 0 auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-            .upload-section { border: 2px dashed #ccc; padding: 20px; text-align: center; margin: 20px 0; }
-            .upload-section.dragover { border-color: #007cba; background-color: #f0f8ff; }
+            * { box-sizing: border-box; }
+            
+            body { 
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                margin: 0; 
+                padding: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            #control-panel { 
+                background: white; 
+                padding: 30px 20px 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+                flex-shrink: 0;
+            }
+            
+            #control-panel h1 {
+                margin: 0 0 20px 0;
+                color: #2c3e50;
+                font-size: 2em;
+            }
+            
+            .upload-section { 
+                border: 2px dashed #e1e8ed; 
+                padding: 30px; 
+                text-align: center; 
+                margin: 20px 0; 
+                border-radius: 8px;
+                background: #fafbfc;
+                transition: all 0.3s ease;
+            }
+            
+            .upload-section:hover {
+                border-color: #007cba;
+            }
+            
+            .upload-section.dragover { 
+                border-color: #007cba; 
+                background-color: #e3f2fd; 
+                transform: scale(1.02);
+            }
+            
+            .upload-section h3 {
+                margin-top: 0;
+                color: #34495e;
+            }
+            
             #fileInput { display: none; }
-            .upload-btn { background: #007cba; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
-            .upload-btn:hover { background: #005a8b; }
-            .result { margin: 20px 0; padding: 15px; border-radius: 5px; }
-            .success { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
-            .error { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
-            .table-container { overflow-x: auto; margin-top: 20px; border: 1px solid #ddd; border-radius: 5px; }
-            .books-table { width: 100%; min-width: 1500px; border-collapse: collapse; margin: 0; }
-            .books-table th, .books-table td { border: 1px solid #ddd; padding: 8px; text-align: left; white-space: nowrap; }
-            .books-table th { background-color: #f2f2f2; position: sticky; top: 280px; z-index: 999; box-shadow: 0 2px 2px rgba(0,0,0,0.1); }
-            .books-table thead th { border-bottom: 2px solid #ddd; }
+            
+            .upload-btn { 
+                background: #007cba; 
+                color: white; 
+                padding: 12px 24px; 
+                border: none; 
+                border-radius: 6px; 
+                cursor: pointer;
+                font-size: 16px;
+                transition: background 0.3s ease;
+            }
+            
+            .upload-btn:hover { 
+                background: #005a8b; 
+            }
+            
+            .result { 
+                margin: 20px 0; 
+                padding: 15px; 
+                border-radius: 8px; 
+            }
+            
+            .success { 
+                background-color: #d4edda; 
+                border: 1px solid #c3e6cb; 
+                color: #155724; 
+            }
+            
+            .error { 
+                background-color: #f8d7da; 
+                border: 1px solid #f5c6cb; 
+                color: #721c24; 
+            }
+            
+            /* Main content area */
+            .main-content {
+                flex: 1;
+                overflow: auto;
+                background: #f5f7fa;
+                padding: 20px;
+                min-height: 0; /* Important for flexbox */
+            }
+            
+            .main-content h2 {
+                color: #2c3e50;
+                margin-bottom: 20px;
+            }
+            
+            /* Table styling */
+            .table-container { 
+                background: white;
+                border-radius: 8px;
+                overflow-x: auto; /* Allow horizontal scroll for wide tables */
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+            
+            .books-table { 
+                width: 100%; 
+                min-width: 1800px; 
+                border-collapse: collapse; 
+                margin: 0; 
+            }
+            
+            .books-table th, .books-table td { 
+                border: 1px solid #e1e8ed; 
+                padding: 12px 8px; 
+                text-align: left; 
+            }
+            
+            .books-table th { 
+                background-color: #f8f9fa; 
+                font-weight: 600;
+                color: #495057;
+                position: sticky; 
+                top: 0;
+                z-index: 10;
+                border-bottom: 2px solid #dee2e6;
+            }
+            
+            .books-table tbody tr:hover {
+                background-color: #f8f9fa;
+            }
+            
+            /* Decision colors */
             .decision-sell { background-color: #ffebee; }
             .decision-digital { background-color: #e8f5e8; }
             .decision-keep { background-color: #fff3e0; }
             .decision-unknown { background-color: #f5f5f5; }
-            .edit-title-input { padding: 4px 6px; border: 1px solid #aaa; border-radius: 4px; }
-            .edit-title-input[type="number"] { width: 50px; font-size: 1.1em; text-align: center; background: #f8f8ff; border: 1px solid #aaa; border-radius: 4px; }
-            .price-input { width: 90px !important; font-size: 1.1em; text-align: right; background: #f8f8ff; border: 1px solid #aaa; border-radius: 4px; }
-            .url-input { width: 120px !important; }
-            .title-input { width: 200px !important; }
-            .isbn-input { width: 130px !important; }
-            .edit-btn, .save-btn, .cancel-btn { padding: 4px 8px; margin-left: 2px; }
+            
+            /* Input styling */
+            .edit-title-input { 
+                padding: 6px 8px; 
+                border: 1px solid #ced4da; 
+                border-radius: 4px;
+                font-size: 14px;
+                transition: border-color 0.3s ease;
+            }
+            
+            .edit-title-input:focus {
+                outline: none;
+                border-color: #007cba;
+            }
+            
+            .edit-title-input[type="number"] { 
+                width: 60px; 
+                text-align: center; 
+                font-size: 16px;
+                font-weight: 600;
+                background-color: #f8f9fa;
+                border: 2px solid #007cba;
+            }
+            
+            /* Special styling for VRPFAS inputs */
+            .vrpfas-input {
+                width: 50px !important;
+                height: 40px;
+                font-size: 18px !important;
+                font-weight: bold;
+                text-align: center;
+                background-color: #fff;
+                border: 2px solid #007cba;
+                border-radius: 6px;
+                color: #2c3e50;
+            }
+            
+            .vrpfas-input:focus {
+                outline: none;
+                border-color: #0056b3;
+                background-color: #e3f2fd;
+                box-shadow: 0 0 0 3px rgba(0, 123, 186, 0.25);
+            }
+            
+            .price-input { 
+                width: 100px !important; 
+                text-align: right; 
+            }
+            
+            .url-input { width: 150px !important; }
+            .title-input { width: 250px !important; }
+            .isbn-input { width: 140px !important; }
+            
+            .edit-btn, .save-btn { 
+                padding: 6px 16px; 
+                margin-left: 4px;
+                background: #28a745;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+            
+            .edit-btn:hover, .save-btn:hover {
+                background: #218838;
+            }
+            
+            /* Form styling */
+            #manualTitleForm {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            
+            #manualTitleForm input[type="text"] {
+                padding: 10px;
+                border: 1px solid #ced4da;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+            
+            #manualTitleForm input[type="text"]:focus {
+                outline: none;
+                border-color: #007cba;
+            }
         </style>
     </head>
     <body>
@@ -136,17 +336,20 @@ async def root(request: Request) -> str:
             <div class="upload-section" id="manualTitleSection" style="margin-top: 20px;">
                 <h3>Or, post the title on text</h3>
                 <form id="manualTitleForm" onsubmit="submitManualTitle(event)">
-                    <input type="text" id="manualTitleInput" placeholder="Enter book title" style="padding: 8px; width: 300px; font-size: 1.1em; border: 1px solid #aaa; border-radius: 4px;" required />
-                    <input type="text" id="manualIsbnInput" placeholder="Enter ISBN 13 digits" maxlength="13" style="padding: 8px; width: 180px; font-size: 1.1em; border: 1px solid #aaa; border-radius: 4px; margin-left: 10px;" required />
-                    <button type="submit" class="upload-btn" style="margin-left: 10px;">Submit</button>
+                    <input type="text" id="manualTitleInput" placeholder="Enter book title" required />
+                    <input type="text" id="manualIsbnInput" placeholder="Enter ISBN 13 digits" maxlength="13" required />
+                    <button type="submit" class="upload-btn">Submit</button>
                 </form>
             </div>
             
             <div id="result"></div>
         </div>
         <div id="toast" style="display:none;position:fixed;top:20px;right:20px;z-index:1000;padding:10px 20px;background:#4caf50;color:white;border-radius:5px;font-weight:bold;"></div>
-        <h2>Books Database</h2>
-        <div id="booksList">Loading...</div>
+        
+        <div class="main-content">
+            <h2>Books Database</h2>
+            <div id="booksList">Loading...</div>
+        </div>
         
         <script>
             const uploadSection = document.getElementById('uploadSection');
@@ -247,12 +450,12 @@ async def root(request: Request) -> str:
                                         <th>Amazon.com URL</th>
                                         <th>Purchase Price</th>
                                         <th>Used Price</th>
-                                        <th>V</th>
-                                        <th>R</th>
-                                        <th>P</th>
-                                        <th>F</th>
-                                        <th>A</th>
-                                        <th>S</th>
+                                        <th title="Value - Resale value (1-5)">V<br><small>Value</small></th>
+                                        <th title="Rarity - How rare the book is (1-5)">R<br><small>Rarity</small></th>
+                                        <th title="Scannability - How easy to digitize (1-5)">P<br><small>Scan</small></th>
+                                        <th title="Frequency - How often you use it (1-5)">F<br><small>Freq</small></th>
+                                        <th title="Annotation - Personal notes/highlights (1-5)">A<br><small>Notes</small></th>
+                                        <th title="Sentimental - Emotional value (1-5)">S<br><small>Sent</small></th>
                                         <th>citation_R</th>
                                         <th>citation_P</th>
                                         <th>Decision</th>
@@ -287,22 +490,22 @@ async def root(request: Request) -> str:
                                     <input type="number" class="edit-title-input price-input" value="${book.used_price || 0}" min="0" id="used-${book.id}">
                                 </td>
                                 <td>
-                                    <input type="number" class="edit-title-input" value="${book.V || ''}" min="0" max="5" id="V-${book.id}" style="width: 40px;">
+                                    <input type="number" class="edit-title-input vrpfas-input" value="${book.V || ''}" min="0" max="5" id="V-${book.id}">
                                 </td>
                                 <td>
-                                    <input type="number" class="edit-title-input" value="${book.R || ''}" min="1" max="5" id="R-${book.id}" style="width: 40px;">
+                                    <input type="number" class="edit-title-input vrpfas-input" value="${book.R || ''}" min="1" max="5" id="R-${book.id}">
                                 </td>
                                 <td>
-                                    <input type="number" class="edit-title-input" value="${book.P || ''}" min="1" max="5" id="P-${book.id}" style="width: 40px;">
+                                    <input type="number" class="edit-title-input vrpfas-input" value="${book.P || ''}" min="1" max="5" id="P-${book.id}">
                                 </td>
                                 <td>
-                                    <input type="number" class="edit-title-input" value="${book.F || ''}" min="1" max="5" id="F-${book.id}" style="width: 40px;">
+                                    <input type="number" class="edit-title-input vrpfas-input" value="${book.F || ''}" min="1" max="5" id="F-${book.id}">
                                 </td>
                                 <td>
-                                    <input type="number" class="edit-title-input" value="${book.A || ''}" min="1" max="5" id="A-${book.id}" style="width: 40px;">
+                                    <input type="number" class="edit-title-input vrpfas-input" value="${book.A || ''}" min="1" max="5" id="A-${book.id}">
                                 </td>
                                 <td>
-                                    <input type="number" class="edit-title-input" value="${book.S || ''}" min="1" max="5" id="S-${book.id}" style="width: 40px;">
+                                    <input type="number" class="edit-title-input vrpfas-input" value="${book.S || ''}" min="1" max="5" id="S-${book.id}">
                                 </td>
                                 <td>${book.citation_R || ''}</td>
                                 <td>${book.citation_P || ''}</td>
@@ -398,11 +601,11 @@ async def root(request: Request) -> str:
                     input.disabled = false;
                     isbnInput.disabled = false;
                     if (submitBtn) submitBtn.disabled = false;
-                    showToast('Failed to add book.');
+                    showToast('Error adding book.');
                 });
             }
             
-            // Load books on page load
+            // Load initial books
             loadBooks();
         </script>
     </body>
