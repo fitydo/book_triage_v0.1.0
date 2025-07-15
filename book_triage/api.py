@@ -277,9 +277,15 @@ async def root(request: Request) -> str:
                                 <td>
                                     <input type="number" class="edit-title-input price-input" value="${book.used_price || 0}" min="0" id="used-${book.id}">
                                 </td>
-                                <td>${book.V || ''}</td>
-                                <td>${book.R || ''}</td>
-                                <td>${book.P || ''}</td>
+                                <td>
+                                    <input type="number" class="edit-title-input" value="${book.V || ''}" min="0" max="5" id="V-${book.id}" style="width: 40px;">
+                                </td>
+                                <td>
+                                    <input type="number" class="edit-title-input" value="${book.R || ''}" min="1" max="5" id="R-${book.id}" style="width: 40px;">
+                                </td>
+                                <td>
+                                    <input type="number" class="edit-title-input" value="${book.P || ''}" min="1" max="5" id="P-${book.id}" style="width: 40px;">
+                                </td>
                                 <td>
                                     <input type="number" class="edit-title-input" value="${book.F || ''}" min="1" max="5" id="F-${book.id}" style="width: 40px;">
                                 </td>
@@ -315,6 +321,9 @@ async def root(request: Request) -> str:
                 const url_com = document.getElementById(`url_com-${bookId}`).value;
                 const purchase_price = parseFloat(document.getElementById(`purchase-${bookId}`).value);
                 const used_price = parseFloat(document.getElementById(`used-${bookId}`).value);
+                const V = document.getElementById(`V-${bookId}`).value;
+                const R = document.getElementById(`R-${bookId}`).value;
+                const P = document.getElementById(`P-${bookId}`).value;
                 const F = document.getElementById(`F-${bookId}`).value;
                 const A = document.getElementById(`A-${bookId}`).value;
                 const S = document.getElementById(`S-${bookId}`).value;
@@ -330,6 +339,9 @@ async def root(request: Request) -> str:
                         url_com: url_com,
                         purchase_price: purchase_price,
                         used_price: used_price,
+                        V: V || null,
+                        R: R || null,
+                        P: P || null,
                         F: F || null,
                         A: A || null,
                         S: S || null
@@ -484,6 +496,9 @@ async def rescan_title(request: Request) -> dict:
     new_url_com = data.get("url_com", "")
     new_purchase = float(data.get("purchase_price", 0.0))
     new_used = float(data.get("used_price", 0.0))
+    new_V = data.get("V")
+    new_R = data.get("R") 
+    new_P = data.get("P")
     new_F = data.get("F")
     new_A = data.get("A")
     new_S = data.get("S")
@@ -498,11 +513,14 @@ async def rescan_title(request: Request) -> dict:
     record.url_com = new_url_com
     record.purchase_price = new_purchase
     record.used_price = new_used
-    record.F = int(new_F) if new_F is not None else None
-    record.A = int(new_A) if new_A is not None else None
-    record.S = int(new_S) if new_S is not None else None
-    # If both prices are present, calculate V
-    if record.purchase_price > 0 and record.used_price > 0:
+    record.V = int(new_V) if new_V is not None and new_V != "" else None
+    record.R = int(new_R) if new_R is not None and new_R != "" else None
+    record.P = int(new_P) if new_P is not None and new_P != "" else None
+    record.F = int(new_F) if new_F is not None and new_F != "" else None
+    record.A = int(new_A) if new_A is not None and new_A != "" else None
+    record.S = int(new_S) if new_S is not None and new_S != "" else None
+    # If V is not manually set and both prices are present, auto-calculate V
+    if record.V is None and record.purchase_price > 0 and record.used_price > 0:
         ratio = record.used_price / record.purchase_price
         if ratio < 0.1:
             record.V = 0

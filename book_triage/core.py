@@ -264,12 +264,30 @@ class BookTriage:
             if content:
                 import json
                 try:
+                    # Handle markdown code blocks around JSON
+                    if content.strip().startswith("```json"):
+                        # Extract JSON from markdown code block
+                        json_start = content.find("{")
+                        json_end = content.rfind("}") + 1
+                        if json_start != -1 and json_end > json_start:
+                            content = content[json_start:json_end]
+                    
                     data = json.loads(content)
-                    record.url = data.get("amazon_co_jp_url", "")
-                    record.url_com = data.get("amazon_com_url", "")
+                    record.url = data.get("amazon_co_jp_url", "unknown")
+                    record.url_com = data.get("amazon_com_url", "unknown")
+                    
+                    # Set to empty string if "unknown"
+                    if record.url == "unknown":
+                        record.url = ""
+                    if record.url_com == "unknown":
+                        record.url_com = ""
+                        
                 except Exception as e:
                     logger.warning(f"Failed to parse GPT-4o response: {e}")
                     logger.warning(f"GPT-4o raw response: {content}")
+                    # Set default values on parsing failure
+                    record.url = ""
+                    record.url_com = ""
             logger.info(f"[GPT-4o] Finished enrichment for record {record.id}")
             print(f"[GPT-4o] Finished enrichment for record {record.id}")
         except Exception as e:
