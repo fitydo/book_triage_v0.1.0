@@ -140,7 +140,7 @@ class TestAPIEndpoints:
         # Check for security headers
         assert response.headers.get("X-Frame-Options") == "DENY"
         assert response.headers.get("X-Content-Type-Options") == "nosniff"
-        assert response.headers.get("Content-Security-Policy") == "default-src 'self'"
+        assert response.headers.get("Content-Security-Policy") == "default-src 'self'; script-src 'self' 'unsafe-inline'"
         assert response.headers.get("Referrer-Policy") == "same-origin"
     
     @patch('book_triage.api.vision_processor')
