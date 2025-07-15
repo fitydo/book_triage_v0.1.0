@@ -1,0 +1,869 @@
+﻿2025-07-14T23:49:21.9199482Z Current runner version: '2.326.0'
+2025-07-14T23:49:21.9223643Z ##[group]Runner Image Provisioner
+2025-07-14T23:49:21.9224866Z Hosted Compute Agent
+2025-07-14T23:49:21.9225439Z Version: 20250711.363
+2025-07-14T23:49:21.9226358Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-14T23:49:21.9227174Z Build Date: 2025-07-11T20:04:25Z
+2025-07-14T23:49:21.9227738Z ##[endgroup]
+2025-07-14T23:49:21.9228323Z ##[group]Operating System
+2025-07-14T23:49:21.9228944Z Ubuntu
+2025-07-14T23:49:21.9229469Z 24.04.2
+2025-07-14T23:49:21.9229963Z LTS
+2025-07-14T23:49:21.9230467Z ##[endgroup]
+2025-07-14T23:49:21.9230987Z ##[group]Runner Image
+2025-07-14T23:49:21.9231521Z Image: ubuntu-24.04
+2025-07-14T23:49:21.9232061Z Version: 20250710.1.0
+2025-07-14T23:49:21.9233033Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250710.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-14T23:49:21.9234583Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250710.1
+2025-07-14T23:49:21.9235619Z ##[endgroup]
+2025-07-14T23:49:21.9237433Z ##[group]GITHUB_TOKEN Permissions
+2025-07-14T23:49:21.9239788Z Contents: read
+2025-07-14T23:49:21.9240307Z Metadata: read
+2025-07-14T23:49:21.9240797Z Packages: read
+2025-07-14T23:49:21.9241366Z ##[endgroup]
+2025-07-14T23:49:21.9243382Z Secret source: Actions
+2025-07-14T23:49:21.9244307Z Prepare workflow directory
+2025-07-14T23:49:21.9573335Z Prepare all required actions
+2025-07-14T23:49:21.9611835Z Getting action download info
+2025-07-14T23:49:22.2649190Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-14T23:49:22.2650210Z Version: 4.2.2
+2025-07-14T23:49:22.2651212Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-14T23:49:22.2652380Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-14T23:49:22.2653066Z ##[endgroup]
+2025-07-14T23:49:22.3574820Z ##[group]Download immutable action package 'actions/setup-python@v4'
+2025-07-14T23:49:22.3575623Z Version: 4.9.1
+2025-07-14T23:49:22.3576765Z Digest: sha256:f03e505388af670b5a108629e0ba26befc08d5c62b41f46146a45fe29ae509a5
+2025-07-14T23:49:22.3577746Z Source commit SHA: 7f4fc3e22c37d6ff65e88745f38bd3157c663f7c
+2025-07-14T23:49:22.3578470Z ##[endgroup]
+2025-07-14T23:49:22.6684175Z Complete job name: test
+2025-07-14T23:49:22.7359542Z ##[group]Run actions/checkout@v4
+2025-07-14T23:49:22.7360392Z with:
+2025-07-14T23:49:22.7360817Z   repository: fitydo/book_triage_v0.1.0
+2025-07-14T23:49:22.7361600Z   token: ***
+2025-07-14T23:49:22.7361997Z   ssh-strict: true
+2025-07-14T23:49:22.7362386Z   ssh-user: git
+2025-07-14T23:49:22.7362795Z   persist-credentials: true
+2025-07-14T23:49:22.7363244Z   clean: true
+2025-07-14T23:49:22.7363651Z   sparse-checkout-cone-mode: true
+2025-07-14T23:49:22.7364128Z   fetch-depth: 1
+2025-07-14T23:49:22.7364522Z   fetch-tags: false
+2025-07-14T23:49:22.7364923Z   show-progress: true
+2025-07-14T23:49:22.7365320Z   lfs: false
+2025-07-14T23:49:22.7365686Z   submodules: false
+2025-07-14T23:49:22.7366611Z   set-safe-directory: true
+2025-07-14T23:49:22.7367417Z ##[endgroup]
+2025-07-14T23:49:22.8421335Z Syncing repository: fitydo/book_triage_v0.1.0
+2025-07-14T23:49:22.8423049Z ##[group]Getting Git version info
+2025-07-14T23:49:22.8423884Z Working directory is '/home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0'
+2025-07-14T23:49:22.8425038Z [command]/usr/bin/git version
+2025-07-14T23:49:22.8470985Z git version 2.50.1
+2025-07-14T23:49:22.8497034Z ##[endgroup]
+2025-07-14T23:49:22.8518048Z Temporarily overriding HOME='/home/runner/work/_temp/98402cd8-c08e-4ae6-a691-531cc72ff842' before making global git config changes
+2025-07-14T23:49:22.8519428Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-14T23:49:22.8522791Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-14T23:49:22.8556854Z Deleting the contents of '/home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0'
+2025-07-14T23:49:22.8560331Z ##[group]Initializing the repository
+2025-07-14T23:49:22.8564219Z [command]/usr/bin/git init /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-14T23:49:22.8631847Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-14T23:49:22.8633497Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-14T23:49:22.8634881Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-14T23:49:22.8636114Z hint:
+2025-07-14T23:49:22.8637224Z hint: 	git config --global init.defaultBranch <name>
+2025-07-14T23:49:22.8638261Z hint:
+2025-07-14T23:49:22.8639258Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-14T23:49:22.8640864Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-14T23:49:22.8642172Z hint:
+2025-07-14T23:49:22.8642824Z hint: 	git branch -m <name>
+2025-07-14T23:49:22.8643573Z hint:
+2025-07-14T23:49:22.8644558Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-07-14T23:49:22.8646910Z Initialized empty Git repository in /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0/.git/
+2025-07-14T23:49:22.8649491Z [command]/usr/bin/git remote add origin https://github.com/fitydo/book_triage_v0.1.0
+2025-07-14T23:49:22.8680857Z ##[endgroup]
+2025-07-14T23:49:22.8681576Z ##[group]Disabling automatic garbage collection
+2025-07-14T23:49:22.8685121Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-14T23:49:22.8714064Z ##[endgroup]
+2025-07-14T23:49:22.8714731Z ##[group]Setting up auth
+2025-07-14T23:49:22.8721683Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-14T23:49:22.8751396Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-14T23:49:22.9059153Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-14T23:49:22.9090299Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-14T23:49:22.9324106Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-14T23:49:22.9375679Z ##[endgroup]
+2025-07-14T23:49:22.9387852Z ##[group]Fetching the repository
+2025-07-14T23:49:22.9389203Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f770bebfda6f86d29f7a62a74f6027a1a5ab793b:refs/remotes/origin/main
+2025-07-14T23:49:23.2552032Z From https://github.com/fitydo/book_triage_v0.1.0
+2025-07-14T23:49:23.2553150Z  * [new ref]         f770bebfda6f86d29f7a62a74f6027a1a5ab793b -> origin/main
+2025-07-14T23:49:23.2575621Z ##[endgroup]
+2025-07-14T23:49:23.2576588Z ##[group]Determining the checkout info
+2025-07-14T23:49:23.2578966Z ##[endgroup]
+2025-07-14T23:49:23.2584549Z [command]/usr/bin/git sparse-checkout disable
+2025-07-14T23:49:23.2624698Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-14T23:49:23.2653067Z ##[group]Checking out the ref
+2025-07-14T23:49:23.2658075Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-07-14T23:49:23.2882063Z Switched to a new branch 'main'
+2025-07-14T23:49:23.2883874Z branch 'main' set up to track 'origin/main'.
+2025-07-14T23:49:23.2892459Z ##[endgroup]
+2025-07-14T23:49:23.2932839Z [command]/usr/bin/git log -1 --format=%H
+2025-07-14T23:49:23.2955799Z f770bebfda6f86d29f7a62a74f6027a1a5ab793b
+2025-07-14T23:49:23.3212571Z ##[group]Run actions/setup-python@v4
+2025-07-14T23:49:23.3213208Z with:
+2025-07-14T23:49:23.3213585Z   python-version: 3.12
+2025-07-14T23:49:23.3214074Z   check-latest: false
+2025-07-14T23:49:23.3214709Z   token: ***
+2025-07-14T23:49:23.3215126Z   update-environment: true
+2025-07-14T23:49:23.3215639Z   allow-prereleases: false
+2025-07-14T23:49:23.3216593Z ##[endgroup]
+2025-07-14T23:49:23.4908926Z ##[group]Installed versions
+2025-07-14T23:49:23.5030621Z Successfully set up CPython (3.12.11)
+2025-07-14T23:49:23.5034531Z ##[endgroup]
+2025-07-14T23:49:23.5159382Z ##[group]Run python -m pip install --upgrade pip
+2025-07-14T23:49:23.5160319Z [36;1mpython -m pip install --upgrade pip[0m
+2025-07-14T23:49:23.5161047Z [36;1mpip install -e .[0m
+2025-07-14T23:49:23.5161653Z [36;1mpip install pytest pytest-cov[0m
+2025-07-14T23:49:23.5365245Z shell: /usr/bin/bash -e {0}
+2025-07-14T23:49:23.5366091Z env:
+2025-07-14T23:49:23.5366715Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:23.5367798Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-14T23:49:23.5368873Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:23.5369817Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:23.5370800Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:23.5371769Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-14T23:49:23.5372574Z ##[endgroup]
+2025-07-14T23:49:25.8450046Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (25.1.1)
+2025-07-14T23:49:26.4149675Z Obtaining file:///home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-14T23:49:26.4178873Z   Installing build dependencies: started
+2025-07-14T23:49:27.1605302Z   Installing build dependencies: finished with status 'done'
+2025-07-14T23:49:27.1612420Z   Checking if build backend supports build_editable: started
+2025-07-14T23:49:27.2080233Z   Checking if build backend supports build_editable: finished with status 'done'
+2025-07-14T23:49:27.2087606Z   Getting requirements to build editable: started
+2025-07-14T23:49:27.3372547Z   Getting requirements to build editable: finished with status 'done'
+2025-07-14T23:49:27.3384818Z   Installing backend dependencies: started
+2025-07-14T23:49:27.8697154Z   Installing backend dependencies: finished with status 'done'
+2025-07-14T23:49:27.8703478Z   Preparing editable metadata (pyproject.toml): started
+2025-07-14T23:49:28.0872453Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2025-07-14T23:49:28.1875127Z Collecting fastapi>=0.104.0 (from book_triage==0.1.0)
+2025-07-14T23:49:28.2196738Z   Downloading fastapi-0.116.1-py3-none-any.whl.metadata (28 kB)
+2025-07-14T23:49:28.2954340Z Collecting openai>=1.0.0 (from book_triage==0.1.0)
+2025-07-14T23:49:28.2994819Z   Downloading openai-1.95.1-py3-none-any.whl.metadata (29 kB)
+2025-07-14T23:49:28.4301057Z Collecting pandas>=2.0.0 (from book_triage==0.1.0)
+2025-07-14T23:49:28.4341045Z   Downloading pandas-2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (91 kB)
+2025-07-14T23:49:28.6330981Z Collecting pillow>=10.0.0 (from book_triage==0.1.0)
+2025-07-14T23:49:28.6378391Z   Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+2025-07-14T23:49:28.6679154Z Collecting pytesseract>=0.3.10 (from book_triage==0.1.0)
+2025-07-14T23:49:28.6716724Z   Downloading pytesseract-0.3.13-py3-none-any.whl.metadata (11 kB)
+2025-07-14T23:49:28.6904907Z Collecting python-dotenv>=1.0.0 (from book_triage==0.1.0)
+2025-07-14T23:49:28.6943162Z   Downloading python_dotenv-1.1.1-py3-none-any.whl.metadata (24 kB)
+2025-07-14T23:49:28.7099556Z Collecting python-magic>=0.4.27 (from book_triage==0.1.0)
+2025-07-14T23:49:28.7132189Z   Downloading python_magic-0.4.27-py2.py3-none-any.whl.metadata (5.8 kB)
+2025-07-14T23:49:28.7282892Z Collecting python-multipart>=0.0.6 (from book_triage==0.1.0)
+2025-07-14T23:49:28.7320695Z   Downloading python_multipart-0.0.20-py3-none-any.whl.metadata (1.8 kB)
+2025-07-14T23:49:28.7510545Z Collecting slowapi>=0.1.8 (from book_triage==0.1.0)
+2025-07-14T23:49:28.7551260Z   Downloading slowapi-0.1.9-py3-none-any.whl.metadata (3.0 kB)
+2025-07-14T23:49:28.7888769Z Collecting tqdm>=4.65.0 (from book_triage==0.1.0)
+2025-07-14T23:49:28.7934426Z   Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+2025-07-14T23:49:28.8200907Z Collecting typer>=0.9.0 (from book_triage==0.1.0)
+2025-07-14T23:49:28.8250529Z   Downloading typer-0.16.0-py3-none-any.whl.metadata (15 kB)
+2025-07-14T23:49:28.8548080Z Collecting uvicorn>=0.24.0 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-14T23:49:28.8587530Z   Downloading uvicorn-0.35.0-py3-none-any.whl.metadata (6.5 kB)
+2025-07-14T23:49:28.8938512Z Collecting starlette<0.48.0,>=0.40.0 (from fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-14T23:49:28.8981052Z   Downloading starlette-0.47.1-py3-none-any.whl.metadata (6.2 kB)
+2025-07-14T23:49:29.0367313Z Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (from fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-14T23:49:29.0407051Z   Downloading pydantic-2.11.7-py3-none-any.whl.metadata (67 kB)
+2025-07-14T23:49:29.0630386Z Collecting typing-extensions>=4.8.0 (from fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-14T23:49:29.0663745Z   Downloading typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+2025-07-14T23:49:29.0877047Z Collecting annotated-types>=0.6.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-14T23:49:29.0910478Z   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+2025-07-14T23:49:29.7089659Z Collecting pydantic-core==2.33.2 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-14T23:49:29.7129113Z   Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2025-07-14T23:49:29.7291702Z Collecting typing-inspection>=0.4.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-14T23:49:29.7327106Z   Downloading typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+2025-07-14T23:49:29.7632073Z Collecting anyio<5,>=3.6.2 (from starlette<0.48.0,>=0.40.0->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-14T23:49:29.7671828Z   Downloading anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB)
+2025-07-14T23:49:29.7899110Z Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette<0.48.0,>=0.40.0->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-14T23:49:29.7942088Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-07-14T23:49:29.8070367Z Collecting sniffio>=1.1 (from anyio<5,>=3.6.2->starlette<0.48.0,>=0.40.0->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-14T23:49:29.8105977Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2025-07-14T23:49:29.8349465Z Collecting distro<2,>=1.7.0 (from openai>=1.0.0->book_triage==0.1.0)
+2025-07-14T23:49:29.8389670Z   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+2025-07-14T23:49:29.8610423Z Collecting httpx<1,>=0.23.0 (from openai>=1.0.0->book_triage==0.1.0)
+2025-07-14T23:49:29.8649255Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2025-07-14T23:49:29.9272647Z Collecting jiter<1,>=0.4.0 (from openai>=1.0.0->book_triage==0.1.0)
+2025-07-14T23:49:29.9308324Z   Downloading jiter-0.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+2025-07-14T23:49:30.0082369Z Collecting certifi (from httpx<1,>=0.23.0->openai>=1.0.0->book_triage==0.1.0)
+2025-07-14T23:49:30.0117902Z   Downloading certifi-2025.7.14-py3-none-any.whl.metadata (2.4 kB)
+2025-07-14T23:49:30.0342228Z Collecting httpcore==1.* (from httpx<1,>=0.23.0->openai>=1.0.0->book_triage==0.1.0)
+2025-07-14T23:49:30.0381038Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2025-07-14T23:49:30.0560247Z Collecting h11>=0.16 (from httpcore==1.*->httpx<1,>=0.23.0->openai>=1.0.0->book_triage==0.1.0)
+2025-07-14T23:49:30.0599436Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2025-07-14T23:49:30.2734204Z Collecting numpy>=1.26.0 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-14T23:49:30.2773415Z   Downloading numpy-2.3.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (62 kB)
+2025-07-14T23:49:30.3026935Z Collecting python-dateutil>=2.8.2 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-14T23:49:30.3060780Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+2025-07-14T23:49:30.3468410Z Collecting pytz>=2020.1 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-14T23:49:30.3502833Z   Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+2025-07-14T23:49:30.3676156Z Collecting tzdata>=2022.7 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-14T23:49:30.3709728Z   Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+2025-07-14T23:49:30.3905404Z Collecting packaging>=21.3 (from pytesseract>=0.3.10->book_triage==0.1.0)
+2025-07-14T23:49:30.3917810Z   Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+2025-07-14T23:49:30.4122724Z Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas>=2.0.0->book_triage==0.1.0)
+2025-07-14T23:49:30.4156648Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2025-07-14T23:49:30.4520556Z Collecting limits>=2.3 (from slowapi>=0.1.8->book_triage==0.1.0)
+2025-07-14T23:49:30.4569696Z   Downloading limits-5.4.0-py3-none-any.whl.metadata (10 kB)
+2025-07-14T23:49:30.4805336Z Collecting deprecated>=1.2 (from limits>=2.3->slowapi>=0.1.8->book_triage==0.1.0)
+2025-07-14T23:49:30.4842261Z   Downloading Deprecated-1.2.18-py2.py3-none-any.whl.metadata (5.7 kB)
+2025-07-14T23:49:30.5766029Z Collecting wrapt<2,>=1.10 (from deprecated>=1.2->limits>=2.3->slowapi>=0.1.8->book_triage==0.1.0)
+2025-07-14T23:49:30.5805036Z   Downloading wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
+2025-07-14T23:49:30.6059066Z Collecting click>=8.0.0 (from typer>=0.9.0->book_triage==0.1.0)
+2025-07-14T23:49:30.6093230Z   Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+2025-07-14T23:49:30.6302190Z Collecting shellingham>=1.3.0 (from typer>=0.9.0->book_triage==0.1.0)
+2025-07-14T23:49:30.6335094Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-07-14T23:49:30.6853592Z Collecting rich>=10.11.0 (from typer>=0.9.0->book_triage==0.1.0)
+2025-07-14T23:49:30.6890952Z   Downloading rich-14.0.0-py3-none-any.whl.metadata (18 kB)
+2025-07-14T23:49:30.7117085Z Collecting markdown-it-py>=2.2.0 (from rich>=10.11.0->typer>=0.9.0->book_triage==0.1.0)
+2025-07-14T23:49:30.7151390Z   Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+2025-07-14T23:49:30.7418114Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.11.0->typer>=0.9.0->book_triage==0.1.0)
+2025-07-14T23:49:30.7452691Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+2025-07-14T23:49:30.7650785Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.11.0->typer>=0.9.0->book_triage==0.1.0)
+2025-07-14T23:49:30.7683849Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2025-07-14T23:49:30.8211540Z Collecting httptools>=0.6.3 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-14T23:49:30.8253121Z   Downloading httptools-0.6.4-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.6 kB)
+2025-07-14T23:49:30.8653024Z Collecting pyyaml>=5.1 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-14T23:49:30.8702765Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-07-14T23:49:30.9109399Z Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-14T23:49:30.9163862Z   Downloading uvloop-0.21.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2025-07-14T23:49:30.9913196Z Collecting watchfiles>=0.13 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-14T23:49:30.9955692Z   Downloading watchfiles-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2025-07-14T23:49:31.0838268Z Collecting websockets>=10.4 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-14T23:49:31.0888250Z   Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2025-07-14T23:49:31.1172903Z Downloading fastapi-0.116.1-py3-none-any.whl (95 kB)
+2025-07-14T23:49:31.1248644Z Downloading pydantic-2.11.7-py3-none-any.whl (444 kB)
+2025-07-14T23:49:31.1342301Z Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+2025-07-14T23:49:31.1474156Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 171.7 MB/s eta 0:00:00
+2025-07-14T23:49:31.1521853Z Downloading starlette-0.47.1-py3-none-any.whl (72 kB)
+2025-07-14T23:49:31.1583660Z Downloading anyio-4.9.0-py3-none-any.whl (100 kB)
+2025-07-14T23:49:31.1651959Z Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+2025-07-14T23:49:31.1714430Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+2025-07-14T23:49:31.1777013Z Downloading openai-1.95.1-py3-none-any.whl (755 kB)
+2025-07-14T23:49:31.1856847Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 755.6/755.6 kB 90.9 MB/s eta 0:00:00
+2025-07-14T23:49:31.1892413Z Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+2025-07-14T23:49:31.1954707Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2025-07-14T23:49:31.2019898Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2025-07-14T23:49:31.2109886Z Downloading jiter-0.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (352 kB)
+2025-07-14T23:49:31.2185632Z Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+2025-07-14T23:49:31.2249213Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2025-07-14T23:49:31.2315737Z Downloading pandas-2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.0 MB)
+2025-07-14T23:49:31.2935136Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 198.2 MB/s eta 0:00:00
+2025-07-14T23:49:31.2973175Z Downloading numpy-2.3.1-cp312-cp312-manylinux_2_28_x86_64.whl (16.6 MB)
+2025-07-14T23:49:31.3876772Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 187.4 MB/s eta 0:00:00
+2025-07-14T23:49:31.3922343Z Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+2025-07-14T23:49:31.4234390Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 226.2 MB/s eta 0:00:00
+2025-07-14T23:49:31.4275028Z Downloading pytesseract-0.3.13-py3-none-any.whl (14 kB)
+2025-07-14T23:49:31.4325005Z Using cached packaging-25.0-py3-none-any.whl (66 kB)
+2025-07-14T23:49:31.4383609Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2025-07-14T23:49:31.4468005Z Downloading python_dotenv-1.1.1-py3-none-any.whl (20 kB)
+2025-07-14T23:49:31.4536822Z Downloading python_magic-0.4.27-py2.py3-none-any.whl (13 kB)
+2025-07-14T23:49:31.4595497Z Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+2025-07-14T23:49:31.4662719Z Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+2025-07-14T23:49:31.4772353Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2025-07-14T23:49:31.4834663Z Downloading slowapi-0.1.9-py3-none-any.whl (14 kB)
+2025-07-14T23:49:31.4899124Z Downloading limits-5.4.0-py3-none-any.whl (60 kB)
+2025-07-14T23:49:31.4967814Z Downloading Deprecated-1.2.18-py2.py3-none-any.whl (10.0 kB)
+2025-07-14T23:49:31.5040232Z Downloading wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (89 kB)
+2025-07-14T23:49:31.5108129Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+2025-07-14T23:49:31.5171334Z Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+2025-07-14T23:49:31.5238929Z Downloading typer-0.16.0-py3-none-any.whl (46 kB)
+2025-07-14T23:49:31.5298431Z Downloading click-8.2.1-py3-none-any.whl (102 kB)
+2025-07-14T23:49:31.5371917Z Downloading rich-14.0.0-py3-none-any.whl (243 kB)
+2025-07-14T23:49:31.5489110Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+2025-07-14T23:49:31.5584266Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 144.6 MB/s eta 0:00:00
+2025-07-14T23:49:31.5622883Z Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+2025-07-14T23:49:31.5692388Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2025-07-14T23:49:31.5758540Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2025-07-14T23:49:31.5819726Z Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+2025-07-14T23:49:31.5884962Z Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+2025-07-14T23:49:31.5962696Z Downloading uvicorn-0.35.0-py3-none-any.whl (66 kB)
+2025-07-14T23:49:31.6027899Z Downloading httptools-0.6.4-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (510 kB)
+2025-07-14T23:49:31.6114173Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2025-07-14T23:49:31.6193333Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 104.3 MB/s eta 0:00:00
+2025-07-14T23:49:31.6273085Z Downloading uvloop-0.21.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.7 MB)
+2025-07-14T23:49:31.6574265Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 163.3 MB/s eta 0:00:00
+2025-07-14T23:49:31.6614802Z Downloading watchfiles-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (452 kB)
+2025-07-14T23:49:31.6715479Z Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+2025-07-14T23:49:31.6786546Z Downloading certifi-2025.7.14-py3-none-any.whl (162 kB)
+2025-07-14T23:49:31.7825285Z Building wheels for collected packages: book_triage
+2025-07-14T23:49:31.7826419Z   Building editable for book_triage (pyproject.toml): started
+2025-07-14T23:49:31.8133237Z   Building editable for book_triage (pyproject.toml): finished with status 'done'
+2025-07-14T23:49:31.8139283Z   Created wheel for book_triage: filename=book_triage-0.1.0-py3-none-any.whl size=8097 sha256=41dca532682c5767dbc230fe24c3a29ca2515b591cb1f90519e8619e77688638
+2025-07-14T23:49:31.8141160Z   Stored in directory: /tmp/pip-ephem-wheel-cache-tyzr859j/wheels/d3/8c/55/20b7343e2b9725e0ea7cb71535aa1bddd3950a939b56e58f9b
+2025-07-14T23:49:31.8171116Z Successfully built book_triage
+2025-07-14T23:49:31.9314166Z Installing collected packages: pytz, wrapt, websockets, uvloop, tzdata, typing-extensions, tqdm, sniffio, six, shellingham, pyyaml, python-multipart, python-magic, python-dotenv, pygments, pillow, packaging, numpy, mdurl, jiter, idna, httptools, h11, distro, click, certifi, annotated-types, uvicorn, typing-inspection, python-dateutil, pytesseract, pydantic-core, markdown-it-py, httpcore, deprecated, anyio, watchfiles, starlette, rich, pydantic, pandas, limits, httpx, typer, slowapi, openai, fastapi, book_triage
+2025-07-14T23:49:42.4004079Z 
+2025-07-14T23:49:42.4053583Z Successfully installed annotated-types-0.7.0 anyio-4.9.0 book_triage-0.1.0 certifi-2025.7.14 click-8.2.1 deprecated-1.2.18 distro-1.9.0 fastapi-0.116.1 h11-0.16.0 httpcore-1.0.9 httptools-0.6.4 httpx-0.28.1 idna-3.10 jiter-0.10.0 limits-5.4.0 markdown-it-py-3.0.0 mdurl-0.1.2 numpy-2.3.1 openai-1.95.1 packaging-25.0 pandas-2.3.1 pillow-11.3.0 pydantic-2.11.7 pydantic-core-2.33.2 pygments-2.19.2 pytesseract-0.3.13 python-dateutil-2.9.0.post0 python-dotenv-1.1.1 python-magic-0.4.27 python-multipart-0.0.20 pytz-2025.2 pyyaml-6.0.2 rich-14.0.0 shellingham-1.5.4 six-1.17.0 slowapi-0.1.9 sniffio-1.3.1 starlette-0.47.1 tqdm-4.67.1 typer-0.16.0 typing-extensions-4.14.1 typing-inspection-0.4.1 tzdata-2025.2 uvicorn-0.35.0 uvloop-0.21.0 watchfiles-1.1.0 websockets-15.0.1 wrapt-1.17.2
+2025-07-14T23:49:43.3359438Z Collecting pytest
+2025-07-14T23:49:43.3738903Z   Downloading pytest-8.4.1-py3-none-any.whl.metadata (7.7 kB)
+2025-07-14T23:49:43.3972173Z Collecting pytest-cov
+2025-07-14T23:49:43.4009171Z   Downloading pytest_cov-6.2.1-py3-none-any.whl.metadata (30 kB)
+2025-07-14T23:49:43.4212780Z Collecting iniconfig>=1 (from pytest)
+2025-07-14T23:49:43.4248725Z   Downloading iniconfig-2.1.0-py3-none-any.whl.metadata (2.7 kB)
+2025-07-14T23:49:43.4291647Z Requirement already satisfied: packaging>=20 in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (from pytest) (25.0)
+2025-07-14T23:49:43.4391197Z Collecting pluggy<2,>=1.5 (from pytest)
+2025-07-14T23:49:43.4402780Z   Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+2025-07-14T23:49:43.4426773Z Requirement already satisfied: pygments>=2.7.2 in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (from pytest) (2.19.2)
+2025-07-14T23:49:43.7523376Z Collecting coverage>=7.5 (from coverage[toml]>=7.5->pytest-cov)
+2025-07-14T23:49:43.7566513Z   Downloading coverage-7.9.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.9 kB)
+2025-07-14T23:49:43.7702973Z Downloading pytest-8.4.1-py3-none-any.whl (365 kB)
+2025-07-14T23:49:43.7932647Z Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+2025-07-14T23:49:43.7978476Z Downloading pytest_cov-6.2.1-py3-none-any.whl (24 kB)
+2025-07-14T23:49:43.8044680Z Downloading coverage-7.9.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (245 kB)
+2025-07-14T23:49:43.8171452Z Downloading iniconfig-2.1.0-py3-none-any.whl (6.0 kB)
+2025-07-14T23:49:43.9011450Z Installing collected packages: pluggy, iniconfig, coverage, pytest, pytest-cov
+2025-07-14T23:49:44.2965303Z 
+2025-07-14T23:49:44.3014528Z Successfully installed coverage-7.9.2 iniconfig-2.1.0 pluggy-1.6.0 pytest-8.4.1 pytest-cov-6.2.1
+2025-07-14T23:49:44.3875119Z ##[group]Run python -m pytest tests/ -v --cov=book_triage --cov-report=term-missing
+2025-07-14T23:49:44.3875704Z [36;1mpython -m pytest tests/ -v --cov=book_triage --cov-report=term-missing[0m
+2025-07-14T23:49:44.3906078Z shell: /usr/bin/bash -e {0}
+2025-07-14T23:49:44.3906305Z env:
+2025-07-14T23:49:44.3906541Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:44.3906942Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-14T23:49:44.3907324Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:44.3907674Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:44.3908025Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:44.3908401Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-14T23:49:44.3908720Z ##[endgroup]
+2025-07-14T23:49:45.4836776Z ============================= test session starts ==============================
+2025-07-14T23:49:45.4837971Z platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0 -- /opt/hostedtoolcache/Python/3.12.11/x64/bin/python
+2025-07-14T23:49:45.4838963Z cachedir: .pytest_cache
+2025-07-14T23:49:45.4839630Z rootdir: /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-14T23:49:45.4840460Z configfile: pyproject.toml
+2025-07-14T23:49:45.4841043Z plugins: cov-6.2.1, anyio-4.9.0
+2025-07-14T23:49:49.0733363Z collecting ... collected 105 items
+2025-07-14T23:49:49.0733763Z 
+2025-07-14T23:49:49.2123414Z tests/test_api.py::TestAPIEndpoints::test_root_endpoint ERROR            [  0%]
+2025-07-14T23:49:49.2549769Z tests/test_api.py::TestAPIEndpoints::test_health_endpoint ERROR          [  1%]
+2025-07-14T23:49:49.2969996Z tests/test_api.py::TestAPIEndpoints::test_get_books_empty ERROR          [  2%]
+2025-07-14T23:49:49.3383189Z tests/test_api.py::TestAPIEndpoints::test_get_books_with_data ERROR      [  3%]
+2025-07-14T23:49:49.3795616Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_success ERROR     [  4%]
+2025-07-14T23:49:49.4221259Z tests/test_api.py::TestAPIEndpoints::test_scan_books_unauthorized ERROR  [  5%]
+2025-07-14T23:49:49.4640091Z tests/test_api.py::TestAPIEndpoints::test_rate_limiting_books_endpoint ERROR [  6%]
+2025-07-14T23:49:49.5069655Z tests/test_api.py::TestAPIEndpoints::test_file_upload_size_limit ERROR   [  7%]
+2025-07-14T23:49:49.5513076Z tests/test_api.py::TestAPIEndpoints::test_security_headers_in_response ERROR [  8%]
+2025-07-14T23:49:49.5934786Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_title_extracted ERROR [  9%]
+2025-07-14T23:49:49.6359699Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_vision_processor_exception ERROR [ 10%]
+2025-07-14T23:49:49.6787313Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_file ERROR     [ 11%]
+2025-07-14T23:49:49.7207390Z tests/test_api.py::TestAPIEndpoints::test_scan_books_success ERROR       [ 12%]
+2025-07-14T23:49:49.7626996Z tests/test_api.py::TestAPIEndpoints::test_scan_books_exception ERROR     [ 13%]
+2025-07-14T23:49:49.8053640Z tests/test_api.py::TestAPIEndpoints::test_rescan_title_record_not_found ERROR [ 14%]
+2025-07-14T23:49:49.8474015Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_success ERROR [ 15%]
+2025-07-14T23:49:49.8894415Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_missing_isbn ERROR [ 16%]
+2025-07-14T23:49:49.9330418Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_invalid_isbn ERROR [ 17%]
+2025-07-14T23:49:49.9745454Z tests/test_api.py::TestAPIInitialization::test_initialize_app FAILED     [ 18%]
+2025-07-14T23:49:50.0525754Z tests/test_api.py::TestAPIInitialization::test_app_without_initialization PASSED [ 19%]
+2025-07-14T23:49:50.0767029Z tests/test_cli.py::TestCLICommands::test_cli_help PASSED                 [ 20%]
+2025-07-14T23:49:50.0863928Z tests/test_cli.py::TestCLICommands::test_scan_command_success PASSED     [ 20%]
+2025-07-14T23:49:50.0932588Z tests/test_cli.py::TestCLICommands::test_scan_command_with_options PASSED [ 21%]
+2025-07-14T23:49:50.0991922Z tests/test_cli.py::TestCLICommands::test_scan_command_no_records PASSED  [ 22%]
+2025-07-14T23:49:50.1051361Z tests/test_cli.py::TestCLICommands::test_scan_command_nonexistent_file PASSED [ 23%]
+2025-07-14T23:49:50.1106705Z tests/test_cli.py::TestCLICommands::test_scan_command_exception PASSED   [ 24%]
+2025-07-14T23:49:50.1172913Z tests/test_cli.py::TestCLICommands::test_web_command_success PASSED      [ 25%]
+2025-07-14T23:49:50.1238598Z tests/test_cli.py::TestCLICommands::test_web_command_with_options PASSED [ 26%]
+2025-07-14T23:49:50.1301644Z tests/test_cli.py::TestCLICommands::test_web_command_nonexistent_file PASSED [ 27%]
+2025-07-14T23:49:50.1359856Z tests/test_cli.py::TestCLICommands::test_web_command_exception PASSED    [ 28%]
+2025-07-14T23:49:50.1476452Z tests/test_cli.py::TestCLICommands::test_create_csv_command_empty PASSED [ 29%]
+2025-07-14T23:49:50.1570210Z tests/test_cli.py::TestCLICommands::test_create_csv_command_with_sample PASSED [ 30%]
+2025-07-14T23:49:50.1630993Z tests/test_cli.py::TestCLICommands::test_create_csv_command_creates_directory PASSED [ 31%]
+2025-07-14T23:49:50.1692698Z tests/test_cli.py::TestCLICommands::test_create_csv_command_exception PASSED [ 32%]
+2025-07-14T23:49:50.1843852Z tests/test_cli.py::TestCLICommands::test_info_command_success FAILED     [ 33%]
+2025-07-14T23:49:50.1895705Z tests/test_cli.py::TestCLICommands::test_info_command_nonexistent_file PASSED [ 34%]
+2025-07-14T23:49:50.1952700Z tests/test_cli.py::TestCLICommands::test_info_command_exception PASSED   [ 35%]
+2025-07-14T23:49:50.2035498Z tests/test_cli.py::TestCLIValidation::test_scan_cost_validation_min PASSED [ 36%]
+2025-07-14T23:49:50.2111204Z tests/test_cli.py::TestCLIValidation::test_scan_cost_validation_max PASSED [ 37%]
+2025-07-14T23:49:50.2179725Z tests/test_cli.py::TestCLIValidation::test_port_validation PASSED        [ 38%]
+2025-07-14T23:49:50.2258583Z tests/test_cli.py::TestCLIIntegration::test_scan_integration_with_core PASSED [ 39%]
+2025-07-14T23:49:50.2323248Z tests/test_cli.py::TestCLIIntegration::test_web_integration_with_api PASSED [ 40%]
+2025-07-14T23:49:50.2467676Z tests/test_cli.py::TestCLIEnvironment::test_environment_loading PASSED   [ 40%]
+2025-07-14T23:49:50.2631499Z tests/test_cli.py::TestCLIEnvironment::test_logging_configuration PASSED [ 41%]
+2025-07-14T23:49:50.2711132Z tests/test_cli.py::TestCLIEnvironment::test_verbose_logging PASSED       [ 42%]
+2025-07-14T23:49:50.2726081Z tests/test_core.py::TestBookRecord::test_book_record_creation PASSED     [ 43%]
+2025-07-14T23:49:50.2738141Z tests/test_core.py::TestBookRecord::test_book_record_to_dict PASSED      [ 44%]
+2025-07-14T23:49:50.2751268Z tests/test_core.py::TestBookRecord::test_book_record_with_all_fields PASSED [ 45%]
+2025-07-14T23:49:50.3136419Z tests/test_core.py::TestBookTriage::test_book_triage_initialization_nonexistent_file FAILED [ 46%]
+2025-07-14T23:49:50.3502257Z tests/test_core.py::TestBookTriage::test_book_triage_initialization_with_data FAILED [ 47%]
+2025-07-14T23:49:50.3870149Z tests/test_core.py::TestBookTriage::test_calculate_utilities FAILED      [ 48%]
+2025-07-14T23:49:50.4848818Z tests/test_core.py::TestBookTriage::test_calculate_utilities_with_none_values FAILED [ 49%]
+2025-07-14T23:49:50.5215047Z tests/test_core.py::TestBookTriage::test_make_decision FAILED            [ 50%]
+2025-07-14T23:49:50.5570685Z tests/test_core.py::TestBookTriage::test_add_record FAILED               [ 51%]
+2025-07-14T23:49:50.5924717Z tests/test_core.py::TestBookTriage::test_get_record_by_id FAILED         [ 52%]
+2025-07-14T23:49:50.6292525Z tests/test_core.py::TestBookTriage::test_price_to_v_calculation FAILED   [ 53%]
+2025-07-14T23:49:50.6316467Z tests/test_core.py::TestBookTriage::test_enrich_with_gpt4o_mock PASSED   [ 54%]
+2025-07-14T23:49:50.6670442Z tests/test_core.py::TestBookTriage::test_scan_cost_parameter FAILED      [ 55%]
+2025-07-14T23:49:50.6682195Z tests/test_core.py::TestDecisionEnum::test_decision_values PASSED        [ 56%]
+2025-07-14T23:49:50.6696758Z tests/test_core.py::TestDecisionEnum::test_decision_comparison PASSED    [ 57%]
+2025-07-14T23:49:50.6708041Z tests/test_core_simple.py::TestBookRecord::test_book_record_creation PASSED [ 58%]
+2025-07-14T23:49:50.6719468Z tests/test_core_simple.py::TestBookRecord::test_book_record_with_values PASSED [ 59%]
+2025-07-14T23:49:50.7035315Z tests/test_core_simple.py::TestBookTriage::test_book_triage_initialization FAILED [ 60%]
+2025-07-14T23:49:50.7370545Z tests/test_core_simple.py::TestBookTriage::test_calculate_utilities_simple FAILED [ 60%]
+2025-07-14T23:49:50.7696763Z tests/test_core_simple.py::TestBookTriage::test_make_decision_simple FAILED [ 61%]
+2025-07-14T23:49:50.7711049Z tests/test_core_simple.py::TestDecision::test_decision_values PASSED     [ 62%]
+2025-07-14T23:49:50.7736484Z tests/test_main.py::TestMainModule::test_main_no_args_with_existing_csv PASSED [ 63%]
+2025-07-14T23:49:50.7759302Z tests/test_main.py::TestMainModule::test_main_no_args_creates_new_csv PASSED [ 64%]
+2025-07-14T23:49:50.7778045Z tests/test_main.py::TestMainModule::test_main_with_args PASSED           [ 65%]
+2025-07-14T23:49:50.7800207Z tests/test_main.py::TestMainModule::test_main_finds_alternative_csv_paths PASSED [ 66%]
+2025-07-14T23:49:50.7819109Z tests/test_main.py::TestMainModule::test_main_module_entry_point PASSED  [ 67%]
+2025-07-14T23:49:50.7835105Z tests/test_vision.py::TestVisionProcessor::test_vision_processor_initialization_with_openai PASSED [ 68%]
+2025-07-14T23:49:50.7846429Z tests/test_vision.py::TestVisionProcessor::test_vision_processor_initialization_without_openai PASSED [ 69%]
+2025-07-14T23:49:50.7859561Z tests/test_vision.py::TestVisionProcessor::test_generate_id PASSED       [ 70%]
+2025-07-14T23:49:50.8054944Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_openai_success PASSED [ 71%]
+2025-07-14T23:49:50.8087850Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_fallback_to_tesseract PASSED [ 72%]
+2025-07-14T23:49:50.8101016Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_nonexistent_file PASSED [ 73%]
+2025-07-14T23:49:50.8123090Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_success PASSED [ 74%]
+2025-07-14T23:49:50.8144420Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_empty_result PASSED [ 75%]
+2025-07-14T23:49:50.8166840Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_error PASSED [ 76%]
+2025-07-14T23:49:50.8210201Z tests/test_vision.py::TestVisionProcessor::test_extract_with_openai_vision_no_content PASSED [ 77%]
+2025-07-14T23:49:50.8241962Z tests/test_vision.py::TestVisionProcessor::test_extract_with_openai_vision_no_client PASSED [ 78%]
+2025-07-14T23:49:50.8291022Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_from_image_success PASSED [ 79%]
+2025-07-14T23:49:50.8313000Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_tesseract_fallback PASSED [ 80%]
+2025-07-14T23:49:50.8326308Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_nonexistent_file PASSED [ 80%]
+2025-07-14T23:49:50.8347723Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_no_isbn_found PASSED [ 81%]
+2025-07-14T23:49:50.8378477Z tests/test_vision.py::TestVisionProcessor::test_image_format_conversion PASSED [ 82%]
+2025-07-14T23:49:50.8402611Z tests/test_vision.py::TestVisionProcessorIntegration::test_processor_with_real_image_mock_ocr PASSED [ 83%]
+2025-07-14T23:49:50.8431934Z tests/test_vision_fixed.py::TestVisionProcessor::test_vision_processor_initialization_with_openai PASSED [ 84%]
+2025-07-14T23:49:50.8443018Z tests/test_vision_fixed.py::TestVisionProcessor::test_vision_processor_initialization_without_openai PASSED [ 85%]
+2025-07-14T23:49:50.8454128Z tests/test_vision_fixed.py::TestVisionProcessor::test_generate_id PASSED [ 86%]
+2025-07-14T23:49:50.8467266Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_from_image_nonexistent_file PASSED [ 87%]
+2025-07-14T23:49:50.8511728Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_with_openai_vision_success PASSED [ 88%]
+2025-07-14T23:49:50.8540247Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_fallback_to_tesseract PASSED [ 89%]
+2025-07-14T23:49:50.8564622Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_success PASSED [ 90%]
+2025-07-14T23:49:50.8586458Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_empty_result PASSED [ 91%]
+2025-07-14T23:49:50.8608943Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_error PASSED [ 92%]
+2025-07-14T23:49:50.8652630Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_openai_vision_no_content PASSED [ 93%]
+2025-07-14T23:49:50.8670015Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_openai_vision_no_client PASSED [ 94%]
+2025-07-14T23:49:50.8712197Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_from_image_success PASSED [ 95%]
+2025-07-14T23:49:50.8733585Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_tesseract_fallback PASSED [ 96%]
+2025-07-14T23:49:50.8746694Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_nonexistent_file PASSED [ 97%]
+2025-07-14T23:49:50.8767457Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_no_isbn_found PASSED [ 98%]
+2025-07-14T23:49:50.8779007Z tests/test_vision_fixed.py::TestVisionProcessor::test_image_format_conversion PASSED [ 99%]
+2025-07-14T23:49:50.9316271Z tests/test_vision_fixed.py::TestVisionProcessorIntegration::test_processor_with_real_image_mock_ocr PASSED [100%]
+2025-07-14T23:49:50.9317373Z ERROR: Coverage failure: total of 56 is less than fail-under=81
+2025-07-14T23:49:50.9317693Z 
+2025-07-14T23:49:50.9317699Z 
+2025-07-14T23:49:50.9317835Z ==================================== ERRORS ====================================
+2025-07-14T23:49:50.9318329Z ____________ ERROR at setup of TestAPIEndpoints.test_root_endpoint _____________
+2025-07-14T23:49:50.9318801Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9319123Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9319494Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9319846Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9320180Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9320492Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9320791Z     self.client = OpenAI()
+2025-07-14T23:49:50.9321045Z                   ^^^^^^^^
+2025-07-14T23:49:50.9321577Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9322176Z     raise OpenAIError(
+2025-07-14T23:49:50.9322865Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9323972Z ___________ ERROR at setup of TestAPIEndpoints.test_health_endpoint ____________
+2025-07-14T23:49:50.9324606Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9325138Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9325680Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9326249Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9326670Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9327102Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9327530Z     self.client = OpenAI()
+2025-07-14T23:49:50.9327922Z                   ^^^^^^^^
+2025-07-14T23:49:50.9328807Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9329640Z     raise OpenAIError(
+2025-07-14T23:49:50.9330610Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9331863Z ___________ ERROR at setup of TestAPIEndpoints.test_get_books_empty ____________
+2025-07-14T23:49:50.9332526Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9332832Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9333141Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9333466Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9333775Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9334061Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9334336Z     self.client = OpenAI()
+2025-07-14T23:49:50.9334568Z                   ^^^^^^^^
+2025-07-14T23:49:50.9335052Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9335601Z     raise OpenAIError(
+2025-07-14T23:49:50.9336511Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9337343Z _________ ERROR at setup of TestAPIEndpoints.test_get_books_with_data __________
+2025-07-14T23:49:50.9337782Z tests/test_api.py:35: in client_with_data
+2025-07-14T23:49:50.9338088Z     initialize_app(temp_csv, scan_cost=2)
+2025-07-14T23:49:50.9338345Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9338613Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9338874Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9339110Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9339343Z     self.client = OpenAI()
+2025-07-14T23:49:50.9339540Z                   ^^^^^^^^
+2025-07-14T23:49:50.9339939Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9340402Z     raise OpenAIError(
+2025-07-14T23:49:50.9340916Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9342055Z _________ ERROR at setup of TestAPIEndpoints.test_upload_photo_success _________
+2025-07-14T23:49:50.9342654Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9342910Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9343165Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9343423Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9343680Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9343909Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9344150Z     self.client = OpenAI()
+2025-07-14T23:49:50.9344342Z                   ^^^^^^^^
+2025-07-14T23:49:50.9344765Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9345207Z     raise OpenAIError(
+2025-07-14T23:49:50.9345722Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9346755Z _______ ERROR at setup of TestAPIEndpoints.test_scan_books_unauthorized ________
+2025-07-14T23:49:50.9347112Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9347361Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9347613Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9347880Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9348134Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9348371Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9348607Z     self.client = OpenAI()
+2025-07-14T23:49:50.9348794Z                   ^^^^^^^^
+2025-07-14T23:49:50.9349193Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9349626Z     raise OpenAIError(
+2025-07-14T23:49:50.9350137Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9350799Z _____ ERROR at setup of TestAPIEndpoints.test_rate_limiting_books_endpoint _____
+2025-07-14T23:49:50.9351280Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9351534Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9351780Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9352051Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9352305Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9352543Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9352769Z     self.client = OpenAI()
+2025-07-14T23:49:50.9352962Z                   ^^^^^^^^
+2025-07-14T23:49:50.9353358Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9353791Z     raise OpenAIError(
+2025-07-14T23:49:50.9354300Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9354951Z ________ ERROR at setup of TestAPIEndpoints.test_file_upload_size_limit ________
+2025-07-14T23:49:50.9355319Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9355663Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9356179Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9356652Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9357090Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9357365Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9357593Z     self.client = OpenAI()
+2025-07-14T23:49:50.9357788Z                   ^^^^^^^^
+2025-07-14T23:49:50.9358181Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9358622Z     raise OpenAIError(
+2025-07-14T23:49:50.9359135Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9359799Z _____ ERROR at setup of TestAPIEndpoints.test_security_headers_in_response _____
+2025-07-14T23:49:50.9360385Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9360633Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9360996Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9361262Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9361517Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9361814Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9362134Z     self.client = OpenAI()
+2025-07-14T23:49:50.9362348Z                   ^^^^^^^^
+2025-07-14T23:49:50.9362750Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9363186Z     raise OpenAIError(
+2025-07-14T23:49:50.9363698Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9364564Z ___ ERROR at setup of TestAPIEndpoints.test_upload_photo_no_title_extracted ____
+2025-07-14T23:49:50.9364940Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9365191Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9365440Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9365710Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9366206Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9366456Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9366679Z     self.client = OpenAI()
+2025-07-14T23:49:50.9366888Z                   ^^^^^^^^
+2025-07-14T23:49:50.9367294Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9367736Z     raise OpenAIError(
+2025-07-14T23:49:50.9368241Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9368928Z _ ERROR at setup of TestAPIEndpoints.test_upload_photo_vision_processor_exception _
+2025-07-14T23:49:50.9369440Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9369686Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9369938Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9370196Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9370450Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9370677Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9370903Z     self.client = OpenAI()
+2025-07-14T23:49:50.9371090Z                   ^^^^^^^^
+2025-07-14T23:49:50.9371484Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9371922Z     raise OpenAIError(
+2025-07-14T23:49:50.9372421Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9373090Z _________ ERROR at setup of TestAPIEndpoints.test_upload_photo_no_file _________
+2025-07-14T23:49:50.9373450Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9373685Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9373945Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9374201Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9374455Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9374684Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9374914Z     self.client = OpenAI()
+2025-07-14T23:49:50.9375108Z                   ^^^^^^^^
+2025-07-14T23:49:50.9375491Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9376073Z     raise OpenAIError(
+2025-07-14T23:49:50.9376628Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9377271Z __________ ERROR at setup of TestAPIEndpoints.test_scan_books_success __________
+2025-07-14T23:49:50.9377621Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9377862Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9378105Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9378369Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9378617Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9378852Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9379072Z     self.client = OpenAI()
+2025-07-14T23:49:50.9379270Z                   ^^^^^^^^
+2025-07-14T23:49:50.9379653Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9380081Z     raise OpenAIError(
+2025-07-14T23:49:50.9380579Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9381339Z _________ ERROR at setup of TestAPIEndpoints.test_scan_books_exception _________
+2025-07-14T23:49:50.9381692Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9381929Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9382180Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9382435Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9382688Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9382924Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9383141Z     self.client = OpenAI()
+2025-07-14T23:49:50.9383334Z                   ^^^^^^^^
+2025-07-14T23:49:50.9383719Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9384150Z     raise OpenAIError(
+2025-07-14T23:49:50.9384642Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9385311Z ____ ERROR at setup of TestAPIEndpoints.test_rescan_title_record_not_found _____
+2025-07-14T23:49:50.9385794Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9386149Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9386403Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9386663Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9386919Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9387145Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9387378Z     self.client = OpenAI()
+2025-07-14T23:49:50.9387575Z                   ^^^^^^^^
+2025-07-14T23:49:50.9387960Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9388394Z     raise OpenAIError(
+2025-07-14T23:49:50.9388890Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9389545Z _______ ERROR at setup of TestAPIEndpoints.test_add_manual_title_success _______
+2025-07-14T23:49:50.9389904Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9390153Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9390407Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9390671Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9390926Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9391154Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9391380Z     self.client = OpenAI()
+2025-07-14T23:49:50.9391567Z                   ^^^^^^^^
+2025-07-14T23:49:50.9391969Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9392394Z     raise OpenAIError(
+2025-07-14T23:49:50.9392904Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9393564Z ____ ERROR at setup of TestAPIEndpoints.test_add_manual_title_missing_isbn _____
+2025-07-14T23:49:50.9393924Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9394165Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9394407Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9394671Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9394913Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9395149Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9395371Z     self.client = OpenAI()
+2025-07-14T23:49:50.9395555Z                   ^^^^^^^^
+2025-07-14T23:49:50.9396037Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9396464Z     raise OpenAIError(
+2025-07-14T23:49:50.9396957Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9397726Z ____ ERROR at setup of TestAPIEndpoints.test_add_manual_title_invalid_isbn _____
+2025-07-14T23:49:50.9398087Z tests/test_api.py:50: in client_empty
+2025-07-14T23:49:50.9398330Z     initialize_app(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9398573Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9398835Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9399080Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9399312Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9399530Z     self.client = OpenAI()
+2025-07-14T23:49:50.9399721Z                   ^^^^^^^^
+2025-07-14T23:49:50.9400101Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9400534Z     raise OpenAIError(
+2025-07-14T23:49:50.9401031Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9401594Z =================================== FAILURES ===================================
+2025-07-14T23:49:50.9402115Z __________________ TestAPIInitialization.test_initialize_app ___________________
+2025-07-14T23:49:50.9402483Z tests/test_api.py:285: in test_initialize_app
+2025-07-14T23:49:50.9402750Z     initialize_app(csv_path, scan_cost=3)
+2025-07-14T23:49:50.9402996Z book_triage/api.py:82: in initialize_app
+2025-07-14T23:49:50.9403258Z     book_triage = BookTriage(csv_path, scan_cost)
+2025-07-14T23:49:50.9403503Z                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9403739Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9403955Z     self.client = OpenAI()
+2025-07-14T23:49:50.9404153Z                   ^^^^^^^^
+2025-07-14T23:49:50.9404539Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9404982Z     raise OpenAIError(
+2025-07-14T23:49:50.9405483Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9406245Z __________________ TestCLICommands.test_info_command_success ___________________
+2025-07-14T23:49:50.9406614Z tests/test_cli.py:235: in test_info_command_success
+2025-07-14T23:49:50.9406891Z     assert result.exit_code == 0
+2025-07-14T23:49:50.9407111Z E   assert 1 == 0
+2025-07-14T23:49:50.9407311Z E    +  where 1 = <Result SystemExit(1)>.exit_code
+2025-07-14T23:49:50.9407649Z ------------------------------ Captured log call -------------------------------
+2025-07-14T23:49:50.9408375Z ERROR    book_triage.cli:cli.py:253 Error analyzing CSV: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9409106Z _______ TestBookTriage.test_book_triage_initialization_nonexistent_file ________
+2025-07-14T23:49:50.9409558Z tests/test_core.py:117: in test_book_triage_initialization_nonexistent_file
+2025-07-14T23:49:50.9409913Z     triage = BookTriage(csv_path, scan_cost=3)
+2025-07-14T23:49:50.9410168Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9410415Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9410640Z     self.client = OpenAI()
+2025-07-14T23:49:50.9410842Z                   ^^^^^^^^
+2025-07-14T23:49:50.9411237Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9411672Z     raise OpenAIError(
+2025-07-14T23:49:50.9412168Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9412816Z ___________ TestBookTriage.test_book_triage_initialization_with_data ___________
+2025-07-14T23:49:50.9413242Z tests/test_core.py:137: in test_book_triage_initialization_with_data
+2025-07-14T23:49:50.9413572Z     triage = BookTriage(csv_path, scan_cost=2)
+2025-07-14T23:49:50.9413957Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9414184Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9414412Z     self.client = OpenAI()
+2025-07-14T23:49:50.9414608Z                   ^^^^^^^^
+2025-07-14T23:49:50.9415015Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9415442Z     raise OpenAIError(
+2025-07-14T23:49:50.9416066Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9416693Z ___________________ TestBookTriage.test_calculate_utilities ____________________
+2025-07-14T23:49:50.9417048Z tests/test_core.py:156: in test_calculate_utilities
+2025-07-14T23:49:50.9417327Z     triage = BookTriage(csv_path)
+2025-07-14T23:49:50.9417538Z              ^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9417753Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9417976Z     self.client = OpenAI()
+2025-07-14T23:49:50.9418171Z                   ^^^^^^^^
+2025-07-14T23:49:50.9418675Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9419102Z     raise OpenAIError(
+2025-07-14T23:49:50.9419637Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9420278Z ___________ TestBookTriage.test_calculate_utilities_with_none_values ___________
+2025-07-14T23:49:50.9420700Z tests/test_core.py:184: in test_calculate_utilities_with_none_values
+2025-07-14T23:49:50.9421024Z     triage = BookTriage(csv_path)
+2025-07-14T23:49:50.9421233Z              ^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9421448Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9421663Z     self.client = OpenAI()
+2025-07-14T23:49:50.9421859Z                   ^^^^^^^^
+2025-07-14T23:49:50.9422245Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9422685Z     raise OpenAIError(
+2025-07-14T23:49:50.9423187Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9423805Z ______________________ TestBookTriage.test_make_decision _______________________
+2025-07-14T23:49:50.9424152Z tests/test_core.py:209: in test_make_decision
+2025-07-14T23:49:50.9424404Z     triage = BookTriage(csv_path)
+2025-07-14T23:49:50.9424619Z              ^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9424826Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9425050Z     self.client = OpenAI()
+2025-07-14T23:49:50.9425238Z                   ^^^^^^^^
+2025-07-14T23:49:50.9425634Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9426163Z     raise OpenAIError(
+2025-07-14T23:49:50.9426662Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9427290Z ________________________ TestBookTriage.test_add_record ________________________
+2025-07-14T23:49:50.9427617Z tests/test_core.py:288: in test_add_record
+2025-07-14T23:49:50.9427870Z     triage = BookTriage(csv_path)
+2025-07-14T23:49:50.9428078Z              ^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9428291Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9428516Z     self.client = OpenAI()
+2025-07-14T23:49:50.9428703Z                   ^^^^^^^^
+2025-07-14T23:49:50.9429103Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9429530Z     raise OpenAIError(
+2025-07-14T23:49:50.9430026Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9430783Z _____________________ TestBookTriage.test_get_record_by_id _____________________
+2025-07-14T23:49:50.9431132Z tests/test_core.py:319: in test_get_record_by_id
+2025-07-14T23:49:50.9431402Z     triage = BookTriage(csv_path)
+2025-07-14T23:49:50.9431608Z              ^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9431820Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9432034Z     self.client = OpenAI()
+2025-07-14T23:49:50.9432227Z                   ^^^^^^^^
+2025-07-14T23:49:50.9432607Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9433040Z     raise OpenAIError(
+2025-07-14T23:49:50.9433529Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9434159Z __________________ TestBookTriage.test_price_to_v_calculation __________________
+2025-07-14T23:49:50.9434533Z tests/test_core.py:352: in test_price_to_v_calculation
+2025-07-14T23:49:50.9434815Z     triage = BookTriage(csv_path)
+2025-07-14T23:49:50.9435031Z              ^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9435370Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9435596Z     self.client = OpenAI()
+2025-07-14T23:49:50.9435777Z                   ^^^^^^^^
+2025-07-14T23:49:50.9436268Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9436704Z     raise OpenAIError(
+2025-07-14T23:49:50.9437190Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9437816Z ___________________ TestBookTriage.test_scan_cost_parameter ____________________
+2025-07-14T23:49:50.9438168Z tests/test_core.py:404: in test_scan_cost_parameter
+2025-07-14T23:49:50.9438478Z     triage_low_cost = BookTriage(csv_path, scan_cost=1)
+2025-07-14T23:49:50.9438750Z                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9438999Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9439224Z     self.client = OpenAI()
+2025-07-14T23:49:50.9439418Z                   ^^^^^^^^
+2025-07-14T23:49:50.9439813Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9440236Z     raise OpenAIError(
+2025-07-14T23:49:50.9440737Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9441363Z ________________ TestBookTriage.test_book_triage_initialization ________________
+2025-07-14T23:49:50.9441778Z tests/test_core_simple.py:50: in test_book_triage_initialization
+2025-07-14T23:49:50.9442099Z     triage = BookTriage(csv_path)
+2025-07-14T23:49:50.9442310Z              ^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9442537Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9442757Z     self.client = OpenAI()
+2025-07-14T23:49:50.9442965Z                   ^^^^^^^^
+2025-07-14T23:49:50.9443348Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9443788Z     raise OpenAIError(
+2025-07-14T23:49:50.9444289Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9444913Z ________________ TestBookTriage.test_calculate_utilities_simple ________________
+2025-07-14T23:49:50.9445327Z tests/test_core_simple.py:62: in test_calculate_utilities_simple
+2025-07-14T23:49:50.9445636Z     triage = BookTriage(csv_path)
+2025-07-14T23:49:50.9445970Z              ^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9446179Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9446409Z     self.client = OpenAI()
+2025-07-14T23:49:50.9446608Z                   ^^^^^^^^
+2025-07-14T23:49:50.9446990Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9447617Z     raise OpenAIError(
+2025-07-14T23:49:50.9448111Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9448735Z ___________________ TestBookTriage.test_make_decision_simple ___________________
+2025-07-14T23:49:50.9449108Z tests/test_core_simple.py:89: in test_make_decision_simple
+2025-07-14T23:49:50.9449406Z     triage = BookTriage(csv_path)
+2025-07-14T23:49:50.9449619Z              ^^^^^^^^^^^^^^^^^^^^
+2025-07-14T23:49:50.9449823Z book_triage/core.py:81: in __init__
+2025-07-14T23:49:50.9450044Z     self.client = OpenAI()
+2025-07-14T23:49:50.9450226Z                   ^^^^^^^^
+2025-07-14T23:49:50.9450615Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/openai/_client.py:130: in __init__
+2025-07-14T23:49:50.9451038Z     raise OpenAIError(
+2025-07-14T23:49:50.9451535Z E   openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9452219Z ================================ tests coverage ================================
+2025-07-14T23:49:50.9452572Z _______________ coverage: platform linux, python 3.12.11-final-0 _______________
+2025-07-14T23:49:50.9452823Z 
+2025-07-14T23:49:50.9452933Z Name                      Stmts   Miss  Cover   Missing
+2025-07-14T23:49:50.9453204Z -------------------------------------------------------
+2025-07-14T23:49:50.9453478Z book_triage/__init__.py       3      0   100%
+2025-07-14T23:49:50.9453733Z book_triage/__main__.py      21      0   100%
+2025-07-14T23:49:50.9454085Z book_triage/api.py          156     99    37%   41, 66, 83, 89-90, 393-444, 455-456, 462-472, 477-529, 534-560
+2025-07-14T23:49:50.9454459Z book_triage/cli.py          117     30    74%   204-250
+2025-07-14T23:49:50.9454914Z book_triage/core.py         176    101    43%   91-164, 168-181, 186-199, 203-224, 229-230, 235, 261-263, 266-267, 271, 275-276, 280-295, 299, 303-306
+2025-07-14T23:49:50.9455426Z book_triage/security.py      45     31    31%   20-32, 37-48, 54-69, 77-90
+2025-07-14T23:49:50.9455812Z book_triage/vision.py        94      7    93%   156-157, 163, 165-166, 168-169
+2025-07-14T23:49:50.9456255Z -------------------------------------------------------
+2025-07-14T23:49:50.9456518Z TOTAL                       612    268    56%
+2025-07-14T23:49:50.9456843Z FAIL Required test coverage of 81.0% not reached. Total coverage: 56.21%
+2025-07-14T23:49:50.9457213Z =========================== short test summary info ============================
+2025-07-14T23:49:50.9458047Z FAILED tests/test_api.py::TestAPIInitialization::test_initialize_app - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9458945Z FAILED tests/test_cli.py::TestCLICommands::test_info_command_success - assert 1 == 0
+2025-07-14T23:49:50.9459347Z  +  where 1 = <Result SystemExit(1)>.exit_code
+2025-07-14T23:49:50.9460192Z FAILED tests/test_core.py::TestBookTriage::test_book_triage_initialization_nonexistent_file - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9461627Z FAILED tests/test_core.py::TestBookTriage::test_book_triage_initialization_with_data - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9462943Z FAILED tests/test_core.py::TestBookTriage::test_calculate_utilities - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9464235Z FAILED tests/test_core.py::TestBookTriage::test_calculate_utilities_with_none_values - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9465664Z FAILED tests/test_core.py::TestBookTriage::test_make_decision - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9466982Z FAILED tests/test_core.py::TestBookTriage::test_add_record - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9468176Z FAILED tests/test_core.py::TestBookTriage::test_get_record_by_id - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9469421Z FAILED tests/test_core.py::TestBookTriage::test_price_to_v_calculation - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9470789Z FAILED tests/test_core.py::TestBookTriage::test_scan_cost_parameter - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9472084Z FAILED tests/test_core_simple.py::TestBookTriage::test_book_triage_initialization - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:50.9473431Z FAILED tests/test_core_simple.py::TestBookTriage::test_calculate_utilities_simple - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2527301Z FAILED tests/test_core_simple.py::TestBookTriage::test_make_decision_simple - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2529892Z ERROR tests/test_api.py::TestAPIEndpoints::test_root_endpoint - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2532215Z ERROR tests/test_api.py::TestAPIEndpoints::test_health_endpoint - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2534206Z ERROR tests/test_api.py::TestAPIEndpoints::test_get_books_empty - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2536209Z ERROR tests/test_api.py::TestAPIEndpoints::test_get_books_with_data - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2538104Z ERROR tests/test_api.py::TestAPIEndpoints::test_upload_photo_success - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2540014Z ERROR tests/test_api.py::TestAPIEndpoints::test_scan_books_unauthorized - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2541974Z ERROR tests/test_api.py::TestAPIEndpoints::test_rate_limiting_books_endpoint - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2543681Z ERROR tests/test_api.py::TestAPIEndpoints::test_file_upload_size_limit - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2546011Z ERROR tests/test_api.py::TestAPIEndpoints::test_security_headers_in_response - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2547398Z ERROR tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_title_extracted - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2548835Z ERROR tests/test_api.py::TestAPIEndpoints::test_upload_photo_vision_processor_exception - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2550198Z ERROR tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_file - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2551660Z ERROR tests/test_api.py::TestAPIEndpoints::test_scan_books_success - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2552957Z ERROR tests/test_api.py::TestAPIEndpoints::test_scan_books_exception - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2554242Z ERROR tests/test_api.py::TestAPIEndpoints::test_rescan_title_record_not_found - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2555561Z ERROR tests/test_api.py::TestAPIEndpoints::test_add_manual_title_success - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2557005Z ERROR tests/test_api.py::TestAPIEndpoints::test_add_manual_title_missing_isbn - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2558309Z ERROR tests/test_api.py::TestAPIEndpoints::test_add_manual_title_invalid_isbn - openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2025-07-14T23:49:51.2559133Z =================== 14 failed, 73 passed, 18 errors in 5.46s ===================
+2025-07-14T23:49:51.5627969Z ##[error]Process completed with exit code 1.
+2025-07-14T23:49:51.5733293Z Post job cleanup.
+2025-07-14T23:49:51.6743955Z [command]/usr/bin/git version
+2025-07-14T23:49:51.6783727Z git version 2.50.1
+2025-07-14T23:49:51.6827653Z Temporarily overriding HOME='/home/runner/work/_temp/f88afe1f-0188-4c47-aecc-5624bd5075f0' before making global git config changes
+2025-07-14T23:49:51.6828876Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-14T23:49:51.6833846Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-14T23:49:51.6888863Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-14T23:49:51.6928508Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-14T23:49:51.7173827Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-14T23:49:51.7198111Z http.https://github.com/.extraheader
+2025-07-14T23:49:51.7211890Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-14T23:49:51.7246553Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-14T23:49:51.7593512Z Cleaning up orphan processes

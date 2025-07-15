@@ -1,0 +1,18 @@
+﻿2025-07-14T23:49:36.1900197Z ##[group]Run grep -r "eval\|exec\|subprocess\.call" book_triage/ || echo "No dangerous functions found"
+2025-07-14T23:49:36.1900844Z [36;1mgrep -r "eval\|exec\|subprocess\.call" book_triage/ || echo "No dangerous functions found"[0m
+2025-07-14T23:49:36.1901433Z [36;1mgrep -r "password\|secret\|key" book_triage/ | grep -v "test" | head -5 || echo "No hardcoded secrets found" [0m
+2025-07-14T23:49:36.1929694Z shell: /usr/bin/bash -e {0}
+2025-07-14T23:49:36.1929915Z env:
+2025-07-14T23:49:36.1930190Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:36.1930601Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-14T23:49:36.1930991Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:36.1931348Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:36.1931699Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-14T23:49:36.1932263Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-14T23:49:36.1932590Z ##[endgroup]
+2025-07-14T23:49:36.1996209Z No dangerous functions found
+2025-07-14T23:49:36.2018020Z book_triage/env_example.txt:OPENAI_API_KEY=your_openai_api_key_here
+2025-07-14T23:49:36.2018667Z book_triage/security.py:import secrets
+2025-07-14T23:49:36.2019074Z book_triage/security.py:    expected_password = os.getenv("BOOK_PASS", "password")
+2025-07-14T23:49:36.2019672Z book_triage/security.py:    is_correct_username = secrets.compare_digest(credentials.username, expected_username)
+2025-07-14T23:49:36.2020340Z book_triage/security.py:    is_correct_password = secrets.compare_digest(credentials.password, expected_password)
