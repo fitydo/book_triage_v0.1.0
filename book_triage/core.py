@@ -78,7 +78,7 @@ class BookTriage:
         """Initialize BookTriage with CSV file path and scan cost."""
         self.csv_path = Path(csv_path)
         self.scan_cost = scan_cost
-        self.client = OpenAI()
+        self.client = None  # Initialize OpenAI client only when needed
         self.records: List[BookRecord] = []
         self._load_csv()
     
@@ -228,6 +228,15 @@ class BookTriage:
         if not record.title and not (record.isbn and len(record.isbn) == 13 and record.isbn.isdigit()):
             logger.warning(f"No title or valid ISBN for record {record.id}, skipping GPT-4o enrichment")
             return
+        
+        # Initialize OpenAI client only when needed
+        if self.client is None:
+            try:
+                self.client = OpenAI()
+            except Exception as e:
+                logger.error(f"Failed to initialize OpenAI client: {e}")
+                return
+        
         try:
             logger.info(f"[GPT-4o] Starting enrichment for record {record.id} (title: {record.title}, isbn: {record.isbn})")
             print(f"[GPT-4o] Starting enrichment for record {record.id} (title: {record.title}, isbn: {record.isbn})")
