@@ -555,7 +555,7 @@ async def rescan_title(request: Request) -> dict:
             record.V = 5
     # Only re-enrich this record (calls GPT-4o) for URL if user did not provide a URL
     should_enrich_url = (
-        (not record.url or record.url == 'unknown') or (not record.url_com or record.url_com == 'unknown')
+        (not record.url or record.url == 'unknown') and (not record.url_com or record.url_com == 'unknown')
     )
     if should_enrich_url and record.F is not None and record.A is not None and record.S is not None and record.purchase_price > 0:
         book_triage.enrich_with_gpt4o(record)

@@ -273,6 +273,59 @@ class TestAPIEndpoints:
         assert "detail" in data
         assert "ISBN is 13 digits" in data["detail"]
 
+    def test_rescan_title_preserves_values(self, client_with_data):
+        """Test that rescan_title preserves existing values when fields are null."""
+        # First update with initial values
+        initial_data = {
+            "id": "test1",
+            "title": "Test Book",
+            "isbn": "",
+            "url": "https://amazon.co.jp/test1",
+            "url_com": "",
+            "purchase_price": 2000,
+            "used_price": 1500,
+            "V": "4",
+            "R": "2",
+            "P": "3",
+            "F": "",
+            "A": "",
+            "S": ""
+        }
+        response = client_with_data.post("/rescan_title", json=initial_data)
+        assert response.status_code == 200
+        
+        # Now update with just a new URL, sending null for other fields
+        update_data = {
+            "id": "test1",
+            "title": "Test Book",
+            "isbn": "",
+            "url": "https://amazon.co.jp/test1-updated",
+            "url_com": "",
+            "purchase_price": None,
+            "used_price": None,
+            "V": "",
+            "R": "",
+            "P": "",
+            "F": "",
+            "A": "",
+            "S": ""
+        }
+        response = client_with_data.post("/rescan_title", json=update_data)
+        assert response.status_code == 200
+        
+        # Get the book and verify values were preserved
+        response = client_with_data.get("/books")
+        assert response.status_code == 200
+        books = response.json()
+        book = next(b for b in books if b["id"] == "test1")
+        
+        assert book["url"] == "https://amazon.co.jp/test1-updated"  # URL updated
+        assert book["purchase_price"] == 2000  # Price preserved
+        assert book["used_price"] == 1500  # Used price preserved
+        assert book["V"] == 4  # V preserved
+        assert book["R"] == 2  # R preserved
+        assert book["P"] == 3  # P preserved
+
 
 class TestAPIInitialization:
     """Test API initialization."""

@@ -4,7 +4,7 @@
 import re
 import subprocess
 import time
-import requests
+import urllib.request
 from pathlib import Path
 from book_triage.core import BookTriage, BookRecord
 import uvicorn
@@ -25,7 +25,8 @@ def test_verified_column_uses_strict_equality():
     proc.start()
     try:
         time.sleep(1.5)  # give server time
-        html = requests.get(f"http://127.0.0.1:{PORT}").text
+        with urllib.request.urlopen(f"http://127.0.0.1:{PORT}") as response:
+            html = response.read().decode('utf-8')
         # Ensure strict equality JS is present
         assert "book.verified === 'yes' ? 'Yes' : 'No'" in html
     finally:

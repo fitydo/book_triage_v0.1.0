@@ -253,11 +253,13 @@ class BookTriage:
             - Search Amazon.co.jp and Amazon.com for the best matching product page.
             - If you cannot find a real product, return the string \"unknown\" for the URL.
 
-            Respond in JSON format:
+            IMPORTANT: You MUST respond with ONLY a valid JSON object in the following format, with no additional text:
             {{
               "amazon_co_jp_url": "...",
               "amazon_com_url": "..."
             }}
+
+            Do not include any explanations, markdown formatting, or other text. Only the JSON object.
             """
             response = self.client.chat.completions.create(
                 model="gpt-4o",
