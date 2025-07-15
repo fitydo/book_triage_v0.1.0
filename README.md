@@ -119,7 +119,7 @@ python test_installation.py
 
 If any tests fail, check the troubleshooting section in the output.
 
-## 📊 Book Scoring System (FRAVSP)
+## 📊 Book Scoring System (VRPFAS)
 
 Book Triage uses a 6-factor scoring system to help you make decisions about your books. Each book is scored on a scale of 1-5 for each factor:
 
@@ -127,12 +127,13 @@ Book Triage uses a 6-factor scoring system to help you make decisions about your
 
 | **Factor** | **Code** | **Description** | **Example** |
 |------------|----------|-----------------|-------------|
-| **Frequency** | **F** | How often you reference/use this book | 5 = Daily reference, 1 = Never used |
-| **Rarity** | **R** | How rare or hard to find this book is | 5 = Out of print/rare, 1 = Common/easily available |
-| **Annotation** | **A** | How much you need to annotate/write in this book | 5 = Extensive notes needed, 1 = Read-only |
 | **Value** | **V** | Resale value - how much money you could get by selling | 5 = High resale value, 1 = Low/no resale value |
-| **Sentimental** | **S** | Emotional/personal attachment to this book | 5 = Irreplaceable memories, 1 = No attachment |
+| **Rarity** | **R** | How rare or hard to find this book is | 5 = Out of print/rare, 1 = Common/easily available |
 | **scannability** | **P** | How easy this book is to scan/digitize | 5 = Easy to scan, 1 = Difficult/impossible to scan |
+| **Frequency** | **F** | How often you reference/use this book | 5 = Daily reference, 1 = Never used |
+| **Annotation** | **A** | How much you need to annotate/write in this book | 5 = Extensive notes needed, 1 = Read-only |
+| **Sentimental** | **S** | Emotional/personal attachment to this book | 5 = Irreplaceable memories, 1 = No attachment |
+
 
 ### Decision Algorithm
 
