@@ -1,0 +1,113 @@
+﻿2025-07-15T03:02:54.4382172Z ##[group]Run codecov/codecov-action@v3
+2025-07-15T03:02:54.4382473Z with:
+2025-07-15T03:02:54.4382653Z   file: ./coverage.xml
+2025-07-15T03:02:54.4382858Z   flags: unittests
+2025-07-15T03:02:54.4383051Z   name: codecov-umbrella
+2025-07-15T03:02:54.4383256Z   fail_ci_if_error: false
+2025-07-15T03:02:54.4383458Z   verbose: true
+2025-07-15T03:02:54.4383654Z env:
+2025-07-15T03:02:54.4383886Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:54.4384292Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:54.4384681Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:54.4385027Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:54.4385385Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:54.4385728Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:54.4386033Z   BOOK_USER: testuser
+2025-07-15T03:02:54.4386232Z   BOOK_PASS: testpass
+2025-07-15T03:02:54.4386457Z   OPENAI_API_KEY: test-key
+2025-07-15T03:02:54.4387043Z   CODECOV_TOKEN: ***
+2025-07-15T03:02:54.4387247Z ##[endgroup]
+2025-07-15T03:02:54.5476831Z {
+2025-07-15T03:02:54.5477243Z   execArgs: [
+2025-07-15T03:02:54.5477585Z     '-n',
+2025-07-15T03:02:54.5477911Z     'codecov-umbrella',
+2025-07-15T03:02:54.5478286Z     '-Q',
+2025-07-15T03:02:54.5478666Z     'github-action-3.1.6',
+2025-07-15T03:02:54.5479048Z     '-f',
+2025-07-15T03:02:54.5479371Z     './coverage.xml',
+2025-07-15T03:02:54.5479734Z     '-F',
+2025-07-15T03:02:54.5480028Z     'unittests',
+2025-07-15T03:02:54.5480340Z     '-v'
+2025-07-15T03:02:54.5480648Z   ]
+2025-07-15T03:02:54.5480915Z }
+2025-07-15T03:02:54.5483169Z ==> linux OS detected
+2025-07-15T03:02:54.9268415Z https://uploader.codecov.io/latest/linux/codecov.SHA256SUM
+2025-07-15T03:02:54.9410366Z Received SHA256SUM b37359013b48fbc3b0790d59fc474a52a260fb96e28e1b2c2ae001dc9b9cc996  codecov
+2025-07-15T03:02:54.9798665Z Received SHA256SUM signature -----BEGIN PGP SIGNATURE-----
+2025-07-15T03:02:54.9799269Z 
+2025-07-15T03:02:54.9799635Z iQIzBAABCgAdFiEEJwNOf9uFDgu8LGL/gGuyiu13mGkFAmas/x0ACgkQgGuyiu13
+2025-07-15T03:02:54.9800502Z mGnuYxAAhL4nufMHTUEJVbG790Tkshg/NwRAQ1I2FmpPOy1HwZnlX0arTb2Fk6r5
+2025-07-15T03:02:54.9801364Z jTUIVHTARwbsQc/gEnaety1RULuMhyn4TlkkTm4rrCENlMvrbkmrT55lbLzx7FzG
+2025-07-15T03:02:54.9802475Z qMS1oEUUZaRDNT/AqrhtUnCtq8UsR4eBgdgKgkxsgSUKjfkumYqfsBp3QBerLcqB
+2025-07-15T03:02:54.9803406Z xeXP2y9qxZ95rVVepMWY+7pdywAhUAyKgA6sO6ejPdwSybSHZeySAFS6MGDhRhcM
+2025-07-15T03:02:54.9804286Z +WTr/2WhRjjOfmJGODTDFmMjUrtnlU5FSqhA8zJ2zv7ZInw7yzelA05tEVz0HT/Q
+2025-07-15T03:02:54.9805149Z HnIvyJZzXtX81hHDgBzXG7Vw8ElQMTyAiySpKF4KcMWaTc+mIm5LG+yhgJXhUqFL
+2025-07-15T03:02:54.9806019Z R1NXxuyh0050+T7zhsFLadw7706Q8QCQKDpBDYgRbjUr+rkRgZBGLcWcoFiqAzNF
+2025-07-15T03:02:54.9806904Z 7lx6W9lxF9M97wKNJezhWvvzR9kI04l676BvVLTX9yPG6MUakLqKgsbR0NuOz7xA
+2025-07-15T03:02:54.9807802Z yCDKCEXfjXr53h1TP3oqmC5wguSurjmIOcVCK77iiv1Sy63RnK+SUXAyIeNsJwME
+2025-07-15T03:02:54.9808678Z KdfVS6l1enI4s35IQzmmd0QxhfiHFTUYHuFPgE78z2Ik93KcSkVc7AZg2C76PCfZ
+2025-07-15T03:02:54.9809469Z fWy10hSbRM0BS5hjauyrSrA4++8ku/KoJhXwkGu49N8GylTcySk=
+2025-07-15T03:02:54.9810001Z =n6lq
+2025-07-15T03:02:54.9810339Z -----END PGP SIGNATURE-----
+2025-07-15T03:02:54.9810610Z 
+2025-07-15T03:02:54.9946481Z ==> SHASUM file signed by key id 806bb28aed779869
+2025-07-15T03:02:55.0705123Z ==> Uploader SHASUM verified (b37359013b48fbc3b0790d59fc474a52a260fb96e28e1b2c2ae001dc9b9cc996  codecov)
+2025-07-15T03:02:55.0706305Z ==> Running version latest
+2025-07-15T03:02:55.1346881Z ==> Running version v0.8.0
+2025-07-15T03:02:55.1364151Z [command]/home/runner/work/_actions/codecov/codecov-action/v3/dist/codecov -n codecov-umbrella -Q github-action-3.1.6 -f ./coverage.xml -F unittests -v
+2025-07-15T03:02:55.3458427Z [2025-07-15T03:02:55.344Z] ['verbose'] Start of uploader: 1752548575344...
+2025-07-15T03:02:55.3462198Z [2025-07-15T03:02:55.346Z] ['info'] 
+2025-07-15T03:02:55.3462881Z      _____          _
+2025-07-15T03:02:55.3463836Z     / ____|        | |
+2025-07-15T03:02:55.3464636Z    | |     ___   __| | ___  ___ _____   __
+2025-07-15T03:02:55.3465019Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2025-07-15T03:02:55.3465286Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2025-07-15T03:02:55.3465549Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2025-07-15T03:02:55.3465732Z 
+2025-07-15T03:02:55.3465993Z   Codecov report uploader 0.8.0
+2025-07-15T03:02:55.3517939Z [2025-07-15T03:02:55.351Z] ['info'] => Project root located at: /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:02:55.3522343Z [2025-07-15T03:02:55.352Z] ['info'] ->  Token found by environment variables
+2025-07-15T03:02:55.3530118Z [2025-07-15T03:02:55.352Z] ['verbose'] Start of network processing...
+2025-07-15T03:02:55.3531065Z [2025-07-15T03:02:55.352Z] ['verbose'] Searching for files in /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:02:55.4529200Z [2025-07-15T03:02:55.452Z] ['verbose'] Skipping coveragepy, files already specified
+2025-07-15T03:02:55.4530005Z [2025-07-15T03:02:55.452Z] ['info'] Searching for coverage files...
+2025-07-15T03:02:55.4914075Z [2025-07-15T03:02:55.490Z] ['verbose'] Preparing to clean the following coverage paths: ./coverage.xml
+2025-07-15T03:02:55.4914885Z [2025-07-15T03:02:55.491Z] ['info'] => Found 1 possible coverage files:
+2025-07-15T03:02:55.4915235Z   ./coverage.xml
+2025-07-15T03:02:55.4915589Z [2025-07-15T03:02:55.491Z] ['verbose'] End of network processing
+2025-07-15T03:02:55.4916267Z [2025-07-15T03:02:55.491Z] ['info'] Processing ./coverage.xml...
+2025-07-15T03:02:55.4943584Z [2025-07-15T03:02:55.494Z] ['info'] Detected GitHub Actions as the CI provider.
+2025-07-15T03:02:55.4944547Z [2025-07-15T03:02:55.494Z] ['verbose'] -> Using the following env variables:
+2025-07-15T03:02:55.4945887Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_ACTION: __codecov_codecov-action
+2025-07-15T03:02:55.4946719Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_HEAD_REF: 
+2025-07-15T03:02:55.4947468Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_REF: refs/heads/main
+2025-07-15T03:02:55.4948379Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_REPOSITORY: fitydo/book_triage_v0.1.0
+2025-07-15T03:02:55.4949070Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_RUN_ID: 16282982068
+2025-07-15T03:02:55.4949923Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_SERVER_URL: https://github.com
+2025-07-15T03:02:55.4950762Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_SHA: 6e5257eb7b60bbc972499ed38d438a155894cf17
+2025-07-15T03:02:55.4951312Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_WORKFLOW: CI
+2025-07-15T03:02:55.6927978Z [2025-07-15T03:02:55.692Z] ['verbose'] Using the following upload parameters:
+2025-07-15T03:02:55.6929731Z [2025-07-15T03:02:55.692Z] ['verbose'] branch
+2025-07-15T03:02:55.6930232Z [2025-07-15T03:02:55.692Z] ['verbose'] build
+2025-07-15T03:02:55.6930718Z [2025-07-15T03:02:55.692Z] ['verbose'] buildURL
+2025-07-15T03:02:55.6931216Z [2025-07-15T03:02:55.692Z] ['verbose'] commit
+2025-07-15T03:02:55.6931844Z [2025-07-15T03:02:55.692Z] ['verbose'] job
+2025-07-15T03:02:55.6932354Z [2025-07-15T03:02:55.692Z] ['verbose'] pr
+2025-07-15T03:02:55.6932816Z [2025-07-15T03:02:55.692Z] ['verbose'] service
+2025-07-15T03:02:55.6933280Z [2025-07-15T03:02:55.692Z] ['verbose'] slug
+2025-07-15T03:02:55.6933723Z [2025-07-15T03:02:55.692Z] ['verbose'] name
+2025-07-15T03:02:55.6934165Z [2025-07-15T03:02:55.692Z] ['verbose'] tag
+2025-07-15T03:02:55.6935017Z [2025-07-15T03:02:55.692Z] ['verbose'] flags
+2025-07-15T03:02:55.6935446Z [2025-07-15T03:02:55.692Z] ['verbose'] parent
+2025-07-15T03:02:55.6946869Z [2025-07-15T03:02:55.694Z] ['info'] Pinging Codecov: https://codecov.io/upload/v4?package=github-action-3.1.6-uploader-0.8.0&token=*******&branch=main&build=16282982068&build_url=https%3A%2F%2Fgithub.com%2Ffitydo%2Fbook_triage_v0.1.0%2Factions%2Fruns%2F16282982068%2Fjob%2F45976141389&commit=6e5257eb7b60bbc972499ed38d438a155894cf17&job=CI&pr=&service=github-actions&slug=fitydo%2Fbook_triage_v0.1.0&name=codecov-umbrella&tag=&flags=unittests&parent=
+2025-07-15T03:02:55.6951096Z [2025-07-15T03:02:55.694Z] ['verbose'] Passed token was 36 characters long
+2025-07-15T03:02:55.6953948Z [2025-07-15T03:02:55.694Z] ['verbose'] https://codecov.io/upload/v4?package=github-action-3.1.6-uploader-0.8.0&branch=main&build=16282982068&build_url=https%3A%2F%2Fgithub.com%2Ffitydo%2Fbook_triage_v0.1.0%2Factions%2Fruns%2F16282982068%2Fjob%2F45976141389&commit=6e5257eb7b60bbc972499ed38d438a155894cf17&job=CI&pr=&service=github-actions&slug=fitydo%2Fbook_triage_v0.1.0&name=codecov-umbrella&tag=&flags=unittests&parent=
+2025-07-15T03:02:55.6956496Z         Content-Type: 'text/plain'
+2025-07-15T03:02:55.6956942Z         Content-Encoding: 'gzip'
+2025-07-15T03:02:55.6957380Z         X-Reduced-Redundancy: 'false'
+2025-07-15T03:02:55.9343949Z [2025-07-15T03:02:55.934Z] ['info'] https://app.codecov.io/github/fitydo/book_triage_v1.0.0/commit/6e5257eb7b60bbc972499ed38d438a155894cf17
+2025-07-15T03:02:55.9347364Z https://storage.googleapis.com/codecov-production/shelter/v4/github/fitydo/book_triage_v1.0.0/6e5257eb7b60bbc972499ed38d438a155894cf17/74b607ba-eb9a-4ba3-bbf4-4e696ad9af0f.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=GOOG1EJWQHUGIBILH4J7Q6ZUSCIFNEOLYSNDS7L3B4N5SIBQ2J4YLYE5CRFCD%2F20250715%2Fus%2Fs3%2Faws4_request&X-Amz-Date=20250715T030255Z&X-Amz-Expires=120&X-Amz-SignedHeaders=host&X-Amz-Signature=954d2f7932a57d550aa1cd238cf639b27c446df7be1a576d89297a394fcbe8b5
+2025-07-15T03:02:55.9355077Z [2025-07-15T03:02:55.934Z] ['verbose'] Returned upload url: https://storage.googleapis.com/codecov-production/shelter/v4/github/fitydo/book_triage_v1.0.0/6e5257eb7b60bbc972499ed38d438a155894cf17/74b607ba-eb9a-4ba3-bbf4-4e696ad9af0f.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=GOOG1EJWQHUGIBILH4J7Q6ZUSCIFNEOLYSNDS7L3B4N5SIBQ2J4YLYE5CRFCD%2F20250715%2Fus%2Fs3%2Faws4_request&X-Amz-Date=20250715T030255Z&X-Amz-Expires=120&X-Amz-SignedHeaders=host&X-Amz-Signature=954d2f7932a57d550aa1cd238cf639b27c446df7be1a576d89297a394fcbe8b5
+2025-07-15T03:02:55.9358208Z [2025-07-15T03:02:55.934Z] ['info'] Uploading...
+2025-07-15T03:02:56.0399768Z [2025-07-15T03:02:56.039Z] ['info'] {"status":"processing","resultURL":"https://app.codecov.io/github/fitydo/book_triage_v1.0.0/commit/6e5257eb7b60bbc972499ed38d438a155894cf17"}
+2025-07-15T03:02:56.0401060Z [2025-07-15T03:02:56.039Z] ['verbose'] End of uploader: 695 milliseconds

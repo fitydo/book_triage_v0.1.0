@@ -1,0 +1,183 @@
+﻿2025-07-15T03:03:53.2844910Z ##[group]Run coverage run -m pytest tests/
+2025-07-15T03:03:53.2845236Z [36;1mcoverage run -m pytest tests/[0m
+2025-07-15T03:03:53.2845550Z [36;1mcoverage report --show-missing --fail-under=84[0m
+2025-07-15T03:03:53.2845844Z [36;1mcoverage xml[0m
+2025-07-15T03:03:53.2846076Z [36;1mecho "✅ Coverage threshold (84%) met"[0m
+2025-07-15T03:03:53.2871720Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:03:53.2871953Z env:
+2025-07-15T03:03:53.2872204Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:53.2872619Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:03:53.2873012Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:53.2873526Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:53.2873878Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:53.2874222Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:03:53.2874517Z   BOOK_USER: testuser
+2025-07-15T03:03:53.2874739Z   BOOK_PASS: testpass
+2025-07-15T03:03:53.2874928Z   OPENAI_API_KEY: test-key
+2025-07-15T03:03:53.2875130Z ##[endgroup]
+2025-07-15T03:03:54.0380118Z ============================= test session starts ==============================
+2025-07-15T03:03:54.0381411Z platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0 -- /opt/hostedtoolcache/Python/3.12.11/x64/bin/python
+2025-07-15T03:03:54.0382235Z cachedir: .pytest_cache
+2025-07-15T03:03:54.0382752Z rootdir: /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:03:54.0383346Z configfile: pyproject.toml
+2025-07-15T03:03:54.0383762Z plugins: cov-6.2.1, anyio-4.9.0
+2025-07-15T03:03:57.5600010Z collecting ... collected 111 items
+2025-07-15T03:03:57.5600356Z 
+2025-07-15T03:03:57.6917830Z tests/test_api.py::TestAPIEndpoints::test_root_endpoint PASSED           [  0%]
+2025-07-15T03:03:57.7196287Z tests/test_api.py::TestAPIEndpoints::test_health_endpoint PASSED         [  1%]
+2025-07-15T03:03:57.7455406Z tests/test_api.py::TestAPIEndpoints::test_get_books_empty PASSED         [  2%]
+2025-07-15T03:03:57.7769512Z tests/test_api.py::TestAPIEndpoints::test_get_books_with_data PASSED     [  3%]
+2025-07-15T03:03:57.8400080Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_success PASSED    [  4%]
+2025-07-15T03:03:57.8664797Z tests/test_api.py::TestAPIEndpoints::test_scan_books_unauthorized PASSED [  5%]
+2025-07-15T03:03:57.8928371Z tests/test_api.py::TestAPIEndpoints::test_rate_limiting_books_endpoint PASSED [  6%]
+2025-07-15T03:03:57.9452832Z tests/test_api.py::TestAPIEndpoints::test_file_upload_size_limit PASSED  [  7%]
+2025-07-15T03:03:57.9724906Z tests/test_api.py::TestAPIEndpoints::test_security_headers_in_response PASSED [  8%]
+2025-07-15T03:03:58.0037094Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_title_extracted PASSED [  9%]
+2025-07-15T03:03:58.0342907Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_vision_processor_exception PASSED [  9%]
+2025-07-15T03:03:58.0611423Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_file PASSED    [ 10%]
+2025-07-15T03:03:58.0895267Z tests/test_api.py::TestAPIEndpoints::test_scan_books_success PASSED      [ 11%]
+2025-07-15T03:03:58.1174038Z tests/test_api.py::TestAPIEndpoints::test_scan_books_exception PASSED    [ 12%]
+2025-07-15T03:03:58.1452087Z tests/test_api.py::TestAPIEndpoints::test_rescan_title_record_not_found PASSED [ 13%]
+2025-07-15T03:03:58.1743018Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_success PASSED [ 14%]
+2025-07-15T03:03:58.2011671Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_missing_isbn PASSED [ 15%]
+2025-07-15T03:03:58.2278740Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_invalid_isbn PASSED [ 16%]
+2025-07-15T03:03:58.2514437Z tests/test_api.py::TestAPIInitialization::test_initialize_app PASSED     [ 17%]
+2025-07-15T03:03:58.2581938Z tests/test_api.py::TestAPIInitialization::test_app_without_initialization PASSED [ 18%]
+2025-07-15T03:03:58.2816079Z tests/test_cli.py::TestCLICommands::test_cli_help PASSED                 [ 18%]
+2025-07-15T03:03:58.2878054Z tests/test_cli.py::TestCLICommands::test_scan_command_success PASSED     [ 19%]
+2025-07-15T03:03:58.2941756Z tests/test_cli.py::TestCLICommands::test_scan_command_with_options PASSED [ 20%]
+2025-07-15T03:03:58.2998538Z tests/test_cli.py::TestCLICommands::test_scan_command_no_records PASSED  [ 21%]
+2025-07-15T03:03:58.3056751Z tests/test_cli.py::TestCLICommands::test_scan_command_nonexistent_file PASSED [ 22%]
+2025-07-15T03:03:58.3111604Z tests/test_cli.py::TestCLICommands::test_scan_command_exception PASSED   [ 23%]
+2025-07-15T03:03:58.3176645Z tests/test_cli.py::TestCLICommands::test_web_command_success PASSED      [ 24%]
+2025-07-15T03:03:58.3241507Z tests/test_cli.py::TestCLICommands::test_web_command_with_options PASSED [ 25%]
+2025-07-15T03:03:58.3304141Z tests/test_cli.py::TestCLICommands::test_web_command_nonexistent_file PASSED [ 26%]
+2025-07-15T03:03:58.3361453Z tests/test_cli.py::TestCLICommands::test_web_command_exception PASSED    [ 27%]
+2025-07-15T03:03:58.3446638Z tests/test_cli.py::TestCLICommands::test_create_csv_command_empty PASSED [ 27%]
+2025-07-15T03:03:58.3533248Z tests/test_cli.py::TestCLICommands::test_create_csv_command_with_sample PASSED [ 28%]
+2025-07-15T03:03:58.3597400Z tests/test_cli.py::TestCLICommands::test_create_csv_command_creates_directory PASSED [ 29%]
+2025-07-15T03:03:58.3654577Z tests/test_cli.py::TestCLICommands::test_create_csv_command_exception PASSED [ 30%]
+2025-07-15T03:03:58.3736759Z tests/test_cli.py::TestCLICommands::test_info_command_success PASSED     [ 31%]
+2025-07-15T03:03:58.3784564Z tests/test_cli.py::TestCLICommands::test_info_command_nonexistent_file PASSED [ 32%]
+2025-07-15T03:03:58.3837297Z tests/test_cli.py::TestCLICommands::test_info_command_exception PASSED   [ 33%]
+2025-07-15T03:03:58.3914977Z tests/test_cli.py::TestCLIValidation::test_scan_cost_validation_min PASSED [ 34%]
+2025-07-15T03:03:58.3984938Z tests/test_cli.py::TestCLIValidation::test_scan_cost_validation_max PASSED [ 35%]
+2025-07-15T03:03:58.4048399Z tests/test_cli.py::TestCLIValidation::test_port_validation PASSED        [ 36%]
+2025-07-15T03:03:58.4120486Z tests/test_cli.py::TestCLIIntegration::test_scan_integration_with_core PASSED [ 36%]
+2025-07-15T03:03:58.4183267Z tests/test_cli.py::TestCLIIntegration::test_web_integration_with_api PASSED [ 37%]
+2025-07-15T03:03:58.4320254Z tests/test_cli.py::TestCLIEnvironment::test_environment_loading PASSED   [ 38%]
+2025-07-15T03:03:58.4454261Z tests/test_cli.py::TestCLIEnvironment::test_logging_configuration PASSED [ 39%]
+2025-07-15T03:03:58.4516152Z tests/test_cli.py::TestCLIEnvironment::test_verbose_logging PASSED       [ 40%]
+2025-07-15T03:03:58.4527612Z tests/test_core.py::TestBookRecord::test_book_record_creation PASSED     [ 41%]
+2025-07-15T03:03:58.4538817Z tests/test_core.py::TestBookRecord::test_book_record_to_dict PASSED      [ 42%]
+2025-07-15T03:03:58.4550834Z tests/test_core.py::TestBookRecord::test_book_record_with_all_fields PASSED [ 43%]
+2025-07-15T03:03:58.4564966Z tests/test_core.py::TestBookTriage::test_book_triage_initialization_nonexistent_file PASSED [ 44%]
+2025-07-15T03:03:58.4609319Z tests/test_core.py::TestBookTriage::test_book_triage_initialization_with_data PASSED [ 45%]
+2025-07-15T03:03:58.4623337Z tests/test_core.py::TestBookTriage::test_calculate_utilities PASSED      [ 45%]
+2025-07-15T03:03:58.4637062Z tests/test_core.py::TestBookTriage::test_calculate_utilities_with_none_values PASSED [ 46%]
+2025-07-15T03:03:58.4650815Z tests/test_core.py::TestBookTriage::test_make_decision PASSED            [ 47%]
+2025-07-15T03:03:58.4700721Z tests/test_core.py::TestBookTriage::test_add_record PASSED               [ 48%]
+2025-07-15T03:03:58.4746867Z tests/test_core.py::TestBookTriage::test_get_record_by_id PASSED         [ 49%]
+2025-07-15T03:03:58.4795070Z tests/test_core.py::TestBookTriage::test_price_to_v_calculation PASSED   [ 50%]
+2025-07-15T03:03:58.4815754Z tests/test_core.py::TestBookTriage::test_enrich_with_gpt4o_mock PASSED   [ 51%]
+2025-07-15T03:03:58.4829632Z tests/test_core.py::TestBookTriage::test_scan_cost_parameter PASSED      [ 52%]
+2025-07-15T03:03:58.4840677Z tests/test_core.py::TestDecisionEnum::test_decision_values PASSED        [ 53%]
+2025-07-15T03:03:58.4853704Z tests/test_core.py::TestDecisionEnum::test_decision_comparison PASSED    [ 54%]
+2025-07-15T03:03:58.4864847Z tests/test_core_simple.py::TestBookRecord::test_book_record_creation PASSED [ 54%]
+2025-07-15T03:03:58.4875823Z tests/test_core_simple.py::TestBookRecord::test_book_record_with_values PASSED [ 55%]
+2025-07-15T03:03:58.4888539Z tests/test_core_simple.py::TestBookTriage::test_book_triage_initialization PASSED [ 56%]
+2025-07-15T03:03:58.4901430Z tests/test_core_simple.py::TestBookTriage::test_calculate_utilities_simple PASSED [ 57%]
+2025-07-15T03:03:58.4914116Z tests/test_core_simple.py::TestBookTriage::test_make_decision_simple PASSED [ 58%]
+2025-07-15T03:03:58.4926759Z tests/test_core_simple.py::TestDecision::test_decision_values PASSED     [ 59%]
+2025-07-15T03:03:58.5528470Z tests/test_indicators_implementation.py::test_v_calculation_from_prices PASSED [ 60%]
+2025-07-15T03:03:58.5543034Z tests/test_indicators_implementation.py::test_utility_calculations PASSED [ 61%]
+2025-07-15T03:03:58.5558797Z tests/test_indicators_implementation.py::test_decision_making PASSED     [ 62%]
+2025-07-15T03:03:58.5571205Z tests/test_indicators_implementation.py::test_human_vs_auto_indicators PASSED [ 63%]
+2025-07-15T03:03:58.5592572Z tests/test_indicators_implementation.py::test_scan_cost_impact PASSED    [ 63%]
+2025-07-15T03:03:58.5615309Z tests/test_main.py::TestMainModule::test_main_no_args_with_existing_csv PASSED [ 64%]
+2025-07-15T03:03:58.5636474Z tests/test_main.py::TestMainModule::test_main_no_args_creates_new_csv PASSED [ 65%]
+2025-07-15T03:03:58.5655949Z tests/test_main.py::TestMainModule::test_main_with_args PASSED           [ 66%]
+2025-07-15T03:03:58.5676036Z tests/test_main.py::TestMainModule::test_main_finds_alternative_csv_paths PASSED [ 67%]
+2025-07-15T03:03:58.5693947Z tests/test_main.py::TestMainModule::test_main_module_entry_point PASSED  [ 68%]
+2025-07-15T03:04:00.0872593Z tests/test_verified_display_logic.py::test_verified_column_uses_strict_equality PASSED [ 69%]
+2025-07-15T03:04:00.0896193Z tests/test_vision.py::TestVisionProcessor::test_vision_processor_initialization_with_openai PASSED [ 70%]
+2025-07-15T03:04:00.0913783Z tests/test_vision.py::TestVisionProcessor::test_vision_processor_initialization_without_openai PASSED [ 71%]
+2025-07-15T03:04:00.0930297Z tests/test_vision.py::TestVisionProcessor::test_generate_id PASSED       [ 72%]
+2025-07-15T03:04:00.0982796Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_openai_success PASSED [ 72%]
+2025-07-15T03:04:00.1012663Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_fallback_to_tesseract PASSED [ 73%]
+2025-07-15T03:04:00.1027042Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_nonexistent_file PASSED [ 74%]
+2025-07-15T03:04:00.1047941Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_success PASSED [ 75%]
+2025-07-15T03:04:00.1068451Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_empty_result PASSED [ 76%]
+2025-07-15T03:04:00.1090418Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_error PASSED [ 77%]
+2025-07-15T03:04:00.1132754Z tests/test_vision.py::TestVisionProcessor::test_extract_with_openai_vision_no_content PASSED [ 78%]
+2025-07-15T03:04:00.1163539Z tests/test_vision.py::TestVisionProcessor::test_extract_with_openai_vision_no_client PASSED [ 79%]
+2025-07-15T03:04:00.1210458Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_from_image_success PASSED [ 80%]
+2025-07-15T03:04:00.1231371Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_tesseract_fallback PASSED [ 81%]
+2025-07-15T03:04:00.1243882Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_nonexistent_file PASSED [ 81%]
+2025-07-15T03:04:00.1273319Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_no_isbn_found PASSED [ 82%]
+2025-07-15T03:04:00.1303478Z tests/test_vision.py::TestVisionProcessor::test_image_format_conversion PASSED [ 83%]
+2025-07-15T03:04:00.1326362Z tests/test_vision.py::TestVisionProcessorIntegration::test_processor_with_real_image_mock_ocr PASSED [ 84%]
+2025-07-15T03:04:00.1341726Z tests/test_vision_fixed.py::TestVisionProcessor::test_vision_processor_initialization_with_openai PASSED [ 85%]
+2025-07-15T03:04:00.1352664Z tests/test_vision_fixed.py::TestVisionProcessor::test_vision_processor_initialization_without_openai PASSED [ 86%]
+2025-07-15T03:04:00.1363769Z tests/test_vision_fixed.py::TestVisionProcessor::test_generate_id PASSED [ 87%]
+2025-07-15T03:04:00.1376217Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_from_image_nonexistent_file PASSED [ 88%]
+2025-07-15T03:04:00.1418542Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_with_openai_vision_success PASSED [ 89%]
+2025-07-15T03:04:00.1445140Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_fallback_to_tesseract PASSED [ 90%]
+2025-07-15T03:04:00.1465706Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_success PASSED [ 90%]
+2025-07-15T03:04:00.1486054Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_empty_result PASSED [ 91%]
+2025-07-15T03:04:00.1510394Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_error PASSED [ 92%]
+2025-07-15T03:04:00.1549721Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_openai_vision_no_content PASSED [ 93%]
+2025-07-15T03:04:00.1565998Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_openai_vision_no_client PASSED [ 94%]
+2025-07-15T03:04:00.1605951Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_from_image_success PASSED [ 95%]
+2025-07-15T03:04:00.1626889Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_tesseract_fallback PASSED [ 96%]
+2025-07-15T03:04:00.1639500Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_nonexistent_file PASSED [ 97%]
+2025-07-15T03:04:00.1659639Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_no_isbn_found PASSED [ 98%]
+2025-07-15T03:04:00.1671231Z tests/test_vision_fixed.py::TestVisionProcessor::test_image_format_conversion PASSED [ 99%]
+2025-07-15T03:04:00.4129550Z tests/test_vision_fixed.py::TestVisionProcessorIntegration::test_processor_with_real_image_mock_ocr PASSED [100%]
+2025-07-15T03:04:00.4130214Z 
+2025-07-15T03:04:00.4130391Z =============================== warnings summary ===============================
+2025-07-15T03:04:00.4130937Z tests/test_indicators_implementation.py::test_v_calculation_from_prices
+2025-07-15T03:04:00.4132448Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_v_calculation_from_prices returned <class 'bool'>.
+2025-07-15T03:04:00.4133831Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:04:00.4134472Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:04:00.4135055Z     warnings.warn(
+2025-07-15T03:04:00.4135208Z 
+2025-07-15T03:04:00.4135450Z tests/test_indicators_implementation.py::test_utility_calculations
+2025-07-15T03:04:00.4136815Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_utility_calculations returned <class 'bool'>.
+2025-07-15T03:04:00.4137867Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:04:00.4138354Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:04:00.4138809Z     warnings.warn(
+2025-07-15T03:04:00.4138927Z 
+2025-07-15T03:04:00.4139262Z tests/test_indicators_implementation.py::test_decision_making
+2025-07-15T03:04:00.4140648Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_decision_making returned <class 'bool'>.
+2025-07-15T03:04:00.4141693Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:04:00.4142174Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:04:00.4142705Z     warnings.warn(
+2025-07-15T03:04:00.4142833Z 
+2025-07-15T03:04:00.4143035Z tests/test_indicators_implementation.py::test_human_vs_auto_indicators
+2025-07-15T03:04:00.4144322Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_human_vs_auto_indicators returned <class 'bool'>.
+2025-07-15T03:04:00.4145384Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:04:00.4145897Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:04:00.4146338Z     warnings.warn(
+2025-07-15T03:04:00.4146469Z 
+2025-07-15T03:04:00.4146641Z tests/test_indicators_implementation.py::test_scan_cost_impact
+2025-07-15T03:04:00.4147663Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_scan_cost_impact returned <class 'bool'>.
+2025-07-15T03:04:00.4148599Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:04:00.4149055Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:04:00.4149613Z     warnings.warn(
+2025-07-15T03:04:00.4149730Z 
+2025-07-15T03:04:00.4149914Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2025-07-15T03:04:00.4150338Z ======================= 111 passed, 5 warnings in 6.14s ========================
+2025-07-15T03:04:00.7230972Z Name                      Stmts   Miss  Cover   Missing
+2025-07-15T03:04:00.7231695Z -------------------------------------------------------
+2025-07-15T03:04:00.7232224Z book_triage/__init__.py       3      0   100%
+2025-07-15T03:04:00.7232601Z book_triage/__main__.py      21      0   100%
+2025-07-15T03:04:00.7233038Z book_triage/api.py          162     38    77%   41, 66, 408, 477, 506, 510-547, 558, 560
+2025-07-15T03:04:00.7233554Z book_triage/cli.py          117      8    93%   229, 231, 233, 235, 237, 239, 241, 250
+2025-07-15T03:04:00.7234203Z book_triage/core.py         195     41    79%   108, 111-112, 121, 166-168, 173-174, 220, 233-234, 238-242, 248, 274-277, 285, 287-294, 297-298, 302, 311-326
+2025-07-15T03:04:00.7234878Z book_triage/security.py      45     14    69%   27, 37-48, 64-69, 83, 89-90
+2025-07-15T03:04:00.7235378Z book_triage/vision.py       100     10    90%   36-38, 164-165, 171, 173-174, 176-177
+2025-07-15T03:04:00.7235825Z -------------------------------------------------------
+2025-07-15T03:04:00.7236171Z TOTAL                       643    111    83%
+2025-07-15T03:04:00.7236541Z Coverage failure: total of 83 is less than fail-under=84
+2025-07-15T03:04:00.7416216Z ##[error]Process completed with exit code 2.

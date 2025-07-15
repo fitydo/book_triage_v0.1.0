@@ -1,0 +1,24 @@
+﻿2025-07-15T03:03:26.9446821Z ##[group]Run actions/cache@v4
+2025-07-15T03:03:26.9447383Z with:
+2025-07-15T03:03:26.9447774Z   path: ~/.cache/pip
+2025-07-15T03:03:26.9448464Z   key: Linux-pip-7481cc370f9bdef12023486f79da6673ff9164659a96ca74a04478bd65194968
+2025-07-15T03:03:26.9449504Z   restore-keys: Linux-pip-
+
+2025-07-15T03:03:26.9450034Z   enableCrossOsArchive: false
+2025-07-15T03:03:26.9450529Z   fail-on-cache-miss: false
+2025-07-15T03:03:26.9450998Z   lookup-only: false
+2025-07-15T03:03:26.9451438Z   save-always: false
+2025-07-15T03:03:26.9451851Z env:
+2025-07-15T03:03:26.9452344Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:26.9453147Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:03:26.9453953Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:26.9454690Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:26.9455405Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:26.9456154Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:03:26.9456960Z ##[endgroup]
+2025-07-15T03:03:27.2059364Z Cache hit for: Linux-pip-7481cc370f9bdef12023486f79da6673ff9164659a96ca74a04478bd65194968
+2025-07-15T03:03:27.5370003Z Received 54770577 of 54770577 (100.0%), 174.7 MBs/sec
+2025-07-15T03:03:27.5372394Z Cache Size: ~52 MB (54770577 B)
+2025-07-15T03:03:27.5401154Z [command]/usr/bin/tar -xf /home/runner/work/_temp/170abb04-ef2b-4c28-a47a-322e7782faaa/cache.tzst -P -C /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0 --use-compress-program unzstd
+2025-07-15T03:03:27.6523574Z Cache restored successfully
+2025-07-15T03:03:27.6721045Z Cache restored from key: Linux-pip-7481cc370f9bdef12023486f79da6673ff9164659a96ca74a04478bd65194968

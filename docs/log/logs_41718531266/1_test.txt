@@ -1,0 +1,932 @@
+﻿2025-07-15T03:02:04.3545488Z Current runner version: '2.326.0'
+2025-07-15T03:02:04.3577098Z ##[group]Runner Image Provisioner
+2025-07-15T03:02:04.3578289Z Hosted Compute Agent
+2025-07-15T03:02:04.3579234Z Version: 20250711.363
+2025-07-15T03:02:04.3580203Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-15T03:02:04.3581349Z Build Date: 2025-07-11T20:04:25Z
+2025-07-15T03:02:04.3582568Z ##[endgroup]
+2025-07-15T03:02:04.3583426Z ##[group]Operating System
+2025-07-15T03:02:04.3584325Z Ubuntu
+2025-07-15T03:02:04.3585158Z 24.04.2
+2025-07-15T03:02:04.3585855Z LTS
+2025-07-15T03:02:04.3586600Z ##[endgroup]
+2025-07-15T03:02:04.3587538Z ##[group]Runner Image
+2025-07-15T03:02:04.3588401Z Image: ubuntu-24.04
+2025-07-15T03:02:04.3589198Z Version: 20250710.1.0
+2025-07-15T03:02:04.3590906Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250710.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-15T03:02:04.3593797Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250710.1
+2025-07-15T03:02:04.3595477Z ##[endgroup]
+2025-07-15T03:02:04.3597210Z ##[group]GITHUB_TOKEN Permissions
+2025-07-15T03:02:04.3599669Z Contents: read
+2025-07-15T03:02:04.3600605Z Metadata: read
+2025-07-15T03:02:04.3601364Z Packages: read
+2025-07-15T03:02:04.3602492Z ##[endgroup]
+2025-07-15T03:02:04.3605019Z Secret source: Actions
+2025-07-15T03:02:04.3605687Z Prepare workflow directory
+2025-07-15T03:02:04.3927043Z Prepare all required actions
+2025-07-15T03:02:04.3964536Z Getting action download info
+2025-07-15T03:02:04.7371177Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-15T03:02:04.7372534Z Version: 4.2.2
+2025-07-15T03:02:04.7373580Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-15T03:02:04.7375154Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-15T03:02:04.7375997Z ##[endgroup]
+2025-07-15T03:02:04.8355642Z ##[group]Download immutable action package 'actions/setup-python@v4'
+2025-07-15T03:02:04.8356513Z Version: 4.9.1
+2025-07-15T03:02:04.8357499Z Digest: sha256:f03e505388af670b5a108629e0ba26befc08d5c62b41f46146a45fe29ae509a5
+2025-07-15T03:02:04.8358422Z Source commit SHA: 7f4fc3e22c37d6ff65e88745f38bd3157c663f7c
+2025-07-15T03:02:04.8359106Z ##[endgroup]
+2025-07-15T03:02:05.0330937Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-07-15T03:02:05.0331890Z Version: 4.2.3
+2025-07-15T03:02:05.0332775Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-07-15T03:02:05.0333791Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-07-15T03:02:05.0334471Z ##[endgroup]
+2025-07-15T03:02:05.1392635Z Download action repository 'codecov/codecov-action@v3' (SHA:ab904c41d6ece82784817410c45d8b8c02684457)
+2025-07-15T03:02:05.3700902Z ##[group]Download immutable action package 'actions/upload-artifact@v4'
+2025-07-15T03:02:05.3701960Z Version: 4.6.2
+2025-07-15T03:02:05.3702800Z Digest: sha256:290722aa3281d5caf23d0acdc3dbeb3424786a1a01a9cc97e72f147225e37c38
+2025-07-15T03:02:05.3703807Z Source commit SHA: ea165f8d65b6e75b540449e92b4886f43607fa02
+2025-07-15T03:02:05.3704474Z ##[endgroup]
+2025-07-15T03:02:05.5792382Z Complete job name: test
+2025-07-15T03:02:05.6516247Z ##[group]Run actions/checkout@v4
+2025-07-15T03:02:05.6517153Z with:
+2025-07-15T03:02:05.6517595Z   repository: fitydo/book_triage_v0.1.0
+2025-07-15T03:02:05.6518329Z   token: ***
+2025-07-15T03:02:05.6518736Z   ssh-strict: true
+2025-07-15T03:02:05.6519159Z   ssh-user: git
+2025-07-15T03:02:05.6519651Z   persist-credentials: true
+2025-07-15T03:02:05.6520133Z   clean: true
+2025-07-15T03:02:05.6520561Z   sparse-checkout-cone-mode: true
+2025-07-15T03:02:05.6521072Z   fetch-depth: 1
+2025-07-15T03:02:05.6521491Z   fetch-tags: false
+2025-07-15T03:02:05.6522142Z   show-progress: true
+2025-07-15T03:02:05.6522578Z   lfs: false
+2025-07-15T03:02:05.6522983Z   submodules: false
+2025-07-15T03:02:05.6523415Z   set-safe-directory: true
+2025-07-15T03:02:05.6524159Z ##[endgroup]
+2025-07-15T03:02:05.7637265Z Syncing repository: fitydo/book_triage_v0.1.0
+2025-07-15T03:02:05.7640883Z ##[group]Getting Git version info
+2025-07-15T03:02:05.7642195Z Working directory is '/home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0'
+2025-07-15T03:02:05.7643501Z [command]/usr/bin/git version
+2025-07-15T03:02:05.7666606Z git version 2.50.1
+2025-07-15T03:02:05.7693575Z ##[endgroup]
+2025-07-15T03:02:05.7709076Z Temporarily overriding HOME='/home/runner/work/_temp/359cb46a-0055-4c6e-8335-b468153e185c' before making global git config changes
+2025-07-15T03:02:05.7712124Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-15T03:02:05.7723164Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:02:05.7756781Z Deleting the contents of '/home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0'
+2025-07-15T03:02:05.7760256Z ##[group]Initializing the repository
+2025-07-15T03:02:05.7765606Z [command]/usr/bin/git init /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:02:05.7825936Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-15T03:02:05.7827845Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-15T03:02:05.7829168Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-15T03:02:05.7830159Z hint:
+2025-07-15T03:02:05.7831373Z hint: 	git config --global init.defaultBranch <name>
+2025-07-15T03:02:05.7832801Z hint:
+2025-07-15T03:02:05.7833931Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-15T03:02:05.7835811Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-15T03:02:05.7837232Z hint:
+2025-07-15T03:02:05.7837975Z hint: 	git branch -m <name>
+2025-07-15T03:02:05.7838804Z hint:
+2025-07-15T03:02:05.7840035Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-07-15T03:02:05.7842555Z Initialized empty Git repository in /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0/.git/
+2025-07-15T03:02:05.7845873Z [command]/usr/bin/git remote add origin https://github.com/fitydo/book_triage_v0.1.0
+2025-07-15T03:02:05.7874829Z ##[endgroup]
+2025-07-15T03:02:05.7876161Z ##[group]Disabling automatic garbage collection
+2025-07-15T03:02:05.7879605Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-15T03:02:05.7908248Z ##[endgroup]
+2025-07-15T03:02:05.7909384Z ##[group]Setting up auth
+2025-07-15T03:02:05.7914390Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-15T03:02:05.7943805Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-15T03:02:05.8214433Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-15T03:02:05.8245600Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-15T03:02:05.8463223Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-15T03:02:05.8496491Z ##[endgroup]
+2025-07-15T03:02:05.8497922Z ##[group]Fetching the repository
+2025-07-15T03:02:05.8506590Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6e5257eb7b60bbc972499ed38d438a155894cf17:refs/remotes/origin/main
+2025-07-15T03:02:06.0754259Z From https://github.com/fitydo/book_triage_v0.1.0
+2025-07-15T03:02:06.0755729Z  * [new ref]         6e5257eb7b60bbc972499ed38d438a155894cf17 -> origin/main
+2025-07-15T03:02:06.0782309Z ##[endgroup]
+2025-07-15T03:02:06.0783689Z ##[group]Determining the checkout info
+2025-07-15T03:02:06.0785058Z ##[endgroup]
+2025-07-15T03:02:06.0789970Z [command]/usr/bin/git sparse-checkout disable
+2025-07-15T03:02:06.0830247Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-15T03:02:06.0858473Z ##[group]Checking out the ref
+2025-07-15T03:02:06.0862983Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-07-15T03:02:06.1082924Z Switched to a new branch 'main'
+2025-07-15T03:02:06.1085547Z branch 'main' set up to track 'origin/main'.
+2025-07-15T03:02:06.1092313Z ##[endgroup]
+2025-07-15T03:02:06.1126750Z [command]/usr/bin/git log -1 --format=%H
+2025-07-15T03:02:06.1148476Z 6e5257eb7b60bbc972499ed38d438a155894cf17
+2025-07-15T03:02:06.1448808Z ##[group]Run actions/setup-python@v4
+2025-07-15T03:02:06.1449578Z with:
+2025-07-15T03:02:06.1450028Z   python-version: 3.12
+2025-07-15T03:02:06.1450475Z   check-latest: false
+2025-07-15T03:02:06.1451104Z   token: ***
+2025-07-15T03:02:06.1451524Z   update-environment: true
+2025-07-15T03:02:06.1452237Z   allow-prereleases: false
+2025-07-15T03:02:06.1452670Z ##[endgroup]
+2025-07-15T03:02:06.3117638Z ##[group]Installed versions
+2025-07-15T03:02:06.3216538Z Successfully set up CPython (3.12.11)
+2025-07-15T03:02:06.3218673Z ##[endgroup]
+2025-07-15T03:02:06.4350262Z ##[group]Run actions/cache@v4
+2025-07-15T03:02:06.4350799Z with:
+2025-07-15T03:02:06.4351169Z   path: ~/.cache/pip
+2025-07-15T03:02:06.4352102Z   key: Linux-pip-7481cc370f9bdef12023486f79da6673ff9164659a96ca74a04478bd65194968
+2025-07-15T03:02:06.4352897Z   restore-keys: Linux-pip-
+
+2025-07-15T03:02:06.4353376Z   enableCrossOsArchive: false
+2025-07-15T03:02:06.4353866Z   fail-on-cache-miss: false
+2025-07-15T03:02:06.4354314Z   lookup-only: false
+2025-07-15T03:02:06.4354706Z   save-always: false
+2025-07-15T03:02:06.4355099Z env:
+2025-07-15T03:02:06.4355567Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:06.4356373Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:06.4357160Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:06.4357867Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:06.4358574Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:06.4359372Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:06.4359988Z ##[endgroup]
+2025-07-15T03:02:06.6393829Z Cache hit for: Linux-pip-7481cc370f9bdef12023486f79da6673ff9164659a96ca74a04478bd65194968
+2025-07-15T03:02:07.0718685Z Received 54770577 of 54770577 (100.0%), 143.5 MBs/sec
+2025-07-15T03:02:07.0720359Z Cache Size: ~52 MB (54770577 B)
+2025-07-15T03:02:07.0758678Z [command]/usr/bin/tar -xf /home/runner/work/_temp/41c73019-9944-43a0-bae6-52a92035c86a/cache.tzst -P -C /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0 --use-compress-program unzstd
+2025-07-15T03:02:07.2054272Z Cache restored successfully
+2025-07-15T03:02:07.2238679Z Cache restored from key: Linux-pip-7481cc370f9bdef12023486f79da6673ff9164659a96ca74a04478bd65194968
+2025-07-15T03:02:07.2391198Z ##[group]Run sudo apt-get update
+2025-07-15T03:02:07.2392783Z [36;1msudo apt-get update[0m
+2025-07-15T03:02:07.2394262Z [36;1msudo apt-get install -y libmagic1 tesseract-ocr[0m
+2025-07-15T03:02:07.2503605Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:02:07.2504800Z env:
+2025-07-15T03:02:07.2506044Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:07.2508119Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:07.2510207Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:07.2512339Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:07.2514215Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:07.2516100Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:07.2517678Z ##[endgroup]
+2025-07-15T03:02:07.3291581Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-07-15T03:02:07.3537217Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2025-07-15T03:02:07.3559090Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2025-07-15T03:02:07.3651503Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2025-07-15T03:02:07.3665371Z Hit:6 https://packages.microsoft.com/repos/azure-cli noble InRelease
+2025-07-15T03:02:07.3691507Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2025-07-15T03:02:07.3710562Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2025-07-15T03:02:07.4721205Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1238 kB]
+2025-07-15T03:02:07.4909690Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [253 kB]
+2025-07-15T03:02:07.4964160Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [163 kB]
+2025-07-15T03:02:07.4968371Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1106 kB]
+2025-07-15T03:02:07.5080096Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [282 kB]
+2025-07-15T03:02:07.5117765Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [377 kB]
+2025-07-15T03:02:07.5144243Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1418 kB]
+2025-07-15T03:02:07.5236513Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [303 kB]
+2025-07-15T03:02:07.5268441Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+2025-07-15T03:02:07.5279010Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2025-07-15T03:02:07.6310453Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7060 B]
+2025-07-15T03:02:07.6326041Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [28.4 kB]
+2025-07-15T03:02:07.6349367Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+2025-07-15T03:02:07.6388171Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+2025-07-15T03:02:07.6526492Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [986 kB]
+2025-07-15T03:02:07.6585517Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [175 kB]
+2025-07-15T03:02:07.6613013Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [21.6 kB]
+2025-07-15T03:02:07.6633853Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [872 kB]
+2025-07-15T03:02:07.6692712Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [192 kB]
+2025-07-15T03:02:07.6716690Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.3 kB]
+2025-07-15T03:02:07.6732307Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1373 kB]
+2025-07-15T03:02:07.6834829Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [294 kB]
+2025-07-15T03:02:07.6866783Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+2025-07-15T03:02:07.6876040Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+2025-07-15T03:02:07.7164587Z Get:32 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [9349 B]
+2025-07-15T03:02:07.7236376Z Get:33 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [40.3 kB]
+2025-07-15T03:02:07.7310352Z Get:34 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [26.5 kB]
+2025-07-15T03:02:13.9104875Z Fetched 9601 kB in 1s (8372 kB/s)
+2025-07-15T03:02:14.5871383Z Reading package lists...
+2025-07-15T03:02:14.6188092Z Reading package lists...
+2025-07-15T03:02:14.8018872Z Building dependency tree...
+2025-07-15T03:02:14.8026247Z Reading state information...
+2025-07-15T03:02:14.9782133Z libmagic1t64 is already the newest version (1:5.45-3build1).
+2025-07-15T03:02:14.9783820Z libmagic1t64 set to manually installed.
+2025-07-15T03:02:14.9784509Z The following additional packages will be installed:
+2025-07-15T03:02:14.9786172Z   libgif7 liblept5 libtesseract5 tesseract-ocr-eng tesseract-ocr-osd
+2025-07-15T03:02:14.9951466Z The following NEW packages will be installed:
+2025-07-15T03:02:14.9955648Z   libgif7 liblept5 libtesseract5 tesseract-ocr tesseract-ocr-eng
+2025-07-15T03:02:14.9956063Z   tesseract-ocr-osd
+2025-07-15T03:02:15.0126703Z 0 upgraded, 6 newly installed, 0 to remove and 22 not upgraded.
+2025-07-15T03:02:15.0127374Z Need to get 8412 kB of archives.
+2025-07-15T03:02:15.0127965Z After this operation, 21.9 MB of additional disk space will be used.
+2025-07-15T03:02:15.0128534Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-07-15T03:02:15.0426724Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libgif7 amd64 5.2.2-1ubuntu1 [35.2 kB]
+2025-07-15T03:02:15.0579207Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 liblept5 amd64 1.82.0-3build4 [1099 kB]
+2025-07-15T03:02:15.0885397Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libtesseract5 amd64 5.3.4-1build5 [1291 kB]
+2025-07-15T03:02:15.1204934Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 tesseract-ocr-eng all 1:4.1.0-2 [1818 kB]
+2025-07-15T03:02:15.2054788Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 tesseract-ocr-osd all 1:4.1.0-2 [3841 kB]
+2025-07-15T03:02:15.2623169Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 tesseract-ocr amd64 5.3.4-1build5 [328 kB]
+2025-07-15T03:02:15.5178497Z Fetched 8412 kB in 0s (32.1 MB/s)
+2025-07-15T03:02:15.5423017Z Selecting previously unselected package libgif7:amd64.
+2025-07-15T03:02:15.5677277Z (Reading database ... 
+2025-07-15T03:02:15.5677747Z (Reading database ... 5%
+2025-07-15T03:02:15.5678616Z (Reading database ... 10%
+2025-07-15T03:02:15.5679058Z (Reading database ... 15%
+2025-07-15T03:02:15.5679480Z (Reading database ... 20%
+2025-07-15T03:02:15.5680013Z (Reading database ... 25%
+2025-07-15T03:02:15.5680464Z (Reading database ... 30%
+2025-07-15T03:02:15.5680914Z (Reading database ... 35%
+2025-07-15T03:02:15.5681309Z (Reading database ... 40%
+2025-07-15T03:02:15.5681884Z (Reading database ... 45%
+2025-07-15T03:02:15.5682287Z (Reading database ... 50%
+2025-07-15T03:02:15.5810764Z (Reading database ... 55%
+2025-07-15T03:02:15.6135654Z (Reading database ... 60%
+2025-07-15T03:02:15.6493172Z (Reading database ... 65%
+2025-07-15T03:02:15.6909154Z (Reading database ... 70%
+2025-07-15T03:02:15.7257971Z (Reading database ... 75%
+2025-07-15T03:02:15.7655569Z (Reading database ... 80%
+2025-07-15T03:02:15.8084827Z (Reading database ... 85%
+2025-07-15T03:02:15.8937836Z (Reading database ... 90%
+2025-07-15T03:02:15.9257955Z (Reading database ... 95%
+2025-07-15T03:02:15.9258865Z (Reading database ... 100%
+2025-07-15T03:02:15.9259311Z (Reading database ... 219506 files and directories currently installed.)
+2025-07-15T03:02:15.9323524Z Preparing to unpack .../0-libgif7_5.2.2-1ubuntu1_amd64.deb ...
+2025-07-15T03:02:15.9381489Z Unpacking libgif7:amd64 (5.2.2-1ubuntu1) ...
+2025-07-15T03:02:15.9637602Z Selecting previously unselected package liblept5:amd64.
+2025-07-15T03:02:15.9772384Z Preparing to unpack .../1-liblept5_1.82.0-3build4_amd64.deb ...
+2025-07-15T03:02:15.9784590Z Unpacking liblept5:amd64 (1.82.0-3build4) ...
+2025-07-15T03:02:16.0135876Z Selecting previously unselected package libtesseract5:amd64.
+2025-07-15T03:02:16.0268829Z Preparing to unpack .../2-libtesseract5_5.3.4-1build5_amd64.deb ...
+2025-07-15T03:02:16.0279847Z Unpacking libtesseract5:amd64 (5.3.4-1build5) ...
+2025-07-15T03:02:16.0686229Z Selecting previously unselected package tesseract-ocr-eng.
+2025-07-15T03:02:16.0819300Z Preparing to unpack .../3-tesseract-ocr-eng_1%3a4.1.0-2_all.deb ...
+2025-07-15T03:02:16.0831583Z Unpacking tesseract-ocr-eng (1:4.1.0-2) ...
+2025-07-15T03:02:16.1220030Z Selecting previously unselected package tesseract-ocr-osd.
+2025-07-15T03:02:16.1353172Z Preparing to unpack .../4-tesseract-ocr-osd_1%3a4.1.0-2_all.deb ...
+2025-07-15T03:02:16.1370102Z Unpacking tesseract-ocr-osd (1:4.1.0-2) ...
+2025-07-15T03:02:16.1989602Z Selecting previously unselected package tesseract-ocr.
+2025-07-15T03:02:16.2122714Z Preparing to unpack .../5-tesseract-ocr_5.3.4-1build5_amd64.deb ...
+2025-07-15T03:02:16.2134138Z Unpacking tesseract-ocr (5.3.4-1build5) ...
+2025-07-15T03:02:16.2705581Z Setting up tesseract-ocr-eng (1:4.1.0-2) ...
+2025-07-15T03:02:16.2752601Z Setting up libgif7:amd64 (5.2.2-1ubuntu1) ...
+2025-07-15T03:02:16.2783578Z Setting up tesseract-ocr-osd (1:4.1.0-2) ...
+2025-07-15T03:02:16.2810020Z Setting up liblept5:amd64 (1.82.0-3build4) ...
+2025-07-15T03:02:16.2840363Z Setting up libtesseract5:amd64 (5.3.4-1build5) ...
+2025-07-15T03:02:16.2868934Z Setting up tesseract-ocr (5.3.4-1build5) ...
+2025-07-15T03:02:16.2900684Z Processing triggers for man-db (2.12.0-4build2) ...
+2025-07-15T03:02:23.1439952Z Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
+2025-07-15T03:02:23.9079260Z 
+2025-07-15T03:02:23.9079793Z Running kernel seems to be up-to-date.
+2025-07-15T03:02:23.9080161Z 
+2025-07-15T03:02:23.9080315Z Restarting services...
+2025-07-15T03:02:23.9149520Z 
+2025-07-15T03:02:23.9149913Z Service restarts being deferred:
+2025-07-15T03:02:23.9151499Z  systemctl restart hosted-compute-agent.service
+2025-07-15T03:02:23.9152001Z 
+2025-07-15T03:02:23.9152221Z No containers need to be restarted.
+2025-07-15T03:02:23.9153565Z 
+2025-07-15T03:02:23.9153812Z No user sessions are running outdated binaries.
+2025-07-15T03:02:23.9154195Z 
+2025-07-15T03:02:23.9154515Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2025-07-15T03:02:24.8359705Z ##[group]Run python -m pip install --upgrade pip
+2025-07-15T03:02:24.8360122Z [36;1mpython -m pip install --upgrade pip[0m
+2025-07-15T03:02:24.8360416Z [36;1mpip install -e .[0m
+2025-07-15T03:02:24.8360721Z [36;1mpip install requests pytest-cov coverage codecov[0m
+2025-07-15T03:02:24.8389426Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:02:24.8389686Z env:
+2025-07-15T03:02:24.8389940Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:24.8390385Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:24.8390814Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:24.8391194Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:24.8391572Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:24.8392180Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:24.8392488Z ##[endgroup]
+2025-07-15T03:02:27.8913605Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (25.1.1)
+2025-07-15T03:02:28.4130454Z Obtaining file:///home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:02:28.4159817Z   Installing build dependencies: started
+2025-07-15T03:02:29.0370654Z   Installing build dependencies: finished with status 'done'
+2025-07-15T03:02:29.0377445Z   Checking if build backend supports build_editable: started
+2025-07-15T03:02:29.1201486Z   Checking if build backend supports build_editable: finished with status 'done'
+2025-07-15T03:02:29.1209167Z   Getting requirements to build editable: started
+2025-07-15T03:02:29.2498240Z   Getting requirements to build editable: finished with status 'done'
+2025-07-15T03:02:29.2513063Z   Installing backend dependencies: started
+2025-07-15T03:02:29.7195195Z   Installing backend dependencies: finished with status 'done'
+2025-07-15T03:02:29.7202283Z   Preparing editable metadata (pyproject.toml): started
+2025-07-15T03:02:29.9278367Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2025-07-15T03:02:30.0163406Z Collecting fastapi>=0.104.0 (from book_triage==0.1.0)
+2025-07-15T03:02:30.0178184Z   Using cached fastapi-0.116.1-py3-none-any.whl.metadata (28 kB)
+2025-07-15T03:02:30.0815189Z Collecting openai>=1.0.0 (from book_triage==0.1.0)
+2025-07-15T03:02:30.0829097Z   Using cached openai-1.95.1-py3-none-any.whl.metadata (29 kB)
+2025-07-15T03:02:30.1995413Z Collecting pandas>=2.0.0 (from book_triage==0.1.0)
+2025-07-15T03:02:30.2009245Z   Using cached pandas-2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (91 kB)
+2025-07-15T03:02:30.3882381Z Collecting pillow>=10.0.0 (from book_triage==0.1.0)
+2025-07-15T03:02:30.3896432Z   Using cached pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+2025-07-15T03:02:30.4024673Z Collecting pytesseract>=0.3.10 (from book_triage==0.1.0)
+2025-07-15T03:02:30.4036389Z   Using cached pytesseract-0.3.13-py3-none-any.whl.metadata (11 kB)
+2025-07-15T03:02:30.4176317Z Collecting python-dotenv>=1.0.0 (from book_triage==0.1.0)
+2025-07-15T03:02:30.4188310Z   Using cached python_dotenv-1.1.1-py3-none-any.whl.metadata (24 kB)
+2025-07-15T03:02:30.4307617Z Collecting python-magic>=0.4.27 (from book_triage==0.1.0)
+2025-07-15T03:02:30.4319628Z   Using cached python_magic-0.4.27-py2.py3-none-any.whl.metadata (5.8 kB)
+2025-07-15T03:02:30.4427230Z Collecting python-multipart>=0.0.6 (from book_triage==0.1.0)
+2025-07-15T03:02:30.4439090Z   Using cached python_multipart-0.0.20-py3-none-any.whl.metadata (1.8 kB)
+2025-07-15T03:02:30.4519992Z Collecting slowapi>=0.1.8 (from book_triage==0.1.0)
+2025-07-15T03:02:30.4531578Z   Using cached slowapi-0.1.9-py3-none-any.whl.metadata (3.0 kB)
+2025-07-15T03:02:30.4826696Z Collecting tqdm>=4.65.0 (from book_triage==0.1.0)
+2025-07-15T03:02:30.4839505Z   Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+2025-07-15T03:02:30.5048088Z Collecting typer>=0.9.0 (from book_triage==0.1.0)
+2025-07-15T03:02:30.5060175Z   Using cached typer-0.16.0-py3-none-any.whl.metadata (15 kB)
+2025-07-15T03:02:30.5339896Z Collecting uvicorn>=0.24.0 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T03:02:30.5351565Z   Using cached uvicorn-0.35.0-py3-none-any.whl.metadata (6.5 kB)
+2025-07-15T03:02:30.5625219Z Collecting starlette<0.48.0,>=0.40.0 (from fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T03:02:30.5637321Z   Using cached starlette-0.47.1-py3-none-any.whl.metadata (6.2 kB)
+2025-07-15T03:02:30.7032231Z Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (from fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T03:02:30.7046024Z   Using cached pydantic-2.11.7-py3-none-any.whl.metadata (67 kB)
+2025-07-15T03:02:30.7271839Z Collecting typing-extensions>=4.8.0 (from fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T03:02:30.7284920Z   Using cached typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+2025-07-15T03:02:30.7381530Z Collecting annotated-types>=0.6.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T03:02:30.7393378Z   Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+2025-07-15T03:02:31.3329651Z Collecting pydantic-core==2.33.2 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T03:02:31.3343478Z   Using cached pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2025-07-15T03:02:31.3464811Z Collecting typing-inspection>=0.4.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T03:02:31.3476700Z   Using cached typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+2025-07-15T03:02:31.3726851Z Collecting anyio<5,>=3.6.2 (from starlette<0.48.0,>=0.40.0->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T03:02:31.3738460Z   Using cached anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB)
+2025-07-15T03:02:31.3936331Z Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette<0.48.0,>=0.40.0->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T03:02:31.3948443Z   Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-07-15T03:02:31.4081489Z Collecting sniffio>=1.1 (from anyio<5,>=3.6.2->starlette<0.48.0,>=0.40.0->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T03:02:31.4093679Z   Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2025-07-15T03:02:31.4359685Z Collecting distro<2,>=1.7.0 (from openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.4370896Z   Using cached distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+2025-07-15T03:02:31.4560552Z Collecting httpx<1,>=0.23.0 (from openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.4572210Z   Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2025-07-15T03:02:31.5147774Z Collecting jiter<1,>=0.4.0 (from openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.5161454Z   Using cached jiter-0.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+2025-07-15T03:02:31.5906471Z Collecting certifi (from httpx<1,>=0.23.0->openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.5919226Z   Using cached certifi-2025.7.14-py3-none-any.whl.metadata (2.4 kB)
+2025-07-15T03:02:31.6096959Z Collecting httpcore==1.* (from httpx<1,>=0.23.0->openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.6109112Z   Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2025-07-15T03:02:31.6224726Z Collecting h11>=0.16 (from httpcore==1.*->httpx<1,>=0.23.0->openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.6236455Z   Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2025-07-15T03:02:31.8251949Z Collecting numpy>=1.26.0 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.8264894Z   Using cached numpy-2.3.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (62 kB)
+2025-07-15T03:02:31.8485443Z Collecting python-dateutil>=2.8.2 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.8497357Z   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+2025-07-15T03:02:31.8863377Z Collecting pytz>=2020.1 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.8875643Z   Using cached pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+2025-07-15T03:02:31.9005406Z Collecting tzdata>=2022.7 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.9016809Z   Using cached tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+2025-07-15T03:02:31.9185489Z Collecting packaging>=21.3 (from pytesseract>=0.3.10->book_triage==0.1.0)
+2025-07-15T03:02:31.9197385Z   Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+2025-07-15T03:02:31.9385825Z Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T03:02:31.9397189Z   Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2025-07-15T03:02:31.9690415Z Collecting limits>=2.3 (from slowapi>=0.1.8->book_triage==0.1.0)
+2025-07-15T03:02:31.9702978Z   Using cached limits-5.4.0-py3-none-any.whl.metadata (10 kB)
+2025-07-15T03:02:31.9883655Z Collecting deprecated>=1.2 (from limits>=2.3->slowapi>=0.1.8->book_triage==0.1.0)
+2025-07-15T03:02:31.9895404Z   Using cached Deprecated-1.2.18-py2.py3-none-any.whl.metadata (5.7 kB)
+2025-07-15T03:02:32.0765722Z Collecting wrapt<2,>=1.10 (from deprecated>=1.2->limits>=2.3->slowapi>=0.1.8->book_triage==0.1.0)
+2025-07-15T03:02:32.0779753Z   Using cached wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
+2025-07-15T03:02:32.0999172Z Collecting click>=8.0.0 (from typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T03:02:32.1011275Z   Using cached click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+2025-07-15T03:02:32.1185543Z Collecting shellingham>=1.3.0 (from typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T03:02:32.1197635Z   Using cached shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-07-15T03:02:32.1578117Z Collecting rich>=10.11.0 (from typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T03:02:32.1590948Z   Using cached rich-14.0.0-py3-none-any.whl.metadata (18 kB)
+2025-07-15T03:02:32.1770609Z Collecting markdown-it-py>=2.2.0 (from rich>=10.11.0->typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T03:02:32.1782420Z   Using cached markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+2025-07-15T03:02:32.2002509Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.11.0->typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T03:02:32.2014548Z   Using cached pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+2025-07-15T03:02:32.2124736Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.11.0->typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T03:02:32.2136343Z   Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2025-07-15T03:02:32.2600156Z Collecting httptools>=0.6.3 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T03:02:32.2612765Z   Using cached httptools-0.6.4-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.6 kB)
+2025-07-15T03:02:32.2976187Z Collecting pyyaml>=5.1 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T03:02:32.2988763Z   Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-07-15T03:02:32.3341105Z Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T03:02:32.3353878Z   Using cached uvloop-0.21.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2025-07-15T03:02:32.4042630Z Collecting watchfiles>=0.13 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T03:02:32.4055910Z   Using cached watchfiles-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2025-07-15T03:02:32.4880215Z Collecting websockets>=10.4 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T03:02:32.4894511Z   Using cached websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2025-07-15T03:02:32.5109806Z Using cached fastapi-0.116.1-py3-none-any.whl (95 kB)
+2025-07-15T03:02:32.5122079Z Using cached pydantic-2.11.7-py3-none-any.whl (444 kB)
+2025-07-15T03:02:32.5138503Z Using cached pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+2025-07-15T03:02:32.5164646Z Using cached starlette-0.47.1-py3-none-any.whl (72 kB)
+2025-07-15T03:02:32.5176589Z Using cached anyio-4.9.0-py3-none-any.whl (100 kB)
+2025-07-15T03:02:32.5188775Z Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+2025-07-15T03:02:32.5200146Z Using cached idna-3.10-py3-none-any.whl (70 kB)
+2025-07-15T03:02:32.5212242Z Using cached openai-1.95.1-py3-none-any.whl (755 kB)
+2025-07-15T03:02:32.5228899Z Using cached distro-1.9.0-py3-none-any.whl (20 kB)
+2025-07-15T03:02:32.5240477Z Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+2025-07-15T03:02:32.5252322Z Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+2025-07-15T03:02:32.5264451Z Using cached jiter-0.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (352 kB)
+2025-07-15T03:02:32.5278318Z Using cached typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+2025-07-15T03:02:32.5289705Z Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+2025-07-15T03:02:32.5301875Z Using cached pandas-2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.0 MB)
+2025-07-15T03:02:32.5399581Z Using cached numpy-2.3.1-cp312-cp312-manylinux_2_28_x86_64.whl (16.6 MB)
+2025-07-15T03:02:32.5529597Z Using cached pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+2025-07-15T03:02:32.5588698Z Using cached pytesseract-0.3.13-py3-none-any.whl (14 kB)
+2025-07-15T03:02:32.5599966Z Using cached packaging-25.0-py3-none-any.whl (66 kB)
+2025-07-15T03:02:32.5612171Z Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2025-07-15T03:02:32.5625313Z Using cached python_dotenv-1.1.1-py3-none-any.whl (20 kB)
+2025-07-15T03:02:32.5636927Z Using cached python_magic-0.4.27-py2.py3-none-any.whl (13 kB)
+2025-07-15T03:02:32.5648534Z Using cached python_multipart-0.0.20-py3-none-any.whl (24 kB)
+2025-07-15T03:02:32.5660031Z Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+2025-07-15T03:02:32.5675009Z Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+2025-07-15T03:02:32.5686210Z Using cached slowapi-0.1.9-py3-none-any.whl (14 kB)
+2025-07-15T03:02:32.5697523Z Using cached limits-5.4.0-py3-none-any.whl (60 kB)
+2025-07-15T03:02:32.5709307Z Using cached Deprecated-1.2.18-py2.py3-none-any.whl (10.0 kB)
+2025-07-15T03:02:32.5721083Z Using cached wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (89 kB)
+2025-07-15T03:02:32.5732999Z Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+2025-07-15T03:02:32.5744269Z Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+2025-07-15T03:02:32.5756161Z Using cached typer-0.16.0-py3-none-any.whl (46 kB)
+2025-07-15T03:02:32.5767673Z Using cached click-8.2.1-py3-none-any.whl (102 kB)
+2025-07-15T03:02:32.5779608Z Using cached rich-14.0.0-py3-none-any.whl (243 kB)
+2025-07-15T03:02:32.5792789Z Using cached pygments-2.19.2-py3-none-any.whl (1.2 MB)
+2025-07-15T03:02:32.5812902Z Using cached markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+2025-07-15T03:02:32.5824620Z Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2025-07-15T03:02:32.5836074Z Using cached shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2025-07-15T03:02:32.5847546Z Using cached typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+2025-07-15T03:02:32.5859029Z Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+2025-07-15T03:02:32.5872781Z Using cached uvicorn-0.35.0-py3-none-any.whl (66 kB)
+2025-07-15T03:02:32.5885247Z Using cached httptools-0.6.4-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (510 kB)
+2025-07-15T03:02:32.5899996Z Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2025-07-15T03:02:32.5916940Z Using cached uvloop-0.21.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.7 MB)
+2025-07-15T03:02:32.5962225Z Using cached watchfiles-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (452 kB)
+2025-07-15T03:02:32.5977492Z Using cached websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+2025-07-15T03:02:32.5989909Z Using cached certifi-2025.7.14-py3-none-any.whl (162 kB)
+2025-07-15T03:02:32.6908820Z Building wheels for collected packages: book_triage
+2025-07-15T03:02:32.6918122Z   Building editable for book_triage (pyproject.toml): started
+2025-07-15T03:02:32.7269868Z   Building editable for book_triage (pyproject.toml): finished with status 'done'
+2025-07-15T03:02:32.7277207Z   Created wheel for book_triage: filename=book_triage-0.1.0-py3-none-any.whl size=10241 sha256=d252fc89c711a0198d038bc88bb21622865a2f23aec55885a27025fe70f288c6
+2025-07-15T03:02:32.7279637Z   Stored in directory: /tmp/pip-ephem-wheel-cache-udpkrgc0/wheels/d3/8c/55/20b7343e2b9725e0ea7cb71535aa1bddd3950a939b56e58f9b
+2025-07-15T03:02:32.7310122Z Successfully built book_triage
+2025-07-15T03:02:32.8438392Z Installing collected packages: pytz, wrapt, websockets, uvloop, tzdata, typing-extensions, tqdm, sniffio, six, shellingham, pyyaml, python-multipart, python-magic, python-dotenv, pygments, pillow, packaging, numpy, mdurl, jiter, idna, httptools, h11, distro, click, certifi, annotated-types, uvicorn, typing-inspection, python-dateutil, pytesseract, pydantic-core, markdown-it-py, httpcore, deprecated, anyio, watchfiles, starlette, rich, pydantic, pandas, limits, httpx, typer, slowapi, openai, fastapi, book_triage
+2025-07-15T03:02:43.1313646Z 
+2025-07-15T03:02:43.1360832Z Successfully installed annotated-types-0.7.0 anyio-4.9.0 book_triage-0.1.0 certifi-2025.7.14 click-8.2.1 deprecated-1.2.18 distro-1.9.0 fastapi-0.116.1 h11-0.16.0 httpcore-1.0.9 httptools-0.6.4 httpx-0.28.1 idna-3.10 jiter-0.10.0 limits-5.4.0 markdown-it-py-3.0.0 mdurl-0.1.2 numpy-2.3.1 openai-1.95.1 packaging-25.0 pandas-2.3.1 pillow-11.3.0 pydantic-2.11.7 pydantic-core-2.33.2 pygments-2.19.2 pytesseract-0.3.13 python-dateutil-2.9.0.post0 python-dotenv-1.1.1 python-magic-0.4.27 python-multipart-0.0.20 pytz-2025.2 pyyaml-6.0.2 rich-14.0.0 shellingham-1.5.4 six-1.17.0 slowapi-0.1.9 sniffio-1.3.1 starlette-0.47.1 tqdm-4.67.1 typer-0.16.0 typing-extensions-4.14.1 typing-inspection-0.4.1 tzdata-2025.2 uvicorn-0.35.0 uvloop-0.21.0 watchfiles-1.1.0 websockets-15.0.1 wrapt-1.17.2
+2025-07-15T03:02:44.0386140Z Collecting requests
+2025-07-15T03:02:44.0399866Z   Using cached requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+2025-07-15T03:02:44.0560994Z Collecting pytest-cov
+2025-07-15T03:02:44.0572793Z   Using cached pytest_cov-6.2.1-py3-none-any.whl.metadata (30 kB)
+2025-07-15T03:02:44.3432308Z Collecting coverage
+2025-07-15T03:02:44.3445929Z   Using cached coverage-7.9.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.9 kB)
+2025-07-15T03:02:44.3528439Z Collecting codecov
+2025-07-15T03:02:44.3539750Z   Using cached codecov-2.1.13-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-07-15T03:02:44.4239256Z Collecting charset_normalizer<4,>=2 (from requests)
+2025-07-15T03:02:44.4252556Z   Using cached charset_normalizer-3.4.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+2025-07-15T03:02:44.4290847Z Requirement already satisfied: idna<4,>=2.5 in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (from requests) (3.10)
+2025-07-15T03:02:44.4547175Z Collecting urllib3<3,>=1.21.1 (from requests)
+2025-07-15T03:02:44.4558681Z   Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+2025-07-15T03:02:44.4588028Z Requirement already satisfied: certifi>=2017.4.17 in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (from requests) (2025.7.14)
+2025-07-15T03:02:44.4943269Z Collecting pytest>=6.2.5 (from pytest-cov)
+2025-07-15T03:02:44.4956194Z   Using cached pytest-8.4.1-py3-none-any.whl.metadata (7.7 kB)
+2025-07-15T03:02:44.5160524Z Collecting pluggy>=1.2 (from pytest-cov)
+2025-07-15T03:02:44.5172314Z   Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+2025-07-15T03:02:44.5387628Z Collecting iniconfig>=1 (from pytest>=6.2.5->pytest-cov)
+2025-07-15T03:02:44.5399942Z   Using cached iniconfig-2.1.0-py3-none-any.whl.metadata (2.7 kB)
+2025-07-15T03:02:44.5416975Z Requirement already satisfied: packaging>=20 in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (from pytest>=6.2.5->pytest-cov) (25.0)
+2025-07-15T03:02:44.5445017Z Requirement already satisfied: pygments>=2.7.2 in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (from pytest>=6.2.5->pytest-cov) (2.19.2)
+2025-07-15T03:02:44.5478335Z Using cached requests-2.32.4-py3-none-any.whl (64 kB)
+2025-07-15T03:02:44.5489985Z Using cached charset_normalizer-3.4.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (148 kB)
+2025-07-15T03:02:44.5501394Z Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
+2025-07-15T03:02:44.5513145Z Using cached pytest_cov-6.2.1-py3-none-any.whl (24 kB)
+2025-07-15T03:02:44.5524478Z Using cached coverage-7.9.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (245 kB)
+2025-07-15T03:02:44.5536086Z Using cached codecov-2.1.13-py2.py3-none-any.whl (16 kB)
+2025-07-15T03:02:44.5546698Z Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+2025-07-15T03:02:44.5557362Z Using cached pytest-8.4.1-py3-none-any.whl (365 kB)
+2025-07-15T03:02:44.5570466Z Using cached iniconfig-2.1.0-py3-none-any.whl (6.0 kB)
+2025-07-15T03:02:44.6507578Z Installing collected packages: urllib3, pluggy, iniconfig, coverage, charset_normalizer, requests, pytest, pytest-cov, codecov
+2025-07-15T03:02:45.2093298Z 
+2025-07-15T03:02:45.2144887Z Successfully installed charset_normalizer-3.4.2 codecov-2.1.13 coverage-7.9.2 iniconfig-2.1.0 pluggy-1.6.0 pytest-8.4.1 pytest-cov-6.2.1 requests-2.32.4 urllib3-2.5.0
+2025-07-15T03:02:45.3056390Z ##[group]Run echo "id,title,url,F,R,A,V,S,P,decision" > sample_books.csv
+2025-07-15T03:02:45.3056897Z [36;1mecho "id,title,url,F,R,A,V,S,P,decision" > sample_books.csv[0m
+2025-07-15T03:02:45.3057408Z [36;1mecho "test1,Test Book,https://example.com,3,2,1,4,2,4,unknown" >> sample_books.csv[0m
+2025-07-15T03:02:45.3085334Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:02:45.3085568Z env:
+2025-07-15T03:02:45.3085815Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3086225Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:45.3086825Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3087186Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3087541Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3087905Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:45.3088199Z ##[endgroup]
+2025-07-15T03:02:45.3156894Z ##[group]Run echo "BOOK_USER=testuser" >> $GITHUB_ENV
+2025-07-15T03:02:45.3157261Z [36;1mecho "BOOK_USER=testuser" >> $GITHUB_ENV[0m
+2025-07-15T03:02:45.3157568Z [36;1mecho "BOOK_PASS=testpass" >> $GITHUB_ENV[0m
+2025-07-15T03:02:45.3157878Z [36;1mecho "OPENAI_API_KEY=test-key" >> $GITHUB_ENV[0m
+2025-07-15T03:02:45.3182788Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:02:45.3183022Z env:
+2025-07-15T03:02:45.3183265Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3183682Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:45.3184095Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3184450Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3184819Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3185197Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:45.3185484Z ##[endgroup]
+2025-07-15T03:02:45.3250354Z ##[group]Run coverage run -m pytest tests/ -v
+2025-07-15T03:02:45.3250701Z [36;1mcoverage run -m pytest tests/ -v[0m
+2025-07-15T03:02:45.3250982Z [36;1mcoverage report --show-missing[0m
+2025-07-15T03:02:45.3251235Z [36;1mcoverage xml[0m
+2025-07-15T03:02:45.3276003Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:02:45.3276259Z env:
+2025-07-15T03:02:45.3276502Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3276922Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:45.3277335Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3277690Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3278041Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:45.3278391Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:45.3278686Z   BOOK_USER: testuser
+2025-07-15T03:02:45.3278889Z   BOOK_PASS: testpass
+2025-07-15T03:02:45.3279118Z   OPENAI_API_KEY: test-key
+2025-07-15T03:02:45.3279324Z ##[endgroup]
+2025-07-15T03:02:47.0923882Z ============================= test session starts ==============================
+2025-07-15T03:02:47.0925024Z platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0 -- /opt/hostedtoolcache/Python/3.12.11/x64/bin/python
+2025-07-15T03:02:47.0925985Z cachedir: .pytest_cache
+2025-07-15T03:02:47.0926590Z rootdir: /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:02:47.0927195Z configfile: pyproject.toml
+2025-07-15T03:02:47.0927530Z plugins: cov-6.2.1, anyio-4.9.0
+2025-07-15T03:02:51.0748855Z collecting ... collected 111 items
+2025-07-15T03:02:51.0749223Z 
+2025-07-15T03:02:51.2122038Z tests/test_api.py::TestAPIEndpoints::test_root_endpoint PASSED           [  0%]
+2025-07-15T03:02:51.2413414Z tests/test_api.py::TestAPIEndpoints::test_health_endpoint PASSED         [  1%]
+2025-07-15T03:02:51.2690257Z tests/test_api.py::TestAPIEndpoints::test_get_books_empty PASSED         [  2%]
+2025-07-15T03:02:51.3024334Z tests/test_api.py::TestAPIEndpoints::test_get_books_with_data PASSED     [  3%]
+2025-07-15T03:02:51.3558307Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_success PASSED    [  4%]
+2025-07-15T03:02:51.3847773Z tests/test_api.py::TestAPIEndpoints::test_scan_books_unauthorized PASSED [  5%]
+2025-07-15T03:02:51.4118852Z tests/test_api.py::TestAPIEndpoints::test_rate_limiting_books_endpoint PASSED [  6%]
+2025-07-15T03:02:51.4663119Z tests/test_api.py::TestAPIEndpoints::test_file_upload_size_limit PASSED  [  7%]
+2025-07-15T03:02:51.4945399Z tests/test_api.py::TestAPIEndpoints::test_security_headers_in_response PASSED [  8%]
+2025-07-15T03:02:51.5258505Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_title_extracted PASSED [  9%]
+2025-07-15T03:02:51.5572570Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_vision_processor_exception PASSED [  9%]
+2025-07-15T03:02:51.5850496Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_file PASSED    [ 10%]
+2025-07-15T03:02:51.6138072Z tests/test_api.py::TestAPIEndpoints::test_scan_books_success PASSED      [ 11%]
+2025-07-15T03:02:51.6427923Z tests/test_api.py::TestAPIEndpoints::test_scan_books_exception PASSED    [ 12%]
+2025-07-15T03:02:51.6708368Z tests/test_api.py::TestAPIEndpoints::test_rescan_title_record_not_found PASSED [ 13%]
+2025-07-15T03:02:51.7010548Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_success PASSED [ 14%]
+2025-07-15T03:02:51.7282777Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_missing_isbn PASSED [ 15%]
+2025-07-15T03:02:51.7554892Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_invalid_isbn PASSED [ 16%]
+2025-07-15T03:02:51.7794087Z tests/test_api.py::TestAPIInitialization::test_initialize_app PASSED     [ 17%]
+2025-07-15T03:02:51.7865825Z tests/test_api.py::TestAPIInitialization::test_app_without_initialization PASSED [ 18%]
+2025-07-15T03:02:51.8102315Z tests/test_cli.py::TestCLICommands::test_cli_help PASSED                 [ 18%]
+2025-07-15T03:02:51.8164199Z tests/test_cli.py::TestCLICommands::test_scan_command_success PASSED     [ 19%]
+2025-07-15T03:02:51.8227849Z tests/test_cli.py::TestCLICommands::test_scan_command_with_options PASSED [ 20%]
+2025-07-15T03:02:51.8283815Z tests/test_cli.py::TestCLICommands::test_scan_command_no_records PASSED  [ 21%]
+2025-07-15T03:02:51.8341927Z tests/test_cli.py::TestCLICommands::test_scan_command_nonexistent_file PASSED [ 22%]
+2025-07-15T03:02:51.8395868Z tests/test_cli.py::TestCLICommands::test_scan_command_exception PASSED   [ 23%]
+2025-07-15T03:02:51.8460484Z tests/test_cli.py::TestCLICommands::test_web_command_success PASSED      [ 24%]
+2025-07-15T03:02:51.8524318Z tests/test_cli.py::TestCLICommands::test_web_command_with_options PASSED [ 25%]
+2025-07-15T03:02:51.8585842Z tests/test_cli.py::TestCLICommands::test_web_command_nonexistent_file PASSED [ 26%]
+2025-07-15T03:02:51.8643097Z tests/test_cli.py::TestCLICommands::test_web_command_exception PASSED    [ 27%]
+2025-07-15T03:02:51.8728326Z tests/test_cli.py::TestCLICommands::test_create_csv_command_empty PASSED [ 27%]
+2025-07-15T03:02:51.8819377Z tests/test_cli.py::TestCLICommands::test_create_csv_command_with_sample PASSED [ 28%]
+2025-07-15T03:02:51.8879137Z tests/test_cli.py::TestCLICommands::test_create_csv_command_creates_directory PASSED [ 29%]
+2025-07-15T03:02:51.8937677Z tests/test_cli.py::TestCLICommands::test_create_csv_command_exception PASSED [ 30%]
+2025-07-15T03:02:51.9020427Z tests/test_cli.py::TestCLICommands::test_info_command_success PASSED     [ 31%]
+2025-07-15T03:02:51.9068329Z tests/test_cli.py::TestCLICommands::test_info_command_nonexistent_file PASSED [ 32%]
+2025-07-15T03:02:51.9122223Z tests/test_cli.py::TestCLICommands::test_info_command_exception PASSED   [ 33%]
+2025-07-15T03:02:51.9201209Z tests/test_cli.py::TestCLIValidation::test_scan_cost_validation_min PASSED [ 34%]
+2025-07-15T03:02:51.9272026Z tests/test_cli.py::TestCLIValidation::test_scan_cost_validation_max PASSED [ 35%]
+2025-07-15T03:02:51.9337310Z tests/test_cli.py::TestCLIValidation::test_port_validation PASSED        [ 36%]
+2025-07-15T03:02:51.9404679Z tests/test_cli.py::TestCLIIntegration::test_scan_integration_with_core PASSED [ 36%]
+2025-07-15T03:02:51.9467405Z tests/test_cli.py::TestCLIIntegration::test_web_integration_with_api PASSED [ 37%]
+2025-07-15T03:02:51.9604163Z tests/test_cli.py::TestCLIEnvironment::test_environment_loading PASSED   [ 38%]
+2025-07-15T03:02:51.9739741Z tests/test_cli.py::TestCLIEnvironment::test_logging_configuration PASSED [ 39%]
+2025-07-15T03:02:51.9805590Z tests/test_cli.py::TestCLIEnvironment::test_verbose_logging PASSED       [ 40%]
+2025-07-15T03:02:51.9817566Z tests/test_core.py::TestBookRecord::test_book_record_creation PASSED     [ 41%]
+2025-07-15T03:02:51.9829253Z tests/test_core.py::TestBookRecord::test_book_record_to_dict PASSED      [ 42%]
+2025-07-15T03:02:51.9841039Z tests/test_core.py::TestBookRecord::test_book_record_with_all_fields PASSED [ 43%]
+2025-07-15T03:02:51.9856055Z tests/test_core.py::TestBookTriage::test_book_triage_initialization_nonexistent_file PASSED [ 44%]
+2025-07-15T03:02:51.9902576Z tests/test_core.py::TestBookTriage::test_book_triage_initialization_with_data PASSED [ 45%]
+2025-07-15T03:02:51.9916654Z tests/test_core.py::TestBookTriage::test_calculate_utilities PASSED      [ 45%]
+2025-07-15T03:02:51.9930104Z tests/test_core.py::TestBookTriage::test_calculate_utilities_with_none_values PASSED [ 46%]
+2025-07-15T03:02:51.9944115Z tests/test_core.py::TestBookTriage::test_make_decision PASSED            [ 47%]
+2025-07-15T03:02:51.9995442Z tests/test_core.py::TestBookTriage::test_add_record PASSED               [ 48%]
+2025-07-15T03:02:52.0041286Z tests/test_core.py::TestBookTriage::test_get_record_by_id PASSED         [ 49%]
+2025-07-15T03:02:52.0089582Z tests/test_core.py::TestBookTriage::test_price_to_v_calculation PASSED   [ 50%]
+2025-07-15T03:02:52.0111418Z tests/test_core.py::TestBookTriage::test_enrich_with_gpt4o_mock PASSED   [ 51%]
+2025-07-15T03:02:52.0126345Z tests/test_core.py::TestBookTriage::test_scan_cost_parameter PASSED      [ 52%]
+2025-07-15T03:02:52.0136970Z tests/test_core.py::TestDecisionEnum::test_decision_values PASSED        [ 53%]
+2025-07-15T03:02:52.0150284Z tests/test_core.py::TestDecisionEnum::test_decision_comparison PASSED    [ 54%]
+2025-07-15T03:02:52.0161911Z tests/test_core_simple.py::TestBookRecord::test_book_record_creation PASSED [ 54%]
+2025-07-15T03:02:52.0173037Z tests/test_core_simple.py::TestBookRecord::test_book_record_with_values PASSED [ 55%]
+2025-07-15T03:02:52.0186347Z tests/test_core_simple.py::TestBookTriage::test_book_triage_initialization PASSED [ 56%]
+2025-07-15T03:02:52.0199527Z tests/test_core_simple.py::TestBookTriage::test_calculate_utilities_simple PASSED [ 57%]
+2025-07-15T03:02:52.0212704Z tests/test_core_simple.py::TestBookTriage::test_make_decision_simple PASSED [ 58%]
+2025-07-15T03:02:52.0225941Z tests/test_core_simple.py::TestDecision::test_decision_values PASSED     [ 59%]
+2025-07-15T03:02:52.0813064Z tests/test_indicators_implementation.py::test_v_calculation_from_prices PASSED [ 60%]
+2025-07-15T03:02:52.0827707Z tests/test_indicators_implementation.py::test_utility_calculations PASSED [ 61%]
+2025-07-15T03:02:52.0843819Z tests/test_indicators_implementation.py::test_decision_making PASSED     [ 62%]
+2025-07-15T03:02:52.0856809Z tests/test_indicators_implementation.py::test_human_vs_auto_indicators PASSED [ 63%]
+2025-07-15T03:02:52.0878548Z tests/test_indicators_implementation.py::test_scan_cost_impact PASSED    [ 63%]
+2025-07-15T03:02:52.0902579Z tests/test_main.py::TestMainModule::test_main_no_args_with_existing_csv PASSED [ 64%]
+2025-07-15T03:02:52.0924343Z tests/test_main.py::TestMainModule::test_main_no_args_creates_new_csv PASSED [ 65%]
+2025-07-15T03:02:52.0944396Z tests/test_main.py::TestMainModule::test_main_with_args PASSED           [ 66%]
+2025-07-15T03:02:52.0965152Z tests/test_main.py::TestMainModule::test_main_finds_alternative_csv_paths PASSED [ 67%]
+2025-07-15T03:02:52.0983885Z tests/test_main.py::TestMainModule::test_main_module_entry_point PASSED  [ 68%]
+2025-07-15T03:02:53.6163938Z tests/test_verified_display_logic.py::test_verified_column_uses_strict_equality PASSED [ 69%]
+2025-07-15T03:02:53.6185801Z tests/test_vision.py::TestVisionProcessor::test_vision_processor_initialization_with_openai PASSED [ 70%]
+2025-07-15T03:02:53.6197491Z tests/test_vision.py::TestVisionProcessor::test_vision_processor_initialization_without_openai PASSED [ 71%]
+2025-07-15T03:02:53.6209778Z tests/test_vision.py::TestVisionProcessor::test_generate_id PASSED       [ 72%]
+2025-07-15T03:02:53.6263660Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_openai_success PASSED [ 72%]
+2025-07-15T03:02:53.6294036Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_fallback_to_tesseract PASSED [ 73%]
+2025-07-15T03:02:53.6308479Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_nonexistent_file PASSED [ 74%]
+2025-07-15T03:02:53.6329369Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_success PASSED [ 75%]
+2025-07-15T03:02:53.6349971Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_empty_result PASSED [ 76%]
+2025-07-15T03:02:53.6371010Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_error PASSED [ 77%]
+2025-07-15T03:02:53.6413811Z tests/test_vision.py::TestVisionProcessor::test_extract_with_openai_vision_no_content PASSED [ 78%]
+2025-07-15T03:02:53.6443877Z tests/test_vision.py::TestVisionProcessor::test_extract_with_openai_vision_no_client PASSED [ 79%]
+2025-07-15T03:02:53.6489865Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_from_image_success PASSED [ 80%]
+2025-07-15T03:02:53.6509656Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_tesseract_fallback PASSED [ 81%]
+2025-07-15T03:02:53.6522321Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_nonexistent_file PASSED [ 81%]
+2025-07-15T03:02:53.6551891Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_no_isbn_found PASSED [ 82%]
+2025-07-15T03:02:53.6582549Z tests/test_vision.py::TestVisionProcessor::test_image_format_conversion PASSED [ 83%]
+2025-07-15T03:02:53.6605225Z tests/test_vision.py::TestVisionProcessorIntegration::test_processor_with_real_image_mock_ocr PASSED [ 84%]
+2025-07-15T03:02:53.6620086Z tests/test_vision_fixed.py::TestVisionProcessor::test_vision_processor_initialization_with_openai PASSED [ 85%]
+2025-07-15T03:02:53.6630855Z tests/test_vision_fixed.py::TestVisionProcessor::test_vision_processor_initialization_without_openai PASSED [ 86%]
+2025-07-15T03:02:53.6641997Z tests/test_vision_fixed.py::TestVisionProcessor::test_generate_id PASSED [ 87%]
+2025-07-15T03:02:53.6654071Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_from_image_nonexistent_file PASSED [ 88%]
+2025-07-15T03:02:53.6696062Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_with_openai_vision_success PASSED [ 89%]
+2025-07-15T03:02:53.6722118Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_fallback_to_tesseract PASSED [ 90%]
+2025-07-15T03:02:53.6742316Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_success PASSED [ 90%]
+2025-07-15T03:02:53.6762834Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_empty_result PASSED [ 91%]
+2025-07-15T03:02:53.6786472Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_error PASSED [ 92%]
+2025-07-15T03:02:53.6825474Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_openai_vision_no_content PASSED [ 93%]
+2025-07-15T03:02:53.6842278Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_openai_vision_no_client PASSED [ 94%]
+2025-07-15T03:02:53.6882456Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_from_image_success PASSED [ 95%]
+2025-07-15T03:02:53.6903146Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_tesseract_fallback PASSED [ 96%]
+2025-07-15T03:02:53.6915318Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_nonexistent_file PASSED [ 97%]
+2025-07-15T03:02:53.6935228Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_no_isbn_found PASSED [ 98%]
+2025-07-15T03:02:53.6946396Z tests/test_vision_fixed.py::TestVisionProcessor::test_image_format_conversion PASSED [ 99%]
+2025-07-15T03:02:53.9085468Z tests/test_vision_fixed.py::TestVisionProcessorIntegration::test_processor_with_real_image_mock_ocr PASSED [100%]
+2025-07-15T03:02:53.9086200Z 
+2025-07-15T03:02:53.9086399Z =============================== warnings summary ===============================
+2025-07-15T03:02:53.9087413Z tests/test_indicators_implementation.py::test_v_calculation_from_prices
+2025-07-15T03:02:53.9089167Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_v_calculation_from_prices returned <class 'bool'>.
+2025-07-15T03:02:53.9090928Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:02:53.9091909Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:02:53.9092633Z     warnings.warn(
+2025-07-15T03:02:53.9092766Z 
+2025-07-15T03:02:53.9092966Z tests/test_indicators_implementation.py::test_utility_calculations
+2025-07-15T03:02:53.9094076Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_utility_calculations returned <class 'bool'>.
+2025-07-15T03:02:53.9095113Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:02:53.9095588Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:02:53.9096022Z     warnings.warn(
+2025-07-15T03:02:53.9096141Z 
+2025-07-15T03:02:53.9096311Z tests/test_indicators_implementation.py::test_decision_making
+2025-07-15T03:02:53.9097565Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_decision_making returned <class 'bool'>.
+2025-07-15T03:02:53.9098570Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:02:53.9099038Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:02:53.9099497Z     warnings.warn(
+2025-07-15T03:02:53.9099616Z 
+2025-07-15T03:02:53.9099828Z tests/test_indicators_implementation.py::test_human_vs_auto_indicators
+2025-07-15T03:02:53.9100974Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_human_vs_auto_indicators returned <class 'bool'>.
+2025-07-15T03:02:53.9102270Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:02:53.9102769Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:02:53.9103214Z     warnings.warn(
+2025-07-15T03:02:53.9103335Z 
+2025-07-15T03:02:53.9103512Z tests/test_indicators_implementation.py::test_scan_cost_impact
+2025-07-15T03:02:53.9104596Z   /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:161: PytestReturnNotNoneWarning: Test functions should return None, but tests/test_indicators_implementation.py::test_scan_cost_impact returned <class 'bool'>.
+2025-07-15T03:02:53.9105552Z   Did you mean to use `assert` instead of `return`?
+2025-07-15T03:02:53.9105998Z   See https://docs.pytest.org/en/stable/how-to/assert.html#return-not-none for more information.
+2025-07-15T03:02:53.9106412Z     warnings.warn(
+2025-07-15T03:02:53.9106527Z 
+2025-07-15T03:02:53.9106710Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2025-07-15T03:02:53.9107144Z ======================= 111 passed, 5 warnings in 6.61s ========================
+2025-07-15T03:02:54.2519795Z Name                      Stmts   Miss  Cover   Missing
+2025-07-15T03:02:54.2520363Z -------------------------------------------------------
+2025-07-15T03:02:54.2520840Z book_triage/__init__.py       3      0   100%
+2025-07-15T03:02:54.2521287Z book_triage/__main__.py      21      0   100%
+2025-07-15T03:02:54.2522030Z book_triage/api.py          162     38    77%   41, 66, 408, 477, 506, 510-547, 558, 560
+2025-07-15T03:02:54.2522661Z book_triage/cli.py          117      8    93%   229, 231, 233, 235, 237, 239, 241, 250
+2025-07-15T03:02:54.2523929Z book_triage/core.py         195     41    79%   108, 111-112, 121, 166-168, 173-174, 220, 233-234, 238-242, 248, 274-277, 285, 287-294, 297-298, 302, 311-326
+2025-07-15T03:02:54.2524752Z book_triage/security.py      45     14    69%   27, 37-48, 64-69, 83, 89-90
+2025-07-15T03:02:54.2525395Z book_triage/vision.py       100     10    90%   36-38, 164-165, 171, 173-174, 176-177
+2025-07-15T03:02:54.2525943Z -------------------------------------------------------
+2025-07-15T03:02:54.2526354Z TOTAL                       643    111    83%
+2025-07-15T03:02:54.4105633Z Wrote XML report to coverage.xml
+2025-07-15T03:02:54.4382185Z ##[group]Run codecov/codecov-action@v3
+2025-07-15T03:02:54.4382475Z with:
+2025-07-15T03:02:54.4382656Z   file: ./coverage.xml
+2025-07-15T03:02:54.4382860Z   flags: unittests
+2025-07-15T03:02:54.4383053Z   name: codecov-umbrella
+2025-07-15T03:02:54.4383258Z   fail_ci_if_error: false
+2025-07-15T03:02:54.4383460Z   verbose: true
+2025-07-15T03:02:54.4383656Z env:
+2025-07-15T03:02:54.4383888Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:54.4384294Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:54.4384683Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:54.4385029Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:54.4385387Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:54.4385736Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:54.4386035Z   BOOK_USER: testuser
+2025-07-15T03:02:54.4386272Z   BOOK_PASS: testpass
+2025-07-15T03:02:54.4386465Z   OPENAI_API_KEY: test-key
+2025-07-15T03:02:54.4387045Z   CODECOV_TOKEN: ***
+2025-07-15T03:02:54.4387250Z ##[endgroup]
+2025-07-15T03:02:54.5476881Z {
+2025-07-15T03:02:54.5477248Z   execArgs: [
+2025-07-15T03:02:54.5477591Z     '-n',
+2025-07-15T03:02:54.5477916Z     'codecov-umbrella',
+2025-07-15T03:02:54.5478292Z     '-Q',
+2025-07-15T03:02:54.5478673Z     'github-action-3.1.6',
+2025-07-15T03:02:54.5479054Z     '-f',
+2025-07-15T03:02:54.5479377Z     './coverage.xml',
+2025-07-15T03:02:54.5479741Z     '-F',
+2025-07-15T03:02:54.5480033Z     'unittests',
+2025-07-15T03:02:54.5480361Z     '-v'
+2025-07-15T03:02:54.5480652Z   ]
+2025-07-15T03:02:54.5480920Z }
+2025-07-15T03:02:54.5483182Z ==> linux OS detected
+2025-07-15T03:02:54.9268469Z https://uploader.codecov.io/latest/linux/codecov.SHA256SUM
+2025-07-15T03:02:54.9410387Z Received SHA256SUM b37359013b48fbc3b0790d59fc474a52a260fb96e28e1b2c2ae001dc9b9cc996  codecov
+2025-07-15T03:02:54.9798752Z Received SHA256SUM signature -----BEGIN PGP SIGNATURE-----
+2025-07-15T03:02:54.9799275Z 
+2025-07-15T03:02:54.9799642Z iQIzBAABCgAdFiEEJwNOf9uFDgu8LGL/gGuyiu13mGkFAmas/x0ACgkQgGuyiu13
+2025-07-15T03:02:54.9800511Z mGnuYxAAhL4nufMHTUEJVbG790Tkshg/NwRAQ1I2FmpPOy1HwZnlX0arTb2Fk6r5
+2025-07-15T03:02:54.9801372Z jTUIVHTARwbsQc/gEnaety1RULuMhyn4TlkkTm4rrCENlMvrbkmrT55lbLzx7FzG
+2025-07-15T03:02:54.9802485Z qMS1oEUUZaRDNT/AqrhtUnCtq8UsR4eBgdgKgkxsgSUKjfkumYqfsBp3QBerLcqB
+2025-07-15T03:02:54.9803412Z xeXP2y9qxZ95rVVepMWY+7pdywAhUAyKgA6sO6ejPdwSybSHZeySAFS6MGDhRhcM
+2025-07-15T03:02:54.9804294Z +WTr/2WhRjjOfmJGODTDFmMjUrtnlU5FSqhA8zJ2zv7ZInw7yzelA05tEVz0HT/Q
+2025-07-15T03:02:54.9805160Z HnIvyJZzXtX81hHDgBzXG7Vw8ElQMTyAiySpKF4KcMWaTc+mIm5LG+yhgJXhUqFL
+2025-07-15T03:02:54.9806029Z R1NXxuyh0050+T7zhsFLadw7706Q8QCQKDpBDYgRbjUr+rkRgZBGLcWcoFiqAzNF
+2025-07-15T03:02:54.9806916Z 7lx6W9lxF9M97wKNJezhWvvzR9kI04l676BvVLTX9yPG6MUakLqKgsbR0NuOz7xA
+2025-07-15T03:02:54.9807812Z yCDKCEXfjXr53h1TP3oqmC5wguSurjmIOcVCK77iiv1Sy63RnK+SUXAyIeNsJwME
+2025-07-15T03:02:54.9808699Z KdfVS6l1enI4s35IQzmmd0QxhfiHFTUYHuFPgE78z2Ik93KcSkVc7AZg2C76PCfZ
+2025-07-15T03:02:54.9809477Z fWy10hSbRM0BS5hjauyrSrA4++8ku/KoJhXwkGu49N8GylTcySk=
+2025-07-15T03:02:54.9810009Z =n6lq
+2025-07-15T03:02:54.9810345Z -----END PGP SIGNATURE-----
+2025-07-15T03:02:54.9810615Z 
+2025-07-15T03:02:54.9946510Z ==> SHASUM file signed by key id 806bb28aed779869
+2025-07-15T03:02:55.0705159Z ==> Uploader SHASUM verified (b37359013b48fbc3b0790d59fc474a52a260fb96e28e1b2c2ae001dc9b9cc996  codecov)
+2025-07-15T03:02:55.0706314Z ==> Running version latest
+2025-07-15T03:02:55.1346900Z ==> Running version v0.8.0
+2025-07-15T03:02:55.1364161Z [command]/home/runner/work/_actions/codecov/codecov-action/v3/dist/codecov -n codecov-umbrella -Q github-action-3.1.6 -f ./coverage.xml -F unittests -v
+2025-07-15T03:02:55.3458466Z [2025-07-15T03:02:55.344Z] ['verbose'] Start of uploader: 1752548575344...
+2025-07-15T03:02:55.3462211Z [2025-07-15T03:02:55.346Z] ['info'] 
+2025-07-15T03:02:55.3462888Z      _____          _
+2025-07-15T03:02:55.3464261Z     / ____|        | |
+2025-07-15T03:02:55.3464640Z    | |     ___   __| | ___  ___ _____   __
+2025-07-15T03:02:55.3465022Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2025-07-15T03:02:55.3465295Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2025-07-15T03:02:55.3465551Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2025-07-15T03:02:55.3465735Z 
+2025-07-15T03:02:55.3465998Z   Codecov report uploader 0.8.0
+2025-07-15T03:02:55.3517959Z [2025-07-15T03:02:55.351Z] ['info'] => Project root located at: /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:02:55.3522358Z [2025-07-15T03:02:55.352Z] ['info'] ->  Token found by environment variables
+2025-07-15T03:02:55.3530134Z [2025-07-15T03:02:55.352Z] ['verbose'] Start of network processing...
+2025-07-15T03:02:55.3531069Z [2025-07-15T03:02:55.352Z] ['verbose'] Searching for files in /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:02:55.4529237Z [2025-07-15T03:02:55.452Z] ['verbose'] Skipping coveragepy, files already specified
+2025-07-15T03:02:55.4530046Z [2025-07-15T03:02:55.452Z] ['info'] Searching for coverage files...
+2025-07-15T03:02:55.4914117Z [2025-07-15T03:02:55.490Z] ['verbose'] Preparing to clean the following coverage paths: ./coverage.xml
+2025-07-15T03:02:55.4914890Z [2025-07-15T03:02:55.491Z] ['info'] => Found 1 possible coverage files:
+2025-07-15T03:02:55.4915238Z   ./coverage.xml
+2025-07-15T03:02:55.4915594Z [2025-07-15T03:02:55.491Z] ['verbose'] End of network processing
+2025-07-15T03:02:55.4916273Z [2025-07-15T03:02:55.491Z] ['info'] Processing ./coverage.xml...
+2025-07-15T03:02:55.4943598Z [2025-07-15T03:02:55.494Z] ['info'] Detected GitHub Actions as the CI provider.
+2025-07-15T03:02:55.4944561Z [2025-07-15T03:02:55.494Z] ['verbose'] -> Using the following env variables:
+2025-07-15T03:02:55.4945895Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_ACTION: __codecov_codecov-action
+2025-07-15T03:02:55.4946724Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_HEAD_REF: 
+2025-07-15T03:02:55.4947499Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_REF: refs/heads/main
+2025-07-15T03:02:55.4948383Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_REPOSITORY: fitydo/book_triage_v0.1.0
+2025-07-15T03:02:55.4949075Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_RUN_ID: 16282982068
+2025-07-15T03:02:55.4949928Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_SERVER_URL: https://github.com
+2025-07-15T03:02:55.4950765Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_SHA: 6e5257eb7b60bbc972499ed38d438a155894cf17
+2025-07-15T03:02:55.4951314Z [2025-07-15T03:02:55.494Z] ['verbose']      GITHUB_WORKFLOW: CI
+2025-07-15T03:02:55.6928024Z [2025-07-15T03:02:55.692Z] ['verbose'] Using the following upload parameters:
+2025-07-15T03:02:55.6929740Z [2025-07-15T03:02:55.692Z] ['verbose'] branch
+2025-07-15T03:02:55.6930240Z [2025-07-15T03:02:55.692Z] ['verbose'] build
+2025-07-15T03:02:55.6930723Z [2025-07-15T03:02:55.692Z] ['verbose'] buildURL
+2025-07-15T03:02:55.6931221Z [2025-07-15T03:02:55.692Z] ['verbose'] commit
+2025-07-15T03:02:55.6931893Z [2025-07-15T03:02:55.692Z] ['verbose'] job
+2025-07-15T03:02:55.6932359Z [2025-07-15T03:02:55.692Z] ['verbose'] pr
+2025-07-15T03:02:55.6932820Z [2025-07-15T03:02:55.692Z] ['verbose'] service
+2025-07-15T03:02:55.6933283Z [2025-07-15T03:02:55.692Z] ['verbose'] slug
+2025-07-15T03:02:55.6933727Z [2025-07-15T03:02:55.692Z] ['verbose'] name
+2025-07-15T03:02:55.6934169Z [2025-07-15T03:02:55.692Z] ['verbose'] tag
+2025-07-15T03:02:55.6935022Z [2025-07-15T03:02:55.692Z] ['verbose'] flags
+2025-07-15T03:02:55.6935450Z [2025-07-15T03:02:55.692Z] ['verbose'] parent
+2025-07-15T03:02:55.6947149Z [2025-07-15T03:02:55.694Z] ['info'] Pinging Codecov: https://codecov.io/upload/v4?package=github-action-3.1.6-uploader-0.8.0&token=*******&branch=main&build=16282982068&build_url=https%3A%2F%2Fgithub.com%2Ffitydo%2Fbook_triage_v0.1.0%2Factions%2Fruns%2F16282982068%2Fjob%2F45976141389&commit=6e5257eb7b60bbc972499ed38d438a155894cf17&job=CI&pr=&service=github-actions&slug=fitydo%2Fbook_triage_v0.1.0&name=codecov-umbrella&tag=&flags=unittests&parent=
+2025-07-15T03:02:55.6951107Z [2025-07-15T03:02:55.694Z] ['verbose'] Passed token was 36 characters long
+2025-07-15T03:02:55.6953969Z [2025-07-15T03:02:55.694Z] ['verbose'] https://codecov.io/upload/v4?package=github-action-3.1.6-uploader-0.8.0&branch=main&build=16282982068&build_url=https%3A%2F%2Fgithub.com%2Ffitydo%2Fbook_triage_v0.1.0%2Factions%2Fruns%2F16282982068%2Fjob%2F45976141389&commit=6e5257eb7b60bbc972499ed38d438a155894cf17&job=CI&pr=&service=github-actions&slug=fitydo%2Fbook_triage_v0.1.0&name=codecov-umbrella&tag=&flags=unittests&parent=
+2025-07-15T03:02:55.6956503Z         Content-Type: 'text/plain'
+2025-07-15T03:02:55.6956946Z         Content-Encoding: 'gzip'
+2025-07-15T03:02:55.6957385Z         X-Reduced-Redundancy: 'false'
+2025-07-15T03:02:55.9343981Z [2025-07-15T03:02:55.934Z] ['info'] https://app.codecov.io/github/fitydo/book_triage_v1.0.0/commit/6e5257eb7b60bbc972499ed38d438a155894cf17
+2025-07-15T03:02:55.9347410Z https://storage.googleapis.com/codecov-production/shelter/v4/github/fitydo/book_triage_v1.0.0/6e5257eb7b60bbc972499ed38d438a155894cf17/74b607ba-eb9a-4ba3-bbf4-4e696ad9af0f.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=GOOG1EJWQHUGIBILH4J7Q6ZUSCIFNEOLYSNDS7L3B4N5SIBQ2J4YLYE5CRFCD%2F20250715%2Fus%2Fs3%2Faws4_request&X-Amz-Date=20250715T030255Z&X-Amz-Expires=120&X-Amz-SignedHeaders=host&X-Amz-Signature=954d2f7932a57d550aa1cd238cf639b27c446df7be1a576d89297a394fcbe8b5
+2025-07-15T03:02:55.9355097Z [2025-07-15T03:02:55.934Z] ['verbose'] Returned upload url: https://storage.googleapis.com/codecov-production/shelter/v4/github/fitydo/book_triage_v1.0.0/6e5257eb7b60bbc972499ed38d438a155894cf17/74b607ba-eb9a-4ba3-bbf4-4e696ad9af0f.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=GOOG1EJWQHUGIBILH4J7Q6ZUSCIFNEOLYSNDS7L3B4N5SIBQ2J4YLYE5CRFCD%2F20250715%2Fus%2Fs3%2Faws4_request&X-Amz-Date=20250715T030255Z&X-Amz-Expires=120&X-Amz-SignedHeaders=host&X-Amz-Signature=954d2f7932a57d550aa1cd238cf639b27c446df7be1a576d89297a394fcbe8b5
+2025-07-15T03:02:55.9358230Z [2025-07-15T03:02:55.934Z] ['info'] Uploading...
+2025-07-15T03:02:56.0399809Z [2025-07-15T03:02:56.039Z] ['info'] {"status":"processing","resultURL":"https://app.codecov.io/github/fitydo/book_triage_v1.0.0/commit/6e5257eb7b60bbc972499ed38d438a155894cf17"}
+2025-07-15T03:02:56.0401064Z [2025-07-15T03:02:56.039Z] ['verbose'] End of uploader: 695 milliseconds
+2025-07-15T03:02:56.0690309Z ##[group]Run python -c "
+2025-07-15T03:02:56.0708653Z [36;1mpython -c "[0m
+2025-07-15T03:02:56.0708955Z [36;1mfrom book_triage.api import initialize_app[0m
+2025-07-15T03:02:56.0709271Z [36;1mfrom pathlib import Path[0m
+2025-07-15T03:02:56.0709553Z [36;1minitialize_app(Path('sample_books.csv'))[0m
+2025-07-15T03:02:56.0709823Z [36;1m" &[0m
+2025-07-15T03:02:56.0710113Z [36;1mpython -m uvicorn book_triage.api:app --host 127.0.0.1 --port 8000 &[0m
+2025-07-15T03:02:56.0710464Z [36;1msleep 10[0m
+2025-07-15T03:02:56.0738287Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:02:56.0738515Z env:
+2025-07-15T03:02:56.0738760Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:56.0739181Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:56.0739582Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:56.0739943Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:56.0740332Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:56.0740854Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:56.0741147Z   BOOK_USER: testuser
+2025-07-15T03:02:56.0741347Z   BOOK_PASS: testpass
+2025-07-15T03:02:56.0741545Z   OPENAI_API_KEY: test-key
+2025-07-15T03:02:56.0741962Z ##[endgroup]
+2025-07-15T03:02:57.2092975Z INFO:     Started server process [3361]
+2025-07-15T03:02:57.2094704Z INFO:     Waiting for application startup.
+2025-07-15T03:02:57.2095806Z INFO:     Application startup complete.
+2025-07-15T03:02:57.2108830Z INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2025-07-15T03:03:11.0855628Z ##[group]Run python scripts/chaos_demo.py
+2025-07-15T03:03:11.0855948Z [36;1mpython scripts/chaos_demo.py[0m
+2025-07-15T03:03:11.0883385Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:03:11.0883606Z env:
+2025-07-15T03:03:11.0883846Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:11.0884273Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:03:11.0884688Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:11.0885032Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:11.0885371Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:11.0885726Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:03:11.0886019Z   BOOK_USER: testuser
+2025-07-15T03:03:11.0886211Z   BOOK_PASS: testpass
+2025-07-15T03:03:11.0886399Z   OPENAI_API_KEY: test-key
+2025-07-15T03:03:11.0886597Z ##[endgroup]
+2025-07-15T03:03:15.7075902Z 🔥 Chaos Engineering Demo 🔥
+2025-07-15T03:03:15.7076317Z ========================================
+2025-07-15T03:03:15.7076900Z Simulating tests against security-hardened Book Triage
+2025-07-15T03:03:15.7077399Z 
+2025-07-15T03:03:15.7077736Z --- 🔒 Authentication Test ---
+2025-07-15T03:03:15.7078319Z Testing /scan unauthorized access...
+2025-07-15T03:03:15.7079013Z   ✅ Unauthorized /scan → 401
+2025-07-15T03:03:15.7079399Z 
+2025-07-15T03:03:15.7079702Z --- ⏱️ Rate Limiting Test ---
+2025-07-15T03:03:15.7080248Z Testing burst 100 requests to /books...
+2025-07-15T03:03:15.7080900Z   ✅ Rate limiting 200→429
+2025-07-15T03:03:15.7081201Z 
+2025-07-15T03:03:15.7081477Z --- 📁 File Upload Test ---
+2025-07-15T03:03:15.7082185Z Testing 12MB file upload...
+2025-07-15T03:03:15.7082597Z   ✅ Large file → 413
+2025-07-15T03:03:15.7082791Z 
+2025-07-15T03:03:15.7083003Z --- 🛡️ Security Headers Test ---
+2025-07-15T03:03:15.7083368Z Testing security headers...
+2025-07-15T03:03:15.7083781Z   ✅ All security headers present
+2025-07-15T03:03:15.7084062Z 
+2025-07-15T03:03:15.7084184Z ========================================
+2025-07-15T03:03:15.7084626Z 🔥 CHAOS DEMO SUMMARY 🔥
+2025-07-15T03:03:15.7084954Z ========================================
+2025-07-15T03:03:15.7085330Z PASSED: 4/4
+2025-07-15T03:03:15.7085632Z SUCCESS RATE: 100.0%
+2025-07-15T03:03:15.7086036Z 🎉 EXCELLENT! Chaos-resistant!
+2025-07-15T03:03:15.7086431Z 🏆 GRADE: A+
+2025-07-15T03:03:15.7086633Z 
+2025-07-15T03:03:15.7086832Z 🛡️ Security Features Demonstrated:
+2025-07-15T03:03:15.7087273Z ✅ HTTP Basic Authentication
+2025-07-15T03:03:15.7087693Z ✅ Rate limiting (30-60 req/min)
+2025-07-15T03:03:15.7087970Z ✅ File size validation (10MB limit)
+2025-07-15T03:03:15.7088253Z ✅ Security headers (XFO, CSP, HSTS)
+2025-07-15T03:03:15.7134527Z ##[group]Run timeout 60 python scripts/simple_chaos.py || echo "Chaos tests completed"
+2025-07-15T03:03:15.7135115Z [36;1mtimeout 60 python scripts/simple_chaos.py || echo "Chaos tests completed"[0m
+2025-07-15T03:03:15.7162907Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:03:15.7163128Z env:
+2025-07-15T03:03:15.7163367Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:15.7163780Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:03:15.7164171Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:15.7164514Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:15.7165048Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:03:15.7165396Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:03:15.7165690Z   BOOK_USER: testuser
+2025-07-15T03:03:15.7165884Z   BOOK_PASS: testpass
+2025-07-15T03:03:15.7166100Z   OPENAI_API_KEY: test-key
+2025-07-15T03:03:15.7166299Z ##[endgroup]
+2025-07-15T03:03:20.0405884Z 🔥 Simple Chaos Engineering Test 🔥
+2025-07-15T03:03:20.0406487Z ========================================
+2025-07-15T03:03:20.0407121Z ✅ Server detected, running tests...
+2025-07-15T03:03:20.0407785Z Testing Unauthorized /scan → 401...
+2025-07-15T03:03:20.0408300Z   ✅ PASS
+2025-07-15T03:03:20.0408673Z Testing Burst requests rate limiting...
+2025-07-15T03:03:20.0409220Z   ❌ FAIL
+2025-07-15T03:03:20.0409670Z Testing Large file upload → 413...
+2025-07-15T03:03:20.0410187Z   ❌ FAIL
+2025-07-15T03:03:20.0410534Z Testing Security headers present...
+2025-07-15T03:03:20.0411038Z   ❌ FAIL
+2025-07-15T03:03:20.0411288Z 
+2025-07-15T03:03:20.0411437Z ========================================
+2025-07-15T03:03:20.0412315Z 🔥 CHAOS TEST SUMMARY 🔥
+2025-07-15T03:03:20.0412651Z ========================================
+2025-07-15T03:03:20.0412988Z PASSED: 1/4
+2025-07-15T03:03:20.0413247Z SUCCESS RATE: 25.0%
+2025-07-15T03:03:20.0413689Z 💥 POOR! Critical issues!
+2025-07-15T03:03:20.0414021Z 🏆 GRADE: F
+2025-07-15T03:03:20.1507449Z Post job cleanup.
+2025-07-15T03:03:20.2751968Z Cache hit occurred on the primary key Linux-pip-7481cc370f9bdef12023486f79da6673ff9164659a96ca74a04478bd65194968, not saving cache.
+2025-07-15T03:03:20.2830591Z Post job cleanup.
+2025-07-15T03:03:20.4461138Z Post job cleanup.
+2025-07-15T03:03:20.5395536Z [command]/usr/bin/git version
+2025-07-15T03:03:20.5432046Z git version 2.50.1
+2025-07-15T03:03:20.5476109Z Temporarily overriding HOME='/home/runner/work/_temp/6d623170-ee8d-4e28-9904-0fad7ba33257' before making global git config changes
+2025-07-15T03:03:20.5477429Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-15T03:03:20.5489808Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T03:03:20.5525536Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-15T03:03:20.5558364Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-15T03:03:20.5790298Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-15T03:03:20.5813591Z http.https://github.com/.extraheader
+2025-07-15T03:03:20.5823946Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-15T03:03:20.5853943Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-15T03:03:20.6186516Z Cleaning up orphan processes
+2025-07-15T03:03:20.6478967Z Terminate orphan process: pid (3361) (python)

@@ -1,0 +1,20 @@
+﻿2025-07-15T03:04:01.9315177Z ##[group]Run actions/upload-artifact@v4
+2025-07-15T03:04:01.9315470Z with:
+2025-07-15T03:04:01.9315654Z   name: coverage-report
+2025-07-15T03:04:01.9315865Z   path: htmlcov/
+2025-07-15T03:04:01.9316092Z   if-no-files-found: warn
+2025-07-15T03:04:01.9316320Z   compression-level: 6
+2025-07-15T03:04:01.9316521Z   overwrite: false
+2025-07-15T03:04:01.9316717Z   include-hidden-files: false
+2025-07-15T03:04:01.9316936Z env:
+2025-07-15T03:04:01.9317171Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:04:01.9317588Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:04:01.9317974Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:04:01.9318332Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:04:01.9318693Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:04:01.9319056Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:04:01.9319617Z   BOOK_USER: testuser
+2025-07-15T03:04:01.9319871Z   BOOK_PASS: testpass
+2025-07-15T03:04:01.9320076Z   OPENAI_API_KEY: test-key
+2025-07-15T03:04:01.9320300Z ##[endgroup]
+2025-07-15T03:04:02.1448430Z ##[warning]No files were found with the provided path: htmlcov/. No artifacts will be uploaded.

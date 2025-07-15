@@ -63,7 +63,7 @@ def test_v_calculation_from_prices():
                 all_passed = False
         
         print(f"\nV calculation test: {'PASSED' if all_passed else 'FAILED'}")
-        return all_passed
+        assert all_passed, "Some V calculation tests failed"
         
     finally:
         if csv_path.exists():
@@ -112,7 +112,7 @@ def test_utility_calculations():
         )
         
         print(f"\nUtility calculation test: {'PASSED' if all_correct else 'FAILED'}")
-        return all_correct
+        assert all_correct, "Utility calculation test failed"
         
     finally:
         if csv_path.exists():
@@ -158,7 +158,7 @@ def test_decision_making():
                 all_passed = False
         
         print(f"\nDecision-making test: {'PASSED' if all_passed else 'FAILED'}")
-        return all_passed
+        assert all_passed, "Some decision-making tests failed"
         
     finally:
         if csv_path.exists():
@@ -201,7 +201,7 @@ def test_human_vs_auto_indicators():
     print("  • book_triage/core.py: enrich_with_gpt4o() - URL enrichment")
     print("  • book_triage/api.py: saveBook() - Manual value updates")
     
-    return True
+    assert True, "Human vs auto indicators test completed"
 
 
 def test_scan_cost_impact():
@@ -239,7 +239,7 @@ def test_scan_cost_impact():
                 csv_path.unlink()
     
     print("\nScan cost test: PASSED")
-    return True
+    assert True, "Scan cost test completed"
 
 
 def main():

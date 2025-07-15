@@ -1,0 +1,24 @@
+﻿2025-07-15T03:02:56.0690297Z ##[group]Run python -c "
+2025-07-15T03:02:56.0708641Z [36;1mpython -c "[0m
+2025-07-15T03:02:56.0708952Z [36;1mfrom book_triage.api import initialize_app[0m
+2025-07-15T03:02:56.0709268Z [36;1mfrom pathlib import Path[0m
+2025-07-15T03:02:56.0709551Z [36;1minitialize_app(Path('sample_books.csv'))[0m
+2025-07-15T03:02:56.0709820Z [36;1m" &[0m
+2025-07-15T03:02:56.0710110Z [36;1mpython -m uvicorn book_triage.api:app --host 127.0.0.1 --port 8000 &[0m
+2025-07-15T03:02:56.0710461Z [36;1msleep 10[0m
+2025-07-15T03:02:56.0738279Z shell: /usr/bin/bash -e {0}
+2025-07-15T03:02:56.0738513Z env:
+2025-07-15T03:02:56.0738757Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:56.0739178Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T03:02:56.0739579Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:56.0739940Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:56.0740297Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T03:02:56.0740851Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T03:02:56.0741145Z   BOOK_USER: testuser
+2025-07-15T03:02:56.0741345Z   BOOK_PASS: testpass
+2025-07-15T03:02:56.0741543Z   OPENAI_API_KEY: test-key
+2025-07-15T03:02:56.0741959Z ##[endgroup]
+2025-07-15T03:02:57.2092928Z INFO:     Started server process [3361]
+2025-07-15T03:02:57.2094693Z INFO:     Waiting for application startup.
+2025-07-15T03:02:57.2095794Z INFO:     Application startup complete.
+2025-07-15T03:02:57.2108814Z INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
