@@ -319,8 +319,10 @@ async def root(request: Request) -> str:
                 const isbn = document.getElementById(`isbn-${bookId}`).value;
                 const url = document.getElementById(`url-${bookId}`).value;
                 const url_com = document.getElementById(`url_com-${bookId}`).value;
-                const purchase_price = parseFloat(document.getElementById(`purchase-${bookId}`).value);
-                const used_price = parseFloat(document.getElementById(`used-${bookId}`).value);
+                const purchaseVal = document.getElementById(`purchase-${bookId}`).value;
+                const usedVal = document.getElementById(`used-${bookId}`).value;
+                const purchase_price = purchaseVal === '' ? null : parseFloat(purchaseVal);
+                const used_price = usedVal === '' ? null : parseFloat(usedVal);
                 const V = document.getElementById(`V-${bookId}`).value;
                 const R = document.getElementById(`R-${bookId}`).value;
                 const P = document.getElementById(`P-${bookId}`).value;
@@ -494,8 +496,17 @@ async def rescan_title(request: Request) -> dict:
     new_isbn = data.get("isbn", "")
     new_url = data.get("url", "")
     new_url_com = data.get("url_com", "")
-    new_purchase = float(data.get("purchase_price", 0.0))
-    new_used = float(data.get("used_price", 0.0))
+    new_purchase_raw = data.get("purchase_price")
+    new_used_raw = data.get("used_price")
+    # Preserve existing values if not provided (null from JS)
+    try:
+        new_purchase = float(new_purchase_raw) if new_purchase_raw is not None and new_purchase_raw != "" else None
+    except (TypeError, ValueError):
+        new_purchase = None
+    try:
+        new_used = float(new_used_raw) if new_used_raw is not None and new_used_raw != "" else None
+    except (TypeError, ValueError):
+        new_used = None
     new_V = data.get("V")
     new_R = data.get("R") 
     new_P = data.get("P")
@@ -511,14 +522,22 @@ async def rescan_title(request: Request) -> dict:
     record.isbn = new_isbn
     record.url = new_url
     record.url_com = new_url_com
-    record.purchase_price = new_purchase
-    record.used_price = new_used
-    record.V = int(new_V) if new_V is not None and new_V != "" else None
-    record.R = int(new_R) if new_R is not None and new_R != "" else None
-    record.P = int(new_P) if new_P is not None and new_P != "" else None
-    record.F = int(new_F) if new_F is not None and new_F != "" else None
-    record.A = int(new_A) if new_A is not None and new_A != "" else None
-    record.S = int(new_S) if new_S is not None and new_S != "" else None
+    if new_purchase is not None:
+        record.purchase_price = new_purchase
+    if new_used is not None:
+        record.used_price = new_used
+    if new_V is not None and new_V != "":
+        record.V = int(new_V)
+    if new_R is not None and new_R != "":
+        record.R = int(new_R)
+    if new_P is not None and new_P != "":
+        record.P = int(new_P)
+    if new_F is not None and new_F != "":
+        record.F = int(new_F)
+    if new_A is not None and new_A != "":
+        record.A = int(new_A)
+    if new_S is not None and new_S != "":
+        record.S = int(new_S)
     # If V is not manually set and both prices are present, auto-calculate V
     if record.V is None and record.purchase_price > 0 and record.used_price > 0:
         ratio = record.used_price / record.purchase_price
