@@ -180,30 +180,48 @@ async def root(request: Request) -> str:
             /* Main content area */
             .main-content {
                 flex: 1;
-                overflow: auto;
+                overflow: hidden; /* Changed from auto to hidden */
                 background: #f5f7fa;
                 padding: 20px;
                 min-height: 0; /* Important for flexbox */
+                display: flex;
+                flex-direction: column;
             }
             
             .main-content h2 {
                 color: #2c3e50;
                 margin-bottom: 20px;
+                flex-shrink: 0; /* Prevent header from shrinking */
             }
             
             /* Table styling */
             .table-container { 
                 background: white;
                 border-radius: 8px;
-                overflow-x: auto; /* Allow horizontal scroll for wide tables */
                 box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                min-height: 0; /* Important for flexbox scrolling */
+                position: relative; /* For proper sticky header positioning */
+                max-height: 70vh; /* Set a maximum height to force scrolling */
             }
             
             .books-table { 
                 width: 100%; 
                 min-width: 1800px; 
                 border-collapse: collapse; 
-                margin: 0; 
+                margin: 0;
+            }
+            
+            /* Create a scrollable wrapper for the table */
+            .table-scroll-container {
+                overflow: auto;
+                flex: 1;
+                min-height: 0; /* Important for flexbox scrolling */
+                max-height: calc(70vh - 60px); /* Account for header space */
+                border: 1px solid #e1e8ed;
+                border-radius: 8px;
             }
             
             .books-table th, .books-table td { 
@@ -220,6 +238,18 @@ async def root(request: Request) -> str:
                 top: 0;
                 z-index: 10;
                 border-bottom: 2px solid #dee2e6;
+            }
+            
+            /* Ensure header cells have a solid background to prevent content showing through */
+            .books-table th::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-color: #f8f9fa;
+                z-index: -1;
             }
             
             .books-table tbody tr:hover {
@@ -440,30 +470,31 @@ async def root(request: Request) -> str:
                     }
                     let table = `
                         <div class="table-container">
-                            <table class="books-table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Title</th>
-                                        <th>ISBN</th>
-                                        <th>Amazon.co.jp URL</th>
-                                        <th>Amazon.com URL</th>
-                                        <th>Purchase Price</th>
-                                        <th>Used Price</th>
-                                        <th title="Value - Resale value (1-5)">V<br><small>Value</small></th>
-                                        <th title="Rarity - How rare the book is (1-5)">R<br><small>Rarity</small></th>
-                                        <th title="Scannability - How easy to digitize (1-5)">P<br><small>Scan</small></th>
-                                        <th title="Frequency - How often you use it (1-5)">F<br><small>Freq</small></th>
-                                        <th title="Annotation - Personal notes/highlights (1-5)">A<br><small>Notes</small></th>
-                                        <th title="Sentimental - Emotional value (1-5)">S<br><small>Sent</small></th>
-                                        <th>citation_R</th>
-                                        <th>citation_P</th>
-                                        <th>Decision</th>
-                                        <th>Verified</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                            <div class="table-scroll-container">
+                                <table class="books-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Title</th>
+                                            <th>ISBN</th>
+                                            <th>Amazon.co.jp URL</th>
+                                            <th>Amazon.com URL</th>
+                                            <th>Purchase Price</th>
+                                            <th>Used Price</th>
+                                            <th title="Value - Resale value (1-5)">V<br><small>Value</small></th>
+                                            <th title="Rarity - How rare the book is (1-5)">R<br><small>Rarity</small></th>
+                                            <th title="Scannability - How easy to digitize (1-5)">P<br><small>Scan</small></th>
+                                            <th title="Frequency - How often you use it (1-5)">F<br><small>Freq</small></th>
+                                            <th title="Annotation - Personal notes/highlights (1-5)">A<br><small>Notes</small></th>
+                                            <th title="Sentimental - Emotional value (1-5)">S<br><small>Sent</small></th>
+                                            <th>citation_R</th>
+                                            <th>citation_P</th>
+                                            <th>Decision</th>
+                                            <th>Verified</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                     `;
                     
                     data.forEach(book => {
@@ -518,7 +549,7 @@ async def root(request: Request) -> str:
                         `;
                     });
                     
-                    table += '</tbody></table></div>';
+                    table += '</tbody></table></div></div>';
                     booksListDiv.innerHTML = table;
                 })
                 .catch(error => {
