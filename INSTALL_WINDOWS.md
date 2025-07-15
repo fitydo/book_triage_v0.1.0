@@ -47,12 +47,15 @@ This guide provides step-by-step instructions for installing Book Triage on Wind
 
 6. **Set up environment (Required for web interface):**
    ```powershell
-   # Create .env file with authentication credentials
-   echo BOOK_USER=admin > .env
-   echo BOOK_PASS=password >> .env
+   # Create .env file with authentication credentials (UTF-8 encoding)
+   [System.IO.File]::WriteAllText('.env', "BOOK_USER=admin`nBOOK_PASS=password`n", [System.Text.Encoding]::UTF8)
+   
+   # Alternative method using Out-File with UTF-8 encoding
+   # "BOOK_USER=admin" | Out-File -FilePath .env -Encoding UTF8
+   # "BOOK_PASS=password" | Out-File -FilePath .env -Encoding UTF8 -Append
    
    # Optional: Add OpenAI API key for OCR features
-   # echo OPENAI_API_KEY=your_openai_key_here >> .env
+   # Add-Content -Path .env -Value "OPENAI_API_KEY=your_openai_key_here" -Encoding UTF8
    ```
 
 7. **Verify installation:**

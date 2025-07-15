@@ -17,17 +17,9 @@ echo.
 
 REM Create .env file if it doesn't exist
 if not exist ".env" (
-    echo # Book Triage Environment Configuration > .env
-    echo # >> .env
-    echo # Basic Authentication (Required for web interface) >> .env
-    echo BOOK_USER=admin >> .env
-    echo BOOK_PASS=password >> .env
-    echo # >> .env
-    echo # OpenAI API Key (Optional - for advanced OCR features) >> .env
-    echo # Get your key from: https://platform.openai.com/api-keys >> .env
-    echo # OPENAI_API_KEY=your_openai_key_here >> .env
+    powershell -Command "Set-Content -Path '.env' -Value @('# Book Triage Environment Configuration','#','# Basic Authentication (Required for web interface)','BOOK_USER=admin','BOOK_PASS=password','#','# OpenAI API Key (Optional - for advanced OCR features)','# Get your key from: https://platform.openai.com/api-keys','# OPENAI_API_KEY=your_openai_key_here') -Encoding UTF8"
     echo.
-    echo ✅ Created .env file with default settings
+    echo ✅ Created .env file with default settings (UTF-8 encoding)
 ) else (
     echo ✅ .env file already exists
 )
