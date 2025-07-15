@@ -27,7 +27,15 @@ class VisionProcessor:
             use_openai_vision: Whether to use OpenAI Vision API as primary method
         """
         self.use_openai_vision = use_openai_vision
-        self.client = None  # Initialize OpenAI client only when needed
+        self.client = None
+        
+        # Initialize OpenAI client immediately if requested
+        if self.use_openai_vision:
+            try:
+                self.client = OpenAI()
+            except Exception as e:
+                logger.warning(f"Failed to initialize OpenAI client: {e}")
+                self.client = None
     
     def extract_title_from_image(self, image_path: str | Path) -> str:
         """Extract book title from image using available methods.
@@ -68,15 +76,8 @@ class VisionProcessor:
     
     def _extract_with_openai_vision(self, image_path: Path) -> str:
         """Extract title using OpenAI Vision API."""
-        # Initialize OpenAI client only when needed
-        if not self.client and self.use_openai_vision:
-            try:
-                self.client = OpenAI()
-            except Exception as e:
-                raise RuntimeError(f"Failed to initialize OpenAI client: {e}")
-        
         if not self.client:
-            raise RuntimeError("OpenAI client not available")
+            raise RuntimeError("OpenAI client not initialized")
             
         try:
             with open(image_path, "rb") as image_file:

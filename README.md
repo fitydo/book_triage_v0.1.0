@@ -146,6 +146,66 @@ The system uses these scores to calculate utilities for each decision:
 
 **The system chooses the option with the highest utility score.**
 
+### How Each Factor is Filled In
+
+The scoring system combines human input, automated calculations, and AI assistance to determine each factor:
+
+#### 🧑‍💻 Human-Entered (via Web Interface)
+- **F (Frequency)**, **A (Annotation)**, **S (Sentimental)** – You set these using 1-to-5 sliders in the web interface because only you know how often you use the book, how much you want to annotate it, and how attached you feel.
+- **Purchase & Used Prices** – When you enter both prices, the backend automatically converts their ratio to a 0-to-5 **V** score (see "Resale Value Mapping" below).
+- **Manual Overrides** – Any score you disagree with can be manually overridden; the next rescan keeps your override.
+
+#### 🤖 Auto-Calculated
+- **V (Resale Value)** – Automatically calculated from price ratio when both purchase and used prices are entered:
+  - < 10% retention → V=0
+  - 10-25% retention → V=1  
+  - 25-40% retention → V=2
+  - 40-60% retention → V=3
+  - 60-80% retention → V=4
+  - ≥ 80% retention → V=5
+
+#### 🔍 AI-Enriched (GPT-4o)
+During scan/enrich operations, the system asks GPT-4o to research your book's ISBN/title and provide:
+
+- **R (Rarity Evidence)** – Citations like "only POD copies available", "no Kindle edition", "OOP for 20 years" boost the R score. The presence of at least one R citation adds to the rarity score (max 5).
+- **P (Scannability Evidence)** – Citations like "loose-leaf binding", "stapled pages", "high-contrast text" raise the P score. Evidence of scanning difficulty lowers it.
+- **Amazon URLs** – Searches Amazon.co.jp and Amazon.com for the best product links.
+- **Verification Status** – A real Amazon URL plus both R and P citation lists allows the backend to mark the row as "verified = yes".
+
+You can edit citation lists directly in the web interface table; clearing them resets the score to your manual value.
+
+#### ⚙️ Utility & Decision Calculation (Fully Automatic)
+After every save or scan, the backend automatically runs:
+
+```
+Sell    = V - (R + S)
+Digital = F + P - scan_cost  (default scan_cost = 2)
+Keep    = R + A + S
+```
+
+If the best utility is positive, the corresponding Decision is written; otherwise the book stays "unknown".
+
+#### 📍 Implementation References
+- **End-to-end flow**: `docs/TESTING.md` – data-flow diagram
+- **Utility calculation**: `book_triage/core.py` → `calculate_utilities()` (lines ≈ 185-205)
+- **Decision logic**: `book_triage/core.py` → `make_decision()` (lines ≈ 206-230)  
+- **AI enrichment**: `book_triage/core.py` → `enrich_with_gpt4o()`
+
+**In summary**: You set the personal scores (F, A, S) and prices, GPT-4o suggests R/P evidence and URLs, and the backend converts everything to numbers and picks the best option.
+
+### Resale Value Mapping
+
+When you enter both purchase and used prices, the system automatically calculates the V (Value) score:
+
+| **Price Retention** | **V Score** | **Example** |
+|---------------------|-------------|-------------|
+| < 10% | 0 | Bought $100, worth $5 |
+| 10-25% | 1 | Bought $100, worth $20 |
+| 25-40% | 2 | Bought $100, worth $35 |
+| 40-60% | 3 | Bought $100, worth $50 |
+| 60-80% | 4 | Bought $100, worth $70 |
+| ≥ 80% | 5 | Bought $100, worth $90+ |
+
 ### Scoring Examples
 
 **Academic Textbook (SELL):**

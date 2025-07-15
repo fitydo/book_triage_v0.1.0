@@ -1,0 +1,192 @@
+﻿2025-07-15T01:08:30.3776733Z ##[group]Run python -m pytest tests/ -v --cov=book_triage --cov-report=term-missing
+2025-07-15T01:08:30.3777320Z [36;1mpython -m pytest tests/ -v --cov=book_triage --cov-report=term-missing[0m
+2025-07-15T01:08:30.3806828Z shell: /usr/bin/bash -e {0}
+2025-07-15T01:08:30.3807059Z env:
+2025-07-15T01:08:30.3807291Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T01:08:30.3807695Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T01:08:30.3808092Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T01:08:30.3808444Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T01:08:30.3808789Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T01:08:30.3809133Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T01:08:30.3809428Z ##[endgroup]
+2025-07-15T01:08:30.9834877Z ============================= test session starts ==============================
+2025-07-15T01:08:30.9836271Z platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0 -- /opt/hostedtoolcache/Python/3.12.11/x64/bin/python
+2025-07-15T01:08:30.9837173Z cachedir: .pytest_cache
+2025-07-15T01:08:30.9837673Z rootdir: /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T01:08:30.9838228Z configfile: pyproject.toml
+2025-07-15T01:08:30.9838603Z plugins: cov-6.2.1, anyio-4.9.0
+2025-07-15T01:08:34.4170588Z collecting ... collected 105 items
+2025-07-15T01:08:34.4170917Z 
+2025-07-15T01:08:34.4918065Z tests/test_api.py::TestAPIEndpoints::test_root_endpoint PASSED           [  0%]
+2025-07-15T01:08:34.4964661Z tests/test_api.py::TestAPIEndpoints::test_health_endpoint PASSED         [  1%]
+2025-07-15T01:08:34.5005768Z tests/test_api.py::TestAPIEndpoints::test_get_books_empty PASSED         [  2%]
+2025-07-15T01:08:34.5102329Z tests/test_api.py::TestAPIEndpoints::test_get_books_with_data PASSED     [  3%]
+2025-07-15T01:08:34.5400126Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_success PASSED    [  4%]
+2025-07-15T01:08:34.5442272Z tests/test_api.py::TestAPIEndpoints::test_scan_books_unauthorized PASSED [  5%]
+2025-07-15T01:08:34.5481454Z tests/test_api.py::TestAPIEndpoints::test_rate_limiting_books_endpoint PASSED [  6%]
+2025-07-15T01:08:34.5796630Z tests/test_api.py::TestAPIEndpoints::test_file_upload_size_limit PASSED  [  7%]
+2025-07-15T01:08:34.5839864Z tests/test_api.py::TestAPIEndpoints::test_security_headers_in_response PASSED [  8%]
+2025-07-15T01:08:34.5924784Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_title_extracted PASSED [  9%]
+2025-07-15T01:08:34.6009748Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_vision_processor_exception PASSED [ 10%]
+2025-07-15T01:08:34.6054050Z tests/test_api.py::TestAPIEndpoints::test_upload_photo_no_file PASSED    [ 11%]
+2025-07-15T01:08:34.6111147Z tests/test_api.py::TestAPIEndpoints::test_scan_books_success PASSED      [ 12%]
+2025-07-15T01:08:34.6166741Z tests/test_api.py::TestAPIEndpoints::test_scan_books_exception PASSED    [ 13%]
+2025-07-15T01:08:34.6217686Z tests/test_api.py::TestAPIEndpoints::test_rescan_title_record_not_found PASSED [ 14%]
+2025-07-15T01:08:34.6276575Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_success PASSED [ 15%]
+2025-07-15T01:08:34.6318582Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_missing_isbn PASSED [ 16%]
+2025-07-15T01:08:34.6361734Z tests/test_api.py::TestAPIEndpoints::test_add_manual_title_invalid_isbn PASSED [ 17%]
+2025-07-15T01:08:34.6374836Z tests/test_api.py::TestAPIInitialization::test_initialize_app PASSED     [ 18%]
+2025-07-15T01:08:34.6433113Z tests/test_api.py::TestAPIInitialization::test_app_without_initialization PASSED [ 19%]
+2025-07-15T01:08:34.6673333Z tests/test_cli.py::TestCLICommands::test_cli_help PASSED                 [ 20%]
+2025-07-15T01:08:34.6737913Z tests/test_cli.py::TestCLICommands::test_scan_command_success PASSED     [ 20%]
+2025-07-15T01:08:34.6803716Z tests/test_cli.py::TestCLICommands::test_scan_command_with_options PASSED [ 21%]
+2025-07-15T01:08:34.6862479Z tests/test_cli.py::TestCLICommands::test_scan_command_no_records PASSED  [ 22%]
+2025-07-15T01:08:34.6921558Z tests/test_cli.py::TestCLICommands::test_scan_command_nonexistent_file PASSED [ 23%]
+2025-07-15T01:08:34.6976210Z tests/test_cli.py::TestCLICommands::test_scan_command_exception PASSED   [ 24%]
+2025-07-15T01:08:34.7052356Z tests/test_cli.py::TestCLICommands::test_web_command_success PASSED      [ 25%]
+2025-07-15T01:08:34.7117949Z tests/test_cli.py::TestCLICommands::test_web_command_with_options PASSED [ 26%]
+2025-07-15T01:08:34.7180652Z tests/test_cli.py::TestCLICommands::test_web_command_nonexistent_file PASSED [ 27%]
+2025-07-15T01:08:34.7238394Z tests/test_cli.py::TestCLICommands::test_web_command_exception PASSED    [ 28%]
+2025-07-15T01:08:34.7323098Z tests/test_cli.py::TestCLICommands::test_create_csv_command_empty PASSED [ 29%]
+2025-07-15T01:08:34.7412068Z tests/test_cli.py::TestCLICommands::test_create_csv_command_with_sample PASSED [ 30%]
+2025-07-15T01:08:34.7473391Z tests/test_cli.py::TestCLICommands::test_create_csv_command_creates_directory PASSED [ 31%]
+2025-07-15T01:08:34.7532106Z tests/test_cli.py::TestCLICommands::test_create_csv_command_exception PASSED [ 32%]
+2025-07-15T01:08:34.7619027Z tests/test_cli.py::TestCLICommands::test_info_command_success PASSED     [ 33%]
+2025-07-15T01:08:34.7667814Z tests/test_cli.py::TestCLICommands::test_info_command_nonexistent_file PASSED [ 34%]
+2025-07-15T01:08:34.7723016Z tests/test_cli.py::TestCLICommands::test_info_command_exception PASSED   [ 35%]
+2025-07-15T01:08:34.7802059Z tests/test_cli.py::TestCLIValidation::test_scan_cost_validation_min PASSED [ 36%]
+2025-07-15T01:08:34.7873588Z tests/test_cli.py::TestCLIValidation::test_scan_cost_validation_max PASSED [ 37%]
+2025-07-15T01:08:34.7939791Z tests/test_cli.py::TestCLIValidation::test_port_validation PASSED        [ 38%]
+2025-07-15T01:08:34.8002165Z tests/test_cli.py::TestCLIIntegration::test_scan_integration_with_core PASSED [ 39%]
+2025-07-15T01:08:34.8066093Z tests/test_cli.py::TestCLIIntegration::test_web_integration_with_api PASSED [ 40%]
+2025-07-15T01:08:34.8206198Z tests/test_cli.py::TestCLIEnvironment::test_environment_loading PASSED   [ 40%]
+2025-07-15T01:08:34.8341209Z tests/test_cli.py::TestCLIEnvironment::test_logging_configuration PASSED [ 41%]
+2025-07-15T01:08:34.8405484Z tests/test_cli.py::TestCLIEnvironment::test_verbose_logging PASSED       [ 42%]
+2025-07-15T01:08:34.8417713Z tests/test_core.py::TestBookRecord::test_book_record_creation PASSED     [ 43%]
+2025-07-15T01:08:34.8429097Z tests/test_core.py::TestBookRecord::test_book_record_to_dict PASSED      [ 44%]
+2025-07-15T01:08:34.8440846Z tests/test_core.py::TestBookRecord::test_book_record_with_all_fields PASSED [ 45%]
+2025-07-15T01:08:34.8455707Z tests/test_core.py::TestBookTriage::test_book_triage_initialization_nonexistent_file PASSED [ 46%]
+2025-07-15T01:08:34.8502242Z tests/test_core.py::TestBookTriage::test_book_triage_initialization_with_data PASSED [ 47%]
+2025-07-15T01:08:34.8516559Z tests/test_core.py::TestBookTriage::test_calculate_utilities PASSED      [ 48%]
+2025-07-15T01:08:34.8530453Z tests/test_core.py::TestBookTriage::test_calculate_utilities_with_none_values PASSED [ 49%]
+2025-07-15T01:08:34.8544128Z tests/test_core.py::TestBookTriage::test_make_decision PASSED            [ 50%]
+2025-07-15T01:08:34.8596778Z tests/test_core.py::TestBookTriage::test_add_record PASSED               [ 51%]
+2025-07-15T01:08:34.8644346Z tests/test_core.py::TestBookTriage::test_get_record_by_id PASSED         [ 52%]
+2025-07-15T01:08:34.8693423Z tests/test_core.py::TestBookTriage::test_price_to_v_calculation PASSED   [ 53%]
+2025-07-15T01:08:34.8715709Z tests/test_core.py::TestBookTriage::test_enrich_with_gpt4o_mock PASSED   [ 54%]
+2025-07-15T01:08:34.8729606Z tests/test_core.py::TestBookTriage::test_scan_cost_parameter PASSED      [ 55%]
+2025-07-15T01:08:34.8740717Z tests/test_core.py::TestDecisionEnum::test_decision_values PASSED        [ 56%]
+2025-07-15T01:08:34.8754262Z tests/test_core.py::TestDecisionEnum::test_decision_comparison PASSED    [ 57%]
+2025-07-15T01:08:34.8771248Z tests/test_core_simple.py::TestBookRecord::test_book_record_creation PASSED [ 58%]
+2025-07-15T01:08:34.8782664Z tests/test_core_simple.py::TestBookRecord::test_book_record_with_values PASSED [ 59%]
+2025-07-15T01:08:34.8796140Z tests/test_core_simple.py::TestBookTriage::test_book_triage_initialization PASSED [ 60%]
+2025-07-15T01:08:34.8809248Z tests/test_core_simple.py::TestBookTriage::test_calculate_utilities_simple PASSED [ 60%]
+2025-07-15T01:08:34.8821983Z tests/test_core_simple.py::TestBookTriage::test_make_decision_simple PASSED [ 61%]
+2025-07-15T01:08:34.8835043Z tests/test_core_simple.py::TestDecision::test_decision_values PASSED     [ 62%]
+2025-07-15T01:08:34.8858548Z tests/test_main.py::TestMainModule::test_main_no_args_with_existing_csv PASSED [ 63%]
+2025-07-15T01:08:34.8881195Z tests/test_main.py::TestMainModule::test_main_no_args_creates_new_csv PASSED [ 64%]
+2025-07-15T01:08:34.8899234Z tests/test_main.py::TestMainModule::test_main_with_args PASSED           [ 65%]
+2025-07-15T01:08:34.8919637Z tests/test_main.py::TestMainModule::test_main_finds_alternative_csv_paths PASSED [ 66%]
+2025-07-15T01:08:34.8938012Z tests/test_main.py::TestMainModule::test_main_module_entry_point PASSED  [ 67%]
+2025-07-15T01:08:35.0019554Z tests/test_vision.py::TestVisionProcessor::test_vision_processor_initialization_with_openai FAILED [ 68%]
+2025-07-15T01:08:35.0031416Z tests/test_vision.py::TestVisionProcessor::test_vision_processor_initialization_without_openai PASSED [ 69%]
+2025-07-15T01:08:35.0043103Z tests/test_vision.py::TestVisionProcessor::test_generate_id PASSED       [ 70%]
+2025-07-15T01:08:35.0090017Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_openai_success PASSED [ 71%]
+2025-07-15T01:08:35.0118375Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_fallback_to_tesseract PASSED [ 72%]
+2025-07-15T01:08:35.0130671Z tests/test_vision.py::TestVisionProcessor::test_extract_title_from_image_nonexistent_file PASSED [ 73%]
+2025-07-15T01:08:35.0153409Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_success PASSED [ 74%]
+2025-07-15T01:08:35.0173945Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_empty_result PASSED [ 75%]
+2025-07-15T01:08:35.0195703Z tests/test_vision.py::TestVisionProcessor::test_extract_with_tesseract_error PASSED [ 76%]
+2025-07-15T01:08:35.0237196Z tests/test_vision.py::TestVisionProcessor::test_extract_with_openai_vision_no_content PASSED [ 77%]
+2025-07-15T01:08:35.0452421Z tests/test_vision.py::TestVisionProcessor::test_extract_with_openai_vision_no_client FAILED [ 78%]
+2025-07-15T01:08:35.0498052Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_from_image_success PASSED [ 79%]
+2025-07-15T01:08:35.0518120Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_tesseract_fallback PASSED [ 80%]
+2025-07-15T01:08:35.0531053Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_nonexistent_file PASSED [ 80%]
+2025-07-15T01:08:35.0550913Z tests/test_vision.py::TestVisionProcessor::test_extract_title_and_isbn_no_isbn_found PASSED [ 81%]
+2025-07-15T01:08:35.0581565Z tests/test_vision.py::TestVisionProcessor::test_image_format_conversion PASSED [ 82%]
+2025-07-15T01:08:35.0605108Z tests/test_vision.py::TestVisionProcessorIntegration::test_processor_with_real_image_mock_ocr PASSED [ 83%]
+2025-07-15T01:08:35.0705064Z tests/test_vision_fixed.py::TestVisionProcessor::test_vision_processor_initialization_with_openai FAILED [ 84%]
+2025-07-15T01:08:35.0716695Z tests/test_vision_fixed.py::TestVisionProcessor::test_vision_processor_initialization_without_openai PASSED [ 85%]
+2025-07-15T01:08:35.0727886Z tests/test_vision_fixed.py::TestVisionProcessor::test_generate_id PASSED [ 86%]
+2025-07-15T01:08:35.0739899Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_from_image_nonexistent_file PASSED [ 87%]
+2025-07-15T01:08:35.0780544Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_with_openai_vision_success PASSED [ 88%]
+2025-07-15T01:08:35.0807471Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_fallback_to_tesseract PASSED [ 89%]
+2025-07-15T01:08:35.0829616Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_success PASSED [ 90%]
+2025-07-15T01:08:35.0849961Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_empty_result PASSED [ 91%]
+2025-07-15T01:08:35.0871148Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_tesseract_error PASSED [ 92%]
+2025-07-15T01:08:35.0924822Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_openai_vision_no_content PASSED [ 93%]
+2025-07-15T01:08:35.1118636Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_openai_vision_no_client FAILED [ 94%]
+2025-07-15T01:08:35.1162014Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_from_image_success PASSED [ 95%]
+2025-07-15T01:08:35.1183341Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_tesseract_fallback PASSED [ 96%]
+2025-07-15T01:08:35.1197083Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_nonexistent_file PASSED [ 97%]
+2025-07-15T01:08:35.1217714Z tests/test_vision_fixed.py::TestVisionProcessor::test_extract_title_and_isbn_no_isbn_found PASSED [ 98%]
+2025-07-15T01:08:35.1229304Z tests/test_vision_fixed.py::TestVisionProcessor::test_image_format_conversion PASSED [ 99%]
+2025-07-15T01:08:35.3867294Z tests/test_vision_fixed.py::TestVisionProcessorIntegration::test_processor_with_real_image_mock_ocr PASSED [100%]
+2025-07-15T01:08:35.3868400Z 
+2025-07-15T01:08:35.3868646Z =================================== FAILURES ===================================
+2025-07-15T01:08:35.3869499Z _____ TestVisionProcessor.test_vision_processor_initialization_with_openai _____
+2025-07-15T01:08:35.3870572Z tests/test_vision.py:22: in test_vision_processor_initialization_with_openai
+2025-07-15T01:08:35.3871343Z     assert processor.client is not None
+2025-07-15T01:08:35.3871890Z E   assert None is not None
+2025-07-15T01:08:35.3872618Z E    +  where None = <book_triage.vision.VisionProcessor object at 0x7ff8de422030>.client
+2025-07-15T01:08:35.3873680Z ________ TestVisionProcessor.test_extract_with_openai_vision_no_client _________
+2025-07-15T01:08:35.3874852Z tests/test_vision.py:225: in test_extract_with_openai_vision_no_client
+2025-07-15T01:08:35.3875327Z     processor._extract_with_openai_vision(image_path)
+2025-07-15T01:08:35.3875716Z book_triage/vision.py:79: in _extract_with_openai_vision
+2025-07-15T01:08:35.3876081Z     raise RuntimeError("OpenAI client not available")
+2025-07-15T01:08:35.3876398Z E   RuntimeError: OpenAI client not available
+2025-07-15T01:08:35.3876577Z 
+2025-07-15T01:08:35.3876748Z During handling of the above exception, another exception occurred:
+2025-07-15T01:08:35.3877531Z tests/test_vision.py:224: in test_extract_with_openai_vision_no_client
+2025-07-15T01:08:35.3877970Z     with pytest.raises(RuntimeError, match="OpenAI client not initialized"):
+2025-07-15T01:08:35.3878330Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-15T01:08:35.3878613Z E   AssertionError: Regex pattern did not match.
+2025-07-15T01:08:35.3878895Z E    Regex: 'OpenAI client not initialized'
+2025-07-15T01:08:35.3879151Z E    Input: 'OpenAI client not available'
+2025-07-15T01:08:35.3879518Z _____ TestVisionProcessor.test_vision_processor_initialization_with_openai _____
+2025-07-15T01:08:35.3880000Z tests/test_vision_fixed.py:31: in test_vision_processor_initialization_with_openai
+2025-07-15T01:08:35.3880367Z     assert processor.client is not None
+2025-07-15T01:08:35.3880640Z E   assert None is not None
+2025-07-15T01:08:35.3880967Z E    +  where None = <book_triage.vision.VisionProcessor object at 0x7ff8de233230>.client
+2025-07-15T01:08:35.3881465Z ________ TestVisionProcessor.test_extract_with_openai_vision_no_client _________
+2025-07-15T01:08:35.3881930Z tests/test_vision_fixed.py:207: in test_extract_with_openai_vision_no_client
+2025-07-15T01:08:35.3882632Z     processor._extract_with_openai_vision(image_path)
+2025-07-15T01:08:35.3882961Z book_triage/vision.py:79: in _extract_with_openai_vision
+2025-07-15T01:08:35.3883283Z     raise RuntimeError("OpenAI client not available")
+2025-07-15T01:08:35.3883576Z E   RuntimeError: OpenAI client not available
+2025-07-15T01:08:35.3883755Z 
+2025-07-15T01:08:35.3883918Z During handling of the above exception, another exception occurred:
+2025-07-15T01:08:35.3884344Z tests/test_vision_fixed.py:206: in test_extract_with_openai_vision_no_client
+2025-07-15T01:08:35.3885074Z     with pytest.raises(RuntimeError, match="OpenAI client not initialized"):
+2025-07-15T01:08:35.3885425Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-15T01:08:35.3885698Z E   AssertionError: Regex pattern did not match.
+2025-07-15T01:08:35.3885989Z E    Regex: 'OpenAI client not initialized'
+2025-07-15T01:08:35.3886237Z E    Input: 'OpenAI client not available'
+2025-07-15T01:08:35.3886493Z ================================ tests coverage ================================
+2025-07-15T01:08:35.3886850Z _______________ coverage: platform linux, python 3.12.11-final-0 _______________
+2025-07-15T01:08:35.3887091Z 
+2025-07-15T01:08:35.3887192Z Name                      Stmts   Miss  Cover   Missing
+2025-07-15T01:08:35.3887458Z -------------------------------------------------------
+2025-07-15T01:08:35.3887746Z book_triage/__init__.py       3      0   100%
+2025-07-15T01:08:35.3887997Z book_triage/__main__.py      21      0   100%
+2025-07-15T01:08:35.3888315Z book_triage/api.py          162     38    77%   41, 66, 408, 477, 506, 510-547, 558, 560
+2025-07-15T01:08:35.3888694Z book_triage/cli.py          117      8    93%   229, 231, 233, 235, 237, 239, 241, 250
+2025-07-15T01:08:35.3889219Z book_triage/core.py         195     44    77%   102-103, 108, 111-112, 121, 166-168, 173-174, 215, 224, 233-234, 238-242, 248, 274-277, 285, 287-294, 297-298, 302, 311-326
+2025-07-15T01:08:35.3889740Z book_triage/security.py      45     14    69%   27, 37-48, 64-69, 83, 89-90
+2025-07-15T01:08:35.3890129Z book_triage/vision.py        99      9    91%   75-76, 163-164, 170, 172-173, 175-176
+2025-07-15T01:08:35.3890453Z -------------------------------------------------------
+2025-07-15T01:08:35.3890705Z TOTAL                       642    113    82%
+2025-07-15T01:08:35.3891009Z Required test coverage of 81.0% reached. Total coverage: 82.40%
+2025-07-15T01:08:35.3891348Z =========================== short test summary info ============================
+2025-07-15T01:08:35.3891907Z FAILED tests/test_vision.py::TestVisionProcessor::test_vision_processor_initialization_with_openai - assert None is not None
+2025-07-15T01:08:35.3892534Z  +  where None = <book_triage.vision.VisionProcessor object at 0x7ff8de422030>.client
+2025-07-15T01:08:35.3893326Z FAILED tests/test_vision.py::TestVisionProcessor::test_extract_with_openai_vision_no_client - AssertionError: Regex pattern did not match.
+2025-07-15T01:08:35.3893875Z  Regex: 'OpenAI client not initialized'
+2025-07-15T01:08:35.3894129Z  Input: 'OpenAI client not available'
+2025-07-15T01:08:35.3894828Z FAILED tests/test_vision_fixed.py::TestVisionProcessor::test_vision_processor_initialization_with_openai - assert None is not None
+2025-07-15T01:08:35.3895469Z  +  where None = <book_triage.vision.VisionProcessor object at 0x7ff8de233230>.client
+2025-07-15T01:08:35.3896143Z FAILED tests/test_vision_fixed.py::TestVisionProcessor::test_extract_with_openai_vision_no_client - AssertionError: Regex pattern did not match.
+2025-07-15T01:08:35.3896699Z  Regex: 'OpenAI client not initialized'
+2025-07-15T01:08:35.3896937Z  Input: 'OpenAI client not available'
+2025-07-15T01:08:35.3897209Z ======================== 4 failed, 101 passed in 4.20s =========================
+2025-07-15T01:08:35.5997224Z ##[error]Process completed with exit code 1.

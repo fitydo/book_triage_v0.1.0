@@ -1,0 +1,203 @@
+﻿2025-07-15T01:08:10.6307697Z ##[group]Run python -m pip install --upgrade pip
+2025-07-15T01:08:10.6308602Z [36;1mpython -m pip install --upgrade pip[0m
+2025-07-15T01:08:10.6309269Z [36;1mpip install -e .[0m
+2025-07-15T01:08:10.6309818Z [36;1mpip install pytest pytest-cov[0m
+2025-07-15T01:08:10.6353502Z shell: /usr/bin/bash -e {0}
+2025-07-15T01:08:10.6354587Z env:
+2025-07-15T01:08:10.6355138Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T01:08:10.6356139Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-15T01:08:10.6357115Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T01:08:10.6357971Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T01:08:10.6358861Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-15T01:08:10.6359746Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-15T01:08:10.6360460Z ##[endgroup]
+2025-07-15T01:08:11.8149316Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (25.1.1)
+2025-07-15T01:08:12.3977649Z Obtaining file:///home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-15T01:08:12.4007923Z   Installing build dependencies: started
+2025-07-15T01:08:13.1957120Z   Installing build dependencies: finished with status 'done'
+2025-07-15T01:08:13.1963375Z   Checking if build backend supports build_editable: started
+2025-07-15T01:08:13.2383497Z   Checking if build backend supports build_editable: finished with status 'done'
+2025-07-15T01:08:13.2391505Z   Getting requirements to build editable: started
+2025-07-15T01:08:13.3663698Z   Getting requirements to build editable: finished with status 'done'
+2025-07-15T01:08:13.3678733Z   Installing backend dependencies: started
+2025-07-15T01:08:13.9084223Z   Installing backend dependencies: finished with status 'done'
+2025-07-15T01:08:13.9090328Z   Preparing editable metadata (pyproject.toml): started
+2025-07-15T01:08:14.0901456Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2025-07-15T01:08:14.2029573Z Collecting fastapi>=0.104.0 (from book_triage==0.1.0)
+2025-07-15T01:08:14.2468936Z   Downloading fastapi-0.116.1-py3-none-any.whl.metadata (28 kB)
+2025-07-15T01:08:14.3285441Z Collecting openai>=1.0.0 (from book_triage==0.1.0)
+2025-07-15T01:08:14.3361295Z   Downloading openai-1.95.1-py3-none-any.whl.metadata (29 kB)
+2025-07-15T01:08:14.4776354Z Collecting pandas>=2.0.0 (from book_triage==0.1.0)
+2025-07-15T01:08:14.4851045Z   Downloading pandas-2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (91 kB)
+2025-07-15T01:08:14.6998242Z Collecting pillow>=10.0.0 (from book_triage==0.1.0)
+2025-07-15T01:08:14.7082707Z   Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+2025-07-15T01:08:14.7290141Z Collecting pytesseract>=0.3.10 (from book_triage==0.1.0)
+2025-07-15T01:08:14.7368327Z   Downloading pytesseract-0.3.13-py3-none-any.whl.metadata (11 kB)
+2025-07-15T01:08:14.7590043Z Collecting python-dotenv>=1.0.0 (from book_triage==0.1.0)
+2025-07-15T01:08:14.7663581Z   Downloading python_dotenv-1.1.1-py3-none-any.whl.metadata (24 kB)
+2025-07-15T01:08:14.7858639Z Collecting python-magic>=0.4.27 (from book_triage==0.1.0)
+2025-07-15T01:08:14.7931509Z   Downloading python_magic-0.4.27-py2.py3-none-any.whl.metadata (5.8 kB)
+2025-07-15T01:08:14.8121294Z Collecting python-multipart>=0.0.6 (from book_triage==0.1.0)
+2025-07-15T01:08:14.8196661Z   Downloading python_multipart-0.0.20-py3-none-any.whl.metadata (1.8 kB)
+2025-07-15T01:08:14.8349582Z Collecting slowapi>=0.1.8 (from book_triage==0.1.0)
+2025-07-15T01:08:14.8431519Z   Downloading slowapi-0.1.9-py3-none-any.whl.metadata (3.0 kB)
+2025-07-15T01:08:14.8812383Z Collecting tqdm>=4.65.0 (from book_triage==0.1.0)
+2025-07-15T01:08:14.8884658Z   Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+2025-07-15T01:08:14.9158152Z Collecting typer>=0.9.0 (from book_triage==0.1.0)
+2025-07-15T01:08:14.9233616Z   Downloading typer-0.16.0-py3-none-any.whl.metadata (15 kB)
+2025-07-15T01:08:14.9574741Z Collecting uvicorn>=0.24.0 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T01:08:14.9646954Z   Downloading uvicorn-0.35.0-py3-none-any.whl.metadata (6.5 kB)
+2025-07-15T01:08:15.0025885Z Collecting starlette<0.48.0,>=0.40.0 (from fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T01:08:15.0100577Z   Downloading starlette-0.47.1-py3-none-any.whl.metadata (6.2 kB)
+2025-07-15T01:08:15.1649945Z Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (from fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T01:08:15.1725846Z   Downloading pydantic-2.11.7-py3-none-any.whl.metadata (67 kB)
+2025-07-15T01:08:15.1982180Z Collecting typing-extensions>=4.8.0 (from fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T01:08:15.2063416Z   Downloading typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+2025-07-15T01:08:15.2228503Z Collecting annotated-types>=0.6.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T01:08:15.2310159Z   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+2025-07-15T01:08:15.8625907Z Collecting pydantic-core==2.33.2 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T01:08:15.8701955Z   Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2025-07-15T01:08:15.8936935Z Collecting typing-inspection>=0.4.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T01:08:15.9005895Z   Downloading typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+2025-07-15T01:08:15.9299436Z Collecting anyio<5,>=3.6.2 (from starlette<0.48.0,>=0.40.0->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T01:08:15.9373185Z   Downloading anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB)
+2025-07-15T01:08:15.9665123Z Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette<0.48.0,>=0.40.0->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T01:08:15.9733901Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-07-15T01:08:15.9897673Z Collecting sniffio>=1.1 (from anyio<5,>=3.6.2->starlette<0.48.0,>=0.40.0->fastapi>=0.104.0->book_triage==0.1.0)
+2025-07-15T01:08:15.9973941Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2025-07-15T01:08:16.0282530Z Collecting distro<2,>=1.7.0 (from openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.0352915Z   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+2025-07-15T01:08:16.0613402Z Collecting httpx<1,>=0.23.0 (from openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.0687176Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2025-07-15T01:08:16.1328032Z Collecting jiter<1,>=0.4.0 (from openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.1406349Z   Downloading jiter-0.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+2025-07-15T01:08:16.2230486Z Collecting certifi (from httpx<1,>=0.23.0->openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.2302209Z   Downloading certifi-2025.7.14-py3-none-any.whl.metadata (2.4 kB)
+2025-07-15T01:08:16.2558552Z Collecting httpcore==1.* (from httpx<1,>=0.23.0->openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.2637713Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2025-07-15T01:08:16.2823085Z Collecting h11>=0.16 (from httpcore==1.*->httpx<1,>=0.23.0->openai>=1.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.2893551Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2025-07-15T01:08:16.5046346Z Collecting numpy>=1.26.0 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.5121372Z   Downloading numpy-2.3.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (62 kB)
+2025-07-15T01:08:16.5450384Z Collecting python-dateutil>=2.8.2 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.5520968Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+2025-07-15T01:08:16.5932220Z Collecting pytz>=2020.1 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.6005431Z   Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+2025-07-15T01:08:16.6205213Z Collecting tzdata>=2022.7 (from pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.6275919Z   Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+2025-07-15T01:08:16.6507627Z Collecting packaging>=21.3 (from pytesseract>=0.3.10->book_triage==0.1.0)
+2025-07-15T01:08:16.6519276Z   Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+2025-07-15T01:08:16.6750431Z Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas>=2.0.0->book_triage==0.1.0)
+2025-07-15T01:08:16.6819529Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2025-07-15T01:08:16.7204861Z Collecting limits>=2.3 (from slowapi>=0.1.8->book_triage==0.1.0)
+2025-07-15T01:08:16.7283643Z   Downloading limits-5.4.0-py3-none-any.whl.metadata (10 kB)
+2025-07-15T01:08:16.7537671Z Collecting deprecated>=1.2 (from limits>=2.3->slowapi>=0.1.8->book_triage==0.1.0)
+2025-07-15T01:08:16.7609777Z   Downloading Deprecated-1.2.18-py2.py3-none-any.whl.metadata (5.7 kB)
+2025-07-15T01:08:16.8556669Z Collecting wrapt<2,>=1.10 (from deprecated>=1.2->limits>=2.3->slowapi>=0.1.8->book_triage==0.1.0)
+2025-07-15T01:08:16.8642310Z   Downloading wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
+2025-07-15T01:08:16.8938206Z Collecting click>=8.0.0 (from typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T01:08:16.9022294Z   Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+2025-07-15T01:08:16.9274968Z Collecting shellingham>=1.3.0 (from typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T01:08:16.9345718Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-07-15T01:08:16.9813294Z Collecting rich>=10.11.0 (from typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T01:08:16.9895429Z   Downloading rich-14.0.0-py3-none-any.whl.metadata (18 kB)
+2025-07-15T01:08:17.0159977Z Collecting markdown-it-py>=2.2.0 (from rich>=10.11.0->typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T01:08:17.0262834Z   Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+2025-07-15T01:08:17.0568389Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.11.0->typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T01:08:17.0638835Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+2025-07-15T01:08:17.0852922Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.11.0->typer>=0.9.0->book_triage==0.1.0)
+2025-07-15T01:08:17.0925948Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2025-07-15T01:08:17.1481911Z Collecting httptools>=0.6.3 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T01:08:17.1560613Z   Downloading httptools-0.6.4-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.6 kB)
+2025-07-15T01:08:17.2021580Z Collecting pyyaml>=5.1 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T01:08:17.2095291Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-07-15T01:08:17.2540110Z Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T01:08:17.2615213Z   Downloading uvloop-0.21.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2025-07-15T01:08:17.3505002Z Collecting watchfiles>=0.13 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T01:08:17.3580752Z   Downloading watchfiles-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2025-07-15T01:08:17.4495400Z Collecting websockets>=10.4 (from uvicorn[standard]>=0.24.0->book_triage==0.1.0)
+2025-07-15T01:08:17.4572252Z   Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2025-07-15T01:08:17.4867545Z Downloading fastapi-0.116.1-py3-none-any.whl (95 kB)
+2025-07-15T01:08:17.4970623Z Downloading pydantic-2.11.7-py3-none-any.whl (444 kB)
+2025-07-15T01:08:17.5143768Z Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+2025-07-15T01:08:17.5341126Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 103.5 MB/s eta 0:00:00
+2025-07-15T01:08:17.5413293Z Downloading starlette-0.47.1-py3-none-any.whl (72 kB)
+2025-07-15T01:08:17.5516124Z Downloading anyio-4.9.0-py3-none-any.whl (100 kB)
+2025-07-15T01:08:17.5616386Z Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+2025-07-15T01:08:17.5713732Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+2025-07-15T01:08:17.5816244Z Downloading openai-1.95.1-py3-none-any.whl (755 kB)
+2025-07-15T01:08:17.5919060Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 755.6/755.6 kB 63.4 MB/s eta 0:00:00
+2025-07-15T01:08:17.5986994Z Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+2025-07-15T01:08:17.6080507Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2025-07-15T01:08:17.6178735Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2025-07-15T01:08:17.6280382Z Downloading jiter-0.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (352 kB)
+2025-07-15T01:08:17.6410542Z Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+2025-07-15T01:08:17.6507213Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2025-07-15T01:08:17.6609985Z Downloading pandas-2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.0 MB)
+2025-07-15T01:08:17.7151531Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 227.3 MB/s eta 0:00:00
+2025-07-15T01:08:17.7223046Z Downloading numpy-2.3.1-cp312-cp312-manylinux_2_28_x86_64.whl (16.6 MB)
+2025-07-15T01:08:17.7943423Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 236.8 MB/s eta 0:00:00
+2025-07-15T01:08:17.8017747Z Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+2025-07-15T01:08:17.8412147Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 173.1 MB/s eta 0:00:00
+2025-07-15T01:08:17.8493005Z Downloading pytesseract-0.3.13-py3-none-any.whl (14 kB)
+2025-07-15T01:08:17.8528014Z Using cached packaging-25.0-py3-none-any.whl (66 kB)
+2025-07-15T01:08:17.8606236Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2025-07-15T01:08:17.8710795Z Downloading python_dotenv-1.1.1-py3-none-any.whl (20 kB)
+2025-07-15T01:08:17.8803480Z Downloading python_magic-0.4.27-py2.py3-none-any.whl (13 kB)
+2025-07-15T01:08:17.8896347Z Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+2025-07-15T01:08:17.9004095Z Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+2025-07-15T01:08:17.9119618Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2025-07-15T01:08:17.9227483Z Downloading slowapi-0.1.9-py3-none-any.whl (14 kB)
+2025-07-15T01:08:17.9323761Z Downloading limits-5.4.0-py3-none-any.whl (60 kB)
+2025-07-15T01:08:17.9419346Z Downloading Deprecated-1.2.18-py2.py3-none-any.whl (10.0 kB)
+2025-07-15T01:08:17.9513722Z Downloading wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (89 kB)
+2025-07-15T01:08:17.9611730Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+2025-07-15T01:08:17.9703461Z Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+2025-07-15T01:08:17.9796894Z Downloading typer-0.16.0-py3-none-any.whl (46 kB)
+2025-07-15T01:08:17.9886683Z Downloading click-8.2.1-py3-none-any.whl (102 kB)
+2025-07-15T01:08:17.9987091Z Downloading rich-14.0.0-py3-none-any.whl (243 kB)
+2025-07-15T01:08:18.0089243Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+2025-07-15T01:08:18.0197419Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 114.8 MB/s eta 0:00:00
+2025-07-15T01:08:18.0276142Z Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+2025-07-15T01:08:18.0373310Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2025-07-15T01:08:18.0466628Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2025-07-15T01:08:18.0560397Z Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+2025-07-15T01:08:18.0655534Z Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+2025-07-15T01:08:18.0770587Z Downloading uvicorn-0.35.0-py3-none-any.whl (66 kB)
+2025-07-15T01:08:18.0880708Z Downloading httptools-0.6.4-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (510 kB)
+2025-07-15T01:08:18.0995298Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2025-07-15T01:08:18.1074767Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 96.7 MB/s eta 0:00:00
+2025-07-15T01:08:18.1146970Z Downloading uvloop-0.21.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.7 MB)
+2025-07-15T01:08:18.1429192Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 173.3 MB/s eta 0:00:00
+2025-07-15T01:08:18.1501842Z Downloading watchfiles-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (452 kB)
+2025-07-15T01:08:18.1619965Z Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+2025-07-15T01:08:18.1723936Z Downloading certifi-2025.7.14-py3-none-any.whl (162 kB)
+2025-07-15T01:08:18.2681486Z Building wheels for collected packages: book_triage
+2025-07-15T01:08:18.2689617Z   Building editable for book_triage (pyproject.toml): started
+2025-07-15T01:08:18.3042393Z   Building editable for book_triage (pyproject.toml): finished with status 'done'
+2025-07-15T01:08:18.3048557Z   Created wheel for book_triage: filename=book_triage-0.1.0-py3-none-any.whl size=8918 sha256=ddb1856d1f579f9365c3baa9fb68d8fce4ff1da2a5b44d1c778fd2f519a3f371
+2025-07-15T01:08:18.3050299Z   Stored in directory: /tmp/pip-ephem-wheel-cache-qdejkret/wheels/d3/8c/55/20b7343e2b9725e0ea7cb71535aa1bddd3950a939b56e58f9b
+2025-07-15T01:08:18.3079381Z Successfully built book_triage
+2025-07-15T01:08:18.4281226Z Installing collected packages: pytz, wrapt, websockets, uvloop, tzdata, typing-extensions, tqdm, sniffio, six, shellingham, pyyaml, python-multipart, python-magic, python-dotenv, pygments, pillow, packaging, numpy, mdurl, jiter, idna, httptools, h11, distro, click, certifi, annotated-types, uvicorn, typing-inspection, python-dateutil, pytesseract, pydantic-core, markdown-it-py, httpcore, deprecated, anyio, watchfiles, starlette, rich, pydantic, pandas, limits, httpx, typer, slowapi, openai, fastapi, book_triage
+2025-07-15T01:08:28.4080056Z 
+2025-07-15T01:08:28.4128676Z Successfully installed annotated-types-0.7.0 anyio-4.9.0 book_triage-0.1.0 certifi-2025.7.14 click-8.2.1 deprecated-1.2.18 distro-1.9.0 fastapi-0.116.1 h11-0.16.0 httpcore-1.0.9 httptools-0.6.4 httpx-0.28.1 idna-3.10 jiter-0.10.0 limits-5.4.0 markdown-it-py-3.0.0 mdurl-0.1.2 numpy-2.3.1 openai-1.95.1 packaging-25.0 pandas-2.3.1 pillow-11.3.0 pydantic-2.11.7 pydantic-core-2.33.2 pygments-2.19.2 pytesseract-0.3.13 python-dateutil-2.9.0.post0 python-dotenv-1.1.1 python-magic-0.4.27 python-multipart-0.0.20 pytz-2025.2 pyyaml-6.0.2 rich-14.0.0 shellingham-1.5.4 six-1.17.0 slowapi-0.1.9 sniffio-1.3.1 starlette-0.47.1 tqdm-4.67.1 typer-0.16.0 typing-extensions-4.14.1 typing-inspection-0.4.1 tzdata-2025.2 uvicorn-0.35.0 uvloop-0.21.0 watchfiles-1.1.0 websockets-15.0.1 wrapt-1.17.2
+2025-07-15T01:08:29.2861647Z Collecting pytest
+2025-07-15T01:08:29.3289219Z   Downloading pytest-8.4.1-py3-none-any.whl.metadata (7.7 kB)
+2025-07-15T01:08:29.3540808Z Collecting pytest-cov
+2025-07-15T01:08:29.3613061Z   Downloading pytest_cov-6.2.1-py3-none-any.whl.metadata (30 kB)
+2025-07-15T01:08:29.3841077Z Collecting iniconfig>=1 (from pytest)
+2025-07-15T01:08:29.3916590Z   Downloading iniconfig-2.1.0-py3-none-any.whl.metadata (2.7 kB)
+2025-07-15T01:08:29.3961647Z Requirement already satisfied: packaging>=20 in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (from pytest) (25.0)
+2025-07-15T01:08:29.4094162Z Collecting pluggy<2,>=1.5 (from pytest)
+2025-07-15T01:08:29.4106457Z   Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+2025-07-15T01:08:29.4129790Z Requirement already satisfied: pygments>=2.7.2 in /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages (from pytest) (2.19.2)
+2025-07-15T01:08:29.7524116Z Collecting coverage>=7.5 (from coverage[toml]>=7.5->pytest-cov)
+2025-07-15T01:08:29.7599892Z   Downloading coverage-7.9.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.9 kB)
+2025-07-15T01:08:29.7760028Z Downloading pytest-8.4.1-py3-none-any.whl (365 kB)
+2025-07-15T01:08:29.7932167Z Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+2025-07-15T01:08:29.8001295Z Downloading pytest_cov-6.2.1-py3-none-any.whl (24 kB)
+2025-07-15T01:08:29.8101092Z Downloading coverage-7.9.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (245 kB)
+2025-07-15T01:08:29.8206969Z Downloading iniconfig-2.1.0-py3-none-any.whl (6.0 kB)
+2025-07-15T01:08:29.9038748Z Installing collected packages: pluggy, iniconfig, coverage, pytest, pytest-cov
+2025-07-15T01:08:30.2871055Z 
+2025-07-15T01:08:30.2919927Z Successfully installed coverage-7.9.2 iniconfig-2.1.0 pluggy-1.6.0 pytest-8.4.1 pytest-cov-6.2.1

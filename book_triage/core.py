@@ -210,10 +210,6 @@ class BookTriage:
         max_utility = max(utilities.values())
         best_decision = max(utilities.items(), key=lambda x: x[1])[0]
         
-        # If all utilities are equal or negative, mark as unknown
-        if max_utility <= 0:
-            return Decision.UNKNOWN
-        
         # Update verified logic: yes only if at least one R citation, one P citation, and at least one valid Amazon URL
         has_r_citation = bool(record.citation_R)
         has_p_citation = bool(record.citation_P)
@@ -224,6 +220,10 @@ class BookTriage:
             record.verified = "yes"
         else:
             record.verified = "no"
+        
+        # If all utilities are equal or negative, mark as unknown
+        if max_utility <= 0:
+            return Decision.UNKNOWN
         
         return Decision(best_decision)
     
