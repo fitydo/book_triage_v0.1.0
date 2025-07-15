@@ -93,7 +93,8 @@ async def root(request: Request) -> str:
     <head>
         <title>Book Triage</title>
         <style>
-            body { font-family: Arial, sans-serif; max-width: 1200px; margin-left: 0; margin-right: auto; padding: 20px; }
+            body { font-family: Arial, sans-serif; max-width: 1200px; margin-left: 0; margin-right: auto; padding: 20px; padding-top: 280px; }
+            #control-panel { position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 20px; max-width: 1200px; margin: 0 auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
             .upload-section { border: 2px dashed #ccc; padding: 20px; text-align: center; margin: 20px 0; }
             .upload-section.dragover { border-color: #007cba; background-color: #f0f8ff; }
             #fileInput { display: none; }
@@ -104,7 +105,8 @@ async def root(request: Request) -> str:
             .error { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
             .books-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
             .books-table th, .books-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-            .books-table th { background-color: #f2f2f2; }
+            .books-table th { background-color: #f2f2f2; position: sticky; top: 280px; z-index: 999; box-shadow: 0 2px 2px rgba(0,0,0,0.1); }
+            .books-table thead th { border-bottom: 2px solid #ddd; }
             .decision-sell { background-color: #ffebee; }
             .decision-digital { background-color: #e8f5e8; }
             .decision-keep { background-color: #fff3e0; }
@@ -116,26 +118,28 @@ async def root(request: Request) -> str:
         </style>
     </head>
     <body>
-        <h1>Book Triage</h1>
-        
-        <div class="upload-section" id="uploadSection">
-            <h3>Upload Book Photo</h3>
-            <p>Drag and drop an image here or click to select</p>
-            <input type="file" id="fileInput" accept="image/*">
-            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">Select Image</button>
-        </div>
+        <div id="control-panel">
+            <h1>Book Triage</h1>
+            
+            <div class="upload-section" id="uploadSection">
+                <h3>Upload Book Photo</h3>
+                <p>Drag and drop an image here or click to select</p>
+                <input type="file" id="fileInput" accept="image/*">
+                <button class="upload-btn" onclick="document.getElementById('fileInput').click()">Select Image</button>
+            </div>
 
-        <!-- Manual Title Input Section -->
-        <div class="upload-section" id="manualTitleSection" style="margin-top: 20px;">
-            <h3>Or, post the title on text</h3>
-            <form id="manualTitleForm" onsubmit="submitManualTitle(event)">
-                <input type="text" id="manualTitleInput" placeholder="Enter book title" style="padding: 8px; width: 300px; font-size: 1.1em; border: 1px solid #aaa; border-radius: 4px;" required />
-                <input type="text" id="manualIsbnInput" placeholder="Enter ISBN 13 digits" maxlength="13" style="padding: 8px; width: 180px; font-size: 1.1em; border: 1px solid #aaa; border-radius: 4px; margin-left: 10px;" required />
-                <button type="submit" class="upload-btn" style="margin-left: 10px;">Submit</button>
-            </form>
+            <!-- Manual Title Input Section -->
+            <div class="upload-section" id="manualTitleSection" style="margin-top: 20px;">
+                <h3>Or, post the title on text</h3>
+                <form id="manualTitleForm" onsubmit="submitManualTitle(event)">
+                    <input type="text" id="manualTitleInput" placeholder="Enter book title" style="padding: 8px; width: 300px; font-size: 1.1em; border: 1px solid #aaa; border-radius: 4px;" required />
+                    <input type="text" id="manualIsbnInput" placeholder="Enter ISBN 13 digits" maxlength="13" style="padding: 8px; width: 180px; font-size: 1.1em; border: 1px solid #aaa; border-radius: 4px; margin-left: 10px;" required />
+                    <button type="submit" class="upload-btn" style="margin-left: 10px;">Submit</button>
+                </form>
+            </div>
+            
+            <div id="result"></div>
         </div>
-        
-        <div id="result"></div>
         <div id="toast" style="display:none;position:fixed;top:20px;right:20px;z-index:1000;padding:10px 20px;background:#4caf50;color:white;border-radius:5px;font-weight:bold;"></div>
         <h2>Books Database</h2>
         <div id="booksList">Loading...</div>
