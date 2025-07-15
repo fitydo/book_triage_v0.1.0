@@ -89,7 +89,8 @@ class BookTriage:
             return
         
         try:
-            df = pd.read_csv(self.csv_path)
+            # Read CSV with ISBN as string to prevent float conversion
+            df = pd.read_csv(self.csv_path, dtype={'isbn': str})
             for _, row in df.iterrows():
                 # Helper function to safely get integer values
                 def get_int_value(col: str) -> Optional[int]:
@@ -115,6 +116,9 @@ class BookTriage:
                     value = row.get(col, default)
                     if value is None or (hasattr(value, '__len__') and len(str(value)) == 0) or str(value).lower() == 'nan':
                         return default
+                    # Special handling for ISBN: remove .0 if it's a float-like string
+                    if col == "isbn" and str(value).endswith('.0'):
+                        return str(value)[:-2]
                     return str(value)
                 
                 isbn = get_string_value("isbn") if "isbn" in row else ""
