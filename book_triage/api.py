@@ -103,17 +103,21 @@ async def root(request: Request) -> str:
             .result { margin: 20px 0; padding: 15px; border-radius: 5px; }
             .success { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
             .error { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
-            .books-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-            .books-table th, .books-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            .table-container { overflow-x: auto; margin-top: 20px; border: 1px solid #ddd; border-radius: 5px; }
+            .books-table { width: 100%; min-width: 1500px; border-collapse: collapse; margin: 0; }
+            .books-table th, .books-table td { border: 1px solid #ddd; padding: 8px; text-align: left; white-space: nowrap; }
             .books-table th { background-color: #f2f2f2; position: sticky; top: 280px; z-index: 999; box-shadow: 0 2px 2px rgba(0,0,0,0.1); }
             .books-table thead th { border-bottom: 2px solid #ddd; }
             .decision-sell { background-color: #ffebee; }
             .decision-digital { background-color: #e8f5e8; }
             .decision-keep { background-color: #fff3e0; }
             .decision-unknown { background-color: #f5f5f5; }
-            .edit-title-input { padding: 4px 6px; }
+            .edit-title-input { padding: 4px 6px; border: 1px solid #aaa; border-radius: 4px; }
             .edit-title-input[type="number"] { width: 50px; font-size: 1.1em; text-align: center; background: #f8f8ff; border: 1px solid #aaa; border-radius: 4px; }
             .price-input { width: 90px !important; font-size: 1.1em; text-align: right; background: #f8f8ff; border: 1px solid #aaa; border-radius: 4px; }
+            .url-input { width: 120px !important; }
+            .title-input { width: 200px !important; }
+            .isbn-input { width: 130px !important; }
             .edit-btn, .save-btn, .cancel-btn { padding: 4px 8px; margin-left: 2px; }
         </style>
     </head>
@@ -232,30 +236,31 @@ async def root(request: Request) -> str:
                         return;
                     }
                     let table = `
-                        <table class="books-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>ISBN</th>
-                                    <th>Amazon.co.jp URL</th>
-                                    <th>Amazon.com URL</th>
-                                    <th>Purchase Price</th>
-                                    <th>Used Price</th>
-                                    <th>V</th>
-                                    <th>R</th>
-                                    <th>P</th>
-                                    <th>F</th>
-                                    <th>A</th>
-                                    <th>S</th>
-                                    <th>citation_R</th>
-                                    <th>citation_P</th>
-                                    <th>Decision</th>
-                                    <th>Verified</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                        <div class="table-container">
+                            <table class="books-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Title</th>
+                                        <th>ISBN</th>
+                                        <th>Amazon.co.jp URL</th>
+                                        <th>Amazon.com URL</th>
+                                        <th>Purchase Price</th>
+                                        <th>Used Price</th>
+                                        <th>V</th>
+                                        <th>R</th>
+                                        <th>P</th>
+                                        <th>F</th>
+                                        <th>A</th>
+                                        <th>S</th>
+                                        <th>citation_R</th>
+                                        <th>citation_P</th>
+                                        <th>Decision</th>
+                                        <th>Verified</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                     `;
                     
                     data.forEach(book => {
@@ -264,16 +269,16 @@ async def root(request: Request) -> str:
                             <tr class="${decisionClass}">
                                 <td>${book.id}</td>
                                 <td>
-                                    <input type="text" class="edit-title-input" value="${book.title || ''}" id="title-${book.id}" style="border: 1px solid #aaa; border-radius: 4px; padding: 4px 6px; width: 150px;">
+                                    <input type="text" class="edit-title-input title-input" value="${book.title || ''}" id="title-${book.id}">
                                 </td>
                                 <td>
-                                    <input type="text" class="edit-title-input" value="${book.isbn || ''}" id="isbn-${book.id}" style="border: 1px solid #aaa; border-radius: 4px; padding: 4px 6px; width: 130px;">
+                                    <input type="text" class="edit-title-input isbn-input" value="${book.isbn || ''}" id="isbn-${book.id}">
                                 </td>
                                 <td>
-                                    <input type="text" class="edit-title-input" value="${book.url || ''}" id="url-${book.id}" style="border: 1px solid #aaa; border-radius: 4px; padding: 4px 6px; width: 150px;">
+                                    <input type="text" class="edit-title-input url-input" value="${book.url || ''}" id="url-${book.id}">
                                 </td>
                                 <td>
-                                    <input type="text" class="edit-title-input" value="${book.url_com || ''}" id="url_com-${book.id}" style="border: 1px solid #aaa; border-radius: 4px; padding: 4px 6px; width: 150px;">
+                                    <input type="text" class="edit-title-input url-input" value="${book.url_com || ''}" id="url_com-${book.id}">
                                 </td>
                                 <td>
                                     <input type="number" class="edit-title-input price-input" value="${book.purchase_price || 0}" min="0" id="purchase-${book.id}">
@@ -310,7 +315,7 @@ async def root(request: Request) -> str:
                         `;
                     });
                     
-                    table += '</tbody></table>';
+                    table += '</tbody></table></div>';
                     booksListDiv.innerHTML = table;
                 })
                 .catch(error => {
