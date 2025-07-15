@@ -298,7 +298,7 @@ async def root(request: Request) -> str:
                                 <td>${book.citation_R || ''}</td>
                                 <td>${book.citation_P || ''}</td>
                                 <td>${book.decision}</td>
-                                <td>${book.verified ? 'Yes' : 'No'}</td>
+                                <td>${book.verified === 'yes' ? 'Yes' : 'No'}</td>
                                 <td>
                                     <button class="edit-btn" onclick="saveBook('${book.id}')">Save</button>
                                 </td>
