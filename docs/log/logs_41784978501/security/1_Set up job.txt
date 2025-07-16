@@ -1,0 +1,38 @@
+﻿2025-07-16T00:19:32.2669370Z Current runner version: '2.326.0'
+2025-07-16T00:19:32.2692222Z ##[group]Runner Image Provisioner
+2025-07-16T00:19:32.2693134Z Hosted Compute Agent
+2025-07-16T00:19:32.2693674Z Version: 20250711.363
+2025-07-16T00:19:32.2694258Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-16T00:19:32.2694928Z Build Date: 2025-07-11T20:04:25Z
+2025-07-16T00:19:32.2695522Z ##[endgroup]
+2025-07-16T00:19:32.2696031Z ##[group]Operating System
+2025-07-16T00:19:32.2696933Z Ubuntu
+2025-07-16T00:19:32.2697395Z 24.04.2
+2025-07-16T00:19:32.2697854Z LTS
+2025-07-16T00:19:32.2698254Z ##[endgroup]
+2025-07-16T00:19:32.2698796Z ##[group]Runner Image
+2025-07-16T00:19:32.2699360Z Image: ubuntu-24.04
+2025-07-16T00:19:32.2699847Z Version: 20250710.1.0
+2025-07-16T00:19:32.2700850Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250710.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-16T00:19:32.2702755Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250710.1
+2025-07-16T00:19:32.2703995Z ##[endgroup]
+2025-07-16T00:19:32.2705024Z ##[group]GITHUB_TOKEN Permissions
+2025-07-16T00:19:32.2707436Z Contents: read
+2025-07-16T00:19:32.2707986Z Metadata: read
+2025-07-16T00:19:32.2708509Z Packages: read
+2025-07-16T00:19:32.2709006Z ##[endgroup]
+2025-07-16T00:19:32.2710877Z Secret source: Actions
+2025-07-16T00:19:32.2711637Z Prepare workflow directory
+2025-07-16T00:19:32.3022536Z Prepare all required actions
+2025-07-16T00:19:32.3059617Z Getting action download info
+2025-07-16T00:19:32.5299313Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-16T00:19:32.5300412Z Version: 4.2.2
+2025-07-16T00:19:32.5301383Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-16T00:19:32.5302532Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-16T00:19:32.5303258Z ##[endgroup]
+2025-07-16T00:19:32.6193936Z ##[group]Download immutable action package 'actions/setup-python@v4'
+2025-07-16T00:19:32.6194742Z Version: 4.9.1
+2025-07-16T00:19:32.6195588Z Digest: sha256:f03e505388af670b5a108629e0ba26befc08d5c62b41f46146a45fe29ae509a5
+2025-07-16T00:19:32.6196811Z Source commit SHA: 7f4fc3e22c37d6ff65e88745f38bd3157c663f7c
+2025-07-16T00:19:32.6197506Z ##[endgroup]
+2025-07-16T00:19:32.8931567Z Complete job name: security

@@ -1,0 +1,23 @@
+﻿2025-07-16T00:19:45.3834783Z ##[group]Run bandit -r book_triage/ -f json -o bandit-report.json || true
+2025-07-16T00:19:45.3835650Z [36;1mbandit -r book_triage/ -f json -o bandit-report.json || true[0m
+2025-07-16T00:19:45.3836563Z [36;1msafety check --json --output safety-report.json || true[0m
+2025-07-16T00:19:45.3837161Z [36;1mecho "Security scan completed"[0m
+2025-07-16T00:19:45.3869163Z shell: /usr/bin/bash -e {0}
+2025-07-16T00:19:45.3869392Z env:
+2025-07-16T00:19:45.3869625Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:19:45.3870203Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-16T00:19:45.3870581Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:19:45.3870938Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:19:45.3871282Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:19:45.3871639Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-16T00:19:45.3871928Z ##[endgroup]
+2025-07-16T00:19:45.6087421Z [main]	INFO	profile include tests: None
+2025-07-16T00:19:45.6088032Z [main]	INFO	profile exclude tests: None
+2025-07-16T00:19:45.6088667Z [main]	INFO	cli include tests: None
+2025-07-16T00:19:45.6089115Z [main]	INFO	cli exclude tests: None
+2025-07-16T00:19:45.7189185Z [json]	INFO	JSON output written to file: bandit-report.json
+2025-07-16T00:19:48.3638463Z Usage: safety check [OPTIONS]
+2025-07-16T00:19:48.3638968Z Try 'safety check --help' for help.
+2025-07-16T00:19:48.3639220Z 
+2025-07-16T00:19:48.3647768Z Error: Invalid value for '--output' / '-o': 'safety-report.json' is not one of 'screen', 'text', 'json', 'bare', 'html'.
+2025-07-16T00:19:48.4937172Z Security scan completed
