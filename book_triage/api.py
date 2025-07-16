@@ -274,10 +274,16 @@ async def root(request: Request) -> str:
             }
             
             /* Decision colors */
-            .decision-sell { background-color: #ffebee; }
-            .decision-digital { background-color: #e8f5e8; }
-            .decision-keep { background-color: #fff3e0; }
-            .decision-unknown { background-color: #f5f5f5; }
+            .decision-keep { background-color: #d4edda; }
+            .decision-sell { background-color: #f8d7da; }
+            .decision-digital { background-color: #d1ecf1; }
+            
+            /* Correct live header offset inside the scroll wrapper */
+            .table-scroll-container .books-table th {
+                position: sticky;
+                top: 0; /* Headers stick to top of scroll container, not page */
+                z-index: 10;
+            }
             
             /* Input styling */
             .edit-title-input { 
