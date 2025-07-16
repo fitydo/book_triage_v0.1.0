@@ -1,0 +1,12 @@
+﻿2025-07-16T01:35:56.5559589Z ##[group]Run echo "id,title,url,F,R,A,V,S,P,decision" > sample_books.csv
+2025-07-16T01:35:56.5560109Z [36;1mecho "id,title,url,F,R,A,V,S,P,decision" > sample_books.csv[0m
+2025-07-16T01:35:56.5560831Z [36;1mecho "test1,Test Book,https://example.com,3,2,1,4,2,4,unknown" >> sample_books.csv[0m
+2025-07-16T01:35:56.5589391Z shell: /usr/bin/bash -e {0}
+2025-07-16T01:35:56.5589634Z env:
+2025-07-16T01:35:56.5589885Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:35:56.5590301Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-16T01:35:56.5590928Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:35:56.5591295Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:35:56.5591673Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:35:56.5592043Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-16T01:35:56.5592337Z ##[endgroup]

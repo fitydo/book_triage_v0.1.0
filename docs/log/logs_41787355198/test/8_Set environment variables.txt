@@ -1,0 +1,13 @@
+﻿2025-07-16T01:35:56.5662870Z ##[group]Run echo "BOOK_USER=testuser" >> $GITHUB_ENV
+2025-07-16T01:35:56.5663258Z [36;1mecho "BOOK_USER=testuser" >> $GITHUB_ENV[0m
+2025-07-16T01:35:56.5663563Z [36;1mecho "BOOK_PASS=testpass" >> $GITHUB_ENV[0m
+2025-07-16T01:35:56.5663880Z [36;1mecho "OPENAI_API_KEY=test-key" >> $GITHUB_ENV[0m
+2025-07-16T01:35:56.5690108Z shell: /usr/bin/bash -e {0}
+2025-07-16T01:35:56.5690338Z env:
+2025-07-16T01:35:56.5690792Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:35:56.5691390Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-16T01:35:56.5691799Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:35:56.5692153Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:35:56.5692512Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:35:56.5692888Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-16T01:35:56.5693186Z ##[endgroup]

@@ -1,0 +1,74 @@
+﻿2025-07-16T01:35:01.8178572Z ##[group]Run actions/checkout@v4
+2025-07-16T01:35:01.8179417Z with:
+2025-07-16T01:35:01.8179795Z   fetch-depth: 0
+2025-07-16T01:35:01.8180222Z   repository: fitydo/book_triage_v0.1.0
+2025-07-16T01:35:01.8180914Z   token: ***
+2025-07-16T01:35:01.8181296Z   ssh-strict: true
+2025-07-16T01:35:01.8181679Z   ssh-user: git
+2025-07-16T01:35:01.8182085Z   persist-credentials: true
+2025-07-16T01:35:01.8182578Z   clean: true
+2025-07-16T01:35:01.8182976Z   sparse-checkout-cone-mode: true
+2025-07-16T01:35:01.8183453Z   fetch-tags: false
+2025-07-16T01:35:01.8183847Z   show-progress: true
+2025-07-16T01:35:01.8184242Z   lfs: false
+2025-07-16T01:35:01.8184611Z   submodules: false
+2025-07-16T01:35:01.8185014Z   set-safe-directory: true
+2025-07-16T01:35:01.8185935Z ##[endgroup]
+2025-07-16T01:35:01.9252719Z Syncing repository: fitydo/book_triage_v0.1.0
+2025-07-16T01:35:01.9254476Z ##[group]Getting Git version info
+2025-07-16T01:35:01.9255556Z Working directory is '/home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0'
+2025-07-16T01:35:01.9256797Z [command]/usr/bin/git version
+2025-07-16T01:35:01.9338912Z git version 2.50.1
+2025-07-16T01:35:01.9365037Z ##[endgroup]
+2025-07-16T01:35:01.9380282Z Temporarily overriding HOME='/home/runner/work/_temp/45472537-f54e-4250-b304-f0df2dae0d4e' before making global git config changes
+2025-07-16T01:35:01.9381856Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-16T01:35:01.9394048Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-16T01:35:01.9430958Z Deleting the contents of '/home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0'
+2025-07-16T01:35:01.9434718Z ##[group]Initializing the repository
+2025-07-16T01:35:01.9440090Z [command]/usr/bin/git init /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-16T01:35:01.9512682Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-16T01:35:01.9514314Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-16T01:35:01.9515578Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-16T01:35:01.9516255Z hint:
+2025-07-16T01:35:01.9516908Z hint: 	git config --global init.defaultBranch <name>
+2025-07-16T01:35:01.9517837Z hint:
+2025-07-16T01:35:01.9518766Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-16T01:35:01.9520067Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-16T01:35:01.9521354Z hint:
+2025-07-16T01:35:01.9522075Z hint: 	git branch -m <name>
+2025-07-16T01:35:01.9522891Z hint:
+2025-07-16T01:35:01.9523939Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-07-16T01:35:01.9526164Z Initialized empty Git repository in /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0/.git/
+2025-07-16T01:35:01.9531976Z [command]/usr/bin/git remote add origin https://github.com/fitydo/book_triage_v0.1.0
+2025-07-16T01:35:01.9566848Z ##[endgroup]
+2025-07-16T01:35:01.9568070Z ##[group]Disabling automatic garbage collection
+2025-07-16T01:35:01.9571922Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-16T01:35:01.9600480Z ##[endgroup]
+2025-07-16T01:35:01.9601742Z ##[group]Setting up auth
+2025-07-16T01:35:01.9608131Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-16T01:35:01.9638559Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-16T01:35:01.9993855Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-16T01:35:02.0023053Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-16T01:35:02.0240751Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-16T01:35:02.0274643Z ##[endgroup]
+2025-07-16T01:35:02.0275964Z ##[group]Fetching the repository
+2025-07-16T01:35:02.0292352Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2025-07-16T01:35:02.6587850Z From https://github.com/fitydo/book_triage_v0.1.0
+2025-07-16T01:35:02.6590006Z  * [new branch]      main       -> origin/main
+2025-07-16T01:35:02.6591611Z  * [new tag]         v0.1.0     -> v0.1.0
+2025-07-16T01:35:02.6668019Z [command]/usr/bin/git branch --list --remote origin/main
+2025-07-16T01:35:02.6693134Z   origin/main
+2025-07-16T01:35:02.6704274Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2025-07-16T01:35:02.6726330Z e6ad698a4feeebc8646e035d5c5aa8289e157b92
+2025-07-16T01:35:02.6735397Z ##[endgroup]
+2025-07-16T01:35:02.6736795Z ##[group]Determining the checkout info
+2025-07-16T01:35:02.6738251Z ##[endgroup]
+2025-07-16T01:35:02.6741591Z [command]/usr/bin/git sparse-checkout disable
+2025-07-16T01:35:02.6788760Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-16T01:35:02.6817182Z ##[group]Checking out the ref
+2025-07-16T01:35:02.6822027Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-07-16T01:35:02.7051734Z Switched to a new branch 'main'
+2025-07-16T01:35:02.7055816Z branch 'main' set up to track 'origin/main'.
+2025-07-16T01:35:02.7066273Z ##[endgroup]
+2025-07-16T01:35:02.7108098Z [command]/usr/bin/git log -1 --format=%H
+2025-07-16T01:35:02.7131718Z e6ad698a4feeebc8646e035d5c5aa8289e157b92

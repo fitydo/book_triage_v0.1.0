@@ -68,7 +68,7 @@ def validate_file_upload(file_content: bytes, max_size_mb: int = 10) -> None:
     except Exception:
         raise HTTPException(
             status_code=400,
-            detail="Invalid file format"
+            detail="File must be an image"
         )
 
 

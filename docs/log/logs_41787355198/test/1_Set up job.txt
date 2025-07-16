@@ -1,0 +1,49 @@
+﻿2025-07-16T01:35:14.2664705Z Current runner version: '2.326.0'
+2025-07-16T01:35:14.2689962Z ##[group]Runner Image Provisioner
+2025-07-16T01:35:14.2691552Z Hosted Compute Agent
+2025-07-16T01:35:14.2692393Z Version: 20250711.363
+2025-07-16T01:35:14.2693321Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-16T01:35:14.2694402Z Build Date: 2025-07-11T20:04:25Z
+2025-07-16T01:35:14.2695378Z ##[endgroup]
+2025-07-16T01:35:14.2696263Z ##[group]Operating System
+2025-07-16T01:35:14.2697164Z Ubuntu
+2025-07-16T01:35:14.2697940Z 24.04.2
+2025-07-16T01:35:14.2698624Z LTS
+2025-07-16T01:35:14.2699409Z ##[endgroup]
+2025-07-16T01:35:14.2700225Z ##[group]Runner Image
+2025-07-16T01:35:14.2701424Z Image: ubuntu-24.04
+2025-07-16T01:35:14.2702369Z Version: 20250710.1.0
+2025-07-16T01:35:14.2704098Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250710.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-16T01:35:14.2706582Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250710.1
+2025-07-16T01:35:14.2708597Z ##[endgroup]
+2025-07-16T01:35:14.2710528Z ##[group]GITHUB_TOKEN Permissions
+2025-07-16T01:35:14.2713687Z Contents: read
+2025-07-16T01:35:14.2714543Z Metadata: read
+2025-07-16T01:35:14.2715399Z Packages: read
+2025-07-16T01:35:14.2716193Z ##[endgroup]
+2025-07-16T01:35:14.2719021Z Secret source: Actions
+2025-07-16T01:35:14.2720432Z Prepare workflow directory
+2025-07-16T01:35:14.3177265Z Prepare all required actions
+2025-07-16T01:35:14.3232341Z Getting action download info
+2025-07-16T01:35:14.6739796Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-16T01:35:14.6740951Z Version: 4.2.2
+2025-07-16T01:35:14.6742059Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-16T01:35:14.6743268Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-16T01:35:14.6743952Z ##[endgroup]
+2025-07-16T01:35:14.7883072Z ##[group]Download immutable action package 'actions/setup-python@v4'
+2025-07-16T01:35:14.7883929Z Version: 4.9.1
+2025-07-16T01:35:14.7884727Z Digest: sha256:f03e505388af670b5a108629e0ba26befc08d5c62b41f46146a45fe29ae509a5
+2025-07-16T01:35:14.7885691Z Source commit SHA: 7f4fc3e22c37d6ff65e88745f38bd3157c663f7c
+2025-07-16T01:35:14.7886381Z ##[endgroup]
+2025-07-16T01:35:15.0236442Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-07-16T01:35:15.0237285Z Version: 4.2.3
+2025-07-16T01:35:15.0238023Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-07-16T01:35:15.0238985Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-07-16T01:35:15.0239704Z ##[endgroup]
+2025-07-16T01:35:15.1774745Z Download action repository 'codecov/codecov-action@v3' (SHA:ab904c41d6ece82784817410c45d8b8c02684457)
+2025-07-16T01:35:15.3938776Z ##[group]Download immutable action package 'actions/upload-artifact@v4'
+2025-07-16T01:35:15.3940129Z Version: 4.6.2
+2025-07-16T01:35:15.3941573Z Digest: sha256:290722aa3281d5caf23d0acdc3dbeb3424786a1a01a9cc97e72f147225e37c38
+2025-07-16T01:35:15.3943338Z Source commit SHA: ea165f8d65b6e75b540449e92b4886f43607fa02
+2025-07-16T01:35:15.3944504Z ##[endgroup]
+2025-07-16T01:35:15.6398860Z Complete job name: test

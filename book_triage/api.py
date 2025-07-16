@@ -99,6 +99,8 @@ async def root(request: Request) -> str:
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
                 margin: 0; 
                 padding: 0;
+                /* Provide top padding equal to control panel height for sticky layout */
+                padding-top: 280px;
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
@@ -109,6 +111,11 @@ async def root(request: Request) -> str:
                 padding: 30px 20px 20px;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
                 flex-shrink: 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
             }
             
             #control-panel h1 {
@@ -205,6 +212,7 @@ async def root(request: Request) -> str:
                 min-height: 0; /* Important for flexbox scrolling */
                 position: relative; /* For proper sticky header positioning */
                 max-height: 70vh; /* Set a maximum height to force scrolling */
+                overflow-x: auto; /* Ensure horizontal scrolling */
             }
             
             .books-table { 
@@ -228,16 +236,25 @@ async def root(request: Request) -> str:
                 border: 1px solid #e1e8ed; 
                 padding: 12px 8px; 
                 text-align: left; 
+                /* Provide top offset for sticky header positioning */
+                top: 280px;
             }
             
             .books-table th { 
-                background-color: #f8f9fa; 
+                background-color: #f2f2f2; 
+                /* Sticky positioning just below the control panel (280px) */
+                position: sticky; 
+                top: 280px;
+                z-index: 999; /* Below control panel (1000) */
                 font-weight: 600;
                 color: #495057;
-                position: sticky; 
-                top: 0;
-                z-index: 10;
-                border-bottom: 2px solid #dee2e6;
+                border-bottom: 2px solid #ddd;
+                box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+            }
+
+            /* Higher specificity for table header styling */
+            .books-table thead th {
+                border-bottom: 2px solid #ddd;
             }
             
             /* Ensure header cells have a solid background to prevent content showing through */
@@ -494,12 +511,12 @@ async def root(request: Request) -> str:
                                             <th>Amazon.com URL</th>
                                             <th>Purchase Price</th>
                                             <th>Used Price</th>
-                                            <th title="Value - Resale value (1-5)">V<br><small>Value</small></th>
-                                            <th title="Rarity - How rare the book is (1-5)">R<br><small>Rarity</small></th>
-                                            <th title="Scannability - How easy to digitize (1-5)">P<br><small>Scan</small></th>
-                                            <th title="Frequency - How often you use it (1-5)">F<br><small>Freq</small></th>
-                                            <th title="Annotation - Personal notes/highlights (1-5)">A<br><small>Notes</small></th>
-                                            <th title="Sentimental - Emotional value (1-5)">S<br><small>Sent</small></th>
+                                            <th>V</th>
+                                            <th>R</th>
+                                            <th>P</th>
+                                            <th>F</th>
+                                            <th>A</th>
+                                            <th>S</th>
                                             <th>citation_R</th>
                                             <th>citation_P</th>
                                             <th>Decision</th>

@@ -1,0 +1,81 @@
+﻿2025-07-16T01:36:07.3906718Z ##[group]Run codecov/codecov-action@v3
+2025-07-16T01:36:07.3906992Z with:
+2025-07-16T01:36:07.3907168Z   file: ./coverage.xml
+2025-07-16T01:36:07.3907368Z   flags: unittests
+2025-07-16T01:36:07.3907557Z   name: codecov-umbrella
+2025-07-16T01:36:07.3907761Z   fail_ci_if_error: false
+2025-07-16T01:36:07.3907961Z   verbose: true
+2025-07-16T01:36:07.3908141Z env:
+2025-07-16T01:36:07.3908379Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:36:07.3908795Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-16T01:36:07.3909190Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:36:07.3909544Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:36:07.3909900Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T01:36:07.3910430Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-16T01:36:07.3910920Z   BOOK_USER: testuser
+2025-07-16T01:36:07.3911118Z   BOOK_PASS: testpass
+2025-07-16T01:36:07.3911353Z   OPENAI_API_KEY: test-key
+2025-07-16T01:36:07.3911877Z   CODECOV_TOKEN: ***
+2025-07-16T01:36:07.3912081Z ##[endgroup]
+2025-07-16T01:36:07.5004016Z {
+2025-07-16T01:36:07.5004459Z   execArgs: [
+2025-07-16T01:36:07.5004806Z     '-n',
+2025-07-16T01:36:07.5005142Z     'codecov-umbrella',
+2025-07-16T01:36:07.5005514Z     '-Q',
+2025-07-16T01:36:07.5005850Z     'github-action-3.1.6',
+2025-07-16T01:36:07.5006242Z     '-f',
+2025-07-16T01:36:07.5006558Z     './coverage.xml',
+2025-07-16T01:36:07.5006892Z     '-F',
+2025-07-16T01:36:07.5007193Z     'unittests',
+2025-07-16T01:36:07.5007517Z     '-v'
+2025-07-16T01:36:07.5007795Z   ]
+2025-07-16T01:36:07.5008081Z }
+2025-07-16T01:36:07.5009592Z ==> linux OS detected
+2025-07-16T01:36:07.9313199Z https://uploader.codecov.io/latest/linux/codecov.SHA256SUM
+2025-07-16T01:36:07.9497019Z Received SHA256SUM b37359013b48fbc3b0790d59fc474a52a260fb96e28e1b2c2ae001dc9b9cc996  codecov
+2025-07-16T01:36:07.9885149Z Received SHA256SUM signature -----BEGIN PGP SIGNATURE-----
+2025-07-16T01:36:07.9885695Z 
+2025-07-16T01:36:07.9886066Z iQIzBAABCgAdFiEEJwNOf9uFDgu8LGL/gGuyiu13mGkFAmas/x0ACgkQgGuyiu13
+2025-07-16T01:36:07.9886938Z mGnuYxAAhL4nufMHTUEJVbG790Tkshg/NwRAQ1I2FmpPOy1HwZnlX0arTb2Fk6r5
+2025-07-16T01:36:07.9898684Z jTUIVHTARwbsQc/gEnaety1RULuMhyn4TlkkTm4rrCENlMvrbkmrT55lbLzx7FzG
+2025-07-16T01:36:07.9899664Z qMS1oEUUZaRDNT/AqrhtUnCtq8UsR4eBgdgKgkxsgSUKjfkumYqfsBp3QBerLcqB
+2025-07-16T01:36:07.9900795Z xeXP2y9qxZ95rVVepMWY+7pdywAhUAyKgA6sO6ejPdwSybSHZeySAFS6MGDhRhcM
+2025-07-16T01:36:07.9901713Z +WTr/2WhRjjOfmJGODTDFmMjUrtnlU5FSqhA8zJ2zv7ZInw7yzelA05tEVz0HT/Q
+2025-07-16T01:36:07.9902638Z HnIvyJZzXtX81hHDgBzXG7Vw8ElQMTyAiySpKF4KcMWaTc+mIm5LG+yhgJXhUqFL
+2025-07-16T01:36:07.9903559Z R1NXxuyh0050+T7zhsFLadw7706Q8QCQKDpBDYgRbjUr+rkRgZBGLcWcoFiqAzNF
+2025-07-16T01:36:07.9904469Z 7lx6W9lxF9M97wKNJezhWvvzR9kI04l676BvVLTX9yPG6MUakLqKgsbR0NuOz7xA
+2025-07-16T01:36:07.9905386Z yCDKCEXfjXr53h1TP3oqmC5wguSurjmIOcVCK77iiv1Sy63RnK+SUXAyIeNsJwME
+2025-07-16T01:36:07.9906321Z KdfVS6l1enI4s35IQzmmd0QxhfiHFTUYHuFPgE78z2Ik93KcSkVc7AZg2C76PCfZ
+2025-07-16T01:36:07.9907078Z fWy10hSbRM0BS5hjauyrSrA4++8ku/KoJhXwkGu49N8GylTcySk=
+2025-07-16T01:36:07.9907607Z =n6lq
+2025-07-16T01:36:07.9907933Z -----END PGP SIGNATURE-----
+2025-07-16T01:36:07.9908193Z 
+2025-07-16T01:36:08.0037369Z ==> SHASUM file signed by key id 806bb28aed779869
+2025-07-16T01:36:08.0808448Z ==> Uploader SHASUM verified (b37359013b48fbc3b0790d59fc474a52a260fb96e28e1b2c2ae001dc9b9cc996  codecov)
+2025-07-16T01:36:08.0809339Z ==> Running version latest
+2025-07-16T01:36:08.1871904Z ==> Running version v0.8.0
+2025-07-16T01:36:08.1888688Z [command]/home/runner/work/_actions/codecov/codecov-action/v3/dist/codecov -n codecov-umbrella -Q github-action-3.1.6 -f ./coverage.xml -F unittests -v
+2025-07-16T01:36:08.3965361Z [2025-07-16T01:36:08.395Z] ['verbose'] Start of uploader: 1752629768395...
+2025-07-16T01:36:08.3969426Z [2025-07-16T01:36:08.396Z] ['info'] 
+2025-07-16T01:36:08.3969956Z      _____          _
+2025-07-16T01:36:08.3970379Z     / ____|        | |
+2025-07-16T01:36:08.3971311Z    | |     ___   __| | ___  ___ _____   __
+2025-07-16T01:36:08.3971665Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2025-07-16T01:36:08.3972001Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2025-07-16T01:36:08.3972340Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2025-07-16T01:36:08.3972565Z 
+2025-07-16T01:36:08.3972695Z   Codecov report uploader 0.8.0
+2025-07-16T01:36:08.4024125Z [2025-07-16T01:36:08.402Z] ['info'] => Project root located at: /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-16T01:36:08.4028211Z [2025-07-16T01:36:08.402Z] ['info'] ->  Token found by environment variables
+2025-07-16T01:36:08.4036078Z [2025-07-16T01:36:08.403Z] ['verbose'] Start of network processing...
+2025-07-16T01:36:08.4036992Z [2025-07-16T01:36:08.403Z] ['verbose'] Searching for files in /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-16T01:36:08.5041974Z [2025-07-16T01:36:08.503Z] ['verbose'] Skipping coveragepy, files already specified
+2025-07-16T01:36:08.5042830Z [2025-07-16T01:36:08.503Z] ['info'] Searching for coverage files...
+2025-07-16T01:36:08.5426175Z [2025-07-16T01:36:08.542Z] ['verbose'] Preparing to clean the following coverage paths: ./coverage.xml
+2025-07-16T01:36:08.5429592Z [2025-07-16T01:36:08.542Z] ['error'] None of the following appear to exist as files: ./coverage.xml
+2025-07-16T01:36:08.5431060Z [2025-07-16T01:36:08.542Z] ['error'] There was an error running the uploader: Error while cleaning paths. No paths matched existing files!
+2025-07-16T01:36:08.5433276Z [2025-07-16T01:36:08.542Z] ['verbose'] The error stack is: Error: Error while cleaning paths. No paths matched existing files!
+2025-07-16T01:36:08.5434339Z     at cleanCoverageFilePaths (/snapshot/repo/dist/src/helpers/files.js)
+2025-07-16T01:36:08.5434981Z     at main (/snapshot/repo/dist/src/index.js)
+2025-07-16T01:36:08.5435634Z [2025-07-16T01:36:08.543Z] ['verbose'] End of uploader: 148 milliseconds
+2025-07-16T01:36:08.5436302Z [2025-07-16T01:36:08.543Z] ['info'] Codecov will exit with status code 0. If you are expecting a non-zero exit code, please pass in the `-Z` flag
