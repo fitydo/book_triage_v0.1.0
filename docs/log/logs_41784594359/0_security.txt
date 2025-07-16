@@ -1,0 +1,336 @@
+﻿2025-07-16T00:08:11.1747211Z Current runner version: '2.326.0'
+2025-07-16T00:08:11.1772525Z ##[group]Runner Image Provisioner
+2025-07-16T00:08:11.1773409Z Hosted Compute Agent
+2025-07-16T00:08:11.1774016Z Version: 20250711.363
+2025-07-16T00:08:11.1774670Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-16T00:08:11.1775426Z Build Date: 2025-07-11T20:04:25Z
+2025-07-16T00:08:11.1776029Z ##[endgroup]
+2025-07-16T00:08:11.1776692Z ##[group]Operating System
+2025-07-16T00:08:11.1777321Z Ubuntu
+2025-07-16T00:08:11.1777823Z 24.04.2
+2025-07-16T00:08:11.1778354Z LTS
+2025-07-16T00:08:11.1778840Z ##[endgroup]
+2025-07-16T00:08:11.1779384Z ##[group]Runner Image
+2025-07-16T00:08:11.1779930Z Image: ubuntu-24.04
+2025-07-16T00:08:11.1780576Z Version: 20250710.1.0
+2025-07-16T00:08:11.1781580Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250710.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-16T00:08:11.1783585Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250710.1
+2025-07-16T00:08:11.1784647Z ##[endgroup]
+2025-07-16T00:08:11.1785828Z ##[group]GITHUB_TOKEN Permissions
+2025-07-16T00:08:11.1787702Z Contents: read
+2025-07-16T00:08:11.1788229Z Metadata: read
+2025-07-16T00:08:11.1788866Z Packages: read
+2025-07-16T00:08:11.1789384Z ##[endgroup]
+2025-07-16T00:08:11.1791533Z Secret source: Actions
+2025-07-16T00:08:11.1792537Z Prepare workflow directory
+2025-07-16T00:08:11.2121100Z Prepare all required actions
+2025-07-16T00:08:11.2161344Z Getting action download info
+2025-07-16T00:08:11.7115396Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-16T00:08:11.7116518Z Version: 4.2.2
+2025-07-16T00:08:11.7117491Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-16T00:08:11.7118831Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-16T00:08:11.7119568Z ##[endgroup]
+2025-07-16T00:08:11.8000929Z ##[group]Download immutable action package 'actions/setup-python@v4'
+2025-07-16T00:08:11.8002078Z Version: 4.9.1
+2025-07-16T00:08:11.8002856Z Digest: sha256:f03e505388af670b5a108629e0ba26befc08d5c62b41f46146a45fe29ae509a5
+2025-07-16T00:08:11.8003916Z Source commit SHA: 7f4fc3e22c37d6ff65e88745f38bd3157c663f7c
+2025-07-16T00:08:11.8004652Z ##[endgroup]
+2025-07-16T00:08:12.1850124Z Complete job name: security
+2025-07-16T00:08:12.2518812Z ##[group]Run actions/checkout@v4
+2025-07-16T00:08:12.2519647Z with:
+2025-07-16T00:08:12.2520175Z   repository: fitydo/book_triage_v0.1.0
+2025-07-16T00:08:12.2520866Z   token: ***
+2025-07-16T00:08:12.2521343Z   ssh-strict: true
+2025-07-16T00:08:12.2521980Z   ssh-user: git
+2025-07-16T00:08:12.2522456Z   persist-credentials: true
+2025-07-16T00:08:12.2522956Z   clean: true
+2025-07-16T00:08:12.2523371Z   sparse-checkout-cone-mode: true
+2025-07-16T00:08:12.2523950Z   fetch-depth: 1
+2025-07-16T00:08:12.2524429Z   fetch-tags: false
+2025-07-16T00:08:12.2524923Z   show-progress: true
+2025-07-16T00:08:12.2525416Z   lfs: false
+2025-07-16T00:08:12.2525934Z   submodules: false
+2025-07-16T00:08:12.2526421Z   set-safe-directory: true
+2025-07-16T00:08:12.2527209Z ##[endgroup]
+2025-07-16T00:08:12.3598971Z Syncing repository: fitydo/book_triage_v0.1.0
+2025-07-16T00:08:12.3601082Z ##[group]Getting Git version info
+2025-07-16T00:08:12.3602124Z Working directory is '/home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0'
+2025-07-16T00:08:12.3603253Z [command]/usr/bin/git version
+2025-07-16T00:08:12.3676023Z git version 2.50.1
+2025-07-16T00:08:12.3702815Z ##[endgroup]
+2025-07-16T00:08:12.3718854Z Temporarily overriding HOME='/home/runner/work/_temp/755af972-5ef0-4dae-8019-a4ea07cca6db' before making global git config changes
+2025-07-16T00:08:12.3721225Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-16T00:08:12.3733204Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-16T00:08:12.3769074Z Deleting the contents of '/home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0'
+2025-07-16T00:08:12.3772540Z ##[group]Initializing the repository
+2025-07-16T00:08:12.3776470Z [command]/usr/bin/git init /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-16T00:08:12.3847965Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-16T00:08:12.3849482Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-16T00:08:12.3850971Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-16T00:08:12.3852245Z hint:
+2025-07-16T00:08:12.3852989Z hint: 	git config --global init.defaultBranch <name>
+2025-07-16T00:08:12.3853961Z hint:
+2025-07-16T00:08:12.3854573Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-16T00:08:12.3855577Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-16T00:08:12.3856339Z hint:
+2025-07-16T00:08:12.3856813Z hint: 	git branch -m <name>
+2025-07-16T00:08:12.3857347Z hint:
+2025-07-16T00:08:12.3858217Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-07-16T00:08:12.3859556Z Initialized empty Git repository in /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0/.git/
+2025-07-16T00:08:12.3863790Z [command]/usr/bin/git remote add origin https://github.com/fitydo/book_triage_v0.1.0
+2025-07-16T00:08:12.3896338Z ##[endgroup]
+2025-07-16T00:08:12.3897201Z ##[group]Disabling automatic garbage collection
+2025-07-16T00:08:12.3899885Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-16T00:08:12.3927579Z ##[endgroup]
+2025-07-16T00:08:12.3928348Z ##[group]Setting up auth
+2025-07-16T00:08:12.3933948Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-16T00:08:12.3962517Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-16T00:08:12.4275949Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-16T00:08:12.4306315Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-16T00:08:12.4528083Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-16T00:08:12.4562416Z ##[endgroup]
+2025-07-16T00:08:12.4563517Z ##[group]Fetching the repository
+2025-07-16T00:08:12.4579268Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a80bfe088efad091bdd355e248ebfb65cd0e357e:refs/remotes/origin/main
+2025-07-16T00:08:12.9669399Z From https://github.com/fitydo/book_triage_v0.1.0
+2025-07-16T00:08:12.9671036Z  * [new ref]         a80bfe088efad091bdd355e248ebfb65cd0e357e -> origin/main
+2025-07-16T00:08:12.9696744Z ##[endgroup]
+2025-07-16T00:08:12.9697929Z ##[group]Determining the checkout info
+2025-07-16T00:08:12.9699819Z ##[endgroup]
+2025-07-16T00:08:12.9704638Z [command]/usr/bin/git sparse-checkout disable
+2025-07-16T00:08:12.9746512Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-16T00:08:12.9775563Z ##[group]Checking out the ref
+2025-07-16T00:08:12.9779141Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-07-16T00:08:12.9995490Z Switched to a new branch 'main'
+2025-07-16T00:08:12.9997086Z branch 'main' set up to track 'origin/main'.
+2025-07-16T00:08:13.0003963Z ##[endgroup]
+2025-07-16T00:08:13.0040123Z [command]/usr/bin/git log -1 --format=%H
+2025-07-16T00:08:13.0062104Z a80bfe088efad091bdd355e248ebfb65cd0e357e
+2025-07-16T00:08:13.0355501Z ##[group]Run actions/setup-python@v4
+2025-07-16T00:08:13.0356592Z with:
+2025-07-16T00:08:13.0357299Z   python-version: 3.12
+2025-07-16T00:08:13.0358230Z   check-latest: false
+2025-07-16T00:08:13.0359317Z   token: ***
+2025-07-16T00:08:13.0360075Z   update-environment: true
+2025-07-16T00:08:13.0361008Z   allow-prereleases: false
+2025-07-16T00:08:13.0362318Z ##[endgroup]
+2025-07-16T00:08:13.2055742Z ##[group]Installed versions
+2025-07-16T00:08:13.2563085Z Successfully set up CPython (3.12.11)
+2025-07-16T00:08:13.2568236Z ##[endgroup]
+2025-07-16T00:08:13.2740141Z ##[group]Run pip install bandit safety
+2025-07-16T00:08:13.2741336Z [36;1mpip install bandit safety[0m
+2025-07-16T00:08:13.2880662Z shell: /usr/bin/bash -e {0}
+2025-07-16T00:08:13.2881619Z env:
+2025-07-16T00:08:13.2883365Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:13.2885529Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-16T00:08:13.2887197Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:13.2888672Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:13.2890125Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:13.2891609Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-16T00:08:13.2893066Z ##[endgroup]
+2025-07-16T00:08:15.5424615Z Collecting bandit
+2025-07-16T00:08:15.5742474Z   Downloading bandit-1.8.6-py3-none-any.whl.metadata (6.9 kB)
+2025-07-16T00:08:15.6079274Z Collecting safety
+2025-07-16T00:08:15.6108137Z   Downloading safety-3.6.0-py3-none-any.whl.metadata (11 kB)
+2025-07-16T00:08:15.6508915Z Collecting PyYAML>=5.3.1 (from bandit)
+2025-07-16T00:08:15.6537981Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-07-16T00:08:15.6766009Z Collecting stevedore>=1.20.0 (from bandit)
+2025-07-16T00:08:15.6793179Z   Downloading stevedore-5.4.1-py3-none-any.whl.metadata (2.3 kB)
+2025-07-16T00:08:15.7212911Z Collecting rich (from bandit)
+2025-07-16T00:08:15.7238319Z   Downloading rich-14.0.0-py3-none-any.whl.metadata (18 kB)
+2025-07-16T00:08:15.7450891Z Collecting authlib>=1.2.0 (from safety)
+2025-07-16T00:08:15.7493966Z   Downloading authlib-1.6.0-py2.py3-none-any.whl.metadata (4.1 kB)
+2025-07-16T00:08:15.7683728Z Collecting click>=8.0.2 (from safety)
+2025-07-16T00:08:15.7724629Z   Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+2025-07-16T00:08:15.7846486Z Collecting dparse>=0.6.4 (from safety)
+2025-07-16T00:08:15.8001264Z   Downloading dparse-0.6.4-py3-none-any.whl.metadata (5.5 kB)
+2025-07-16T00:08:15.8215527Z Collecting filelock~=3.16.1 (from safety)
+2025-07-16T00:08:15.8247833Z   Downloading filelock-3.16.1-py3-none-any.whl.metadata (2.9 kB)
+2025-07-16T00:08:15.8473293Z Collecting httpx (from safety)
+2025-07-16T00:08:15.8509315Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2025-07-16T00:08:15.8698155Z Collecting jinja2>=3.1.0 (from safety)
+2025-07-16T00:08:15.8726098Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2025-07-16T00:08:15.9123932Z Collecting marshmallow>=3.15.0 (from safety)
+2025-07-16T00:08:15.9166985Z   Downloading marshmallow-4.0.0-py3-none-any.whl.metadata (7.4 kB)
+2025-07-16T00:08:15.9351023Z Collecting nltk>=3.9 (from safety)
+2025-07-16T00:08:15.9388304Z   Downloading nltk-3.9.1-py3-none-any.whl.metadata (2.9 kB)
+2025-07-16T00:08:15.9566163Z Collecting packaging>=21.0 (from safety)
+2025-07-16T00:08:15.9591033Z   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+2025-07-16T00:08:16.0241997Z Collecting psutil~=6.1.0 (from safety)
+2025-07-16T00:08:16.0271073Z   Downloading psutil-6.1.1-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (22 kB)
+2025-07-16T00:08:16.1432791Z Collecting pydantic<2.10.0,>=2.6.0 (from safety)
+2025-07-16T00:08:16.1469635Z   Downloading pydantic-2.9.2-py3-none-any.whl.metadata (149 kB)
+2025-07-16T00:08:16.1832905Z Collecting requests (from safety)
+2025-07-16T00:08:16.1862407Z   Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+2025-07-16T00:08:16.3263723Z Collecting ruamel-yaml>=0.17.21 (from safety)
+2025-07-16T00:08:16.3293738Z   Downloading ruamel.yaml-0.18.14-py3-none-any.whl.metadata (24 kB)
+2025-07-16T00:08:16.3479603Z Collecting safety-schemas==0.0.14 (from safety)
+2025-07-16T00:08:16.3559628Z   Downloading safety_schemas-0.0.14-py3-none-any.whl.metadata (1.1 kB)
+2025-07-16T00:08:16.4701434Z Collecting setuptools>=65.5.1 (from safety)
+2025-07-16T00:08:16.4732916Z   Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+2025-07-16T00:08:16.4985757Z Collecting tenacity (from safety)
+2025-07-16T00:08:16.5011412Z   Downloading tenacity-9.1.2-py3-none-any.whl.metadata (1.2 kB)
+2025-07-16T00:08:16.5190527Z Collecting tomlkit (from safety)
+2025-07-16T00:08:16.5216502Z   Downloading tomlkit-0.13.3-py3-none-any.whl.metadata (2.8 kB)
+2025-07-16T00:08:16.5400164Z Collecting typer>=0.16.0 (from safety)
+2025-07-16T00:08:16.5432193Z   Downloading typer-0.16.0-py3-none-any.whl.metadata (15 kB)
+2025-07-16T00:08:16.5705336Z Collecting typing-extensions>=4.7.1 (from safety)
+2025-07-16T00:08:16.5739326Z   Downloading typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+2025-07-16T00:08:16.5886144Z Collecting annotated-types>=0.6.0 (from pydantic<2.10.0,>=2.6.0->safety)
+2025-07-16T00:08:16.5916875Z   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+2025-07-16T00:08:17.1983803Z Collecting pydantic-core==2.23.4 (from pydantic<2.10.0,>=2.6.0->safety)
+2025-07-16T00:08:17.2025310Z   Downloading pydantic_core-2.23.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+2025-07-16T00:08:17.4226120Z Collecting cryptography (from authlib>=1.2.0->safety)
+2025-07-16T00:08:17.4255094Z   Downloading cryptography-45.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+2025-07-16T00:08:17.4850543Z Collecting MarkupSafe>=2.0 (from jinja2>=3.1.0->safety)
+2025-07-16T00:08:17.4884006Z   Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+2025-07-16T00:08:17.5135477Z Collecting joblib (from nltk>=3.9->safety)
+2025-07-16T00:08:17.5160522Z   Downloading joblib-1.5.1-py3-none-any.whl.metadata (5.6 kB)
+2025-07-16T00:08:17.8125284Z Collecting regex>=2021.8.3 (from nltk>=3.9->safety)
+2025-07-16T00:08:17.8162677Z   Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB)
+2025-07-16T00:08:17.8532221Z Collecting tqdm (from nltk>=3.9->safety)
+2025-07-16T00:08:17.8558005Z   Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+2025-07-16T00:08:17.8947074Z Collecting ruamel.yaml.clib>=0.2.7 (from ruamel-yaml>=0.17.21->safety)
+2025-07-16T00:08:17.8975024Z   Downloading ruamel.yaml.clib-0.2.12-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.7 kB)
+2025-07-16T00:08:17.9250655Z Collecting pbr>=2.0.0 (from stevedore>=1.20.0->bandit)
+2025-07-16T00:08:17.9275122Z   Downloading pbr-6.1.1-py2.py3-none-any.whl.metadata (3.4 kB)
+2025-07-16T00:08:17.9537899Z Collecting shellingham>=1.3.0 (from typer>=0.16.0->safety)
+2025-07-16T00:08:17.9565122Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-07-16T00:08:17.9842935Z Collecting markdown-it-py>=2.2.0 (from rich->bandit)
+2025-07-16T00:08:17.9870098Z   Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+2025-07-16T00:08:18.0120646Z Collecting pygments<3.0.0,>=2.13.0 (from rich->bandit)
+2025-07-16T00:08:18.0146930Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+2025-07-16T00:08:18.0271234Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->bandit)
+2025-07-16T00:08:18.0294492Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2025-07-16T00:08:18.1298375Z Collecting cffi>=1.14 (from cryptography->authlib>=1.2.0->safety)
+2025-07-16T00:08:18.1332989Z   Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+2025-07-16T00:08:18.1458907Z Collecting pycparser (from cffi>=1.14->cryptography->authlib>=1.2.0->safety)
+2025-07-16T00:08:18.1490448Z   Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+2025-07-16T00:08:18.1688480Z Collecting anyio (from httpx->safety)
+2025-07-16T00:08:18.1712542Z   Downloading anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB)
+2025-07-16T00:08:18.1931528Z Collecting certifi (from httpx->safety)
+2025-07-16T00:08:18.1966291Z   Downloading certifi-2025.7.14-py3-none-any.whl.metadata (2.4 kB)
+2025-07-16T00:08:18.2174590Z Collecting httpcore==1.* (from httpx->safety)
+2025-07-16T00:08:18.2206124Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2025-07-16T00:08:18.2399160Z Collecting idna (from httpx->safety)
+2025-07-16T00:08:18.2424532Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-07-16T00:08:18.3103832Z Collecting h11>=0.16 (from httpcore==1.*->httpx->safety)
+2025-07-16T00:08:18.3130866Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2025-07-16T00:08:18.3288788Z Collecting sniffio>=1.1 (from anyio->httpx->safety)
+2025-07-16T00:08:18.3314549Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2025-07-16T00:08:18.4235876Z Collecting charset_normalizer<4,>=2 (from requests->safety)
+2025-07-16T00:08:18.4267368Z   Downloading charset_normalizer-3.4.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+2025-07-16T00:08:18.4617724Z Collecting urllib3<3,>=1.21.1 (from requests->safety)
+2025-07-16T00:08:18.4645115Z   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+2025-07-16T00:08:18.4868857Z Downloading bandit-1.8.6-py3-none-any.whl (133 kB)
+2025-07-16T00:08:18.5010285Z Downloading safety-3.6.0-py3-none-any.whl (285 kB)
+2025-07-16T00:08:18.5077751Z Downloading safety_schemas-0.0.14-py3-none-any.whl (39 kB)
+2025-07-16T00:08:18.5130315Z Downloading filelock-3.16.1-py3-none-any.whl (16 kB)
+2025-07-16T00:08:18.5190342Z Downloading psutil-6.1.1-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (287 kB)
+2025-07-16T00:08:18.5250038Z Downloading pydantic-2.9.2-py3-none-any.whl (434 kB)
+2025-07-16T00:08:18.5326339Z Downloading pydantic_core-2.23.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+2025-07-16T00:08:18.5523461Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 130.8 MB/s eta 0:00:00
+2025-07-16T00:08:18.5550568Z Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+2025-07-16T00:08:18.5637653Z Downloading authlib-1.6.0-py2.py3-none-any.whl (239 kB)
+2025-07-16T00:08:18.5692766Z Downloading click-8.2.1-py3-none-any.whl (102 kB)
+2025-07-16T00:08:18.5788281Z Downloading dparse-0.6.4-py3-none-any.whl (11 kB)
+2025-07-16T00:08:18.5834895Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-07-16T00:08:18.5887031Z Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+2025-07-16T00:08:18.5931258Z Downloading marshmallow-4.0.0-py3-none-any.whl (48 kB)
+2025-07-16T00:08:18.5985200Z Downloading nltk-3.9.1-py3-none-any.whl (1.5 MB)
+2025-07-16T00:08:18.6158877Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 84.8 MB/s eta 0:00:00
+2025-07-16T00:08:18.6183473Z Downloading packaging-25.0-py3-none-any.whl (66 kB)
+2025-07-16T00:08:18.6232327Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2025-07-16T00:08:18.6298234Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 123.4 MB/s eta 0:00:00
+2025-07-16T00:08:18.6322472Z Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (796 kB)
+2025-07-16T00:08:18.6389489Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 796.9/796.9 kB 129.8 MB/s eta 0:00:00
+2025-07-16T00:08:18.6415981Z Downloading ruamel.yaml-0.18.14-py3-none-any.whl (118 kB)
+2025-07-16T00:08:18.6465731Z Downloading ruamel.yaml.clib-0.2.12-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (754 kB)
+2025-07-16T00:08:18.6536732Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 754.1/754.1 kB 116.9 MB/s eta 0:00:00
+2025-07-16T00:08:18.6561434Z Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+2025-07-16T00:08:18.6649316Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 145.8 MB/s eta 0:00:00
+2025-07-16T00:08:18.6677050Z Downloading stevedore-5.4.1-py3-none-any.whl (49 kB)
+2025-07-16T00:08:18.6721510Z Downloading pbr-6.1.1-py2.py3-none-any.whl (108 kB)
+2025-07-16T00:08:18.6836400Z Downloading typer-0.16.0-py3-none-any.whl (46 kB)
+2025-07-16T00:08:18.6880563Z Downloading rich-14.0.0-py3-none-any.whl (243 kB)
+2025-07-16T00:08:18.6933257Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+2025-07-16T00:08:18.7015873Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 159.1 MB/s eta 0:00:00
+2025-07-16T00:08:18.7043133Z Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+2025-07-16T00:08:18.7091823Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2025-07-16T00:08:18.7135707Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2025-07-16T00:08:18.7180684Z Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+2025-07-16T00:08:18.7227201Z Downloading cryptography-45.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+2025-07-16T00:08:18.7448592Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 214.8 MB/s eta 0:00:00
+2025-07-16T00:08:18.7476200Z Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (479 kB)
+2025-07-16T00:08:18.7543737Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2025-07-16T00:08:18.7591404Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2025-07-16T00:08:18.7636483Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2025-07-16T00:08:18.7684907Z Downloading anyio-4.9.0-py3-none-any.whl (100 kB)
+2025-07-16T00:08:18.7733427Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+2025-07-16T00:08:18.7786419Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+2025-07-16T00:08:18.7831133Z Downloading certifi-2025.7.14-py3-none-any.whl (162 kB)
+2025-07-16T00:08:18.7898754Z Downloading joblib-1.5.1-py3-none-any.whl (307 kB)
+2025-07-16T00:08:18.7959984Z Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+2025-07-16T00:08:18.8008301Z Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+2025-07-16T00:08:18.8057780Z Downloading charset_normalizer-3.4.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (148 kB)
+2025-07-16T00:08:18.8110574Z Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+2025-07-16T00:08:18.8163036Z Downloading tenacity-9.1.2-py3-none-any.whl (28 kB)
+2025-07-16T00:08:18.8217230Z Downloading tomlkit-0.13.3-py3-none-any.whl (38 kB)
+2025-07-16T00:08:18.8261514Z Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+2025-07-16T00:08:18.9806824Z Installing collected packages: urllib3, typing-extensions, tqdm, tomlkit, tenacity, sniffio, shellingham, setuptools, ruamel.yaml.clib, regex, PyYAML, pygments, pycparser, psutil, packaging, mdurl, marshmallow, MarkupSafe, joblib, idna, h11, filelock, click, charset_normalizer, certifi, annotated-types, ruamel-yaml, requests, pydantic-core, pbr, nltk, markdown-it-py, jinja2, httpcore, dparse, cffi, anyio, stevedore, rich, pydantic, httpx, cryptography, typer, safety-schemas, bandit, authlib, safety
+2025-07-16T00:08:24.3764477Z 
+2025-07-16T00:08:24.3813720Z Successfully installed MarkupSafe-3.0.2 PyYAML-6.0.2 annotated-types-0.7.0 anyio-4.9.0 authlib-1.6.0 bandit-1.8.6 certifi-2025.7.14 cffi-1.17.1 charset_normalizer-3.4.2 click-8.2.1 cryptography-45.0.5 dparse-0.6.4 filelock-3.16.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.10 jinja2-3.1.6 joblib-1.5.1 markdown-it-py-3.0.0 marshmallow-4.0.0 mdurl-0.1.2 nltk-3.9.1 packaging-25.0 pbr-6.1.1 psutil-6.1.1 pycparser-2.22 pydantic-2.9.2 pydantic-core-2.23.4 pygments-2.19.2 regex-2024.11.6 requests-2.32.4 rich-14.0.0 ruamel-yaml-0.18.14 ruamel.yaml.clib-0.2.12 safety-3.6.0 safety-schemas-0.0.14 setuptools-80.9.0 shellingham-1.5.4 sniffio-1.3.1 stevedore-5.4.1 tenacity-9.1.2 tomlkit-0.13.3 tqdm-4.67.1 typer-0.16.0 typing-extensions-4.14.1 urllib3-2.5.0
+2025-07-16T00:08:24.9499447Z ##[group]Run bandit -r book_triage/ -f json -o bandit-report.json || true
+2025-07-16T00:08:24.9500310Z [36;1mbandit -r book_triage/ -f json -o bandit-report.json || true[0m
+2025-07-16T00:08:24.9501080Z [36;1msafety check --json --output safety-report.json || true[0m
+2025-07-16T00:08:24.9501887Z [36;1mecho "Security scan completed"[0m
+2025-07-16T00:08:24.9535318Z shell: /usr/bin/bash -e {0}
+2025-07-16T00:08:24.9535538Z env:
+2025-07-16T00:08:24.9535783Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:24.9536359Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-16T00:08:24.9536753Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:24.9537100Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:24.9537443Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:24.9537790Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-16T00:08:24.9538103Z ##[endgroup]
+2025-07-16T00:08:25.2972261Z [main]	INFO	profile include tests: None
+2025-07-16T00:08:25.2973019Z [main]	INFO	profile exclude tests: None
+2025-07-16T00:08:25.2973373Z [main]	INFO	cli include tests: None
+2025-07-16T00:08:25.2973703Z [main]	INFO	cli exclude tests: None
+2025-07-16T00:08:25.4063863Z [json]	INFO	JSON output written to file: bandit-report.json
+2025-07-16T00:08:27.4200165Z Usage: safety check [OPTIONS]
+2025-07-16T00:08:27.4200648Z Try 'safety check --help' for help.
+2025-07-16T00:08:27.4200886Z 
+2025-07-16T00:08:27.4201555Z Error: Invalid value for '--output' / '-o': 'safety-report.json' is not one of 'screen', 'text', 'json', 'bare', 'html'.
+2025-07-16T00:08:27.5436430Z Security scan completed
+2025-07-16T00:08:27.5464849Z ##[group]Run grep -r "eval\|exec\|subprocess\.call" book_triage/ || echo "No dangerous functions found"
+2025-07-16T00:08:27.5465524Z [36;1mgrep -r "eval\|exec\|subprocess\.call" book_triage/ || echo "No dangerous functions found"[0m
+2025-07-16T00:08:27.5466160Z [36;1mgrep -r "password\|secret\|key" book_triage/ | grep -v "test" | head -5 || echo "No hardcoded secrets found" [0m
+2025-07-16T00:08:27.5495283Z shell: /usr/bin/bash -e {0}
+2025-07-16T00:08:27.5495505Z env:
+2025-07-16T00:08:27.5495739Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:27.5496141Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-16T00:08:27.5496513Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:27.5496883Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:27.5497279Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:27.5497650Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-16T00:08:27.5497930Z ##[endgroup]
+2025-07-16T00:08:27.5564606Z No dangerous functions found
+2025-07-16T00:08:27.5585159Z book_triage/env_example.txt:OPENAI_API_KEY=your_openai_api_key_here
+2025-07-16T00:08:27.5585594Z book_triage/security.py:import secrets
+2025-07-16T00:08:27.5586133Z book_triage/security.py:    expected_password = os.getenv("BOOK_PASS", "password")
+2025-07-16T00:08:27.5587164Z book_triage/security.py:    is_correct_username = secrets.compare_digest(credentials.username, expected_username)
+2025-07-16T00:08:27.5588348Z book_triage/security.py:    is_correct_password = secrets.compare_digest(credentials.password, expected_password)
+2025-07-16T00:08:27.5646587Z Post job cleanup.
+2025-07-16T00:08:27.7334513Z Post job cleanup.
+2025-07-16T00:08:27.8275448Z [command]/usr/bin/git version
+2025-07-16T00:08:27.8312926Z git version 2.50.1
+2025-07-16T00:08:27.8357918Z Temporarily overriding HOME='/home/runner/work/_temp/2ea4c82d-3d0a-4b8e-9a86-0d7973d4da62' before making global git config changes
+2025-07-16T00:08:27.8359304Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-16T00:08:27.8364769Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-16T00:08:27.8402051Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-16T00:08:27.8434663Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-16T00:08:27.8665277Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-16T00:08:27.8686881Z http.https://github.com/.extraheader
+2025-07-16T00:08:27.8699216Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-16T00:08:27.8729368Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-16T00:08:27.9064159Z Cleaning up orphan processes

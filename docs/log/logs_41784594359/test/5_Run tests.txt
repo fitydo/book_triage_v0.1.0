@@ -1,0 +1,63 @@
+﻿2025-07-16T00:08:34.9442428Z ##[group]Run python -m pytest tests/ -v --cov=book_triage --cov-report=term-missing
+2025-07-16T00:08:34.9443019Z [36;1mpython -m pytest tests/ -v --cov=book_triage --cov-report=term-missing[0m
+2025-07-16T00:08:34.9472695Z shell: /usr/bin/bash -e {0}
+2025-07-16T00:08:34.9472925Z env:
+2025-07-16T00:08:34.9473169Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:34.9473575Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib/pkgconfig
+2025-07-16T00:08:34.9473968Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:34.9474319Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:34.9474662Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.11/x64
+2025-07-16T00:08:34.9475107Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.11/x64/lib
+2025-07-16T00:08:34.9475405Z ##[endgroup]
+2025-07-16T00:08:36.3436865Z ============================= test session starts ==============================
+2025-07-16T00:08:36.3437894Z platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0 -- /opt/hostedtoolcache/Python/3.12.11/x64/bin/python
+2025-07-16T00:08:36.3438949Z cachedir: .pytest_cache
+2025-07-16T00:08:36.3439472Z rootdir: /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0
+2025-07-16T00:08:36.3440047Z configfile: pyproject.toml
+2025-07-16T00:08:36.3440436Z plugins: cov-6.2.1, anyio-4.9.0
+2025-07-16T00:08:40.7799294Z collecting ... collected 176 items / 1 error
+2025-07-16T00:08:40.7799836Z 
+2025-07-16T00:08:40.7800049Z ==================================== ERRORS ====================================
+2025-07-16T00:08:40.7800677Z ________________ ERROR collecting tests/test_frontend_layout.py ________________
+2025-07-16T00:08:40.7801465Z ImportError while importing test module '/home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0/tests/test_frontend_layout.py'.
+2025-07-16T00:08:40.7802266Z Hint: make sure your test modules/packages have valid Python names.
+2025-07-16T00:08:40.7802837Z Traceback:
+2025-07-16T00:08:40.7803368Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+2025-07-16T00:08:40.7803992Z     mod = import_path(
+2025-07-16T00:08:40.7804515Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+2025-07-16T00:08:40.7805502Z     importlib.import_module(module_name)
+2025-07-16T00:08:40.7806031Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+2025-07-16T00:08:40.7806705Z     return _bootstrap._gcd_import(name[level:], package, level)
+2025-07-16T00:08:40.7807077Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-07-16T00:08:40.7807362Z <frozen importlib._bootstrap>:1387: in _gcd_import
+2025-07-16T00:08:40.7807638Z     ???
+2025-07-16T00:08:40.7808202Z <frozen importlib._bootstrap>:1360: in _find_and_load
+2025-07-16T00:08:40.7808479Z     ???
+2025-07-16T00:08:40.7808713Z <frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+2025-07-16T00:08:40.7809029Z     ???
+2025-07-16T00:08:40.7809227Z <frozen importlib._bootstrap>:935: in _load_unlocked
+2025-07-16T00:08:40.7809506Z     ???
+2025-07-16T00:08:40.7809962Z /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+2025-07-16T00:08:40.7810503Z     exec(co, module.__dict__)
+2025-07-16T00:08:40.7810760Z tests/test_frontend_layout.py:4: in <module>
+2025-07-16T00:08:40.7811032Z     from bs4 import BeautifulSoup
+2025-07-16T00:08:40.7811299Z E   ModuleNotFoundError: No module named 'bs4'
+2025-07-16T00:08:40.7811602Z =============================== warnings summary ===============================
+2025-07-16T00:08:40.7811899Z tests/test_security.py:87
+2025-07-16T00:08:40.7812947Z   /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0/tests/test_security.py:87: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+2025-07-16T00:08:40.7814379Z     @pytest.mark.asyncio
+2025-07-16T00:08:40.7814526Z 
+2025-07-16T00:08:40.7814612Z tests/test_security.py:97
+2025-07-16T00:08:40.7815725Z   /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0/tests/test_security.py:97: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+2025-07-16T00:08:40.7816764Z     @pytest.mark.asyncio
+2025-07-16T00:08:40.7816895Z 
+2025-07-16T00:08:40.7816990Z tests/test_security.py:111
+2025-07-16T00:08:40.7817978Z   /home/runner/work/book_triage_v0.1.0/book_triage_v0.1.0/tests/test_security.py:111: PytestUnknownMarkWarning: Unknown pytest.mark.asyncio - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+2025-07-16T00:08:40.7818981Z     @pytest.mark.asyncio
+2025-07-16T00:08:40.7819104Z 
+2025-07-16T00:08:40.7819310Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2025-07-16T00:08:40.7819754Z =========================== short test summary info ============================
+2025-07-16T00:08:40.7820049Z ERROR tests/test_frontend_layout.py
+2025-07-16T00:08:40.7820342Z !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+2025-07-16T00:08:40.7820679Z ========================= 3 warnings, 1 error in 4.27s =========================
+2025-07-16T00:08:40.9369615Z ##[error]Process completed with exit code 2.
