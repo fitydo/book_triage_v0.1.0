@@ -66,9 +66,10 @@ def validate_file_upload(file_content: bytes, max_size_mb: int = 10) -> None:
                 detail="File must be an image"
             )
     except Exception:
+        # If detecting MIME type fails (e.g., magic library error), report invalid format
         raise HTTPException(
             status_code=400,
-            detail="File must be an image"
+            detail="Invalid file format"
         )
 
 
