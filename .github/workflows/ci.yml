@@ -46,8 +46,8 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -e .
-        pip install requests pytest-cov coverage codecov
+        pip install -e .[test]
+        pip install codecov
     
     - name: Create test CSV
       run: |
