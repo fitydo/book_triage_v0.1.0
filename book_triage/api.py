@@ -459,7 +459,20 @@ async def root(request: Request) -> str:
                 setTimeout(() => { toast.style.display = 'none'; }, 2000);
             }
 
-            function loadBooks() {
+            function loadBooks(preserveScroll = false, targetId = null) {
+                // Save scroll position before reloading if requested
+                let scrollContainer = null;
+                let savedScrollTop = 0;
+                let savedScrollLeft = 0;
+                
+                if (preserveScroll) {
+                    scrollContainer = document.querySelector('.table-scroll-container');
+                    if (scrollContainer) {
+                        savedScrollTop = scrollContainer.scrollTop;
+                        savedScrollLeft = scrollContainer.scrollLeft;
+                    }
+                }
+                
                 fetch('/books')
                 .then(response => response.json())
                 .then(data => {
@@ -500,7 +513,7 @@ async def root(request: Request) -> str:
                     data.forEach(book => {
                         const decisionClass = `decision-${book.decision.toLowerCase()}`;
                         table += `
-                            <tr class="${decisionClass}">
+                            <tr class="${decisionClass}" data-row-id="${book.id}">
                                 <td>${book.id}</td>
                                 <td>
                                     <input type="text" class="edit-title-input title-input" value="${book.title || ''}" id="title-${book.id}">
@@ -551,6 +564,23 @@ async def root(request: Request) -> str:
                     
                     table += '</tbody></table></div></div>';
                     booksListDiv.innerHTML = table;
+
+                    // Restore scroll position if requested
+                    if (preserveScroll) {
+                        const currentScrollContainer = document.querySelector('.table-scroll-container');
+                        if (currentScrollContainer) {
+                            currentScrollContainer.scrollTop = savedScrollTop;
+                            currentScrollContainer.scrollLeft = savedScrollLeft;
+                        }
+                    }
+
+                    // If a target row id is provided, scroll it into view
+                    if (targetId) {
+                        const rowEl = document.querySelector(`tr[data-row-id="${targetId}"]`);
+                        if (rowEl) {
+                            rowEl.scrollIntoView({ block: 'center' });
+                        }
+                    }
                 })
                 .catch(error => {
                     document.getElementById('booksList').innerHTML = '<p>Error loading books.</p>';
@@ -594,7 +624,7 @@ async def root(request: Request) -> str:
                 })
                 .then(response => response.json())
                 .then(data => {
-                    loadBooks();
+                    loadBooks(true);  // Pass true to preserve scroll position
                     showToast('Book updated!');
                 })
                 .catch(error => {
@@ -625,7 +655,8 @@ async def root(request: Request) -> str:
                     input.disabled = false;
                     isbnInput.disabled = false;
                     if (submitBtn) submitBtn.disabled = false;
-                    loadBooks();
+                    // Scroll to the newly added row
+                    loadBooks(false, data.id);
                     showToast('Book added!');
                 })
                 .catch(() => {
