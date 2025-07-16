@@ -87,6 +87,16 @@ def initialize_app(csv_path: str | Path, scan_cost: int = 2) -> None:
 async def root(request: Request) -> str:
     """Serve the main HTML interface."""
     check_rate_limit(request.client.host if request.client else "unknown", "root", 60)
+    
+    # Auto-initialize if not already done
+    if book_triage is None:
+        csv_path = Path("books.csv")
+        if not csv_path.exists():
+            # Create empty CSV with headers
+            with open(csv_path, 'w') as f:
+                f.write("id,title,isbn,url,url_com,purchase_price,used_price,V,R,P,F,A,S,citation_R,citation_P,decision,verified\n")
+        initialize_app(csv_path, scan_cost=2)
+    
     return """
     <!DOCTYPE html>
     <html>
@@ -759,6 +769,15 @@ async def upload_photo(request: Request, file: UploadFile = File(...)) -> Dict[s
 async def get_books(request: Request) -> list[Dict[str, Any]]:
     """Get all books from the database."""
     check_rate_limit(request.client.host if request.client else "unknown", "books", 30)
+    
+    # Auto-initialize if not already done
+    if book_triage is None:
+        csv_path = Path("books.csv")
+        if not csv_path.exists():
+            # Create empty CSV with headers
+            with open(csv_path, 'w') as f:
+                f.write("id,title,isbn,url,url_com,purchase_price,used_price,V,R,P,F,A,S,citation_R,citation_P,decision,verified\n")
+        initialize_app(csv_path, scan_cost=2)
     
     if not book_triage:
         raise HTTPException(status_code=500, detail="Application not initialized")
