@@ -37,6 +37,7 @@ dependencies = [
     "fastapi>=0.104.0",
     "uvicorn[standard]>=0.24.0",
     "pillow>=10.0.0",
+    "beautifulsoup4>=4.12.0",  # Required for HTML parsing in frontend layout tests
     "pytesseract>=0.3.10",
     "typer>=0.9.0",
     "python-multipart>=0.0.6",
